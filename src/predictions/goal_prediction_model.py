@@ -11,7 +11,6 @@ class GoalPredictionModel:
         self.model = LogisticRegression()
         self.inserted_matches = set()
         self.read_existing_matches()
-        self.min_probability = 69
 
     def train_model(self, X_train, y_train):
         try:
@@ -34,7 +33,7 @@ class GoalPredictionModel:
             print(f"An error occurred in predict_for_future_matches: {e}")
             return None
 
-    def __call__(self, csv_match_data, start_time, home_team, away_team, target):
+    def __call__(self, csv_match_data, start_time, home_team, away_team, target, min_probability):
         try:
             filters = Filters(csv_match_data)
 
@@ -71,10 +70,10 @@ class GoalPredictionModel:
                 perc_true = round(is_true * 100 / (is_true + is_false))
                 perc_fail = round(is_false * 100 / (is_true + is_false))
 
-                if perc_true > self.min_probability:
+                if perc_true >= min_probability:
                     print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_true}%')
                     self.append_to_csv(start_time, home_team, away_team, target.upper(), perc_true)
-                elif perc_fail > self.min_probability:
+                elif perc_fail >= min_probability:
                     target = target.replace('gg', 'ng').replace('ov', 'un')
                     print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_fail}%')
 

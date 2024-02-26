@@ -9,11 +9,13 @@ class Main:
     def __init__(self):
         self.csv_match_data = './data/match_data.csv' 
         self.csv_upcoming_matches = './data/upcoming_matches.csv' 
+        self.markets = ['1x2','uo','bts'] 
         self.targets = ['gg', 'ov15', 'ov25']
+        self.min_probability = 75
 
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
-        #self.goal_prediction_model = GoalPredictionModel()
+        self.goal_prediction_model = GoalPredictionModel()
 
     def team_exists_in_match_data(self, team):
         try:
@@ -39,7 +41,7 @@ class Main:
                     if self.team_exists_in_match_data(home_team) and self.team_exists_in_match_data(away_team):
                         for target in self.targets:
                             try:
-                                GoalPredictionModel()(self.csv_match_data, start_time, home_team, away_team, target)
+                                self.goal_prediction_model(self.csv_match_data, start_time, home_team, away_team, target, self.min_probability)
                             except ValueError as e:
                                 print(f"An error occurred: {e}")
                                 # Continue with the next iteration of the loop
@@ -64,9 +66,8 @@ class Main:
         end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
         markets = ['1x2']  
         sport_id='14'
-
-        markets = ['1x2','uo','bts']  
-        for market in markets:  
+ 
+        for market in self.markets:  
             self.load_date(start_date, end_date, market)
 
         self.fetch_upcoming(sport_id)
