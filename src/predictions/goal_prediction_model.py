@@ -67,6 +67,9 @@ class GoalPredictionModel:
         if perc_true > 68:
             print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_true}%')
             self.append_to_csv(start_time, home_team, away_team, target.upper(), perc_true)
+        elif perc_fail > 68:
+            target = target.replace('gg', 'ng').replace('ov', 'un')
+            print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_fail}%')
 
     def read_existing_matches(self):
         try:
@@ -88,7 +91,7 @@ class GoalPredictionModel:
             if csv_file.tell() == 0:
                 writer.writeheader()
 
-            match_identifier = (start_time, home_team, away_team, prediction, probability)
+            match_identifier = (start_time, home_team, away_team, prediction, f'{probability}')
             
             if match_identifier not in self.inserted_matches:
                 writer.writerow({
