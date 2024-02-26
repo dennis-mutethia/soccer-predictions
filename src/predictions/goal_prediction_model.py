@@ -64,48 +64,40 @@ class GoalPredictionModel:
         perc_true = round(is_true*100/(is_true+is_false))
         perc_fail = round(is_false*100/(is_true+is_false))
 
-        print(f"""
-            {home_team} vs {away_team}
-            Prediction: {target}
-            Yes: {perc_true}%
-            No: {perc_fail}%
-        """)
-
         if perc_true > 68:
-            self.append_to_csv(start_time, home_team, away_team, target.upper())
+            print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_true}%')
+            self.append_to_csv(start_time, home_team, away_team, target.upper(), perc_true)
 
     def read_existing_matches(self):
         try:
             with open(self.csv_predictions, mode='r') as csv_file:
                 reader = csv.DictReader(csv_file)
                 for row in reader:
-                    match_identifier = (row['start_time'], row['home_team'], row['away_team'])
+                    match_identifier = (row['start_time'], row['home_team'], row['away_team'], row['prediction'], row['probability'])
                     self.inserted_matches.add(match_identifier)
         except FileNotFoundError:
             # Handle the case where the file doesn't exist yet
             pass
 
-    def append_to_csv(self, start_time, home_team, away_team, prediction):
+    def append_to_csv(self, start_time, home_team, away_team, prediction, probability):
         with open(self.csv_predictions, mode='a', newline='') as csv_file:
-            fieldnames = ['start_time', 'home_team', 'away_team', 'prediction']
+            fieldnames = ['start_time', 'home_team', 'away_team', 'prediction', 'probability']
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
             # Check if the file is empty, if so write the header
             if csv_file.tell() == 0:
                 writer.writeheader()
 
-            match_identifier = (start_time, home_team, away_team, prediction)
+            match_identifier = (start_time, home_team, away_team, prediction, probability)
             
             if match_identifier not in self.inserted_matches:
                 writer.writerow({
                     'start_time': start_time,
                     'home_team': home_team,
                     'away_team': away_team,
-                    'prediction': prediction
+                    'prediction': prediction,
+                    'probability': probability
                 })
 
                 # Add the match identifier to the set
                 self.inserted_matches.add(match_identifier)
-                print(f'New Match Added')
-            else:
-                print(f'Match Already exists - Skipped')

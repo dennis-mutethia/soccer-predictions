@@ -56,9 +56,6 @@ class FetchUpcoming:
 
                     # Add the match identifier to the set
                     self.inserted_matches.add(match_identifier)
-                    print(f'New Match Added')
-                else:
-                    print(f'Match Already exists - Skipped')
 
     def __call__(self, sport_id='14'):
         url = f"https://api.betika.com/v1/uo/matches?limit=100&tab=2&sub_type_id=162&sport_id={sport_id}&sort_id=2&period_id=-1&esports=false&is_srl=false&page=1"
@@ -66,6 +63,3 @@ class FetchUpcoming:
 
         if matches:
             self.append_to_csv(matches, self.csv_filename)
-            print(f"Data for sport_id: {sport_id} appended to {self.csv_filename}")
-        else:
-            print(f"No data fetched for sport_id : {sport_id}")

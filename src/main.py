@@ -42,8 +42,6 @@ class Main:
                         if self.team_exists_in_match_data(home_team) and self.team_exists_in_match_data(away_team):
                             for target in self.targets:
                                 self.goal_prediction_model(self.csv_match_data, start_time_str, home_team, away_team, target)
-                        else:
-                            print(f'No match data for {home_team} vs {away_team}')
         except FileNotFoundError:
             # Handle the case where the file doesn't exist yet
             pass

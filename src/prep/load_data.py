@@ -67,9 +67,6 @@ class LoadData:
 
                         # Add the match identifier to the set
                         self.inserted_matches.add(match_identifier)
-                        print(f'New Match Added')
-                else:
-                    print(f'Match Already exists - Skipped')
 
     def __call__(self, start_date, end_date, market='1x2'):
         date_range = pandas.date_range(start=start_date, end=end_date).strftime('%Y-%m-%d')
@@ -80,6 +77,3 @@ class LoadData:
 
             if matches:
                 self.append_to_csv(matches, self.csv_filename)
-                print(f"Data for {date} appended to {self.csv_filename}")
-            else:
-                print(f"No data fetched for {date}")

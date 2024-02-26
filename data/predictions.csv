@@ -1,5 +1,5 @@
-start_time,home_team,away_team,prediction
-2024-02-26 19:00:00,Jeddah Club,Al Jabalain,OV15
-2024-02-26 21:00:00,Warta Poznan,Radomiak Radom,OV15
-2024-02-26 22:45:00,Fiorentina,Lazio,OV15
-2024-02-26 23:00:00,West Ham,Brentford,OV15
+start_time,home_team,away_team,prediction,probability
+2024-02-26 21:00:00,Warta Poznan,Radomiak Radom,OV15,70
+2024-02-26 22:45:00,Fiorentina,Lazio,OV15,74
+2024-02-26 23:00:00,West Ham,Brentford,OV15,80
+2024-02-26 21:00:00,Warta Poznan,Radomiak Radom,OV15,70
