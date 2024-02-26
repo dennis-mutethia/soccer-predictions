@@ -4,8 +4,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-              "ms-azuretools.vscode-docker"
-              // Add any other extensions you need
+                "ms-azuretools.vscode-docker",
+                "github.vscode-github-actions"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux#": "/bin/bash"
