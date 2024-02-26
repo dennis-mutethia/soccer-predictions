@@ -1,12 +1,13 @@
 import requests, csv, pandas
 from match_day import MatchData
-
+from helper import Helper
 
 class LoadData:
     def __init__(self, csv_filename):
         self.csv_filename = csv_filename
         self.inserted_matches = set()
         self.read_existing_matches()
+        self.helper = Helper()
 
     def read_existing_matches(self):
         try:
@@ -18,23 +19,6 @@ class LoadData:
         except FileNotFoundError:
             # Handle the case where the file doesn't exist yet
             pass
-
-    def fetch_data(self, url):
-        headers = {
-            'User-Agent': 'PostmanRuntime/7.36.3',
-        }
-
-        response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-            json_data = response.json()
-            if json_data and isinstance(json_data, list) and json_data[0]:
-                matches_data = json_data[0]
-                matches_objects = [MatchData(match) for match in matches_data]
-                return matches_objects
-            else:
-                print("Invalid JSON data format")
-        else:
-            print(f"Failed to fetch data. Status Code: {response.status_code}")
 
     def append_to_csv(self, matches, csv_filename):
         with open(csv_filename, mode='a', newline='') as csv_file:
@@ -73,7 +57,9 @@ class LoadData:
 
         for date in date_range:
             url = f"https://forebet.com/scripts/getrs.php?ln=en&tp={market}&in={date}&ord=0&tz=+180&tzs=0&tze=0"
-            matches = self.fetch_data(url)
+            
+            matches_data = self.helper.fetch_data(url)[0]
+            matches = [MatchData(match) for match in matches_data]
 
             if matches:
                 self.append_to_csv(matches, self.csv_filename)
