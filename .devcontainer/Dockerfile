@@ -9,6 +9,9 @@ RUN apt-get update \
 
 RUN pip install --upgrade pip
 
+# Set the timezone to Africa/Nairobi
+RUN ln -sf /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
+
 #RUN pip install -r requirements.txt
 
 

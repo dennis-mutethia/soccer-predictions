@@ -19,4 +19,7 @@ class Filters:
         filtered_data = self.match_data[(self.match_data['host_name'] == team_name) | (self.match_data['guest_name'] == team_name)]
         return filtered_data
 
+    def filter_matches_after(self, match_data, min_date):
+        filtered_data = match_data[(match_data['match_day'] >= min_date)]
+        return filtered_data
     

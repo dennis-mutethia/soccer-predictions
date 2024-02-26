@@ -1,4 +1,4 @@
-import pandas as pd
+import csv, pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
@@ -6,8 +6,11 @@ from prep.filters import Filters
 
 class GoalPredictionModel:
     def __init__(self):
+        self.csv_predictions = './data/predictions.csv' 
         self.features = ['host_score', 'guest_score']
         self.model = LogisticRegression()
+        self.inserted_matches = set()
+        self.read_existing_matches()
 
     def train_model(self, X_train, y_train):
         #print(f"Training model...")
@@ -22,11 +25,15 @@ class GoalPredictionModel:
         predictions = self.model.predict(future_matches[self.features])
         return predictions
 
-    def __call__(self, csv_filename, home_team, away_team, target):        
-        filters = Filters(csv_filename)
+    def __call__(self, csv_match_data, start_time, home_team, away_team, target):        
+        filters = Filters(csv_match_data)
+        min_date = '2022-01-01'
 
         team_1_matches = filters.filter_matches_by_team(home_team)
+        team_1_matches = filters.filter_matches_after(team_1_matches, min_date)
+
         team_2_matches = filters.filter_matches_by_team(away_team)
+        team_2_matches = filters.filter_matches_after(team_2_matches, min_date)
 
         # Create instances of the GoalPredictionModel class  prediction
         model_team_1 = model_team_2 = GoalPredictionModel()
@@ -54,9 +61,51 @@ class GoalPredictionModel:
         is_true = sum_true_team_1+sum_true_team_2
         is_false = count_false_team_1+count_false_team_2
 
+        perc_true = round(is_true*100/(is_true+is_false))
+        perc_fail = round(is_false*100/(is_true+is_false))
+
         print(f"""
             {home_team} vs {away_team}
             Prediction: {target}
-            True: {round(is_true*100/(is_true+is_false))}%
-            False: {round(is_false*100/(is_true+is_false))}%
+            Yes: {perc_true}%
+            No: {perc_fail}%
         """)
+
+        if perc_true > 68:
+            self.append_to_csv(start_time, home_team, away_team, target.upper())
+
+    def read_existing_matches(self):
+        try:
+            with open(self.csv_predictions, mode='r') as csv_file:
+                reader = csv.DictReader(csv_file)
+                for row in reader:
+                    match_identifier = (row['start_time'], row['home_team'], row['away_team'])
+                    self.inserted_matches.add(match_identifier)
+        except FileNotFoundError:
+            # Handle the case where the file doesn't exist yet
+            pass
+
+    def append_to_csv(self, start_time, home_team, away_team, prediction):
+        with open(self.csv_predictions, mode='a', newline='') as csv_file:
+            fieldnames = ['start_time', 'home_team', 'away_team', 'prediction']
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+            # Check if the file is empty, if so write the header
+            if csv_file.tell() == 0:
+                writer.writeheader()
+
+            match_identifier = (start_time, home_team, away_team, prediction)
+            
+            if match_identifier not in self.inserted_matches:
+                writer.writerow({
+                    'start_time': start_time,
+                    'home_team': home_team,
+                    'away_team': away_team,
+                    'prediction': prediction
+                })
+
+                # Add the match identifier to the set
+                self.inserted_matches.add(match_identifier)
+                print(f'New Match Added')
+            else:
+                print(f'Match Already exists - Skipped')
