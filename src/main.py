@@ -1,11 +1,13 @@
 import csv
-import pandas as pd
 from datetime import datetime, timedelta
 from prep.load_data import LoadData
 from prep.fetch_upcoming import FetchUpcoming
 from predictions.goal_prediction_model import GoalPredictionModel
 
 class Main:
+    """
+        main class
+    """
     def __init__(self):
         self.csv_match_data = './data/match_data.csv' 
         self.csv_upcoming_matches = './data/upcoming_matches.csv' 
@@ -18,6 +20,10 @@ class Main:
         self.goal_prediction_model = GoalPredictionModel()
 
     def team_exists_in_match_data(self, team):
+        """
+        parameters
+            team
+        """
         try:
             with open(self.csv_match_data, 'r') as csvfile:
                 reader = csv.DictReader(csvfile)
@@ -31,6 +37,9 @@ class Main:
         return False
 
     def predict_upcoming_matches(self):
+        """
+        method to predict upcoming matches
+        """
         try:
             with open(self.csv_upcoming_matches, mode='r') as csv_file:
                 reader = csv.DictReader(csv_file)
@@ -42,8 +51,8 @@ class Main:
                         for target in self.targets:
                             try:
                                 self.goal_prediction_model(self.csv_match_data, start_time, home_team, away_team, target, self.min_probability)
-                            except ValueError as e:
-                                print(f"An error occurred: {e}")
+                            except ValueError as ex:
+                                print(f"An error occurred: {ex}")
                                 # Continue with the next iteration of the loop
                                 continue
 
@@ -52,6 +61,9 @@ class Main:
             pass
         
     def last_inserted_date(self):
+        """
+        function to get last inserted date
+        """
         # Read the CSV file and get the last row
         with open(self.csv_match_data, 'r') as file:
             reader = csv.reader(file)
@@ -61,19 +73,18 @@ class Main:
         # Extract the match_day value from the last row
         return last_row[0]
 
-    def __call__(self):         
+    def __call__(self):
+        """
+        class entry point
+        """
         start_date = self.last_inserted_date()
         end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
         sport_id='14'
- 
-        for market in self.markets:  
+
+        for market in self.markets:
             self.load_date(start_date, end_date, market)
 
         self.fetch_upcoming(sport_id)
-        
+
         self.predict_upcoming_matches()
-    
-try:
-    Main()()
-except Exception as e:
-    print(e)
+Main()()

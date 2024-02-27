@@ -5,10 +5,9 @@ start_time,home_team,away_team,prediction,probability,status
 2024-02-26 23:00:00,Bolivia,Peru,OV15,84,WON
 2024-02-26 23:00:00,West Ham,Brentford,OV15,78,WON
 2024-02-26 23:00:00,Bolivia,Peru,OV15,79,WON
-2024-02-27 16:00:00,Fleetwood Town,Burnley,OV15,75
-2024-02-27 16:00:00,Ukraine,Bulgaria,GG,75,LOST
+2024-02-27 16:00:00,Fleetwood Town,Burnley,OV15,75,PP
 2024-02-27 16:00:00,Ukraine,Bulgaria,OV15,78,WON
-2024-02-27 17:30:00,Iceland,Serbia,OV15,98
+2024-02-27 17:30:00,Iceland,Serbia,OV15,98,WON
 2024-02-27 17:30:00,Iceland,Serbia,OV25,88
 2024-02-27 17:30:00,Iceland,Serbia,OV35,75
 2024-02-27 18:30:00,Botev Plovdiv,Spartak Varna,OV15,75
@@ -21,3 +20,9 @@ start_time,home_team,away_team,prediction,probability,status
 2024-02-27 22:00:00,Belgium,Hungary,OV15,80
 2024-02-27 22:30:00,Sampdoria,Cremonese,OV15,78
 2024-02-27 22:30:00,Ireland,Wales,OV15,75
+2024-02-27 22:30:00,Caerau Ely,Taffs Well,OV15,88
+2024-02-27 22:30:00,Caerau Ely,Taffs Well,OV25,78
+2024-02-27 22:45:00,Woking,Gateshead,OV15,78
+2024-02-27 22:45:00,Barnet,Chesterfield,OV15,81
+2024-02-27 22:45:00,Solihull Moors,Kidderminster,OV15,75
+2024-02-27 22:45:00,Lyon,Strasbourg,OV15,80
