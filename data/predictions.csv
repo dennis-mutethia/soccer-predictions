@@ -3,26 +3,14 @@ start_time,home_team,away_team,prediction,probability,status
 2024-02-26 22:45:00,Fiorentina,Lazio,OV15,74,WON
 2024-02-26 23:00:00,West Ham,Brentford,OV15,80,WON
 2024-02-26 23:00:00,Bolivia,Peru,OV15,84,WON
-2024-02-26 23:00:00,West Ham,Brentford,OV15,78,WON
 2024-02-26 23:00:00,Bolivia,Peru,OV15,79,WON
 2024-02-27 16:00:00,Fleetwood Town,Burnley,OV15,75,PP
-2024-02-27 16:00:00,Ukraine,Bulgaria,OV15,78,WON
-2024-02-27 17:30:00,Iceland,Serbia,OV15,98,WON
-2024-02-27 17:30:00,Iceland,Serbia,OV25,88
-2024-02-27 17:30:00,Iceland,Serbia,OV35,75
-2024-02-27 18:30:00,Botev Plovdiv,Spartak Varna,OV15,75
-2024-02-27 19:00:00,Switzerland,Poland,OV15,89
-2024-02-27 19:00:00,Switzerland,Poland,OV25,79
-2024-02-27 20:00:00,England,Italy,OV15,82
-2024-02-27 20:00:00,Slovakia,Latvia,OV15,85
-2024-02-27 20:00:00,Slovakia,Latvia,OV25,75
-2024-02-27 20:30:00,Spain,Norway,OV15,80
-2024-02-27 22:00:00,Belgium,Hungary,OV15,80
+2024-02-27 18:30:00,Botev Plovdiv,Spartak Varna,OV15,75,WON
 2024-02-27 22:30:00,Sampdoria,Cremonese,OV15,78
-2024-02-27 22:30:00,Ireland,Wales,OV15,75
 2024-02-27 22:30:00,Caerau Ely,Taffs Well,OV15,88
 2024-02-27 22:30:00,Caerau Ely,Taffs Well,OV25,78
 2024-02-27 22:45:00,Woking,Gateshead,OV15,78
 2024-02-27 22:45:00,Barnet,Chesterfield,OV15,81
 2024-02-27 22:45:00,Solihull Moors,Kidderminster,OV15,75
 2024-02-27 22:45:00,Lyon,Strasbourg,OV15,80
+2024-02-28 03:30:00,Sporting Cristal,Always Ready,OV15,79

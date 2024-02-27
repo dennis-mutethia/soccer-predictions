@@ -1,101 +1,109 @@
 start_time,home_team,away_team
-2024-02-27 19:15:00,Sitra Club,Al Riffa
-2024-02-27 19:30:00,PIAST GLIWICE,Rakow Czestochowa
-2024-02-27 19:30:00,Dinamo B.,AFC Hermannstadt
-2024-02-27 20:00:00,Hajduk Split,Varazdin
-2024-02-27 20:00:00,England,Italy
-2024-02-27 20:00:00,MAINZ 05 U19,MANCHESTER CITY U19
-2024-02-27 20:00:00,Slovakia,Latvia
-2024-02-27 20:00:00,Al Ahly,AL Mehalla
-2024-02-27 20:00:00,Norway,Croatia
-2024-02-27 20:00:00,GKS Katowice,Miedz Legnica
-2024-02-27 20:00:00,JABLONEC,VIKTORIA PLZEN
-2024-02-27 20:15:00,Reggiana,Sudtirol
-2024-02-27 20:15:00,Ascoli,Brescia
-2024-02-27 20:30:00,Mamelodi Sundowns,Amazulu
-2024-02-27 20:30:00,Spain,Norway
-2024-02-27 20:45:00,Ankaragucu,Fenerbahce
-2024-02-27 21:00:00,Grorud,Eidsvold
-2024-02-27 21:00:00,Eugendorf,Wals-Grunau
 2024-02-27 21:00:00,Berliner AK,BFC Dynamo
 2024-02-27 21:00:00,Energie Cottbus,Berlin II
 2024-02-27 21:00:00,Eilenburg,Jena
-2024-02-27 21:15:00,Portugal,Republic of Korea
+2024-02-27 21:00:00,Grorud,Eidsvold
+2024-02-27 21:00:00,Eugendorf,Wals-Grunau
 2024-02-27 21:30:00,Orleans,Sochaux
 2024-02-27 21:30:00,Red Star,FC Goal
-2024-02-27 21:30:00,Philippines Women,Slovenia
-2024-02-27 21:30:00,Torrent CF,Atletico Saguntino
 2024-02-27 21:30:00,Villefranche,Le Mans
-2024-02-27 22:00:00,ASTON VILLA RESERVE,BLACKBURN ROVERS RESERVE
-2024-02-27 22:00:00,Northern Ireland,Montenegro
-2024-02-27 22:00:00,Lisse,Katwijk
-2024-02-27 22:00:00,Belgium,Hungary
-2024-02-27 22:00:00,Cambuur,NEC Nijmegen
-2024-02-27 22:00:00,Sheff Utd,SWANSEA CITY RESERVES
+2024-02-27 21:30:00,Torrent CF,Atletico Saguntino
+2024-02-27 21:30:00,Asker,Oppsal
 2024-02-27 22:00:00,Otelul,CFR Cluj
-2024-02-27 22:30:00,Ireland,Wales
+2024-02-27 22:00:00,Cambuur,NEC Nijmegen
+2024-02-27 22:00:00,Lisse,Katwijk
+2024-02-27 22:00:00,Sheff Utd,SWANSEA CITY RESERVES
+2024-02-27 22:00:00,ASTON VILLA RESERVE,BLACKBURN ROVERS RESERVE
 2024-02-27 22:30:00,BOURNEMOUTH,Leicester
 2024-02-27 22:30:00,LECH POZNAN,POGON SZCZECIN
+2024-02-27 22:30:00,SAMPDORIA,Cremonese
+2024-02-27 22:30:00,Catanzaro,Bari 1908
+2024-02-27 22:30:00,Palermo,Ternana
+2024-02-27 22:30:00,Lecco,Como
+2024-02-27 22:30:00,Parma Calcio,Cosenza
+2024-02-27 22:30:00,Denbigh Town,Prestatyn
+2024-02-27 22:30:00,Holywell,Guilsfield
 2024-02-27 22:30:00,Trefelin,Ammanford
 2024-02-27 22:30:00,Caerau Ely,Taffs Well
 2024-02-27 22:30:00,Llanelli,Cambrian & Clydach Vale
-2024-02-27 22:30:00,Denbigh Town,Prestatyn
-2024-02-27 22:30:00,SAMPDORIA,Cremonese
-2024-02-27 22:30:00,Palermo,Ternana
-2024-02-27 22:30:00,Lecco,Como
-2024-02-27 22:30:00,Holywell,Guilsfield
-2024-02-27 22:30:00,Catanzaro,Bari 1908
-2024-02-27 22:30:00,Parma Calcio,Cosenza
-2024-02-27 22:45:00,Dundee United,Airdrieonians
-2024-02-27 22:45:00,Inverness CT,Dunfermline
-2024-02-27 22:45:00,Kettering,Sudbury
-2024-02-27 22:45:00,Walsall,Accrington
-2024-02-27 22:45:00,Leiston,Mickleover Sports
-2024-02-27 22:45:00,Harrogate,Newport
-2024-02-27 22:45:00,Needham,Stratford
-2024-02-27 22:45:00,Notts County,Sutton
-2024-02-27 22:45:00,Forest Green,Wrexham
-2024-02-27 22:45:00,Queens Park,Arbroath
-2024-02-27 22:45:00,Boston,Buxton
-2024-02-27 22:45:00,Farnborough,Chelmsford
-2024-02-27 22:45:00,Whitby,Lancaster
-2024-02-27 22:45:00,Alfreton,Kings Lynn
 2024-02-27 22:45:00,Blackburn,NEWCASTLE
-2024-02-27 22:45:00,Stirling,Hamilton
-2024-02-27 22:45:00,Concord Rangers,Hornchurch
-2024-02-27 22:45:00,Chesham,Hanwell
-2024-02-27 22:45:00,Salford,Colchester
-2024-02-27 22:45:00,Ayr,Partick Thistle
-2024-02-27 22:45:00,Brackley,Chorley
-2024-02-27 22:45:00,Banbury,Peterborough Sports
-2024-02-27 22:45:00,Farsley Celtic,Rushall
-2024-02-27 22:45:00,Dartford,Aveley
-2024-02-27 22:45:00,Bath,Braintree
-2024-02-27 22:45:00,Curzon,Darlington
 2024-02-27 22:45:00,Woking,Gateshead
 2024-02-27 22:45:00,Barnet,Chesterfield
 2024-02-27 22:45:00,Eastleigh,Oldham
 2024-02-27 22:45:00,Southend,Altrincham
-2024-02-27 22:45:00,Hampton & R,Havant & W
-2024-02-27 22:45:00,Bognor Regis,Wingate & Finchley
-2024-02-27 22:45:00,Folkestone,Potters
-2024-02-27 22:45:00,Whitehawk,Cray
 2024-02-27 22:45:00,Wycombe,Cheltenham
 2024-02-27 22:45:00,Stevenage,Cambridge
 2024-02-27 22:45:00,Burton,Carlisle
 2024-02-27 22:45:00,Swindon Town,Tranmere
 2024-02-27 22:45:00,Lincoln City,Shrewsbury
 2024-02-27 22:45:00,Wigan,Bolton
-2024-02-27 22:45:00,LYON,STRASBOURG
-2024-02-27 22:45:00,Solihull Moors,Kidderminster
-2024-02-27 22:45:00,Weymouth,St Albans
-2024-02-27 22:45:00,Welling,Truro
-2024-02-27 22:45:00,Newington,Ards
-2024-02-27 22:45:00,Derby,Charlton
-2024-02-27 22:45:00,Raith Rovers,Greenock Morton
 2024-02-27 22:45:00,Leyton Orient London,Blackpool
 2024-02-27 22:45:00,Port Vale,Fleetwood
-2024-02-27 22:45:00,Bishop's Stortford,Spennymoor
-2024-02-27 22:45:00,Poole Town,Parkway
-2024-02-27 22:45:00,Tiverton,Winchester
+2024-02-27 22:45:00,Dundee United,Airdrieonians
+2024-02-27 22:45:00,Inverness CT,Dunfermline
+2024-02-27 22:45:00,Queens Park,Arbroath
+2024-02-27 22:45:00,Solihull Moors,Kidderminster
 2024-02-27 22:45:00,Rochdale,Wealdstone
+2024-02-27 22:45:00,Ayr,Partick Thistle
+2024-02-27 22:45:00,Raith Rovers,Greenock Morton
+2024-02-27 22:45:00,Derby,Charlton
+2024-02-27 22:45:00,Walsall,Accrington
+2024-02-27 22:45:00,Harrogate,Newport
+2024-02-27 22:45:00,Notts County,Sutton
+2024-02-27 22:45:00,Forest Green,Wrexham
+2024-02-27 22:45:00,LYON,STRASBOURG
+2024-02-27 22:45:00,Stirling,Hamilton
+2024-02-27 22:45:00,Salford,Colchester
+2024-02-27 22:45:00,Poole Town,Parkway
+2024-02-27 22:45:00,Kettering,Sudbury
+2024-02-27 22:45:00,Leiston,Mickleover Sports
+2024-02-27 22:45:00,Needham,Stratford
+2024-02-27 22:45:00,Whitby,Lancaster
+2024-02-27 22:45:00,Brackley,Chorley
+2024-02-27 22:45:00,Banbury,Peterborough Sports
+2024-02-27 22:45:00,Farsley Celtic,Rushall
+2024-02-27 22:45:00,Curzon,Darlington
+2024-02-27 22:45:00,Bognor Regis,Wingate & Finchley
+2024-02-27 22:45:00,Folkestone,Potters
+2024-02-27 22:45:00,Whitehawk,Cray
+2024-02-27 22:45:00,Dartford,Aveley
+2024-02-27 22:45:00,Bath,Braintree
+2024-02-27 22:45:00,Hampton & R,Havant & W
+2024-02-27 22:45:00,Weymouth,St Albans
+2024-02-27 22:45:00,Welling,Truro
+2024-02-27 22:45:00,Boston,Buxton
+2024-02-27 22:45:00,Alfreton,Kings Lynn
+2024-02-27 22:45:00,Bishop's Stortford,Spennymoor
+2024-02-27 22:45:00,Concord Rangers,Hornchurch
+2024-02-27 22:45:00,Chesham,Hanwell
+2024-02-27 22:45:00,Newington,Ards
+2024-02-27 22:45:00,Farnborough,Chelmsford
+2024-02-27 23:00:00,Luton,MAN CITY
+2024-02-27 23:00:00,Ross County,St Mirren
+2024-02-27 23:00:00, Union Santa Fe Reserve,CA Tigre Reserves
+2024-02-27 23:00:00,Rosario Central Reserves,Argentinos Juniors Reserves
+2024-02-27 23:00:00,Platense Reserves,Newell's Old Boys Reserves
+2024-02-27 23:00:00,St Josephs,Mons Calpe SC
+2024-02-27 23:00:00,Berazategui,Lujan
+2024-02-27 23:00:00,Sacachispas,Sportivo
+2024-02-27 23:00:00,Centro Espanol,Juv. Unida S. Miguel
+2024-02-27 23:00:00,Bogota,Huila
+2024-02-27 23:10:00,Sarmiento,Temperley
+2024-02-27 23:15:00,Avs Futebol Sad,Academico de Viseu
+2024-02-27 23:30:00,Real Sociedad,Mallorca
+2024-02-27 23:30:00,Real San Andres,Atletico
+2024-02-28 00:00:00,Envigado,Patriotas
+2024-02-28 00:00:00,Imperial,Comunicaciones
+2024-02-28 01:00:00,Palestino,Portuguesa
+2024-02-28 01:00:00,Belgrano Reserves,Instituto Cordoba Reserves
+2024-02-28 01:15:00,Athletic Club Sjdr MG,Volta Redonda
+2024-02-28 02:00:00,Orlando,Cavalry FC
+2024-02-28 02:00:00,Iguatu CE,Juventude RS
+2024-02-28 03:00:00,Independiente Petrolero,Nacional Potosi
+2024-02-28 03:00:00,Boca Juniors Reserves,Ind Avellaneda Reserves
+2024-02-28 03:10:00,Atletico Atlanta,Aldosivi
+2024-02-28 03:30:00,Sporting Cristal,Always Ready
+2024-02-28 03:30:00,Bragantino,Rionegro Aguilas
+2024-02-28 03:30:00,Marcilio Dias SC,Vasco Gama
+2024-02-28 04:00:00,Queretaro,San Luis
+2024-02-28 04:00:00,San Carlos,Santos
