@@ -1,7 +1,4 @@
 start_time,home_team,away_team
-2024-02-27 11:00:00,Dewa United,Rans Nusantara
-2024-02-27 11:00:00,PSS Sleman,Persita
-2024-02-27 13:00:00,Quang Nam,Viettel
 2024-02-27 13:30:00,Olympic Brisbane Women,Gold Coast Utd Women
 2024-02-27 14:00:00,Gol Gohar,Nassaji Mazandaran FC
 2024-02-27 14:00:00,Khanh Hoa,Gia Lai
@@ -9,10 +6,13 @@ start_time,home_team,away_team
 2024-02-27 14:00:00,Torreense U23,SL Benfica
 2024-02-27 14:00:00,Inter Kashi FC,Neroca FC
 2024-02-27 14:15:00,Mes Sungun Varzaghan,Shahrdari Astara
+2024-02-27 14:15:00,Khosheh Talaei,Shahin Bandar Ameri
 2024-02-27 14:30:00,SaiPa Karadj,Mes Kerman
+2024-02-27 14:30:00,Shahre Raz Shiraz,Mes Shahr-e Babak
 2024-02-27 14:45:00,Naft Gachsaran,Fajr Sepasi
 2024-02-27 14:45:00,Pars Jonoubi Jam,Esteghlal Mollasani
 2024-02-27 14:45:00,Chador Malu Yazd,Ario Eslamshahr
+2024-02-27 14:45:00,Naft Masjed,FC Darya Caspian Babol
 2024-02-27 15:00:00,Persib Bandung,PSIS Semarang
 2024-02-27 15:00:00,Lahti,HJK
 2024-02-27 15:15:00,Hai Phong,Nghe An
@@ -30,10 +30,8 @@ start_time,home_team,away_team
 2024-02-27 16:00:00,El Nasr Taadeen,Telecom Egypt
 2024-02-27 16:00:00,Ukraine,Bulgaria
 2024-02-27 16:00:00,Mtibwa Sugar,Dodoma FC
-2024-02-27 16:00:00,Express,Updf FC
 2024-02-27 16:00:00,Jkt Tanzania,Kmc FC
 2024-02-27 16:00:00,Kitara FC,Wakiso Giants FC
-2024-02-27 16:05:00,Scotland,Finland
 2024-02-27 16:30:00,Churchill Brothers,Delhi FC
 2024-02-27 16:30:00,Al Nahda,AL Nassr
 2024-02-27 16:45:00,Esteghlal,Sepahan
@@ -50,6 +48,7 @@ start_time,home_team,away_team
 2024-02-27 18:00:00,Gallos Blancos Queretaro U23,Atletico San Luis U23
 2024-02-27 18:00:00,Pioneros de Cancun,Petroleros de Salamanca FC
 2024-02-27 18:00:00,ALKMAAR U19,Porto U19
+2024-02-27 18:00:00,Brann,Valerenga
 2024-02-27 18:15:00,Al Qadisiyah,AL Faisaly (Ksa)
 2024-02-27 18:30:00,Botev Plovdiv,Spartak Varna
 2024-02-27 18:30:00,Zilina U19,Kopenhagen
@@ -72,6 +71,7 @@ start_time,home_team,away_team
 2024-02-27 20:15:00,Reggiana,Sudtirol
 2024-02-27 20:15:00,Ascoli,Brescia
 2024-02-27 20:30:00,Mamelodi Sundowns,Amazulu
+2024-02-27 20:30:00,Spain,Norway
 2024-02-27 20:45:00,Ankaragucu,Fenerbahce
 2024-02-27 21:00:00,Berliner AK,BFC Dynamo
 2024-02-27 21:00:00,Energie Cottbus,Berlin II

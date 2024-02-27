@@ -64,7 +64,6 @@ class Main:
     def __call__(self):         
         start_date = self.last_inserted_date()
         end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
-        markets = ['1x2']  
         sport_id='14'
  
         for market in self.markets:  
