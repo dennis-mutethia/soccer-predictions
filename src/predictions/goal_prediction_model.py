@@ -1,5 +1,4 @@
-import csv, pandas as pd
-from sklearn.model_selection import train_test_split
+import csv
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from prep.filters import Filters
@@ -69,9 +68,10 @@ class GoalPredictionModel:
 
                 perc_true = round(is_true * 100 / (is_true + is_false))
                 perc_fail = round(is_false * 100 / (is_true + is_false))
+                
+                print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_true}%')
 
                 if perc_true >= min_probability:
-                    print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_true}%')
                     self.append_to_csv(start_time, home_team, away_team, target.upper(), perc_true)
                     
                 if perc_true >= min_probability+10 and '1' in target :
