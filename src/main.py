@@ -10,7 +10,7 @@ class Main:
         self.csv_match_data = './data/match_data.csv' 
         self.csv_upcoming_matches = './data/upcoming_matches.csv' 
         self.markets = ['1x2','uo','bts'] 
-        self.targets = ['gg', 'ov15', 'ov25']
+        self.targets = ['ov15', 'ov25']
         self.min_probability = 75
 
         self.load_date = LoadData(self.csv_match_data)
