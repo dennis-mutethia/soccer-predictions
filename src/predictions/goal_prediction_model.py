@@ -62,25 +62,26 @@ class GoalPredictionModel:
                 # Calculate the count of False
                 count_false_team_1 = len(future_predictions_team_1) - sum_true_team_1
                 count_false_team_2 = len(future_predictions_team_2) - sum_true_team_2
-                
-                is_true = sum_true_team_1 + sum_true_team_2
-                is_false = count_false_team_1 + count_false_team_2
 
-                perc_true = round(is_true * 100 / (is_true + is_false))
-                perc_fail = round(is_false * 100 / (is_true + is_false))
-                
-                print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_true}%')
+                perc_team_1 = round(sum_true_team_1 * 100 / (sum_true_team_1 + count_false_team_1))
+                perc_team_2 = round(sum_true_team_2 * 100 / (sum_true_team_1 + count_false_team_2))
 
-                if perc_true >= min_probability:
-                    self.append_to_csv(start_time, home_team, away_team, target.upper(), perc_true)
+                perc_true = round((perc_team_1+perc_team_2)/2)
+                perc_fail = 100 - perc_true
+                
+                print(f"{start_time} {home_team} - ({perc_team_1}%) vs {away_team} - ({perc_team_2}%) = {target.upper()} - {perc_true}%")
+
+                if perc_team_1 >= min_probability or perc_team_2 >= min_probability:
+                    self.append_to_csv(start_time, home_team, away_team, target.upper(), perc_team_1, perc_team_2, perc_true)
                     
-                if perc_true >= min_probability+10 and '1' in target :
+                if (perc_team_1 >= min_probability+10 or perc_team_2 >= min_probability+10) and '1' in target :
                     print(f"{start_time} {home_team} vs {away_team} = {target.replace('1', '2').upper()} - {perc_true-10}%")
-                    self.append_to_csv(start_time, home_team, away_team, target.replace('1', '2').upper(), perc_true-10)
+                    self.append_to_csv(start_time, home_team, away_team, target.replace('1', '2').upper(), perc_team_1-10, perc_team_2-10, perc_true-10)
 
                 elif perc_fail >= min_probability:
                     target = target.replace('gg', 'ng').replace('ov', 'un')
                     print(f'{start_time} {home_team} vs {away_team} = {target.upper()} - {perc_fail}%')
+                    self.append_to_csv(start_time, home_team, away_team, target.replace('1', '2').upper(), 100-perc_team_1, 100-perc_team_2, perc_fail)
 
         except Exception as e:
             print(f"An error occurred in __call__: {e}")
@@ -93,22 +94,22 @@ class GoalPredictionModel:
             with open(self.csv_predictions, mode='r') as csv_file:
                 reader = csv.DictReader(csv_file)
                 for row in reader:
-                    match_identifier = (row['start_time'], row['home_team'], row['away_team'], row['prediction'], row['probability'])
+                    match_identifier = (row['start_time'], row['home_team'], row['away_team'], row['prediction'], row['overall_prob'])
                     self.inserted_matches.add(match_identifier)
         except FileNotFoundError:
             print(f"An error occurred in read_existing_matches: {e}")
 
-    def append_to_csv(self, start_time, home_team, away_team, prediction, probability):
+    def append_to_csv(self, start_time, home_team, away_team, prediction, home_prob, away_prob, overall_prob):
         try:
             with open(self.csv_predictions, mode='a', newline='') as csv_file:
-                fieldnames = ['start_time', 'home_team', 'away_team', 'prediction', 'probability']
+                fieldnames = ['start_time', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
                 # Check if the file is empty, if so write the header
                 if csv_file.tell() == 0:
                     writer.writeheader()
 
-                match_identifier = (start_time, home_team, away_team, prediction, f'{probability}')
+                match_identifier = (start_time, home_team, away_team, prediction, f'{overall_prob}')
                 
                 if match_identifier not in self.inserted_matches:
                     writer.writerow({
@@ -116,7 +117,9 @@ class GoalPredictionModel:
                         'home_team': home_team,
                         'away_team': away_team,
                         'prediction': prediction,
-                        'probability': probability
+                        'home_prob': home_prob,
+                        'away_prob': away_prob,
+                        'overall_prob': overall_prob
                     })
 
                     # Add the match identifier to the set

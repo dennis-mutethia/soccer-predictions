@@ -1,92 +1,194 @@
 start_time,home_team,away_team
-2024-02-27 22:30:00,BOURNEMOUTH,Leicester
-2024-02-27 22:30:00,LECH POZNAN,POGON SZCZECIN
-2024-02-27 22:30:00,SAMPDORIA,Cremonese
-2024-02-27 22:30:00,Catanzaro,Bari 1908
-2024-02-27 22:30:00,Palermo,Ternana
-2024-02-27 22:30:00,Lecco,Como
-2024-02-27 22:30:00,Parma Calcio,Cosenza
-2024-02-27 22:30:00,Denbigh Town,Prestatyn
-2024-02-27 22:30:00,Holywell,Guilsfield
-2024-02-27 22:30:00,Trefelin,Ammanford
-2024-02-27 22:30:00,Caerau Ely,Taffs Well
-2024-02-27 22:30:00,Llanelli,Cambrian & Clydach Vale
-2024-02-27 22:45:00,Blackburn,NEWCASTLE
-2024-02-27 22:45:00,Woking,Gateshead
-2024-02-27 22:45:00,Barnet,Chesterfield
-2024-02-27 22:45:00,Eastleigh,Oldham
-2024-02-27 22:45:00,Southend,Altrincham
-2024-02-27 22:45:00,Wycombe,Cheltenham
-2024-02-27 22:45:00,Stevenage,Cambridge
-2024-02-27 22:45:00,Burton,Carlisle
-2024-02-27 22:45:00,Swindon Town,Tranmere
-2024-02-27 22:45:00,Lincoln City,Shrewsbury
-2024-02-27 22:45:00,Wigan,Bolton
-2024-02-27 22:45:00,Leyton Orient London,Blackpool
-2024-02-27 22:45:00,Port Vale,Fleetwood
-2024-02-27 22:45:00,Dundee United,Airdrieonians
-2024-02-27 22:45:00,Inverness CT,Dunfermline
-2024-02-27 22:45:00,Queens Park,Arbroath
-2024-02-27 22:45:00,Solihull Moors,Kidderminster
-2024-02-27 22:45:00,Rochdale,Wealdstone
-2024-02-27 22:45:00,Ayr,Partick Thistle
-2024-02-27 22:45:00,Raith Rovers,Greenock Morton
-2024-02-27 22:45:00,Derby,Charlton
-2024-02-27 22:45:00,Walsall,Accrington
-2024-02-27 22:45:00,Harrogate,Newport
-2024-02-27 22:45:00,Notts County,Sutton
-2024-02-27 22:45:00,Forest Green,Wrexham
-2024-02-27 22:45:00,LYON,STRASBOURG
-2024-02-27 22:45:00,Stirling,Hamilton
-2024-02-27 22:45:00,Salford,Colchester
-2024-02-27 22:45:00,Kettering,Sudbury
-2024-02-27 22:45:00,Leiston,Mickleover Sports
-2024-02-27 22:45:00,Needham,Stratford
-2024-02-27 22:45:00,Whitby,Lancaster
-2024-02-27 22:45:00,Brackley,Chorley
-2024-02-27 22:45:00,Banbury,Peterborough Sports
-2024-02-27 22:45:00,Farsley Celtic,Rushall
-2024-02-27 22:45:00,Curzon,Darlington
-2024-02-27 22:45:00,Folkestone,Potters
-2024-02-27 22:45:00,Whitehawk,Cray
-2024-02-27 22:45:00,Dartford,Aveley
-2024-02-27 22:45:00,Bath,Braintree
-2024-02-27 22:45:00,Hampton & R,Havant & W
-2024-02-27 22:45:00,Weymouth,St Albans
-2024-02-27 22:45:00,Welling,Truro
-2024-02-27 22:45:00,Boston,Buxton
-2024-02-27 22:45:00,Alfreton,Kings Lynn
-2024-02-27 22:45:00,Bishop's Stortford,Spennymoor
-2024-02-27 22:45:00,Concord Rangers,Hornchurch
-2024-02-27 22:45:00,Chesham,Hanwell
-2024-02-27 22:45:00,Newington,Ards
-2024-02-27 22:45:00,Farnborough,Chelmsford
-2024-02-27 23:00:00,Luton,MAN CITY
-2024-02-27 23:00:00,Ross County,St Mirren
-2024-02-27 23:00:00, Union Santa Fe Reserve,CA Tigre Reserves
-2024-02-27 23:00:00,Rosario Central Reserves,Argentinos Juniors Reserves
-2024-02-27 23:00:00,Platense Reserves,Newell's Old Boys Reserves
-2024-02-27 23:00:00,St Josephs,Mons Calpe SC
-2024-02-27 23:00:00,Berazategui,Lujan
-2024-02-27 23:00:00,Sacachispas,Sportivo
-2024-02-27 23:00:00,Centro Espanol,Juv. Unida S. Miguel
-2024-02-27 23:00:00,Bogota,Huila
-2024-02-27 23:10:00,Sarmiento,Temperley
-2024-02-27 23:15:00,Avs Futebol Sad,Academico de Viseu
-2024-02-27 23:30:00,Real Sociedad,Mallorca
-2024-02-27 23:30:00,Real San Andres,Atletico
-2024-02-28 00:00:00,Envigado,Patriotas
-2024-02-28 00:00:00,Imperial,Comunicaciones
-2024-02-28 01:00:00,Palestino,Portuguesa
-2024-02-28 01:00:00,Belgrano Reserves,Instituto Cordoba Reserves
-2024-02-28 01:15:00,Athletic Club Sjdr MG,Volta Redonda
-2024-02-28 02:00:00,Orlando,Cavalry FC
-2024-02-28 02:00:00,Iguatu CE,Juventude RS
-2024-02-28 03:00:00,Independiente Petrolero,Nacional Potosi
-2024-02-28 03:00:00,Boca Juniors Reserves,Ind Avellaneda Reserves
-2024-02-28 03:10:00,Atletico Atlanta,Aldosivi
-2024-02-28 03:30:00,Sporting Cristal,Always Ready
-2024-02-28 03:30:00,Bragantino,Rionegro Aguilas
-2024-02-28 03:30:00,Marcilio Dias SC,Vasco Gama
-2024-02-28 04:00:00,Queretaro,San Luis
-2024-02-28 04:00:00,San Carlos,Santos
+2024-02-28 11:00:00,Udon United,Surin City
+2024-02-28 11:00:00,Persik Kediri,Barito Putera
+2024-02-28 12:00:00,Irevan,Moik Baku
+2024-02-28 12:00:00,Sassuolo Calcio SRL,SSC Napoli SRL
+2024-02-28 12:00:00,FC Inter Milan SRL,Atalanta BC SRL
+2024-02-28 13:00:00,Samut Sakhon,Chiangmai United
+2024-02-28 14:00:00,Ihefu FC,Mashujaa FC
+2024-02-28 14:00:00,B. Binh Duong,Hong Linh Ha Tinh FC
+2024-02-28 14:00:00,Phitsanulok Unity FC,DP Kanchanaburi FC
+2024-02-28 14:00:00,Tanzania Prisons,Tabora United FC
+2024-02-28 14:00:00,Prachuap FC,Lamphun Warrior
+2024-02-28 14:00:00,Tractor,Est. Esteghlal
+2024-02-28 14:00:00,Keshla,Zaqatala
+2024-02-28 14:00:00,FC Van Charentsavan,Ararat
+2024-02-28 14:00:00,FC West Armenia,Ararat Armenia
+2024-02-28 14:00:00,Nam Dinh,Ha Noi FC
+2024-02-28 14:00:00,Lech II Poznan,Olimpia Elblag
+2024-02-28 14:00:00,Sukhothai,Saimit Kabin United
+2024-02-28 14:00:00,Aizawl,Real Kashmir
+2024-02-28 14:30:00,Aluminium Arak,Havadar SC
+2024-02-28 14:30:00,Peykan,Sanat Naft
+2024-02-28 14:30:00,Shams Azar Qazvin,Mes Rafsanjan FC
+2024-02-28 15:00:00,Mezoors Kse,Vasas Budapest
+2024-02-28 15:00:00,Makassar,Persebaya
+2024-02-28 15:00:00,Chonburi,Nakhon Pathom FC
+2024-02-28 15:00:00,Songkhla FC,Bangkok Utd
+2024-02-28 15:00:00,Bangkok FC,Buriram
+2024-02-28 15:15:00,TP Ho Chi Minh,Binh Dinh
+2024-02-28 15:30:00,Hebar,Pirin
+2024-02-28 16:00:00,Al-Najma,AL Jandal
+2024-02-28 16:00:00,OLYMPIACOS FC U19,RC Lens
+2024-02-28 16:00:00,Geita Gold FC,Kagera Sugar
+2024-02-28 16:00:00,Singida Fountain Gate FC,Azam
+2024-02-28 16:00:00,Abia Warriors,Kwara Utd
+2024-02-28 16:00:00,Asteras Tripolis,Kifisias
+2024-02-28 16:00:00,Volos Nps,OFI Crete
+2024-02-28 16:00:00,Rudes,Rijeka
+2024-02-28 16:15:00,Ohud Medina,Al Baten
+2024-02-28 16:25:00,Bahla,Dhofar
+2024-02-28 16:30:00,Varesina Calcio,US Follonica Gavorrano
+2024-02-28 16:30:00,AC MILAN U19,Braga U19
+2024-02-28 16:30:00,Odeva Lipany,Skalica
+2024-02-28 17:00:00,Katsina United FC,Kano Pillars
+2024-02-28 17:00:00,Bournemouth,Queens Park Rangers
+2024-02-28 17:00:00,Mladost DG,FK Decic
+2024-02-28 17:00:00,Sunshine Stars,Lobi Stars
+2024-02-28 17:00:00,FC SALZBURG U19,FC Nantes
+2024-02-28 17:00:00,Mumbai City FC,FC Goa
+2024-02-28 17:00:00,FK Jedinstvo,Sutjeska
+2024-02-28 17:30:00,Trabzonspor,Basaksehir
+2024-02-28 18:00:00,Gabala,Qarabag
+2024-02-28 18:00:00,Bayelsa Utd,Doma United FC
+2024-02-28 18:00:00,Tigres UANL U23,FC Juarez U23
+2024-02-28 18:00:00,Enyimba,Gombe United
+2024-02-28 18:00:00,Heartland,Plateau Utd
+2024-02-28 18:00:00,Atromitos Athens,Lamia
+2024-02-28 18:00:00,Panaitolikos,Olympiacos
+2024-02-28 18:00:00,BAYERN MUNICH U19,FEYENOORD U19
+2024-02-28 18:00:00,Posusje,Sloga
+2024-02-28 18:20:00,Hajer,Al Orubah
+2024-02-28 18:30:00,CSKA Sofia,Arda Kurdzhali
+2024-02-28 19:00:00,Imolese,Trapani
+2024-02-28 19:00:00,Malkiya,Bouri
+2024-02-28 19:00:00,ZLIN,SLOVAN LIBEREC
+2024-02-28 19:00:00,Qalali,Um Alhassam
+2024-02-28 19:00:00,Veszprem,Kecskemeti
+2024-02-28 19:00:00,Aali,Al Ittihad BHR
+2024-02-28 19:00:00,Kozarmisleny,MTK Budapest
+2024-02-28 19:00:00,Espeleno Atletico,Conil CF
+2024-02-28 19:30:00,U. Cluj,Constanta
+2024-02-28 19:30:00,JAGIELLONIA,KORONA KIELCE
+2024-02-28 19:30:00,Dunajska Streda,Ruzomberok
+2024-02-28 19:30:00,Slovan Bratislava,Zilina
+2024-02-28 20:00:00,SASSUOLO,NAPOLI
+2024-02-28 20:00:00,Tiszakecske Vse,Kisvarda
+2024-02-28 20:00:00,Buducnost Podgorica,Jezero
+2024-02-28 20:00:00,Dinamo Zagreb,Gorica
+2024-02-28 20:00:00,AEK Athens,PAS Giannina
+2024-02-28 20:00:00,Omonia,Zakakiou
+2024-02-28 20:00:00,REAL MADRID U19,LEIPZIG U19
+2024-02-28 20:00:00,TS Podbeskidzie,Motor Lublin
+2024-02-28 20:00:00,Nea Salamina,Pafos
+2024-02-28 20:00:00,SLAVIA PRAGUE,Sparta Prague
+2024-02-28 20:30:00,Cape Town City FC,Supersport United
+2024-02-28 20:30:00,Golden Arrows,Sekhukhune United
+2024-02-28 20:30:00,Stal Mielec,LKS Lodz
+2024-02-28 20:30:00,1. FC Phonix Lubeck,FC Teutonia Ottensen 1905
+2024-02-28 20:30:00,FK Borac Banja Luka,Sarajevo
+2024-02-28 20:30:00,H. Beer Sheva,I. Tiberias
+2024-02-28 20:30:00,Bellinzona,VADUZ
+2024-02-28 20:45:00,Besiktas,KONYASPOR
+2024-02-28 21:00:00,Uniao Sao Joao EC SP U23,At. Votuporanguense
+2024-02-28 21:00:00,Sao Bernardo SP,Sao Caetano
+2024-02-28 21:00:00,Debreceni VSC,Ferencvaros
+2024-02-28 21:00:00,Panserraikos,PAOK
+2024-02-28 21:00:00,Vocem U23,Sao Jose Campos U23
+2024-02-28 21:00:00,El Fahem,Maccabi Haifa
+2024-02-28 21:00:00,Nacional U23,Taquaritinga U23
+2024-02-28 21:00:00,Jabaquara AC SP U23,Independente U23
+2024-02-28 21:00:00,Rio Branco U23,America SP
+2024-02-28 21:00:00,Lokomotive Leipzig,Meuselwitz
+2024-02-28 21:00:00,Altglienicke,Babelsberg
+2024-02-28 21:00:00,Padova,Lucchese
+2024-02-28 21:30:00,Ceilandia,Real Brasilia FC DF
+2024-02-28 21:30:00,SC Preussen Munster II,Siegen
+2024-02-28 21:30:00,Blau-Weiss Lohne,Jeddeloh
+2024-02-28 21:30:00,Maccabi Tel Aviv,M. Jaffa
+2024-02-28 21:30:00,Olaria,Sao Bernardo FC SP
+2024-02-28 22:00:00,Zurich II,Bruhl
+2024-02-28 22:00:00,Rapid B.,Uta Arad
+2024-02-28 22:00:00,Panathinaikos,Aris Thessaloniki
+2024-02-28 22:00:00,Gd Fontinhas,Sertanense
+2024-02-28 22:15:00,Delemont,Servette
+2024-02-28 22:30:00,Pisa,Modena
+2024-02-28 22:30:00,WISLA KRAKOW,Widzew Lodz
+2024-02-28 22:30:00,Union Gilloise,Club Brugge
+2024-02-28 22:30:00,ZURICH,Winterthur
+2024-02-28 22:30:00,BASEL,LUGANO
+2024-02-28 22:30:00,Spezia,Feralpi Salo
+2024-02-28 22:30:00,CHELSEA,Leeds
+2024-02-28 22:30:00,Venezia,Cittadella
+2024-02-28 22:30:00,Catania,Rimini
+2024-02-28 22:45:00,KILMARNOCK,GLASGOW RANGERS
+2024-02-28 22:45:00,ABERDEEN,St Johnstone
+2024-02-28 22:45:00,Wolves,BRIGHTON
+2024-02-28 22:45:00,Nottingham Forest,MAN UTD
+2024-02-28 22:45:00,CELTIC,Dundee FC
+2024-02-28 22:45:00,Inter,ATALANTA
+2024-02-28 22:45:00,HEARTS,HIBERNIAN
+2024-02-28 22:45:00,Kingstonian,Cheshunt
+2024-02-28 23:00:00,Dep. Laferrere,Liniers
+2024-02-28 23:00:00,LIVERPOOL,SOUTHAMPTON
+2024-02-28 23:00:00,Rouen,Valenciennes
+2024-02-28 23:00:00,College Europa,Glacis Utd
+2024-02-28 23:00:00,IA Akranes,Vikingur R
+2024-02-28 23:00:00,Huracan Reserves,Sarmiento Junin Reserve
+2024-02-28 23:00:00,Gimnasia de la Plata Reserve,Atletico Tucuman Reserves
+2024-02-28 23:00:00,Godoy Cruz Reserves,CA Talleres de Cordoba Reserve
+2024-02-28 23:00:00,Livingston,MOTHERWELL
+2024-02-28 23:15:00,Leixoes,Nacional
+2024-02-28 23:15:00,Fortaleza,Alianza FC Valledupar
+2024-02-29 00:00:00,Red Bull,Rio Preto
+2024-02-29 00:00:00,Coatepeque,Malacateco
+2024-02-29 00:00:00,Guanacasteca,Cartagines
+2024-02-29 01:00:00,Atibaia,SE Itapirense
+2024-02-29 01:00:00,Sertaozinho,Bandeirante EC SP
+2024-02-29 01:00:00,Deportivo Mixco,Dep. Guastatoya
+2024-02-29 01:00:00,Sao-Carlense U23,Barretos
+2024-02-29 01:00:00,River,Itabaiana
+2024-02-29 01:00:00,Nacional,Ac. Puerto Cabello
+2024-02-29 01:00:00,America,Treze
+2024-02-29 01:00:00,Real Noroeste,Rio Branco
+2024-02-29 01:00:00,Avai,Barra
+2024-02-29 01:00:00,Racing Club  Reserves,River Plate Reserve
+2024-02-29 01:15:00,Maringa FC,America MG
+2024-02-29 01:30:00,At. Francana U23,Gremio Osasco Audax
+2024-02-29 01:30:00,Grêmio Prudente,Uniao Suzano AC SP
+2024-02-29 01:30:00,Murici,Confianca
+2024-02-29 01:30:00,Portuguesa,Palmeiras
+2024-02-29 01:30:00,Sao Luiz,Gremio
+2024-02-29 01:30:00,Itabuna,Nova Iguacu
+2024-02-29 01:30:00,Petrolina PE,Cascavel
+2024-02-29 01:30:00,Maranhao,Ferroviario
+2024-02-29 02:00:00,XV de Novembro de Jau U23,FC SKA Brasil SP U23
+2024-02-29 02:00:00,Aguia de Maraba,Rio Branco
+2024-02-29 02:00:00,CD Genesis,Real Espana
+2024-02-29 02:00:00,Uniao Rondonopolis,Costa Rica EC
+2024-02-29 02:00:00,ASA AL,Internacional
+2024-02-29 02:00:00,Llaneros,Cartagena
+2024-02-29 02:00:00,Remo,Sao Francisco
+2024-02-29 02:15:00,Marilia SP,Desportivo Brasil
+2024-02-29 02:30:00,Villa Nova,Aparecidense GO
+2024-02-29 02:30:00,Portuguesa San.,Caxias
+2024-02-29 02:30:00,Agua Santa,Jacuipense
+2024-02-29 02:30:00,Gremio Atletico Sampaio RR,Brusque
+2024-02-29 02:45:00,Club Tijuana de Caliente U23,Rayados de Monterrey U23
+2024-02-29 03:00:00,Cincinnati,Cavaliers FC
+2024-02-29 03:00:00,Mexicali FC,Real Apodaca FC
+2024-02-29 03:00:00,Plaza Colonia,Defensor Sp.
+2024-02-29 03:00:00,Xinabajul,Xelaju MC
+2024-02-29 03:10:00,San Lorenzo,Indep. (Chivilcoy)
+2024-02-29 03:30:00,Sporting San Jose,Municipal Grecia
+2024-02-29 03:30:00,Operario,Operario
+2024-02-29 03:30:00,Atletico Nacional,Nacional FC
+2024-02-29 03:30:00,Trem,Sport Recife
+2024-02-29 03:30:00,Operario,Criciuma
+2024-02-29 03:30:00,Botafogo RJ,CD Aurora
+2024-02-29 03:30:00,Ceara,ABC
+2024-02-29 03:30:00,CRB AL,Bahia BA
+2024-02-29 03:30:00,EC Humaita AC,Sampaio Correa
+2024-02-29 03:35:00,Inter de Limeira,Sao Paulo
+2024-02-29 04:00:00,Real Sociedad (HND),Motagua
+2024-02-29 04:00:00,Tigres,Juarez

@@ -7,14 +7,9 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip
-RUN pip install requests
-RUN pip install pandas
-RUN pip install scikit-learn
-
+#update pip & install dependencies
+RUN pip install --upgrade pip \
+    && pip install requests pandas statsmodels matplotlib scikit-learn pmdarima pystan prophet keras tensorflow
+    
 # Set the timezone to Africa/Nairobi
 RUN ln -sf /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
-
-#RUN pip install -r requirements.txt
-
-
