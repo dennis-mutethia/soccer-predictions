@@ -77,6 +77,8 @@ class Main:
         """
         class entry point
         """
+        print(f'Execution started at {datetime.now()}')
+
         start_date = self.last_inserted_date()
         end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
         sport_id='14'
@@ -87,4 +89,6 @@ class Main:
         self.fetch_upcoming(sport_id)
 
         self.predict_upcoming_matches()
+
+        print(f'Execution completed at {datetime.now()}')
 Main()()

@@ -14,16 +14,14 @@ start_time,home_team,away_team,prediction,home_prob,away_prob,overall_prob,statu
 2024-02-27 22:45:00,Solihull Moors,Kidderminster,OV15,,,75,LOST
 2024-02-27 22:45:00,Lyon,Strasbourg,OV15,,,80,LOST
 2024-02-28 03:30:00,Sporting Cristal,Always Ready,,,OV15,79,WON
-2024-02-28 11:00:00,Persik Kediri,Barito Putera,OV15,73,94,84
-2024-02-28 11:00:00,Persik Kediri,Barito Putera,OV25,63,84,74
-2024-02-28 11:00:00,Persik Kediri,Barito Putera,GG,59,87,73
-2024-02-28 13:00:00,Samut Sakhon,Chiangmai United,OV15,81,101,91
-2024-02-28 13:00:00,Samut Sakhon,Chiangmai United,OV25,71,91,81
-2024-02-28 19:30:00,Jagiellonia,Korona Kielce,OV15,83,65,74
-2024-02-28 19:30:00,Jagiellonia,Korona Kielce,GG,75,61,68
-2024-02-28 21:00:00,Lokomotive Leipzig,Meuselwitz,OV15,80,74,77
-2024-02-28 22:30:00,Wisla Krakow,Widzew Lodz,OV15,77,74,76
-2024-02-28 23:00:00,Liverpool,Southampton,OV15,81,70,76
-2024-02-29 01:30:00,Portuguesa,Palmeiras,OV15,83,214,148
-2024-02-29 01:30:00,Portuguesa,Palmeiras,OV25,73,204,138
-2024-02-29 01:30:00,Portuguesa,Palmeiras,OV25,17,86,52
+2024-02-28 11:00:00,Persik Kediri,Barito Putera,OV15,73,94,84,WON
+2024-02-28 11:00:00,Persik Kediri,Barito Putera,OV25,63,84,74,WON
+2024-02-28 11:00:00,Persik Kediri,Barito Putera,GG,59,87,73,WON
+2024-02-28 13:00:00,Samut Sakhon,Chiangmai United,OV15,81,101,91,WON
+2024-02-28 13:00:00,Samut Sakhon,Chiangmai United,OV25,71,91,81,WON
+2024-02-28 19:30:00,Jagiellonia,Korona Kielce,OV15,83,71,77
+2024-02-28 19:30:00,Jagiellonia,Korona Kielce,GG,75,65,70
+2024-02-28 21:00:00,Lokomotive Leipzig,Meuselwitz,OV15,80,77,78
+2024-02-28 22:30:00,Wisla Krakow,Widzew Lodz,OV15,77,75,76
+2024-02-28 23:00:00,Liverpool,Southampton,OV15,81,80,80
+2024-02-29 01:30:00,Portuguesa,Palmeiras,OV15,83,70,76

@@ -1,29 +1,9 @@
 start_time,home_team,away_team
-2024-02-28 11:00:00,Udon United,Surin City
-2024-02-28 11:00:00,Persik Kediri,Barito Putera
-2024-02-28 12:00:00,Irevan,Moik Baku
-2024-02-28 12:00:00,Sassuolo Calcio SRL,SSC Napoli SRL
-2024-02-28 12:00:00,FC Inter Milan SRL,Atalanta BC SRL
-2024-02-28 13:00:00,Samut Sakhon,Chiangmai United
-2024-02-28 14:00:00,Ihefu FC,Mashujaa FC
-2024-02-28 14:00:00,B. Binh Duong,Hong Linh Ha Tinh FC
-2024-02-28 14:00:00,Phitsanulok Unity FC,DP Kanchanaburi FC
-2024-02-28 14:00:00,Tanzania Prisons,Tabora United FC
-2024-02-28 14:00:00,Prachuap FC,Lamphun Warrior
-2024-02-28 14:00:00,Tractor,Est. Esteghlal
-2024-02-28 14:00:00,Keshla,Zaqatala
-2024-02-28 14:00:00,FC Van Charentsavan,Ararat
-2024-02-28 14:00:00,FC West Armenia,Ararat Armenia
-2024-02-28 14:00:00,Nam Dinh,Ha Noi FC
-2024-02-28 14:00:00,Lech II Poznan,Olimpia Elblag
-2024-02-28 14:00:00,Sukhothai,Saimit Kabin United
-2024-02-28 14:00:00,Aizawl,Real Kashmir
 2024-02-28 14:30:00,Aluminium Arak,Havadar SC
 2024-02-28 14:30:00,Peykan,Sanat Naft
 2024-02-28 14:30:00,Shams Azar Qazvin,Mes Rafsanjan FC
 2024-02-28 15:00:00,Mezoors Kse,Vasas Budapest
 2024-02-28 15:00:00,Makassar,Persebaya
-2024-02-28 15:00:00,Chonburi,Nakhon Pathom FC
 2024-02-28 15:00:00,Songkhla FC,Bangkok Utd
 2024-02-28 15:00:00,Bangkok FC,Buriram
 2024-02-28 15:15:00,TP Ho Chi Minh,Binh Dinh
@@ -32,13 +12,14 @@ start_time,home_team,away_team
 2024-02-28 16:00:00,OLYMPIACOS FC U19,RC Lens
 2024-02-28 16:00:00,Geita Gold FC,Kagera Sugar
 2024-02-28 16:00:00,Singida Fountain Gate FC,Azam
-2024-02-28 16:00:00,Abia Warriors,Kwara Utd
 2024-02-28 16:00:00,Asteras Tripolis,Kifisias
 2024-02-28 16:00:00,Volos Nps,OFI Crete
 2024-02-28 16:00:00,Rudes,Rijeka
 2024-02-28 16:15:00,Ohud Medina,Al Baten
 2024-02-28 16:25:00,Bahla,Dhofar
 2024-02-28 16:30:00,Varesina Calcio,US Follonica Gavorrano
+2024-02-28 16:30:00,AC Ajaccio,SC Air Bel
+2024-02-28 16:30:00,Lajong,Rajasthan United
 2024-02-28 16:30:00,AC MILAN U19,Braga U19
 2024-02-28 16:30:00,Odeva Lipany,Skalica
 2024-02-28 17:00:00,Katsina United FC,Kano Pillars
@@ -68,6 +49,7 @@ start_time,home_team,away_team
 2024-02-28 19:00:00,Aali,Al Ittihad BHR
 2024-02-28 19:00:00,Kozarmisleny,MTK Budapest
 2024-02-28 19:00:00,Espeleno Atletico,Conil CF
+2024-02-28 19:00:00,NEC FC,Kampala CC
 2024-02-28 19:30:00,U. Cluj,Constanta
 2024-02-28 19:30:00,JAGIELLONIA,KORONA KIELCE
 2024-02-28 19:30:00,Dunajska Streda,Ruzomberok
@@ -108,6 +90,7 @@ start_time,home_team,away_team
 2024-02-28 21:30:00,Maccabi Tel Aviv,M. Jaffa
 2024-02-28 21:30:00,Olaria,Sao Bernardo FC SP
 2024-02-28 22:00:00,Zurich II,Bruhl
+2024-02-28 22:00:00,San Antonio Bulo Bulo,The Strongest
 2024-02-28 22:00:00,Rapid B.,Uta Arad
 2024-02-28 22:00:00,Panathinaikos,Aris Thessaloniki
 2024-02-28 22:00:00,Gd Fontinhas,Sertanense
@@ -141,6 +124,7 @@ start_time,home_team,away_team
 2024-02-28 23:15:00,Leixoes,Nacional
 2024-02-28 23:15:00,Fortaleza,Alianza FC Valledupar
 2024-02-29 00:00:00,Red Bull,Rio Preto
+2024-02-29 00:00:00,Sebaco,Esteli
 2024-02-29 00:00:00,Coatepeque,Malacateco
 2024-02-29 00:00:00,Guanacasteca,Cartagines
 2024-02-29 01:00:00,Atibaia,SE Itapirense
@@ -164,6 +148,7 @@ start_time,home_team,away_team
 2024-02-29 01:30:00,Maranhao,Ferroviario
 2024-02-29 02:00:00,XV de Novembro de Jau U23,FC SKA Brasil SP U23
 2024-02-29 02:00:00,Aguia de Maraba,Rio Branco
+2024-02-29 02:00:00,Tocantinopolis,Manauara EC AM
 2024-02-29 02:00:00,CD Genesis,Real Espana
 2024-02-29 02:00:00,Uniao Rondonopolis,Costa Rica EC
 2024-02-29 02:00:00,ASA AL,Internacional
