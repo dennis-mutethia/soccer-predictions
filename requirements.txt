@@ -1,3 +1,10 @@
-requests
-pandas
-scikit-learn
+requests 
+pandas 
+statsmodels 
+matplotlib 
+scikit-learn 
+pmdarima 
+pystan 
+prophet 
+keras 
+tensorflow
