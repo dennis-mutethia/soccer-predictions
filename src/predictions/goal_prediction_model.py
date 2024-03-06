@@ -73,10 +73,6 @@ class GoalPredictionModel:
 
                 if perc_team_1 >= min_probability or perc_team_2 >= min_probability:
                     self.append_to_csv(start_time, home_team, away_team, target.upper(), perc_team_1, perc_team_2, perc_true)
-                
-                if (perc_team_1 >= min_probability+10 or perc_team_2 >= min_probability+10) and '1' in target :
-                    print(f"{start_time} {home_team} - ({perc_team_1-10}%) vs {away_team} - ({perc_team_2-10}%) = {target.upper()} - {perc_true-10}%")
-                    self.append_to_csv(start_time, home_team, away_team, target.replace('1', '2').upper(), perc_team_1-10, perc_team_2-10, perc_true-10)
 
                 elif perc_fail >= min_probability:
                     target = target.replace('gg', 'ng').replace('ov', 'un')
