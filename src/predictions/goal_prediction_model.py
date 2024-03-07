@@ -5,7 +5,7 @@ from prep.filters import Filters
 
 class GoalPredictionModel:
     def __init__(self):
-        self.csv_predictions = './data/predictions.csv' 
+        self.csv_predictions = './docs/predictions.csv' 
         self.features = ['host_score', 'guest_score']
         self.model = LogisticRegression()
         self.inserted_matches = set()
