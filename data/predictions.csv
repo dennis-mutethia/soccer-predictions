@@ -1,2 +1,109 @@
 start_time,match_id,home_team,away_team,prediction,home_prob,away_prob,overall_prob,status
-2024-03-08 03:30:00,7084666,Always Ready,Nacional,OV15,86,84,85,pending
+26/02/2024 21:00,Warta Poznan,Radomiak Radom,OV15,,,70,LOST
+26/02/2024 22:45,Fiorentina,Lazio,OV15,,,74,WON
+26/02/2024 23:00,West Ham,Brentford,OV15,,,80,WON
+26/02/2024 23:00,Bolivia,Peru,OV15,,,84,WON
+26/02/2024 23:00,Bolivia,Peru,OV15,,,79,WON
+27/02/2024 16:00,Fleetwood Town,Burnley,OV15,,,75,postponed
+27/02/2024 18:30,Botev Plovdiv,Spartak Varna,OV15,,,75,WON
+27/02/2024 22:30,Sampdoria,Cremonese,OV15,,,78,WON
+27/02/2024 22:30,Caerau Ely,Taffs Well,OV15,,,88,LOST
+27/02/2024 22:30,Caerau Ely,Taffs Well,OV25,,,78,LOST
+27/02/2024 22:45,Woking,Gateshead,OV15,,,78,WON
+27/02/2024 22:45,Barnet,Chesterfield,OV15,,,81,WON
+27/02/2024 22:45,Solihull Moors,Kidderminster,OV15,,,75,LOST
+27/02/2024 22:45,Lyon,Strasbourg,OV15,,,80,LOST
+28/02/2024 03:30,Sporting Cristal,Always Ready,OV15,,,79,WON
+28/02/2024 11:00,Persik Kediri,Barito Putera,OV15,73,94,84,WON
+28/02/2024 11:00,Persik Kediri,Barito Putera,OV25,63,84,74,WON
+28/02/2024 11:00,Persik Kediri,Barito Putera,GG,59,87,73,WON
+28/02/2024 13:00,Samut Sakhon,Chiangmai United,OV15,81,101,91,WON
+28/02/2024 13:00,Samut Sakhon,Chiangmai United,OV25,71,91,81,WON
+28/02/2024 19:30,Jagiellonia,Korona Kielce,OV15,83,71,77,WON
+28/02/2024 19:30,Jagiellonia,Korona Kielce,GG,75,65,70,WON
+28/02/2024 21:00,Lokomotive Leipzig,Meuselwitz,OV15,80,77,78,WON
+28/02/2024 22:30,Wisla Krakow,Widzew Lodz,OV15,77,75,76,WON
+28/02/2024 23:00,Liverpool,Southampton,OV15,81,80,80,WON
+2024-02-29 01:30:00,Portuguesa,Palmeiras,OV15,83,70,76,WON
+2024-03-01 03:30:00,Colo Colo,Godoy Cruz,OV15,75,69,72
+2024-03-01 12:00:00,Para Hills Knights,Adelaide City,OV15,100,78,89
+2024-03-01 12:00:00,Para Hills Knights,Adelaide City,OV25,90,68,79
+2024-03-01 12:00:00,Para Hills Knights,Adelaide City,OV25,100,55,78
+2024-03-01 12:00:00,Para Hills Knights,Adelaide City,GG,100,53,76
+2024-03-01 20:00:00,Stal Rzeszow,Miedz Legnica,OV15,80,70,75
+2024-03-01 20:30:00,Schalke 04,St. Pauli,OV15,82,83,82
+2024-03-01 21:00:00,Spartak Myjava,Petrzalka,OV15,83,83,83
+2024-03-01 22:30:00,Briton Ferry,Afan Lido,OV15,92,95,94
+2024-03-01 22:30:00,Briton Ferry,Afan Lido,OV25,82,85,84
+2024-03-01 22:30:00,Briton Ferry,Afan Lido,OV25,76,71,74
+2024-03-01 22:30:00,Briton Ferry,Afan Lido,GG,76,71,74
+2024-03-01 22:45:00,Finn Harps,Athlone Town,OV15,78,82,80
+2024-03-01 22:45:00,Bray Wanderers,Longford Town,OV15,76,77,76
+2024-03-02 02:30:00,Cobreloa,Cobresal,OV15,63,77,70
+2024-03-02 14:35:00,Chengdu Qianbao,Qingdao Jonoon,OV15,73,75,74
+2024-03-02 15:00:00,Hansa Rostock,Kaiserslautern,OV15,72,79,76
+2024-03-02 15:30:00,Dorking Wanderers,Chesterfield,OV15,82,78,80
+2024-03-02 15:30:00,Colwyn Bay,Haverfordwest,OV15,86,80,83
+2024-03-02 15:30:00,Colwyn Bay,Haverfordwest,OV25,76,70,73
+2024-03-02 16:00:00,Schweinfurt,Memmingen,OV15,90,81,86
+2024-03-02 16:00:00,Schweinfurt,Memmingen,OV25,80,71,76
+2024-03-02 16:00:00,Rizespor,Kayserispor,OV15,77,78,78
+2024-03-02 16:00:00,Pyramids,Nouadhibou,NG,80,81,80
+2024-03-02 16:00:00,Rudar Prijedor,Ljubic Prnjavor,OV15,74,81,78
+2024-03-02 16:30:00,Montana,Spartak Pleven,NG,84,73,78
+2024-03-02 16:30:00,Spartak Varna,Belasitsa,OV15,79,53,66
+2024-03-02 16:30:00,Spartak Varna,Belasitsa,UN25,75,79,77
+2024-03-02 16:30:00,Spartak Varna,Belasitsa,NG,69,84,76
+2024-03-02 16:30:00,Cremonese U19,Brescia U19,OV15,80,79,80
+2024-03-02 16:30:00,Vorskla,Veres Rivne,OV15,75,67,71
+2024-03-02 17:00:00,Sigma Olomouc,Bohemians 1905,OV15,77,78,78
+2024-03-02 17:00:00,Gornik Zabrze,Jagiellonia,OV15,77,83,80
+2024-03-02 17:00:00,Reutlingen,Oberachern,OV15,95,95,95
+2024-03-02 17:00:00,Reutlingen,Oberachern,OV25,85,85,85
+2024-03-02 17:00:00,Carmarthen Town,Taffs Well,OV15,81,83,82
+2024-03-02 17:00:00,Buckley Town,Llanidloes Town,OV15,95,93,94
+2024-03-02 17:00:00,Buckley Town,Llanidloes Town,OV25,85,83,84
+2024-03-02 17:30:00,Guilsfield,Llandudno,OV15,83,86,84
+2024-03-02 17:30:00,Guilsfield,Llandudno,OV25,73,76,74
+2024-03-02 18:00:00,Bradford City,Notts County,OV15,71,84,78
+2024-03-02 18:00:00,Billericay,Hashtag United,OV15,80,82,81
+2024-03-02 18:00:00,Fulham,Brighton,OV15,76,77,76
+2024-03-02 18:00:00,Brentford,Chelsea,OV15,81,71,76
+2024-03-02 18:00:00,Tottenham,Crystal Palace,OV15,80,73,76
+2024-03-02 18:00:00,Nottingham Forest,Liverpool,OV15,75,81,78
+2024-03-02 18:00:00,Everton,West Ham,OV15,73,75,74
+2024-03-02 18:00:00,Wycombe,Barnsley,OV15,70,76,73
+2024-03-02 18:00:00,Eastleigh,Solihull Moors,OV15,72,80,76
+2024-03-02 18:00:00,Grimsby Town,Forest Green,OV15,74,81,78
+2024-03-02 18:00:00,Partick Thistle,Dundee United,OV15,79,70,74
+2024-03-02 18:00:00,Southport,Peterborough Sports,OV15,73,77,75
+2024-03-02 19:00:00,Welayta Dicha,Shashemene Kenema,UN25,76,80,78
+2024-03-02 19:00:00,Slovan Bratislava,Spartak Trnava,OV15,79,74,76
+2024-03-02 19:30:00,Slask Wroclaw,Widzew Lodz,OV15,75,75,75
+2024-03-02 19:30:00,Odra Opole,Wisla Krakow,OV15,75,77,76
+2024-03-02 19:30:00,Zenit,Spartak Moscow,OV15,82,81,82
+2024-03-02 20:30:00,Maccabi Tel Aviv,Maccabi Petah Tikva,OV15,79,72,76
+2024-03-02 22:00:00,Heist,Royal Knokke,OV15,86,82,84
+2024-03-02 22:00:00,Heist,Royal Knokke,OV25,76,72,74
+2024-03-02 22:00:00,Heist,Royal Knokke,GG,84,67,76
+2024-03-02 22:00:00,Minnesota United,Columbus Crew,OV15,80,80,80
+2024-03-04 11:00:00,Barito Putera,Bali United Pusam,OV15,84,82,83
+2024-03-04 20:00:00,Juventus U19,Sassuolo U19,OV15,83,82,82
+2024-03-04 20:00:00,Alanyaspor,Trabzonspor,OV15,82,76,79
+2024-03-05 14:30:00,Fajr Sepasi,Mes Kerman,NG,75,79,77
+2024-03-05 16:00:00,Cardiff City,Ipswich Town,OV15,72,76,74
+2024-03-05 21:00:00,Colo Colo,Boca Juniors,OV15,75,59,67
+2024-03-05 22:45:00,Recanatese,Pescara,OV15,70,75,72
+2024-03-05 22:45:00,Peterborough,Northampton,OV15,81,67,74
+2024-03-05 22:45:00,Altrincham,Dorking Wanderers,OV15,82,83,82
+2024-03-05 22:45:00,Barnet,Rochdale,OV15,84,73,78
+2024-03-05 22:45:00,Gateshead,Solihull Moors,OV15,86,80,83
+2024-03-05 22:45:00,Gateshead,Solihull Moors,OV25,76,70,73
+2024-03-06 19:30:00,Zemplin Michalovce,Spartak Trnava,OV15,74,75,74
+2024-03-07 01:15:00,Santa Fe,Boca Juniors,OV15,91,59,75
+2024-03-07 01:15:00,Santa Fe,Boca Juniors,OV25,81,49,65
+2024-03-07 01:15:00,Santa Fe,Boca Juniors,OV25,82,38,60
+2024-03-07 01:15:00,Santa Fe,Boca Juniors,GG,82,38,60
+2024-03-07 12:00:00,Adelaide Comets,Adelaide City,OV15,79,78,78
+2024-03-07 23:00:00,Maccabi Haifa,Fiorentina,OV15,82,76,79
+2024-03-08 03:30:00,7084666,Always Ready,Nacional,OV15,86,84,85
