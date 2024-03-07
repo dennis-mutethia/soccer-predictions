@@ -7,10 +7,6 @@ title: Soccer Predictions
 
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 
-<pre>
-  {% include_relative data/predictions.csv %}
-</pre>
-
 <table class="styled-table">
   <thead>
     <tr>
