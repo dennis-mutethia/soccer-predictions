@@ -7,6 +7,10 @@ title: Soccer Predictions
 
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 
+<pre>
+  {{ site.data.predictions | jsonify }}
+</pre>
+
 <table class="styled-table">
   <thead>
     <tr>
