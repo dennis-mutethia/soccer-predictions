@@ -1,112 +1,26 @@
-start_time,home_team,away_team
-2024-03-07 11:00:00,Dewa United,PS Tni
-2024-03-07 11:00:00,Central Coast,Odisha FC
-2024-03-07 12:00:00,Adelaide Comets,Adelaide City
-2024-03-07 12:30:00,Zhenis Nur Sultan,Sh. Karagandy
-2024-03-07 14:00:00,Difai Agsu,Irevan
-2024-03-07 14:00:00,Karvan Evlakh,Keshla
-2024-03-07 14:00:00,Zaqatala,Energetik
-2024-03-07 14:00:00,Lokbatan,Imisli FK
-2024-03-07 14:00:00,FC BKMA Yerevan,Ararat Armenia
-2024-03-07 14:00:00,Gareji,Dusheti
-2024-03-07 14:45:00,Qarabag FK Srl,Bayer 04 Leverkusen SRL
-2024-03-07 14:45:00,AC Sparta Prague SRL,Liverpool FC SRL
-2024-03-07 14:45:00,AS Roma SRL,Brighton & Hove Albion SRL
-2024-03-07 15:00:00,KF Malisheva,KF Ballkani
-2024-03-07 15:00:00,FK Turan,Kairat
-2024-03-07 15:00:00,KF Vjosa,FC Suhareka
-2024-03-07 15:00:00,Pusamania,Persebaya
-2024-03-07 15:30:00,Ironi Modiin,Hapoel B. Hayarden
-2024-03-07 15:30:00,H. Migdal Haemeq,Ironi Acre
-2024-03-07 16:00:00,Samgurali Tskaltubo,Dila Gori
-2024-03-07 16:00:00,Hawassa Kenema,Shashemene Kenema
-2024-03-07 16:00:00,FK IMT Novi Beograd,Javor
-2024-03-07 16:00:00,FK Jedinstvo UB,FK Mladost Gat
-2024-03-07 16:30:00,Al Shabab,Ibri
-2024-03-07 16:30:00,Zorya Lugansk,FC Minaj
-2024-03-07 16:35:00,Al Ain,Kalba
-2024-03-07 16:50:00,Havadar SC,Zobahan
-2024-03-07 17:00:00,Dhamk,Al Wehda
-2024-03-07 17:00:00,AL Shabab,Al Faiha
-2024-03-07 17:00:00,Al Fehaheel,Al Salmiyah
-2024-03-07 17:00:00,AL Salt,Shabab AL Ordun
-2024-03-07 17:00:00,Northeast United FC,Punjab FC
-2024-03-07 17:00:00,Malavan Bandar,Gol Gohar
-2024-03-07 17:00:00,Olympique Marseille SRL,Villarreal CF SRL
-2024-03-07 17:00:00,AC Milan SRL,SK Slavia Prague SRL
-2024-03-07 17:00:00,SC Freiburg SRL,West Ham United SRL
-2024-03-07 17:00:00,FC Noah,Ararat
-2024-03-07 17:00:00,SL Benfica SRL,Glasgow Rangers SRL
-2024-03-07 17:00:00,Olimp. Ljubljana,FC Koper
-2024-03-07 17:10:00,Sanat Naft,Nassaji Mazandaran FC
-2024-03-07 18:00:00,Sagrada,De Agosto
-2024-03-07 18:00:00,Napredak,FK TSC Backa Topola
-2024-03-07 18:00:00,CONCORDIA CHIAJNA,CSC Dumbravita
-2024-03-07 18:00:00,Lyn,Kristiansund BK
-2024-03-07 18:00:00,Barnsley,Wigan
-2024-03-07 19:00:00,Sport Club Dimona,Shimshon Kfar Kasem
-2024-03-07 19:00:00,Sohar,Al-Rustaq
-2024-03-07 19:00:00,Veres Rivne,Dynamo Kiev
-2024-03-07 19:00:00,Hapoel Kfar Shelem,H. Herzelia
-2024-03-07 19:00:00,Mekelakeya,Bahir Dar Kenema FC
-2024-03-07 19:15:00,Al Wahda,Al Wasl
-2024-03-07 19:30:00,Sahab SC,AL Ahli
-2024-03-07 19:30:00,Nafta,Rogaska
-2024-03-07 19:40:00,Qadsia SC,Al Shabab
-2024-03-07 20:00:00,SC Hapoel Lod,Maccabi Ironi
-2024-03-07 20:00:00,FC Gagra,Dinamo Batumi
-2024-03-07 20:00:00,Al Nasr,Al Raed
-2024-03-07 20:00:00,Nea Salamina,Doxa
-2024-03-07 20:00:00,Coca Cola,Masr
-2024-03-07 20:30:00,Monterosi,Sorrento
-2024-03-07 20:30:00,Latina,Juve Stabia
-2024-03-07 20:45:00,Sparta Prague,LIVERPOOL
-2024-03-07 20:45:00,Qarabag,LEVERKUSEN
-2024-03-07 20:45:00,Sturm Graz,LILLE
-2024-03-07 20:45:00,Molde,Club Brugge
-2024-03-07 20:45:00,Olympiacos,Maccabi Tel Aviv
-2024-03-07 20:45:00,AJAX,Aston Villa
-2024-03-07 20:45:00,ROMA,BRIGHTON
-2024-03-07 21:00:00,Flamengo U20,SD Aucas U20
-2024-03-07 21:00:00,Abengourou,Mimosas
-2024-03-07 21:00:00,Atl. Bilbao Women,FC Barcelona Women
-2024-03-07 22:00:00,Quick B,FC Rijnvogels
-2024-03-07 22:00:00,Tiradentes,Pacajus
-2024-03-07 22:00:00,Breidablik,Keflavik
-2024-03-07 22:30:00,Potenza,BENEVENTO
-2024-03-07 22:45:00,Casertana 1908,Audace Cerignola
-2024-03-07 23:00:00,BENFICA,GLASGOW RANGERS
-2024-03-07 23:00:00,Dinamo Zagreb,PAOK
-2024-03-07 23:00:00,Milan,SLAVIA PRAGUE
-2024-03-07 23:00:00,Union Gilloise,Fenerbahce
-2024-03-07 23:00:00,MARSEILLE,Villarreal
-2024-03-07 23:00:00,Dep. Riestra,Talleres
-2024-03-07 23:00:00,Cusco FC,Alianza Atletico
-2024-03-07 23:00:00,Maccabi Haifa,FIORENTINA
-2024-03-07 23:00:00,Servette,VIKTORIA PLZEN
-2024-03-07 23:00:00,FREIBURG,WEST HAM
-2024-03-07 23:30:00,Tigres,Union Magdalena
-2024-03-08 00:00:00,Def. Sporting,Sp. Cristal
-2024-03-08 00:00:00,Barranquilla,Huila
-2024-03-08 01:00:00,Villa Nova,Operario
-2024-03-08 01:00:00,Lanus,Central Cordoba
-2024-03-08 01:00:00,Botafogo,Fortaleza
-2024-03-08 01:00:00,Rayo Zuliano,La Guaira
-2024-03-08 01:00:00,Racing Club Mdeo.,Cerro Largo
-2024-03-08 02:00:00,Bucaramanga,Real San Andres
-2024-03-08 02:00:00,Coruripe,Zumbi EC AL
-2024-03-08 02:00:00,Pacatuba EC CE,Icasa
-2024-03-08 02:00:00,Vasco Gama,Agua Santa
-2024-03-08 02:00:00,Comercial,Juventus
-2024-03-08 02:00:00,Oratorio,Ypiranga AP
-2024-03-08 02:00:00,Remo,Trem
-2024-03-08 02:30:00,Sousa PB,Petrolina PE
-2024-03-08 02:30:00,Operario AM,Unidos Do Alvorada AM
-2024-03-08 03:00:00,Arnett Gardens FC,Cavaliers FC
-2024-03-08 03:00:00,Cincinnati,Monterrey
-2024-03-08 03:15:00,Belgrano,Defensa Jus.
-2024-03-08 03:15:00,Newell's Old Boys,Tigre
-2024-03-08 03:30:00,Always Ready,Nacional
-2024-03-08 03:30:00,Sportivo Ameliano,Olimpia Asuncion
-2024-03-08 03:30:00,Cesar Vallejo,Sport Huancayo
-2024-03-08 04:00:00,Pereira,Real Soacha Cundinamarca
+start_time,match_id,home_team,away_team
+2024-03-08 00:00:00,6971398,Barranquilla,Huila
+2024-03-08 00:00:00,7116278,Def. Sporting,Sp. Cristal
+2024-03-08 01:00:00,7083548,Rayo Zuliano,La Guaira
+2024-03-08 01:00:00,7083550,Racing Club Mdeo.,Cerro Largo
+2024-03-08 01:00:00,7099469,Lanus,Central Cordoba
+2024-03-08 01:00:00,7099488,Villa Nova,Operario
+2024-03-08 01:00:00,7104826,Botafogo,Fortaleza
+2024-03-08 02:00:00,6971399,Bucaramanga,Real San Andres
+2024-03-08 02:00:00,7099485,Vasco Gama,Agua Santa
+2024-03-08 02:00:00,6786344,Comercial,Juventus
+2024-03-08 02:00:00,7115102,Pacatuba EC CE,Icasa
+2024-03-08 02:00:00,7115161,Remo,Trem
+2024-03-08 02:00:00,7116872,Coruripe,Zumbi EC AL
+2024-03-08 02:00:00,7115159,Oratorio,Ypiranga AP
+2024-03-08 02:30:00,7099486,Sousa PB,Petrolina PE
+2024-03-08 02:30:00,7115272,Operario AM,Unidos Do Alvorada AM
+2024-03-08 03:00:00,7086639,Cincinnati,Monterrey
+2024-03-08 03:00:00,7076615,Arnett Gardens FC,Cavaliers FC
+2024-03-08 03:15:00,7099475,Belgrano,Defensa Jus.
+2024-03-08 03:15:00,7099478,Newell's Old Boys,Tigre
+2024-03-08 03:30:00,7084278,Sportivo Ameliano,Olimpia Asuncion
+2024-03-08 03:30:00,7084666,Always Ready,Nacional
+2024-03-08 03:30:00,7105726,Cesar Vallejo,Sport Huancayo
+2024-03-08 04:00:00,6971401,Pereira,Real Soacha Cundinamarca
+2024-03-08 04:00:00,7118793,AD Aserri,Municipal S. A.
