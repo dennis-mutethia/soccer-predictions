@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CSV Display
+title: Soccer Predictions
 ---
 
 <table>
