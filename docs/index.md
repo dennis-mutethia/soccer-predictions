@@ -3,4 +3,4 @@ layout: default
 title: Soccer Predictions
 ---
 
-[Download predictions.csv](../data/predictions.csv)
+[Download predictions.csv](https://raw.githubusercontent.com/kamquatz/soccer-predictions/master/data/predictions.csv)
