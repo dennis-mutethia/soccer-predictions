@@ -7,20 +7,22 @@ title: Soccer Predictions
 
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 
+{% assign csv_url = "https://raw.githubusercontent.com/kamquatz/soccer-predictions/master/data/predictions.csv" %}
+{% assign csv_data = site.github.data[ 'content_from_url' ] | parse_csv: csv_url %}
+
 <table class="styled-table">
   <thead>
     <tr>
-      {% assign headers = site.data.predictions | first %}
-      {% for header in headers %}
-        <th>{{ header[0] }}</th>
+      {% for header in csv_data[0] %}
+        <th>{{ header }}</th>
       {% endfor %}
     </tr>
   </thead>
   <tbody>
-    {% for row in site.data.predictions | offset:1 %}
+    {% for row in csv_data | offset:1 %}
       <tr>
         {% for value in row %}
-          <td>{{ value[1] }}</td>
+          <td>{{ value }}</td>
         {% endfor %}
       </tr>
     {% endfor %}
