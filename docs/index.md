@@ -3,8 +3,6 @@ layout: default
 title: Soccer Predictions
 ---
 
-[Download predictions.csv](https://raw.githubusercontent.com/kamquatz/soccer-predictions/master/data/predictions.csv)
-
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 
 <div id="csv-table-container"></div>
@@ -15,7 +13,7 @@ title: Soccer Predictions
     .then(response => response.text())
     .then(data => {
       // Convert CSV to an array of arrays
-      const csvArray = data.split('\n').map(row => row.split(','));
+      const csvArray = data.split('\n').map(row => row.split(',')).reverse();
 
       // Create HTML table
       const table = document.createElement('table');
