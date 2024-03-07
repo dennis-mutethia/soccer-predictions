@@ -1,4 +1,4 @@
-start_time,home_team,away_team,prediction,home_prob,away_prob,overall_prob,status
+start_time,match_id,home_team,away_team,prediction,home_prob,away_prob,overall_prob,status
 26/02/2024 21:00,Warta Poznan,Radomiak Radom,OV15,,,70,LOST
 26/02/2024 22:45,Fiorentina,Lazio,OV15,,,74,WON
 26/02/2024 23:00,West Ham,Brentford,OV15,,,80,WON
@@ -106,6 +106,4 @@ start_time,home_team,away_team,prediction,home_prob,away_prob,overall_prob,statu
 2024-03-07 01:15:00,Santa Fe,Boca Juniors,GG,82,38,60
 2024-03-07 12:00:00,Adelaide Comets,Adelaide City,OV15,79,78,78
 2024-03-07 23:00:00,Maccabi Haifa,Fiorentina,OV15,82,76,79
-2024-03-08 03:30:00,Always Ready,Nacional,OV15,86,84,85
-2024-03-08 03:30:00,Always Ready,Nacional,GG,85,76,80
-2024-03-08 03:30:00,Cesar Vallejo,Sport Huancayo,OV15,78,71,74
+2024-03-08 03:30:00,7084666,Always Ready,Nacional,OV15,86,84,85

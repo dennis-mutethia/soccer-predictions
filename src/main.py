@@ -13,7 +13,7 @@ class Main:
         self.csv_upcoming_matches = './data/upcoming_matches.csv' 
         self.markets = ['1x2','uo','bts'] 
         self.targets = ['ov15', 'ov25', 'gg']
-        self.min_probability = 75
+        self.min_probability = 80
 
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
@@ -45,12 +45,13 @@ class Main:
                 reader = csv.DictReader(csv_file)
                 for row in reader:
                     start_time = row['start_time']
+                    match_id = row['match_id']
                     home_team = row['home_team'].title()
                     away_team = row['away_team'].title()
                     if self.team_exists_in_match_data(home_team) and self.team_exists_in_match_data(away_team):
                         for target in self.targets:
                             try:
-                                self.goal_prediction_model(self.csv_match_data, start_time, home_team, away_team, target, self.min_probability)
+                                self.goal_prediction_model(self.csv_match_data, start_time, match_id, home_team, away_team, target, self.min_probability)
                             except ValueError as ex:
                                 print(f"An error occurred: {ex}")
                                 # Continue with the next iteration of the loop
