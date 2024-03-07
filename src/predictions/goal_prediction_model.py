@@ -71,7 +71,7 @@ class GoalPredictionModel:
                 
                 print(f"{start_time} {home_team} - ({perc_team_1}%) vs {away_team} - ({perc_team_2}%) = {target.upper()} - {perc_true}%")
 
-                if perc_team_1 >= min_probability or perc_team_2 >= min_probability:
+                if perc_team_1 >= min_probability and perc_team_2 >= min_probability:
                     self.append_to_csv(start_time, match_id, home_team, away_team, target.upper(), perc_team_1, perc_team_2, perc_true)
 
                 elif perc_fail >= min_probability:
@@ -116,7 +116,7 @@ class GoalPredictionModel:
                         'home_prob': home_prob,
                         'away_prob': away_prob,
                         'overall_prob': overall_prob,
-                        'status': 'pending'
+                        'status': ''
                     })
 
                     # Add the match identifier to the set
