@@ -2,10 +2,10 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 4 * * *'
 
 jobs:
-  build:
+  execute:
     runs-on: ubuntu-latest
     steps:
 
