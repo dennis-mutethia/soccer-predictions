@@ -8,7 +8,8 @@ title: Soccer Predictions
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 
 <pre>
-{% include_relative https://raw.githubusercontent.com/kamquatz/soccer-predictions/master/data/predictions.csv %}
+{% capture csv_content %}{% include https://raw.githubusercontent.com/kamquatz/soccer-predictions/master/data/predictions.csv %}{% endcapture %}
+{{ csv_content | newline_to_br }}
 </pre>
 
 <table class="styled-table">
