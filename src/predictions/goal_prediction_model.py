@@ -116,7 +116,7 @@ class GoalPredictionModel:
                         'home_prob': home_prob,
                         'away_prob': away_prob,
                         'overall_prob': overall_prob,
-                        'status': ''
+                        'status': 'pending'
                     })
 
                     # Add the match identifier to the set

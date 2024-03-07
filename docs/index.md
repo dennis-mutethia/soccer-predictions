@@ -13,7 +13,7 @@ title: Soccer Predictions
     .then(response => response.text())
     .then(data => {
       // Convert CSV to an array of arrays
-      const csvArray = data.split('\n').map(row => row.split(',')).reverse();
+      const csvArray = data.split('\n').map(row => row.split(','));
 
       // Create HTML table
       const table = document.createElement('table');
@@ -32,7 +32,7 @@ title: Soccer Predictions
 
       // Create table body
       const tbody = document.createElement('tbody');
-      for (let i = 1; i < csvArray.length; i++) {
+      for (let i = csvArray.length - 1; i > 0; i--) {
         const row = document.createElement('tr');
         csvArray[i].forEach(cell => {
           const td = document.createElement('td');
