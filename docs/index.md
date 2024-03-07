@@ -8,25 +8,10 @@ title: Soccer Predictions
 <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
 
 <pre>
-  {{ site.data.predictions | jsonify }}
-</pre>
-
-<table class="styled-table">
-  <thead>
-    <tr>
-      <th>Column1</th>
-      <th>Column2</th>
-      <!-- Add more columns as needed -->
-    </tr>
-  </thead>
-  <tbody>
-  {% for row in site.data.predictions %}
-    <tr>
-      {% for column in row %}
-        <td>{{ column[1] }}</td>
-      {% endfor %}
-    </tr>
+{% for row in site.data.predictions %}
+  {% for column in row %}
+    {{ column[0] }}: {{ column[1] }}{% unless forloop.last %}, {% endunless %}
   {% endfor %}
-</tbody>
-
-</table>
+  {% unless forloop.last %}{% endunless %}
+{% endfor %}
+</pre>
