@@ -1,26 +1,4 @@
 start_time,match_id,home_team,away_team
-2024-03-08 02:00:00,6971399,Bucaramanga,Real San Andres
-2024-03-08 02:00:00,7116872,Coruripe,Zumbi EC AL
-2024-03-08 02:00:00,7115102,Pacatuba EC CE,Icasa
-2024-03-08 02:00:00,7099485,Vasco Gama,Agua Santa
-2024-03-08 02:00:00,6786344,Comercial,Juventus
-2024-03-08 02:00:00,7115161,Remo,Trem
-2024-03-08 02:00:00,7115159,Oratorio,Ypiranga AP
-2024-03-08 02:30:00,7099486,Sousa PB,Petrolina PE
-2024-03-08 02:30:00,7115272,Operario AM,Unidos Do Alvorada AM
-2024-03-08 03:00:00,7076615,Arnett Gardens FC,Cavaliers FC
-2024-03-08 03:00:00,7086639,Cincinnati,Monterrey
-2024-03-08 03:15:00,7099475,Belgrano,Defensa Jus.
-2024-03-08 03:15:00,7099478,Newell's Old Boys,Tigre
-2024-03-08 03:30:00,7084666,Always Ready,Nacional
-2024-03-08 03:30:00,7084278,Sportivo Ameliano,Olimpia Asuncion
-2024-03-08 03:30:00,7105726,Cesar Vallejo,Sport Huancayo
-2024-03-08 04:00:00,7118793,AD Aserri,Municipal S. A.
-2024-03-08 04:00:00,6971401,Pereira,Real Soacha Cundinamarca
-2024-03-08 04:05:00,7097992,Mineros de Zacatecas,Club Atletico La Paz
-2024-03-08 05:00:00,7096773,Tecnico,Universidad Catolica
-2024-03-08 05:00:00,7086640,Nashville SC,Inter Miami CF
-2024-03-08 06:05:00,7085214,CD Tapatio,Oaxaca
 2024-03-08 08:00:00,7119792,Shanghai Shenhua SRL,Qingdao West Coast FC Srl
 2024-03-08 08:00:00,7119580,Qingdao Hainiu FC Srl,Changchun Yatai Srl
 2024-03-08 11:00:00,7118746,Ural Ekaterinburg Youth,Dinamo Moscow Youth
@@ -50,6 +28,7 @@ start_time,match_id,home_team,away_team
 2024-03-08 13:00:00,7118795,Chertanovo Moscow,CSKA Moscow Youth
 2024-03-08 13:00:00,7118799,FC Master Saturn,RUBIN KAZAN YOUTH
 2024-03-08 13:00:00,7116321,Da Nang,BA Ria Vung Tau FC
+2024-03-08 13:00:00,7115778,Hapoel Kafr Kanna,Tzeirey Um El Fahem
 2024-03-08 13:00:00,7115139,Metallurg,Jizzax
 2024-03-08 13:00:00,7116538,FASTAV ZLIN U19,Vysocina
 2024-03-08 13:00:00,7104227,Para Hills Knights,Adelaide Utd. Youth
@@ -64,7 +43,10 @@ start_time,match_id,home_team,away_team
 2024-03-08 14:00:00,7115539,M. Shaaraim,AS Ashdod
 2024-03-08 14:00:00,7115543,FC Van Charentsavan,Pyunik
 2024-03-08 14:00:00,7115158,Nam Dinh,CLB Thanh Hoa
+2024-03-08 14:00:00,7121019,OGC Nice SRL,Montpellier HSC SRL
+2024-03-08 14:00:00,7121039,SAMSUNSPOR U19,ALTINORDU FK U19
 2024-03-08 14:00:00,6955613,SC Dnipro-1,Rukh Vinnyky
+2024-03-08 14:30:00,7121145,VfB Stuttgart Srl,Union Berlin SRL
 2024-03-08 14:35:00,6987498,Qingdao Jonoon,Changchun Yatai
 2024-03-08 14:45:00,7118114,AS Nordia Jerusalem,Shimshon Tel Aviv
 2024-03-08 15:00:00,7044031,KCB,Shabana FC
@@ -108,6 +90,7 @@ start_time,match_id,home_team,away_team
 2024-03-08 16:00:00,6806286,Hapoel Kiryat Shmona,Kfar Qasem
 2024-03-08 16:00:00,6806287,I. Tiberias,H. Kfar Saba
 2024-03-08 16:00:00,6806284,Sectzya Nes Ziona,H Nazrat Elit
+2024-03-08 16:00:00,7118956,ACS Sepsi Osk Sfantu Gheorghe 2,Brasov
 2024-03-08 16:00:00,7118691,Amagaju,Bugesera FC
 2024-03-08 16:00:00,7118734,I. Modelu,ACS Recolta Gheorghe Doja
 2024-03-08 16:15:00,6962141,Neftekhimik,Kamaz Nab Chelny
@@ -128,12 +111,14 @@ start_time,match_id,home_team,away_team
 2024-03-08 17:00:00,6910910,Jamshedpur,Mumbai City FC
 2024-03-08 17:00:00,7111035,Hussein Dey,Constantine
 2024-03-08 17:00:00,6893419,Al Tai,Al Hazm
+2024-03-08 17:00:00,7121573,Paradou,MC Oran
 2024-03-08 17:00:00,6893422,Al Riyadh,Al Hilal
 2024-03-08 17:30:00,7119494,NK Dragovoljac,Belisce
 2024-03-08 18:00:00,7109336,Puebla FC U23,Atlas FC U23
 2024-03-08 18:00:00,7109338,Necaxa U23,Atletico San Luis U23
 2024-03-08 18:00:00,7119826,Ghana U20,Republic Congo
 2024-03-08 18:00:00,7119507,Namungo FC,Young Africans
+2024-03-08 18:00:00,7121795,AS Kigali,Musanze
 2024-03-08 18:00:00,6829675,Sabayil,Sumgayit
 2024-03-08 18:00:00,7117718,Nevezis,FK Banga B
 2024-03-08 18:00:00,7117724,CD Castellon B,Gandia
@@ -146,6 +131,7 @@ start_time,match_id,home_team,away_team
 2024-03-08 19:00:00,7109334,FC Juarez U23,Deportivo Toluca U23
 2024-03-08 19:00:00,7116320,Sidama Bunna SC,Wolkite City FC
 2024-03-08 19:00:00,7052718,Varazdin,Istra 1961
+2024-03-08 19:00:00,7121942,FC Baltika Kaliningrad,Kryliya Sovetov Youth
 2024-03-08 19:00:00,7117722,Babrungas Plunge,FK Panevezys B
 2024-03-08 19:00:00,7033496,Auda,RFS
 2024-03-08 19:15:00,7044629,Est. Esteghlal,Esteghlal
@@ -297,9 +283,7 @@ start_time,match_id,home_team,away_team
 2024-03-08 23:00:00,7082841,BARCELONA,Mallorca
 2024-03-08 23:00:00,7082837,NICE,MONTPELLIER
 2024-03-08 23:00:00,7118299,Lions,Lincoln Red Imps
-2024-03-08 23:00:00,7119732,Berazategui,Ituzaingo
 2024-03-08 23:00:00,7119716,Yupanqui,Lamadrid
-2024-03-08 23:00:00,7120081,CA Atlas,Juv. Unida S. Miguel
 2024-03-08 23:00:00,7119718,Def. de Cambaceres,CA Lugano
 2024-03-08 23:00:00,7119706,Argentino Rosario,Puerto Nuevo
 2024-03-08 23:00:00,7119730,Justo Jose de Urq.,Deportivo Muniz
@@ -312,14 +296,13 @@ start_time,match_id,home_team,away_team
 2024-03-09 00:00:00,6955788,Deportes Recoleta,Barnechea
 2024-03-09 00:00:00,7118910,Boca Juniors,Academia Puerto Cabello
 2024-03-09 00:00:00,6955783,Deportes Limache,Rangers
+2024-03-09 00:00:00,6755702,Sol de America,Nacional FC
 2024-03-09 00:00:00,7119306,Csdc de Pereira,Independiente Medellin
 2024-03-09 01:00:00,7105069,Caxias,Sao Jose
 2024-03-09 01:00:00,7118641,Barbalha,Uniclinic CE
-2024-03-09 01:00:00,6755702,Sol de America,Nacional FC
 2024-03-09 01:00:00,7117643,Tachira,Ac. Puerto Cabello
 2024-03-09 01:00:00,7119710,Real Pilar,Central Cordoba
 2024-03-09 02:00:00,7108861,Portuguesa,Monagas
-2024-03-09 02:00:00,7118036,Excursionistas,Dock Sud
 2024-03-09 02:00:00,7120351,Brusque,Marcilio Dias SC
 2024-03-09 02:00:00,7118670,Horizonte,Caucaia
 2024-03-09 02:10:00,6813332,Rionegro Aguilas,CA Junior
