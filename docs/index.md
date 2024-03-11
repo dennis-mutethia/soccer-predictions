@@ -22,7 +22,7 @@ title: Soccer Predictions
       // Create table header
       const thead = document.createElement('thead');
       const headerRow = document.createElement('tr');
-      const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction', 'outcome'];
+      const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction', 'status'];
 
       columnsToDisplay.forEach(column => {
         const th = document.createElement('th');
@@ -42,7 +42,11 @@ title: Soccer Predictions
           const td = document.createElement('td');
           td.textContent = csvArray[i][columnIndex];
           row.appendChild(td);
-        });
+        });        
+        const td = document.createElement('td');
+        td.textContent = csvArray[i][8];
+        row.appendChild(td);
+
         tbody.appendChild(row);
       }
       table.appendChild(tbody);

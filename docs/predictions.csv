@@ -1,4 +1,4 @@
-start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,overall_prob,outcome
+start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,overall_prob,status
 26/02/2024 21:00,,Warta Poznan,Radomiak Radom,OV15,,,70,LOST
 26/02/2024 22:45,,Fiorentina,Lazio,OV15,,,74,WON
 26/02/2024 23:00,,West Ham,Brentford,OV15,,,80,WON
