@@ -104,7 +104,7 @@ class Main:
 
             for row in data:
                 # Check if start_time is less than today and status is empty
-                if row['status'] == 'pending':
+                if row['status'] == '':
                     start_time = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S')
                     today = datetime.now()
                     if start_time < today:
