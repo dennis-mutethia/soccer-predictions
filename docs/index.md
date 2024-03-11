@@ -22,18 +22,14 @@ title: Soccer Predictions
       // Create table header
       const thead = document.createElement('thead');
       const headerRow = document.createElement('tr');
-      csvArray[0].forEach(header => {
+      const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction', 'status'];
+
+      columnsToDisplay.forEach(column => {
         const th = document.createElement('th');
-        if (header === 'home_team') {
-          th.textContent = 'Match';
-        } else if (header === 'away_team') {
-          // Skip away_team header
-          return;
-        } else {
-          th.textContent = header;
-        }
+        th.textContent = column;
         headerRow.appendChild(th);
       });
+
       thead.appendChild(headerRow);
       table.appendChild(thead);
 
@@ -41,21 +37,11 @@ title: Soccer Predictions
       const tbody = document.createElement('tbody');
       for (let i = csvArray.length - 1; i > 0; i--) {
         const row = document.createElement('tr');
-        csvArray[i].forEach((cell, index) => {
-          if (index === 2) {
-            // Concatenate home_team and away_team values for the "Match" column
-            const matchValue = `${csvArray[i][2]} vs ${csvArray[i][3]}`;
-            const td = document.createElement('td');
-            td.textContent = matchValue;
-            row.appendChild(td);
-          } else if (index === 3) {
-            // Skip away_team column
-            return;
-          } else {
-            const td = document.createElement('td');
-            td.textContent = cell;
-            row.appendChild(td);
-          }
+        columnsToDisplay.forEach(column => {
+          const columnIndex = csvArray[0].indexOf(column);
+          const td = document.createElement('td');
+          td.textContent = csvArray[i][columnIndex];
+          row.appendChild(td);
         });
         tbody.appendChild(row);
       }
