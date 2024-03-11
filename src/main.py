@@ -97,14 +97,14 @@ class Main:
 
         return host_score, guest_score
     
-    def update_match_status(self):
+    def update_match_outcome(self):
         try:            
             with open(self.csv_predictions, mode='r') as csv_file:
                 data = list(csv.DictReader(csv_file))
 
             for row in data:
-                # Check if start_time is less than today and status is empty
-                if not row['status']:
+                # Check if start_time is less than today and outcome is empty
+                if row['outcome'] == 'pending':
                     start_time = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S')
                     today = datetime.now()
                     if start_time < today:
@@ -116,15 +116,15 @@ class Main:
                         total_score = int(host_score) + int(guest_score)
 
                         if '15' in prediction and total_score > 1:
-                            row['status'] = 'WON'
+                            row['outcome'] = 'WON'
                         elif '25' in prediction and total_score > 2:
-                            row['status'] = 'WON'
+                            row['outcome'] = 'WON'
                         elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
-                            row['status'] = 'WON'
+                            row['outcome'] = 'WON'
                         else:
-                            row['status'] = 'LOST'
+                            row['outcome'] = 'LOST'
 
-                        print(f'{start_time} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["status"]}')
+                        print(f'{start_time} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["outcome"]}')
 
             # Update the CSV file with the modified data
             with open(self.csv_predictions, mode='w', newline='') as csv_file:
@@ -150,7 +150,7 @@ class Main:
         for market in self.markets:
             self.load_date(start_date, end_date, market)
 
-        self.update_match_status()
+        self.update_match_outcome()
 
         self.fetch_upcoming(self.sport_id)
 

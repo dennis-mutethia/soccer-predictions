@@ -1,4 +1,4 @@
-start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,overall_prob,status
+start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,overall_prob,outcome
 26/02/2024 21:00,,Warta Poznan,Radomiak Radom,OV15,,,70,LOST
 26/02/2024 22:45,,Fiorentina,Lazio,OV15,,,74,WON
 26/02/2024 23:00,,West Ham,Brentford,OV15,,,80,WON
@@ -125,4 +125,4 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-03-10 17:00:00,7129155,Uerdingen,Kleve,OV15,81,82,82,WON
 2024-03-10 17:00:00,7115932,Dolny Kubin,Spartak Myjava,OV15,89,83,86,WON
 2024-03-10 19:00:00,6740787,Austria Klagenfurt,Rapid Wien,OV15,83,81,82,WON
-2024-03-11 22:00:00,41981645,De Graafschap,Jong Ajax,OV15,81,85,83,PENDING
+2024-03-11 22:00:00,41981645,De Graafschap,Jong Ajax,OV15,81,85,83,pending

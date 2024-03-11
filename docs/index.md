@@ -22,7 +22,7 @@ title: Soccer Predictions
       // Create table header
       const thead = document.createElement('thead');
       const headerRow = document.createElement('tr');
-      const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction', 'status'];
+      const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction', 'outcome'];
 
       columnsToDisplay.forEach(column => {
         const th = document.createElement('th');
