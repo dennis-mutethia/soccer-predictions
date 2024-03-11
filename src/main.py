@@ -11,9 +11,11 @@ class Main:
     def __init__(self):
         self.csv_match_data = './data/match_data.csv' 
         self.csv_upcoming_matches = './data/upcoming_matches.csv' 
+        self.csv_predictions = './docs/predictions.csv' 
         self.markets = ['1x2','uo','bts'] 
         self.targets = ['ov15', 'ov25', 'gg']
         self.min_probability = 80
+        self.sport_id='14'
 
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
@@ -45,13 +47,13 @@ class Main:
                 reader = csv.DictReader(csv_file)
                 for row in reader:
                     start_time = row['start_time']
-                    match_id = row['match_id']
+                    parent_match_id = row['parent_match_id']
                     home_team = row['home_team'].title()
                     away_team = row['away_team'].title()
                     if self.team_exists_in_match_data(home_team) and self.team_exists_in_match_data(away_team):
                         for target in self.targets:
                             try:
-                                self.goal_prediction_model(self.csv_match_data, start_time, match_id, home_team, away_team, target, self.min_probability)
+                                self.goal_prediction_model(self.csv_match_data, start_time, parent_match_id, home_team, away_team, target, self.min_probability)
                             except ValueError as ex:
                                 print(f"An error occurred: {ex}")
                                 # Continue with the next iteration of the loop
@@ -74,6 +76,68 @@ class Main:
         # Extract the match_day value from the last row
         return last_row[0]
 
+    def match_results(self, home_team, away_team):
+        """
+        parameters
+            team
+        """
+        host_score = 0
+        guest_score = 0
+        try:
+            with open(self.csv_match_data, 'r') as csvfile:
+                reader = csv.DictReader(csvfile)
+                for row in reader:
+                    if home_team == row['host_name'] and away_team == row['guest_name']:
+                        host_score = row['host_score']
+                        guest_score = row['guest_score']       
+                        
+        except FileNotFoundError:
+            # Handle the case where the file doesn't exist yet
+            pass
+
+        return host_score, guest_score
+    
+    def update_match_status(self):
+        try:            
+            with open(self.csv_predictions, mode='r') as csv_file:
+                data = list(csv.DictReader(csv_file))
+
+            for row in data:
+                # Check if start_time is less than today and status is empty
+                if not row['status']:
+                    start_time = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S')
+                    today = datetime.now()
+                    if start_time < today:
+                        home_team = row['home_team'].title()
+                        away_team = row['away_team'].title()
+                        prediction = row['prediction']
+
+                        host_score, guest_score = self.match_results(home_team, away_team)
+                        total_score = int(host_score) + int(guest_score)
+
+                        if '15' in prediction and total_score > 1:
+                            row['status'] = 'WON'
+                        elif '25' in prediction and total_score > 2:
+                            row['status'] = 'WON'
+                        elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
+                            row['status'] = 'WON'
+                        else:
+                            row['status'] = 'LOST'
+
+                        print(f'{start_time} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["status"]}')
+
+            # Update the CSV file with the modified data
+            with open(self.csv_predictions, mode='w', newline='') as csv_file:
+                fieldnames = data[0].keys()
+                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(data)
+
+        except FileNotFoundError:
+            print(f'File not found: {self.csv_predictions}')
+        except Exception as e:
+            print(f'An error occurred: {e}')
+
     def __call__(self):
         """
         class entry point
@@ -82,14 +146,16 @@ class Main:
 
         start_date = self.last_inserted_date()
         end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
-        sport_id='14'
-
+        
         for market in self.markets:
             self.load_date(start_date, end_date, market)
 
-        self.fetch_upcoming(sport_id)
+        self.update_match_status()
+
+        self.fetch_upcoming(self.sport_id)
 
         self.predict_upcoming_matches()
-
+        
         print(f'Execution completed at {datetime.now()}')
+
 Main()()

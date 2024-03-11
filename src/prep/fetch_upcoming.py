@@ -1,4 +1,4 @@
-import requests, csv, pandas
+import csv
 from upcoming_match import UpcomingMatch
 from helper import Helper 
 
@@ -9,7 +9,7 @@ class FetchUpcoming:
 
     def append_to_csv(self, matches, csv_filename):
         with open(csv_filename, mode='w', newline='') as csv_file:
-            fieldnames = ['start_time', 'match_id', 'home_team', 'away_team']
+            fieldnames = ['start_time', 'parent_match_id', 'home_team', 'away_team']
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
             # Check if the file is empty, if so write the header
@@ -20,7 +20,7 @@ class FetchUpcoming:
                 if 'Women' not in match.competition_name and 'Int. Friendly Games W' not in match.competition_name:        
                     writer.writerow({
                         'start_time': match.start_time,
-                        'match_id': match.match_id,
+                        'parent_match_id': match.parent_match_id,
                         'home_team': match.home_team,
                         'away_team': match.away_team
                     })

@@ -32,7 +32,7 @@ class GoalPredictionModel:
             print(f"An error occurred in predict_for_future_matches: {e}")
             return None
 
-    def __call__(self, csv_match_data, start_time, match_id, home_team, away_team, target, min_probability):
+    def __call__(self, csv_match_data, start_time, parent_match_id, home_team, away_team, target, min_probability):
         try:
             filters = Filters(csv_match_data)
 
@@ -72,12 +72,12 @@ class GoalPredictionModel:
                 print(f"{start_time} {home_team} - ({perc_team_1}%) vs {away_team} - ({perc_team_2}%) = {target.upper()} - {perc_true}%")
 
                 if perc_team_1 >= min_probability and perc_team_2 >= min_probability:
-                    self.append_to_csv(start_time, match_id, home_team, away_team, target.upper(), perc_team_1, perc_team_2, perc_true)
+                    self.append_to_csv(start_time, parent_match_id, home_team, away_team, target.upper(), perc_team_1, perc_team_2, perc_true)
 
                 elif perc_fail >= min_probability:
                     target = target.replace('gg', 'ng').replace('ov', 'un')
                     print(f"{start_time} {home_team} - ({100-perc_team_1}%) vs {away_team} - ({100-perc_team_2}%) = {target.upper()} - {perc_fail}%")
-                    self.append_to_csv(start_time, match_id, home_team, away_team, target.replace('1', '2').upper(), 100-perc_team_1, 100-perc_team_2, perc_fail)
+                    self.append_to_csv(start_time, parent_match_id, home_team, away_team, target.replace('1', '2').upper(), 100-perc_team_1, 100-perc_team_2, perc_fail)
 
         except Exception as e:
             print(f"An error occurred in __call__: {e}")
@@ -90,15 +90,15 @@ class GoalPredictionModel:
             with open(self.csv_predictions, mode='r') as csv_file:
                 reader = csv.DictReader(csv_file)
                 for row in reader:
-                    match_id = (row['match_id'])
-                    self.inserted_matches.add(match_id)
+                    parent_match_id = (row['parent_match_id'])
+                    self.inserted_matches.add(parent_match_id)
         except Exception as e:
             print(f"An error occurred in read_existing_matches: {e}")
 
-    def append_to_csv(self, start_time, match_id, home_team, away_team, prediction, home_prob, away_prob, overall_prob):
+    def append_to_csv(self, start_time, parent_match_id, home_team, away_team, prediction, home_prob, away_prob, overall_prob):
         try:
             with open(self.csv_predictions, mode='a', newline='') as csv_file:
-                fieldnames = ['start_time', 'match_id', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob', 'status']
+                fieldnames = ['start_time', 'parent_match_id', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob', 'status']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
                 # Check if the file is empty, if so write the header
@@ -106,10 +106,10 @@ class GoalPredictionModel:
                     writer.writeheader()
 
                 
-                if match_id not in self.inserted_matches:
+                if parent_match_id not in self.inserted_matches:
                     writer.writerow({
                         'start_time': start_time,
-                        'match_id': match_id,
+                        'parent_match_id': parent_match_id,
                         'home_team': home_team,
                         'away_team': away_team,
                         'prediction': prediction,
@@ -120,6 +120,6 @@ class GoalPredictionModel:
                     })
 
                     # Add the match identifier to the set
-                    self.inserted_matches.add(match_id)
+                    self.inserted_matches.add(parent_match_id)
         except Exception as e:
             print(f"An error occurred in append_to_csv: {e}")
