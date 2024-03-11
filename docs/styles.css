@@ -4,8 +4,8 @@
   overflow-x: auto;
   border-collapse: collapse;
   margin: 25px 0;
-  font-size: auto;
-  text-align: left;
+  font-size: small;
+  text-align: center;
 }
 
 .styled-table th,
