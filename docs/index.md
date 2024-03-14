@@ -37,26 +37,29 @@ title: Soccer Predictions
       const tbody = document.createElement('tbody');
 
       // Iterate over the CSV array
-      csvArray.forEach(row => {
+      csvArray.forEach(rowData => {
         const row = document.createElement('tr');
 
-        const td = document.createElement('td');
-        td.textContent = row[0].trim();
-        row.appendChild(td);
-        td.textContent = row[2].trim();
-        row.appendChild(td);
-        td.textContent = row[3].trim();
-        row.appendChild(td);
-        td.textContent = row[4].trim();
-        row.appendChild(td);
-        const status = row[8].trim();       
+        rowData.forEach(cellData => {
+          const td = document.createElement('td');
+          td.textContent = cellData.trim();
+          row.appendChild(td);
+        });
+
+        const status = rowData[4].trim();       
         
-        if (status.trim() == 'WON') {
+        if (status === 'WON') {
+          const td = document.createElement('td');
           td.innerHTML = '<img src="{{ site.baseurl }}/tick.png" alt="Green Tick" />';
-        } else if (status == 'LOST') {
+          row.appendChild(td);
+        } else if (status === 'LOST') {
+          const td = document.createElement('td');
           td.innerHTML = '<img src="{{ site.baseurl }}/cross.png" alt="Red Cross" />';
-        } else{
+          row.appendChild(td);
+        } else {
+          const td = document.createElement('td');
           td.textContent = status;
+          row.appendChild(td);
         }
 
         tbody.appendChild(row);
