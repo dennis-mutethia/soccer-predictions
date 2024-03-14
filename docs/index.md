@@ -22,47 +22,46 @@ title: Soccer Predictions
       // Create table header
       const thead = document.createElement('thead');
       const headerRow = document.createElement('tr');
-      const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction'];
+      const columnsToDisplay = ['Kickoff', 'Home', 'Away', 'Prediction', 'Status'];
 
       columnsToDisplay.forEach(column => {
         const th = document.createElement('th');
         th.textContent = column;
         headerRow.appendChild(th);
       });
-      const th = document.createElement('th');
-      th.textContent = 'status';
-      headerRow.appendChild(th);
 
       thead.appendChild(headerRow);
       table.appendChild(thead);
 
       // Create table body
       const tbody = document.createElement('tbody');
-      for (let i = csvArray.length - 1; i > 0; i--) {
-        const row = document.createElement('tr');
-        columnsToDisplay.forEach(column => {
-          const columnIndex = csvArray[0].indexOf(column);
-          const td = document.createElement('td');
-          td.textContent = csvArray[i][columnIndex];
-          row.appendChild(td);
-        });   
 
-        const status = csvArray[i][8].trim();
+      // Iterate over the CSV array
+      csvArray.forEach(row => {
+        const row = document.createElement('tr');
+
         const td = document.createElement('td');
+        td.textContent = row[0].trim();
+        row.appendChild(td);
+        td.textContent = row[2].trim();
+        row.appendChild(td);
+        td.textContent = row[3].trim();
+        row.appendChild(td);
+        td.textContent = row[4].trim();
+        row.appendChild(td);
+        const status = row[8].trim();       
         
-        if (status === 'WON') {
+        if (status.trim() == 'WON') {
           td.innerHTML = '<img src="{{ site.baseurl }}/tick.png" alt="Green Tick" />';
-        } else if (status === 'LOST') {
+        } else if (status == 'LOST') {
           td.innerHTML = '<img src="{{ site.baseurl }}/cross.png" alt="Red Cross" />';
         } else{
           td.textContent = status;
         }
-        
-
-        row.appendChild(td);
 
         tbody.appendChild(row);
-      }
+      });
+
       table.appendChild(tbody);
 
       // Append table to the container
