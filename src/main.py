@@ -94,6 +94,7 @@ class Main:
                     if home_team == row['host_name'] and away_team == row['guest_name'] and match_day == datetime.strptime(row['match_day'], '%Y-%m-%d').date():
                         host_score = row['host_score']
                         guest_score = row['guest_score']
+                        break
                         
         except FileNotFoundError:
             # Handle the case where the file doesn't exist yet
@@ -138,12 +139,12 @@ class Main:
 
                         print(f'{match_day} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["status"]}')
 
-            # Update the CSV file with the modified data
-            with open(self.csv_predictions, mode='w', newline='') as csv_file:
-                fieldnames = data[0].keys()
-                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-                writer.writeheader()
-                writer.writerows(data)
+                # Update the CSV file with the modified data
+                with open(self.csv_predictions, mode='w', newline='') as csv_file:
+                    fieldnames = data[0].keys()
+                    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+                    writer.writeheader()
+                    writer.writerows(data)
 
         except FileNotFoundError:
             print(f'File not found: {self.csv_predictions}')

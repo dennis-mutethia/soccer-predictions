@@ -1,13 +1,4 @@
 start_time,parent_match_id,home_team,away_team
-2024-03-14 21:00:00,41966941,AL Jazira,Kalba
-2024-03-14 21:00:00,41966921,Shabab AlAhli,AL Bataeh (UAE)
-2024-03-14 21:00:00,41966925,Sharjah,Al Nasr
-2024-03-14 21:00:00,48494275,Boca Juniors,SD Aucas U20
-2024-03-14 21:30:00,48255631,Alianza Atletico,Cesar Vallejo
-2024-03-14 22:00:00,42417099,Al Hazm,AL Shabab
-2024-03-14 22:00:00,42417087,Al Khaleej,Al-Akhdoud Club
-2024-03-14 22:00:00,42417103,Abha,Al Wehda
-2024-03-14 22:00:00,47393361,Wattenscheid,TSV Victoria Clarholz
 2024-03-14 22:45:00,48393963,Parkway,Merthyr
 2024-03-14 23:00:00,48038783,ATALANTA,Sporting
 2024-03-14 23:00:00,48038777,BRIGHTON,ROMA
@@ -18,6 +9,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-14 23:00:00,48039035,Club Brugge,Molde
 2024-03-14 23:00:00,48039033,Aston Villa,AJAX
 2024-03-14 23:00:00,41890893,Salford,Stockport
+2024-03-14 23:00:00,47671507,FC Barcelona Women,Atl. Bilbao Women
 2024-03-14 23:15:00,43575921,San Giovanni,Domagnano
 2024-03-14 23:30:00,48189489,Talleres,Agropecuario
 2024-03-14 23:45:00,48255633,Comerciantes U.,Sport Huancayo
@@ -37,7 +29,6 @@ start_time,parent_match_id,home_team,away_team
 2024-03-15 03:00:00,48217413,LD Alajuelense,New England
 2024-03-15 03:00:00,48255635,Carlos Mannucci,Sport Boys
 2024-03-15 03:00:00,48417845,Bolivar,Jorge Wilstermann
-2024-03-15 03:00:00,47256023,River Plate Reserve,San Lorenzo  Reserve
 2024-03-15 03:00:00,48222573,Chacaritas FC,Guayaquil City
 2024-03-15 03:30:00,48208687,Nacional,Always Ready
 2024-03-15 03:30:00,48252091,Botafogo SP,Anapolis GO
