@@ -22,48 +22,46 @@ title: Soccer Predictions
       // Create table header
       const thead = document.createElement('thead');
       const headerRow = document.createElement('tr');
-      const columnsToDisplay = ['Kickoff', 'Home', 'Away', 'Prediction', 'Status'];
+      const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction'];
 
       columnsToDisplay.forEach(column => {
         const th = document.createElement('th');
         th.textContent = column;
         headerRow.appendChild(th);
       });
+      const th = document.createElement('th');
+      th.textContent = 'status';
+      headerRow.appendChild(th);
 
       thead.appendChild(headerRow);
       table.appendChild(thead);
 
       // Create table body
       const tbody = document.createElement('tbody');
-
-      // Iterate over the CSV array
-      csvArray.forEach(rowData => {
+      for (let i = csvArray.length - 1; i > 0; i--) {
         const row = document.createElement('tr');
-
-        // Fetch data from columns 0, 2, 3, and 4
-        [0, 2, 3, 4].forEach(index => {
+        columnsToDisplay.forEach(column => {
+          const columnIndex = csvArray[0].indexOf(column);
           const td = document.createElement('td');
-          const cellData = rowData[index] ? rowData[index].trim() : '';
-          td.textContent = cellData;
+          td.textContent = csvArray[i][columnIndex];
           row.appendChild(td);
-        });
-
-        // Fetch status from column 8
-        const status = rowData[8] ? rowData[8].trim() : '';
-
+        });         
+        
         const td = document.createElement('td');
+        const status = csvArray[i][8] ? csvArray[i][8].trim() : '';
+        
         if (status === 'WON') {
           td.innerHTML = '<img src="{{ site.baseurl }}/tick.png" alt="Green Tick" />';
         } else if (status === 'LOST') {
           td.innerHTML = '<img src="{{ site.baseurl }}/cross.png" alt="Red Cross" />';
-        } else {
+        } else{
           td.textContent = status;
         }
+        
         row.appendChild(td);
 
         tbody.appendChild(row);
-      });
-
+      }
       table.appendChild(tbody);
 
       // Append table to the container
