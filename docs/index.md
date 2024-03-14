@@ -50,9 +50,9 @@ title: Soccer Predictions
         const td = document.createElement('td');
         
         if (csvArray[i][8] === 'WON') {
-          td.innerHTML = '<img src="{{ site.baseurl }}/green_tick.png" alt="Green Tick" />';
+          td.innerHTML = '<img src="{{ site.baseurl }}/tick.png" alt="Green Tick" />';
         } else if (csvArray[i][8] === 'LOST') {
-          td.innerHTML = '<img src="{{ site.baseurl }}/red_cross.png" alt="Red Cross" />';
+          td.innerHTML = '<img src="{{ site.baseurl }}/cross.png" alt="Red Cross" />';
         } else{
           td.textContent = csvArray[i][8];
         }
