@@ -29,7 +29,7 @@ title: Soccer Predictions
         const headerRow = document.createElement('tr');
 
         const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction'];
-        
+
         columnsToDisplay.forEach(column => {
             // Capitalize the heading and remove underscores
             const columnHeader = column.replace('_', ' ').toUpperCase();
@@ -39,7 +39,7 @@ title: Soccer Predictions
             headerRow.appendChild(th);
         });
         const th = document.createElement('th');
-        th.textContent = 'status';
+        th.textContent = 'STATUS';
         headerRow.appendChild(th);
 
         thead.appendChild(headerRow);
