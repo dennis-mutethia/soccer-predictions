@@ -27,12 +27,14 @@ title: Soccer Predictions
         // Create table header
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
-        const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction'];
-
+        
         columnsToDisplay.forEach(column => {
-          const th = document.createElement('th');
-          th.textContent = column;
-          headerRow.appendChild(th);
+            // Capitalize the heading and remove underscores
+            const columnHeader = column.replace(/_/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase());
+
+            const th = document.createElement('th');
+            th.textContent = columnHeader;
+            headerRow.appendChild(th);
         });
         const th = document.createElement('th');
         th.textContent = 'status';
