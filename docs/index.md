@@ -47,12 +47,12 @@ title: Soccer Predictions
           row.appendChild(td);
         });   
 
-        const status = csvArray[i][8];
+        const status = csvArray[i][8].trim();
         const td = document.createElement('td');
         
-        if (status == 'WON') {
+        if (status === 'WON') {
           td.innerHTML = '<img src="{{ site.baseurl }}/tick.png" alt="Green Tick" />';
-        } else if (status == 'LOST') {
+        } else if (status === 'LOST') {
           td.innerHTML = '<img src="{{ site.baseurl }}/cross.png" alt="Red Cross" />';
         } else{
           td.textContent = status;
