@@ -1,3 +1,10 @@
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .styled-table {
   width: 100%;
   max-width: 100%;
