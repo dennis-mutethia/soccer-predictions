@@ -28,6 +28,8 @@ title: Soccer Predictions
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
 
+        const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction'];
+        
         columnsToDisplay.forEach(column => {
             // Capitalize the heading and remove underscores
             const columnHeader = column.replace('_', ' ').toUpperCase();
