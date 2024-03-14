@@ -1,3 +1,4 @@
+I need to add a green tick when the status = WON and red cross when the status = LOST
 ---
 layout: default
 title: Soccer Predictions
@@ -49,6 +50,14 @@ title: Soccer Predictions
         const td = document.createElement('td');
         td.textContent = csvArray[i][8];
         row.appendChild(td);
+
+        const statusTd = document.createElement('td');
+        if (csvArray[i][8] === 'WON') {
+          statusTd.innerHTML = '<img src="green_tick.png" alt="Green Tick">';
+        } else if (csvArray[i][8] === 'LOST') {
+          statusTd.innerHTML = '<img src="red_cross.png" alt="Red Cross">';
+        } 
+        row.appendChild(statusTd);
 
         tbody.appendChild(row);
       }

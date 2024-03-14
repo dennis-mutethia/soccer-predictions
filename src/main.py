@@ -76,20 +76,24 @@ class Main:
         # Extract the match_day value from the last row
         return last_row[0]
 
-    def match_results(self, home_team, away_team):
+    def match_results(self, home_team, away_team, match_day):
         """
         parameters
             team
         """
-        host_score = 0
-        guest_score = 0
+        host_score = None
+        guest_score = None
         try:
+            matches = []
             with open(self.csv_match_data, 'r') as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
-                    if home_team == row['host_name'] and away_team == row['guest_name']:
+                    matches.append(row)
+                
+                for row in reversed(matches):                    
+                    if home_team == row['host_name'] and away_team == row['guest_name'] and match_day == datetime.strptime(row['match_day'], '%Y-%m-%d').date():
                         host_score = row['host_score']
-                        guest_score = row['guest_score']       
+                        guest_score = row['guest_score']
                         
         except FileNotFoundError:
             # Handle the case where the file doesn't exist yet
@@ -105,26 +109,34 @@ class Main:
             for row in data:
                 # Check if start_time is less than today and status is empty
                 if row['status'] == '':
-                    start_time = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S')
-                    today = datetime.now()
-                    if start_time < today:
+                    try:
+                        match_day = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S').date()
+                    except Exception as e:
+                        match_day = datetime.strptime(row['start_time'], '%d/%m/%Y %H:%M').date()
+
+                    today = datetime.now().date()
+                    if match_day < today:
                         home_team = row['home_team'].title()
                         away_team = row['away_team'].title()
                         prediction = row['prediction']
 
-                        host_score, guest_score = self.match_results(home_team, away_team)
-                        total_score = int(host_score) + int(guest_score)
+                        host_score, guest_score = self.match_results(home_team, away_team, match_day)
+                        if host_score is not None and guest_score is not None:
+                            total_score = int(host_score) + int(guest_score)
 
-                        if '15' in prediction and total_score > 1:
-                            row['status'] = 'WON'
-                        elif '25' in prediction and total_score > 2:
-                            row['status'] = 'WON'
-                        elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
-                            row['status'] = 'WON'
+                            if '15' in prediction and total_score > 1:
+                                row['status'] = 'WON'
+                            elif '25' in prediction and total_score > 2:
+                                row['status'] = 'WON'
+                            elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
+                                row['status'] = 'WON'
+                            else:
+                                row['status'] = 'LOST'
+
                         else:
-                            row['status'] = 'LOST'
+                            row['status'] = '--'
 
-                        print(f'{start_time} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["status"]}')
+                        print(f'{match_day} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["status"]}')
 
             # Update the CSV file with the modified data
             with open(self.csv_predictions, mode='w', newline='') as csv_file:
