@@ -40,27 +40,26 @@ title: Soccer Predictions
       csvArray.forEach(rowData => {
         const row = document.createElement('tr');
 
-        rowData.forEach(cellData => {
+        // Fetch data from columns 0, 2, 3, and 4
+        [0, 2, 3, 4].forEach(index => {
           const td = document.createElement('td');
-          td.textContent = cellData.trim();
+          const cellData = rowData[index] ? rowData[index].trim() : '';
+          td.textContent = cellData;
           row.appendChild(td);
         });
 
-        const status = rowData[4].trim();       
-        
+        // Fetch status from column 8
+        const status = rowData[8] ? rowData[8].trim() : '';
+
+        const td = document.createElement('td');
         if (status === 'WON') {
-          const td = document.createElement('td');
           td.innerHTML = '<img src="{{ site.baseurl }}/tick.png" alt="Green Tick" />';
-          row.appendChild(td);
         } else if (status === 'LOST') {
-          const td = document.createElement('td');
           td.innerHTML = '<img src="{{ site.baseurl }}/cross.png" alt="Red Cross" />';
-          row.appendChild(td);
         } else {
-          const td = document.createElement('td');
           td.textContent = status;
-          row.appendChild(td);
         }
+        row.appendChild(td);
 
         tbody.appendChild(row);
       });
