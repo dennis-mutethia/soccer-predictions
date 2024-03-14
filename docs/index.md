@@ -27,10 +27,10 @@ title: Soccer Predictions
         // Create table header
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
-        
+
         columnsToDisplay.forEach(column => {
             // Capitalize the heading and remove underscores
-            const columnHeader = column.replace(/_/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase());
+            const columnHeader = column.replace('_', ' ').toUpperCase();
 
             const th = document.createElement('th');
             th.textContent = columnHeader;
