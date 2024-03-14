@@ -2,7 +2,6 @@
 layout: default
 title: Soccer Predictions
 ---
-<!DOCTYPE html>
 <html>
   <head>
     <title>Soccer Predictions</title>
