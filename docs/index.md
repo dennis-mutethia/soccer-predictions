@@ -56,7 +56,9 @@ title: Soccer Predictions
           td.innerHTML = '<img src="{{ site.baseurl }}/cross.png" alt="Red Cross" />';
         } else{
           td.textContent = status;
+          td.innerHTML = '<img src="{{ site.baseurl }}/tick.png" alt="Green Tick" />';
         }
+        
 
         row.appendChild(td);
 
