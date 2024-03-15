@@ -4,8 +4,9 @@ from bet_market import BetMarket
 from helper import Helper 
 
 class Autobet:
-    def __init__(self, csv_predictions):
+    def __init__(self, csv_predictions, csv_profiles):
         self.csv_predictions = csv_predictions
+        self.csv_profiles = csv_profiles
         self.helper = Helper()
 
     def fetch_bet_markets(self, parent_match_id):
@@ -37,18 +38,18 @@ class Autobet:
         data = response['data']
         return data['balance']
 
-    def place_bet(self, best_slips):
+    def place_bet(self, best_slips, profile_id, token):
         balance = self.get_bal()
         stakeable = balance/2
         stake = int(stakeable/len(best_slips))
         for bet_slip in best_slips:
             body = '{'
             body = body + f'''
-                "profile_id": "7139155",
+                "profile_id": "{profile_id}",
                 "stake": "{stake}",
                 "total_odd": "1",
                 "src": "MOBILE_WEB",    
-                "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9iZXRpa2EuY29tIiwiaWF0IjoxNzEwMTU1OTQxLCJuYmYiOjE3MDc2NTAzNDEsImV4cCI6MTcxMjc0Nzk0MSwidXNlciI6eyJpZCI6IjcxMzkxNTUiLCJtb2JpbGUiOiIyNTQ3MjMxMTE5MjAiLCJiYWxhbmNlIjoiMC4wMCIsImJvbnVzIjoiMC42NyIsInBvaW50cyI6IjE1NS4zMyJ9fQ.3OdymSyxMueMLXwomfxvONHxdMnk6fH6le97Ve1W1_4",
+                "token": "{token}",
                 "betslip": [
                 {bet_slip[:-1]}
                 ]
@@ -130,4 +131,19 @@ class Autobet:
         """
 
         best_slips = self.generate_betslips()
-        self.place_bet(best_slips)
+
+        try:            
+            with open(self.csv_profiles, mode='r') as csv_file:
+                data = list(csv.DictReader(csv_file))
+
+            for row in data:
+                profile_id = row['profile_id']
+                token = row['token']
+                self.place_bet(best_slips, profile_id, token)
+
+        except FileNotFoundError:
+            print(f'File not found: {self.csv_predictions}')
+        except Exception as e:
+            print(f'An error occurred: {e}')
+
+        

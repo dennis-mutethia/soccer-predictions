@@ -13,6 +13,8 @@ class Main:
         self.csv_match_data = './data/match_data.csv' 
         self.csv_upcoming_matches = './data/upcoming_matches.csv' 
         self.csv_predictions = './docs/predictions.csv' 
+        self.csv_profiles = './data/profiles.csv' 
+
         self.markets = ['1x2','uo','bts', 'dbc', 'ah']
         self.targets = ['ov15', 'ov25', 'gg']
         self.min_probability = 80
@@ -21,7 +23,7 @@ class Main:
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
         self.goal_prediction_model = GoalPredictionModel()
-        self.autobet = Autobet(self.csv_predictions)
+        self.autobet = Autobet(self.csv_predictions, self.csv_profiles)
 
     def team_exists_in_match_data(self, team):
         """
