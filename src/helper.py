@@ -1,4 +1,4 @@
-import requests
+import json, requests
 
 class Helper:
     """
@@ -27,6 +27,26 @@ class Helper:
                 return json_data
             print("Invalid JSON data format")
         else:
-            print(f"Failed to fetch data. Status Code: {response.status_code}")
+            print(f"{response}")
 
         return None
+    
+    def post_data(self, url, body, timeout=10):
+        """
+        Fetch data from the given URL with POST method.
+
+        Args:
+            url (str): The URL to fetch data from.
+            body (dict): The body of the POST request.
+            timeout (int, optional): The timeout for the HTTP request.
+
+        Returns:
+            dict or None: The JSON data if successful, otherwise None.
+        """
+
+        body_dict = json.loads(body)
+
+        response = requests.post(url, json=body_dict, timeout=timeout)
+        return response.json()
+
+

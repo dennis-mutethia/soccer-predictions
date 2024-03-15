@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from prep.load_data import LoadData
 from prep.fetch_upcoming import FetchUpcoming
 from predictions.goal_prediction_model import GoalPredictionModel
+from autobet import Autobet
 
 class Main:
     """
@@ -12,7 +13,7 @@ class Main:
         self.csv_match_data = './data/match_data.csv' 
         self.csv_upcoming_matches = './data/upcoming_matches.csv' 
         self.csv_predictions = './docs/predictions.csv' 
-        self.markets = ['1x2','uo','bts'] 
+        self.markets = ['1x2','uo','bts', 'dbc', 'ah']
         self.targets = ['ov15', 'ov25', 'gg']
         self.min_probability = 80
         self.sport_id='14'
@@ -20,6 +21,7 @@ class Main:
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
         self.goal_prediction_model = GoalPredictionModel()
+        self.autobet = Autobet(self.csv_predictions)
 
     def team_exists_in_match_data(self, team):
         """
@@ -111,12 +113,12 @@ class Main:
                 # Check if start_time is less than today and status is empty
                 if row['status'] == '':
                     try:
-                        match_day = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S').date()
+                        match_time = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S')
                     except Exception as e:
-                        match_day = datetime.strptime(row['start_time'], '%d/%m/%Y %H:%M').date()
+                        match_time = datetime.strptime(row['start_time'], '%d/%m/%Y %H:%M')
 
-                    today = datetime.now().date()
-                    if match_day < today:
+                    if match_time < datetime.now():
+                        match_day = match_time.date()
                         home_team = row['home_team'].title()
                         away_team = row['away_team'].title()
                         prediction = row['prediction']
@@ -168,6 +170,8 @@ class Main:
         self.fetch_upcoming(self.sport_id)
 
         self.predict_upcoming_matches()
+
+        self.autobet()
         
         print(f'Execution completed at {datetime.now()}')
 
