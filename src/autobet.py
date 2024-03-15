@@ -25,10 +25,10 @@ class Autobet:
         
         return None
     
-    def get_bal(self):
+    def get_bal(self, token):
         body = '{'
         body = body + f'''
-            "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9iZXRpa2EuY29tIiwiaWF0IjoxNzEwMTU1OTQxLCJuYmYiOjE3MDc2NTAzNDEsImV4cCI6MTcxMjc0Nzk0MSwidXNlciI6eyJpZCI6IjcxMzkxNTUiLCJtb2JpbGUiOiIyNTQ3MjMxMTE5MjAiLCJiYWxhbmNlIjoiMC4wMCIsImJvbnVzIjoiMC42NyIsInBvaW50cyI6IjE1NS4zMyJ9fQ.3OdymSyxMueMLXwomfxvONHxdMnk6fH6le97Ve1W1_4"
+            "token": "{token}"
         '''
         body = body + '}'
 
@@ -36,10 +36,10 @@ class Autobet:
 
         response = self.helper.post_data(url, body)
         data = response['data']
-        return data['balance']
+        return float(data['balance'])
 
     def place_bet(self, best_slips, profile_id, token):
-        balance = self.get_bal()
+        balance = self.get_bal(token)
         stakeable = balance/2
         stake = int(stakeable/len(best_slips))
         for bet_slip in best_slips:
@@ -55,6 +55,8 @@ class Autobet:
                 ]
             '''
             body = body + '}'
+
+            print(body)
 
             url = f"https://api.betika.com/v2/bet"
 
