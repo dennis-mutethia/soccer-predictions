@@ -9,6 +9,30 @@ class Autobet:
         self.csv_profiles = csv_profiles
         self.helper = Helper()
 
+    def update_prediction(self, parent_match_id, prediction):
+        new_prediction = prediction.replace('OVER ', 'OV').replace('UNDER ', 'UN').replace('.', '')
+        try:            
+            with open(self.csv_predictions, mode='r') as csv_file:
+                data = list(csv.DictReader(csv_file))
+
+            for row in data:
+                # Check if start_time is less than today and status is empty
+                if row['parent_match_id'] == parent_match_id:
+                    row['prediction'] = new_prediction
+
+                # Update the CSV file with the modified data
+                with open(self.csv_predictions, mode='w', newline='') as csv_file:
+                    fieldnames = data[0].keys()
+                    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+                    writer.writeheader()
+                    writer.writerows(data)
+
+        except FileNotFoundError:
+            print(f'File not found: {self.csv_predictions}')
+        except Exception as e:
+            print(f'An error occurred: {e}')
+
+
     def fetch_bet_markets(self, parent_match_id):
         url = f"https://api.betika.com/v1/uo/match?parent_match_id={parent_match_id}"
 
@@ -86,6 +110,7 @@ class Autobet:
                                     "bet_type": 7
                                 '''
                                 best_slip = best_slip + '}'
+                                self.update_prediction(parent_match_id, odd.odd_key.upper())
 
         return best_slip
 
