@@ -28,7 +28,7 @@ title: Soccer Predictions
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
 
-        const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction'];
+        const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction', 'odd'];
 
         columnsToDisplay.forEach(column => {
             // Capitalize the heading and remove underscores

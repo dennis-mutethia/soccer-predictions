@@ -98,7 +98,7 @@ class GoalPredictionModel:
     def append_to_csv(self, start_time, parent_match_id, home_team, away_team, prediction, home_prob, away_prob, overall_prob):
         try:
             with open(self.csv_predictions, mode='a', newline='') as csv_file:
-                fieldnames = ['start_time', 'parent_match_id', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob', 'status']
+                fieldnames = ['start_time', 'parent_match_id', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob', 'status', 'odd']
                 writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
                 # Check if the file is empty, if so write the header
@@ -116,7 +116,8 @@ class GoalPredictionModel:
                         'home_prob': home_prob,
                         'away_prob': away_prob,
                         'overall_prob': overall_prob,
-                        'status': ''
+                        'status': '',
+                        'odd': ''
                     })
 
                     # Add the match identifier to the set

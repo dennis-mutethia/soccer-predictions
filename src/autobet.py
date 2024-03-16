@@ -9,7 +9,7 @@ class Autobet:
         self.csv_profiles = csv_profiles
         self.helper = Helper()
 
-    def update_prediction(self, parent_match_id, prediction):
+    def update_prediction(self, parent_match_id, prediction, odd):
         new_prediction = prediction.replace('OVER ', 'OV').replace('UNDER ', 'UN').replace('.', '')
         try:            
             with open(self.csv_predictions, mode='r') as csv_file:
@@ -19,6 +19,7 @@ class Autobet:
                 # Check if start_time is less than today and status is empty
                 if row['parent_match_id'] == parent_match_id:
                     row['prediction'] = new_prediction
+                    row['odd'] = odd
 
                 # Update the CSV file with the modified data
                 with open(self.csv_predictions, mode='w', newline='') as csv_file:
@@ -110,7 +111,7 @@ class Autobet:
                                     "bet_type": 7
                                 '''
                                 best_slip = best_slip + '}'
-                                self.update_prediction(parent_match_id, odd.odd_key.upper())
+                                self.update_prediction(parent_match_id, odd.odd_key.upper(), odd.odd_value)
 
         return best_slip
 
