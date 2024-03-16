@@ -38,11 +38,11 @@ title: Soccer Predictions
             th.textContent = columnHeader;
             headerRow.appendChild(th);
         });
+        const th_ = document.createElement('th');
+        th_.textContent = 'ODD';
+        headerRow.appendChild(th_);
+        
         const th = document.createElement('th');
-        th.textContent = 'ODD';
-        headerRow.appendChild(th);
-
-        th = document.createElement('th');
         th.textContent = 'STATUS';
         headerRow.appendChild(th);
 
@@ -60,12 +60,12 @@ title: Soccer Predictions
             row.appendChild(td);
           });         
           
-          const td = document.createElement('td');
+          const td_ = document.createElement('td');
           const odd = csvArray[i][9] ? csvArray[i][9].trim() : '';
-          td.textContent = odd;
-          row.appendChild(td);
+          td_.textContent = odd;
+          row.appendChild(td_);
 
-          td = document.createElement('td');
+          const td = document.createElement('td');
           const status = csvArray[i][8] ? csvArray[i][8].trim() : '';
           
           if (status === 'WON') {
