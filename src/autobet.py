@@ -60,8 +60,8 @@ class Autobet:
 
             url = f"https://api.betika.com/v2/bet"
 
-            #response = self.helper.post_data(url, body)
-            #print(response)
+            response = self.helper.post_data(url, body)
+            print(response)
 
     def get_best_slip(self, parent_match_id, prediction):
         best_slip = None
@@ -99,27 +99,27 @@ class Autobet:
             bs_str = ''
             count = 0
             for row in data:
-                # Check if start_time is less than today and status is empty
-                if row['status'] == '':
-                    try:
-                        match_time = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S')
-                    except Exception as e:
-                        match_time = datetime.strptime(row['start_time'], '%d/%m/%Y %H:%M')
+                # Check if start_time is less than today 
+                try:
+                    match_time = datetime.strptime(row['start_time'], '%Y-%m-%d %H:%M:%S')
+                except Exception as e:
+                    match_time = datetime.strptime(row['start_time'], '%d/%m/%Y %H:%M')
 
-                    if match_time > datetime.now():
-                        parent_match_id = row['parent_match_id']
-                        prediction = 'OVER' if 'OV' in row['prediction'] else 'UNDER' if 'UN' in row['prediction'] else row['prediction']
+                if match_time > datetime.now():
+                    parent_match_id = row['parent_match_id']
+                    prediction = 'OVER' if 'OV' in row['prediction'] else 'UNDER' if 'UN' in row['prediction'] else row['prediction']
 
-                        best_slip = self.get_best_slip(parent_match_id, prediction)
-                        if best_slip is not None:
-                            if count < 4:
-                                bs_str = bs_str + best_slip + ','
-                                count = count + 1
-                            else:      
-                                best_slips.append(bs_str)  
-                                bs_str = ''                    
-                                count = 0
-            if count > 0 and count < 4:
+                    best_slip = self.get_best_slip(parent_match_id, prediction)
+                    if best_slip is not None:
+                        count = count + 1
+                        bs_str = bs_str + best_slip + ','
+
+                        if count == 4:
+                            best_slips.append(bs_str)   
+                            count = 0 
+                            bs_str = ''
+
+            if count>0 and count < 4:
                 best_slips.append(bs_str)
 
         except FileNotFoundError:
