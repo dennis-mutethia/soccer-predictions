@@ -28,7 +28,7 @@ title: Soccer Predictions
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
 
-        const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction', 'odd'];
+        const columnsToDisplay = ['start_time', 'home_team', 'away_team', 'prediction'];
 
         columnsToDisplay.forEach(column => {
             // Capitalize the heading and remove underscores
@@ -38,6 +38,10 @@ title: Soccer Predictions
             th.textContent = columnHeader;
             headerRow.appendChild(th);
         });
+        const th = document.createElement('th');
+        th.textContent = 'ODD';
+        headerRow.appendChild(th);
+        
         const th = document.createElement('th');
         th.textContent = 'STATUS';
         headerRow.appendChild(th);
@@ -56,6 +60,11 @@ title: Soccer Predictions
             row.appendChild(td);
           });         
           
+          const td = document.createElement('td');
+          const odd = csvArray[i][9] ? csvArray[i][9].trim() : '';
+          td.textContent = odd;
+          row.appendChild(td);
+
           const td = document.createElement('td');
           const status = csvArray[i][8] ? csvArray[i][8].trim() : '';
           
