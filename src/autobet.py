@@ -60,8 +60,8 @@ class Autobet:
 
             url = f"https://api.betika.com/v2/bet"
 
-            response = self.helper.post_data(url, body)
-            print(response)
+            #response = self.helper.post_data(url, body)
+            #print(response)
 
     def get_best_slip(self, parent_match_id, prediction):
         best_slip = None
@@ -115,9 +115,11 @@ class Autobet:
                             if count < 4:
                                 bs_str = bs_str + best_slip + ','
                                 count = count + 1
-                            else:                                
+                            else:      
+                                best_slips.append(bs_str)  
+                                bs_str = ''                    
                                 count = 0
-            if count < 4:
+            if count > 0 and count < 4:
                 best_slips.append(bs_str)
 
         except FileNotFoundError:
