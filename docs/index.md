@@ -41,8 +41,8 @@ title: Soccer Predictions
         const th = document.createElement('th');
         th.textContent = 'ODD';
         headerRow.appendChild(th);
-        
-        const th = document.createElement('th');
+
+        th = document.createElement('th');
         th.textContent = 'STATUS';
         headerRow.appendChild(th);
 
@@ -65,7 +65,7 @@ title: Soccer Predictions
           td.textContent = odd;
           row.appendChild(td);
 
-          const td = document.createElement('td');
+          td = document.createElement('td');
           const status = csvArray[i][8] ? csvArray[i][8].trim() : '';
           
           if (status === 'WON') {
