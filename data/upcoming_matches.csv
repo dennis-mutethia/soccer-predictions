@@ -1,63 +1,4 @@
 start_time,parent_match_id,home_team,away_team
-2024-03-17 00:10:00,46669695,Bucaramanga,La Equidad
-2024-03-17 00:30:00,48515679,Araguaina,Uniao Atletica Carmolandense TO
-2024-03-17 00:30:00,48309367,Boavista,Portuguesa
-2024-03-17 00:30:00,48403271,Athletic Club Sjdr MG,Uberlandia
-2024-03-17 00:30:00,46849189,Aguila,FAS
-2024-03-17 00:40:00,46188043,Olimpia Asuncion,2 de Mayo
-2024-03-17 00:45:00,48546743,Carabobo,Zamora
-2024-03-17 01:00:00,48389143,Rio Branco,Andira EC AC
-2024-03-17 01:00:00,47738899,Independiente Medellin,CDP Junior FC
-2024-03-17 01:00:00,48065515,Far Rabat,Olympique de Safi
-2024-03-17 01:00:00,48065517,Mouloudia Oujda,Maghrib Tetouan
-2024-03-17 01:00:00,48065523,Renaissance Ezzmamra,SCC Mohammedia
-2024-03-17 01:00:00,48065519,Raja Casablanca,Salmi
-2024-03-17 01:00:00,46190069,SE Itapirense,Sao Caetano
-2024-03-17 01:00:00,47923489,Cdm FC,CD Ayense AC
-2024-03-17 01:00:00,46930959,Real Pilar,CA Lugano
-2024-03-17 01:00:00,42644267,Inter de Queretaro,Sporting Canamy
-2024-03-17 01:00:00,46378639,Imperatriz,Chapadinha FC MA
-2024-03-17 01:00:00,48302633,Real Noroeste,Vitoria
-2024-03-17 01:00:00,48547389,Raja,Marrakesh
-2024-03-17 01:00:00,47627977,Deportivo Mixco,Xinabajul
-2024-03-17 01:00:00,47923491,Club Deportivo de Futbol Zitacuaro,Ciervos FC
-2024-03-17 01:00:00,46190059,Bandeirante EC SP,Sao Bernardo SP
-2024-03-17 01:00:00,45405422,Cunupia FC,Caledonia
-2024-03-17 01:10:00,46927661,Temperley,Atletico Rafaela
-2024-03-17 01:15:00,46656613,Racing Club,Defensa Jus.
-2024-03-17 01:30:00,48540123,Gama,Ceilandia
-2024-03-17 01:30:00,48377349,Racing Club Mdeo.,Penarol
-2024-03-17 01:40:00,46927659,Brown de Adrogue,San Telmo
-2024-03-17 02:00:00,47869367,Arturo Fernandez Vial,CD Provincial Ovalle FC
-2024-03-17 02:00:00,46327191,Pittsburgh,Orange County
-2024-03-17 02:00:00,46327197,Miami,Sacramento Republic
-2024-03-17 02:00:00,46326771,Charlotte Ind.,One Knoxville SC
-2024-03-17 02:00:00,46345525,Cruz Azul,Necaxa
-2024-03-17 02:00:00,47343581,Barcelona (ECU),Orense SC
-2024-03-17 02:15:00,46908041,Atletico Ind.,Costa Del Este FC
-2024-03-17 02:20:00,46669697,Boyaca Chico,Atletico Nacional
-2024-03-17 02:30:00,47491695,Curico Unido,Arica
-2024-03-17 02:30:00,46364503,Columbus Crew,New York
-2024-03-17 02:30:00,46327187,Tampa Bay,San Antonio
-2024-03-17 02:30:00,46326773,S. Georgia Tormenta,Forward Madison FC
-2024-03-17 02:30:00,46364505,NYC FC,Toronto
-2024-03-17 02:30:00,47100751,Cobreloa,Espanola
-2024-03-17 03:00:00,46327205,Colorado Springs Sw.,Detroit City FC
-2024-03-17 03:00:00,46327201,Las Vegas Lights,Tulsa Roughnecks
-2024-03-17 03:00:00,46188045,Club General Caballero JLM,Libertad
-2024-03-17 03:00:00,42644271,Lobos Ulmx,Reboceros de La Piedad
-2024-03-17 03:00:00,48566953,Diriangen FC,Masachapa FC
-2024-03-17 03:00:00,48307865,Flamengo,Fluminense
-2024-03-17 03:10:00,45405424,Defence Force FC,Point Fortin FC
-2024-03-17 03:30:00,46364517,Nashville SC,Charlotte FC
-2024-03-17 03:30:00,46656651,Velez S.,Instituto Atletico
-2024-03-17 03:30:00,46364511,Houston,Portland
-2024-03-17 03:30:00,48546745,Ac. Puerto Cabello,Caracas
-2024-03-17 03:30:00,46364507,Austin FC,Philadelphia
-2024-03-17 03:30:00,46364513,Kansas City,San Jose
-2024-03-17 03:30:00,46364515,Minnesota United,Los Angeles
-2024-03-17 03:30:00,46364509,Dallas,Vancouver
-2024-03-17 03:30:00,46656633,Atletico Tucuman,Independiente Riv.
 2024-03-17 04:00:00,46849187,Isidro,Dragon
 2024-03-17 04:00:00,46345527,Leon,Puebla
 2024-03-17 04:00:00,48442765,La Luz FC,Uruguay Montevideo FC
@@ -108,7 +49,6 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 10:30:00,46638309,South China,Kowloon City
 2024-03-17 10:30:00,47219479,Ansan Greeners,Suwon Bluewings
 2024-03-17 10:30:00,46638307,Wong Tai Sin,Central & Western
-2024-03-17 11:00:00,47771815,Caboolture,Broadbeach
 2024-03-17 11:00:00,48598117,SC Heerenveen SRL,Feyenoord Rotterdam SRL
 2024-03-17 11:00:00,48598115,FC Utrecht SRL,NEC Nijmegen Srl
 2024-03-17 11:00:00,48598113,FC Volendam Srl,AZ Alkmaar SRL
@@ -129,8 +69,10 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 12:00:00,48598195,Villarreal CF SRL,Valencia CF SRL
 2024-03-17 12:00:00,48598063,Stade Brestois 29 SRL,Lille OSC SRL
 2024-03-17 12:00:00,48598197,UD Las Palmas Srl,UD Almeria Srl
-2024-03-17 12:15:00,46678307,SK Slavia Prague B,L. Vltavin
+2024-03-17 12:00:00,48598193,Sevilla FC SRL,RC Celta de Vigo SRL
+2024-03-17 12:00:00,48598201,Atletico Madrid SRL,FC Barcelona SRL
 2024-03-17 12:15:00,46678315,Bohemians Prague 1905 B,Karlovy Vary
+2024-03-17 12:15:00,46678307,SK Slavia Prague B,L. Vltavin
 2024-03-17 12:15:00,45182654,FC Banik Ostrava B,Unex
 2024-03-17 12:30:00,41968213,Bregenz,Dornbirn
 2024-03-17 12:30:00,42161899,1914 Samorin,Dolny Kubin
@@ -138,6 +80,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 12:30:00,42420533,Raca,D. Velke Ludince
 2024-03-17 12:30:00,41878073,Sparta Prague B,Varnsdorf
 2024-03-17 12:45:00,42073879,HEBC Hamburg,Tuerkiye
+2024-03-17 12:45:00,42073881,Uhlenhorst,Wandsbeker TSV Concordia 1881
 2024-03-17 12:45:00,42492321,AC MILAN U19,LAZIO ROMA U19
 2024-03-17 13:00:00,42532137,Toulouse FC,Bastia SC
 2024-03-17 13:00:00,47676407,Zemplin Michalovce U19,Spartak Trnava U19
@@ -145,10 +88,10 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 13:00:00,48171553,FK Arsenal Dzerzhinsk,Zhodino
 2024-03-17 13:00:00,42482035,UD Montijo,UD San Fernando
 2024-03-17 13:00:00,47441593,UE Coloma,Encarnada
-2024-03-17 13:00:00,46678567,FK Teplice B,Ceska
 2024-03-17 13:00:00,42557683,Bursa Yildirim Spor,S.I.O. Idaresi Spor
 2024-03-17 13:00:00,42551719,Erzincan,Derince
 2024-03-17 13:00:00,46461801,Tj Spoje Praha,FC Slavia HK
+2024-03-17 13:00:00,48598027,West Ham United SRL,Aston Villa SRL
 2024-03-17 13:30:00,42944317,Basconia,Vitoria
 2024-03-17 13:30:00,47099897,Parnu JK Vaprus,Kuressaare
 2024-03-17 13:30:00,42438847,Bodrum,Boluspor
@@ -157,9 +100,12 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 13:30:00,42946327,Trival Valderas,CD Galapagar
 2024-03-17 13:30:00,42944301,Portugalete,CD San Ignacio
 2024-03-17 13:30:00,42416107,Rizespor,Gazisehir Gaziantep
+2024-03-17 13:30:00,42949133,CD Ibiza Islas Pitiusas,UD Collerense
 2024-03-17 13:30:00,42481371,La Union,CA Antoniano
 2024-03-17 13:45:00,42943841,Siete Villas,CF Vimenor
 2024-03-17 13:45:00,42568221,FC Krumovgrad,Pirin
+2024-03-17 13:45:00,42944829,UE Tona,CP San Cristobal
+2024-03-17 14:00:00,42942905,CD Praviano,Condal Club
 2024-03-17 14:00:00,42532125,AS Montferrand U19,RC Strasbourg Alsace
 2024-03-17 14:00:00,42944323,Deportivo Alaves C,Scd Durango
 2024-03-17 14:00:00,42944825,FC L Escala,Pobla de Mafumet
@@ -171,7 +117,14 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 14:00:00,42170545,Jagiellonia II Bialystok,Nowy Dwor
 2024-03-17 14:00:00,42550535,Diyarbekirspor AS,Karacabey
 2024-03-17 14:00:00,42551717,Arnavutkoy Belediyesi Genclik Ve Spor,Karaman
+2024-03-17 14:00:00,48598073,Montpellier HSC SRL,Paris Saint-Germain SRL
 2024-03-17 14:00:00,42551721,Somaspor,Sariyer
+2024-03-17 14:00:00,48598071,Stade Rennais FC SRL,Olympique Marseille SRL
+2024-03-17 14:00:00,42557703,Sanliurfa Karak. BS,Kutahyaspor
+2024-03-17 14:00:00,48598067,Clermont Foot 63 Srl,Le Havre AC Srl
+2024-03-17 14:00:00,42942907,Lealtad,Sporting Gijon B
+2024-03-17 14:00:00,48598065,AS Monaco SRL,FC Lorient Srl
+2024-03-17 14:00:00,48598069,Stade Reims SRL,FC Metz SRL
 2024-03-17 14:00:00,42557657,Anadolu Universitesi,Elazigspor
 2024-03-17 14:00:00,47093383,Cracovia,Warta
 2024-03-17 14:00:00,42431155,MALAGA,CF Intercity
@@ -211,8 +164,11 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 14:00:00,42952119,CD Beti Onak,CD Subiza
 2024-03-17 14:00:00,42557675,Efeler 09 Sfk,Ergene Velimese S.
 2024-03-17 14:00:00,47542143,Neroca FC,Mohammedan
-2024-03-17 14:00:00,42949147,Llosetense,CD Santanyi
 2024-03-17 14:00:00,42950859,Racing Murcia,CD Bullense
+2024-03-17 14:00:00,42950863,D. Minera,CD Plus Ultra
+2024-03-17 14:00:00,42952127,CD Avance Ezcabarte,Udc Txantrea Kke
+2024-03-17 14:00:00,42951307,CD Castuera Subastacar,Racing CPVO Valverdeno
+2024-03-17 14:00:00,42951301,Olivenza FC,CD Coria
 2024-03-17 14:00:00,42551729,Kastamonuspor,Yeni
 2024-03-17 14:00:00,47486213,Covilha,Varzim
 2024-03-17 14:00:00,42551713,Menemen,Denizlispor
@@ -227,8 +183,13 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 14:00:00,42551723,Etimesgut Bel.,Amedspor
 2024-03-17 14:00:00,42942901,Aviles Stadium CF,Real Titanico FC
 2024-03-17 14:00:00,42952115,Ucd Burlades,CD Oberena
+2024-03-17 14:00:00,42942897,CD Llanes,L Entregu CF
+2024-03-17 14:00:00,42944821,Vilafranca,Peralada
 2024-03-17 14:15:00,41981643,Maastricht,Roda
 2024-03-17 14:15:00,41980563,Volendam,AZ Alkmaar
+2024-03-17 14:30:00,48598005,Borussia Dortmund SRL,Eintracht Frankfurt SRL
+2024-03-17 14:30:00,48598003,SC Freiburg SRL,Bayer 04 Leverkusen SRL
+2024-03-17 14:30:00,48394781,AE Prat,L'Hospitalet
 2024-03-17 14:30:00,42799769,UD Santarem,SC Lusitania
 2024-03-17 14:30:00,42942909,Gijon Industrial,Tuilla
 2024-03-17 14:30:00,41755597,KORONA KIELCE,POGON SZCZECIN
@@ -278,13 +239,13 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 16:00:00,42069533,Nyiregyhaza,Szeged
 2024-03-17 16:00:00,42297069,Erkenschwick,Wattenscheid
 2024-03-17 16:00:00,41917735,Turkspor Augsburg,1860 Munich II
-2024-03-17 16:00:00,42721203,Kukesi,Vllaznia
 2024-03-17 16:00:00,41946419,Stadtallendorf,SV Steinbach 1920
 2024-03-17 16:00:00,42438839,Umraniyespor,Adanaspor
 2024-03-17 16:00:00,42416105,Hatayspor,Samsunspor
 2024-03-17 16:00:00,42416103,Kasimpasa,GALATASARAY
 2024-03-17 16:00:00,42483873,Zesco Utd.,Kansanshi Dynamos
 2024-03-17 16:00:00,48523247,Tripoli,Al Hikma
+2024-03-17 16:00:00,48280831,D General,TS Galaxy FC
 2024-03-17 16:00:00,41891927,Radunia Stezyca,Kotwica Kolobrzeg
 2024-03-17 16:00:00,42168087,Eintracht Mahlsdorf,Neustrelitz
 2024-03-17 16:00:00,41891923,GKS Jastrzebie,Olimpia Elblag
@@ -299,6 +260,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 16:00:00,41905849,Turkgucu At. Munchen,Greuther Furth II
 2024-03-17 16:00:00,42073871,Etsv Hamburg,Niendorf
 2024-03-17 16:00:00,42184341,Eckernforde,Oldenburger SV
+2024-03-17 16:00:00,48546879,Bulawayo Chiefs FC,Highlanders FC
 2024-03-17 16:00:00,41905853,Nuremberg II,Aschaffenburg
 2024-03-17 16:00:00,42820799,Asd Pineto Calcio,Arezzo
 2024-03-17 16:00:00,42305117,St. Pauli II,Weiche
@@ -318,9 +280,11 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 16:00:00,48085235,Fasil Kenema,Sidama Bunna SC
 2024-03-17 16:00:00,42551035,Metalac,Sloboda
 2024-03-17 16:00:00,42551031,FK Radnicki Beograd,OFK Vrsac
-2024-03-17 16:00:00,42551021,FK Odzaci,Indjija
 2024-03-17 16:00:00,47815263,FA Siauliai,Kauno Zalgiris
 2024-03-17 16:00:00,47116071,FC Balti,Milsami
+2024-03-17 16:00:00,48402943,Tuna Luso,Sao Francisco
+2024-03-17 16:00:00,46657767,Penapolense SP U23,Vocem U23
+2024-03-17 16:00:00,46657769,XV de Novembro de Jau U23,America SP
 2024-03-17 16:00:00,42732385,OFK Belgrade,Kolubara
 2024-03-17 16:00:00,42551027,Novi Sad,Smederevo
 2024-03-17 16:00:00,42069527,Bvsc-Zuglo,Kazincbaricika
@@ -411,6 +375,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 17:00:00,41877571,Gornik Leczna,Znicz Pruszkow
 2024-03-17 17:00:00,42147433,Santa Clara,Nacional
 2024-03-17 17:00:00,41877575,GKS Katowice,TS Podbeskidzie
+2024-03-17 17:00:00,47441595,IC Escaldes,Atletic America
 2024-03-17 17:00:00,42003757,Capellen,Namur
 2024-03-17 17:00:00,41907107,FK Rudar,Jezero
 2024-03-17 17:00:00,41907105,FK Decic,Sutjeska
@@ -441,6 +406,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 18:00:00,42799737,Clube de Lisboa,V. Setubal
 2024-03-17 18:00:00,42799731,Sintrense,Moncarapachense
 2024-03-17 18:00:00,41888515,Leeds,Millwall
+2024-03-17 18:00:00,47869369,D. Concepcion,Cds Concon National
 2024-03-17 18:00:00,47099079,Tallinna Charma,Paide Linnameeskond
 2024-03-17 18:00:00,42431143,Atletico Madrid B,RM Castilla
 2024-03-17 18:00:00,42548701,Crvena Zvezda,Radnicki 1923
@@ -601,6 +567,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 20:30:00,42820009,Alessandria,Renate
 2024-03-17 20:30:00,41894151,OH Leuven,KV MECHELEN
 2024-03-17 21:00:00,42644283,Montaneses FC,Halcones De Zapopan FC
+2024-03-17 21:00:00,48523881,AL Arabi,Dubba Al-Husun
 2024-03-17 21:00:00,42146627,Casa Pia,BENFICA
 2024-03-17 21:00:00,48523911,AL Jazira AL Hamra,Masfoot Sports Club
 2024-03-17 21:00:00,48523897,AL Taawoun,City Football Club
@@ -619,10 +586,15 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 21:30:00,41861305,Maccabi Haifa,Hapoel Tel Aviv
 2024-03-17 21:30:00,47516163,Al Taraji,Al Jabalain
 2024-03-17 21:30:00,47516165,AL Adalh,Al-Arabi SC (SA)
+2024-03-17 21:30:00,46930965,CA Atlas,Central Ballester
 2024-03-17 21:30:00,41891915,Stal Stalowa Wola,KKS Kalisz
+2024-03-17 21:30:00,48515419,Ivinhema,Operario
 2024-03-17 21:30:00,46927089,Liniers,Midland
 2024-03-17 21:30:00,46927081,Flandria,Dep. Merlo
 2024-03-17 21:30:00,42337051,Rouen,Epinal
+2024-03-17 21:30:00,46056423,Maranguape,Guarani de Juazeiro
+2024-03-17 21:30:00,47859841,Porto Velho Ec/Ro,Genus
+2024-03-17 21:30:00,48611637,Olimpico EC SE,AD Carmopolis SE
 2024-03-17 21:30:00,46927085,Sportivo,Canuelas FC
 2024-03-17 22:00:00,41980569,PSV,TWENTE
 2024-03-17 22:00:00,48307869,Nova Iguacu,Vasco Gama
@@ -640,8 +612,13 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 22:00:00,42548699,Napredak,Radnicki Nis
 2024-03-17 22:00:00,46927663,Dep. Moron,Deportivo Madryn
 2024-03-17 22:00:00,47486219,Braga B,Felgueiras
+2024-03-17 22:00:00,48370449,Vitoria,Barcelona Ilheus BA
+2024-03-17 22:00:00,46056521,Pacatuba EC CE,Itapipoca
 2024-03-17 22:00:00,48537547,Juventude RS,Internacional
 2024-03-17 22:00:00,48304491,Retro FC PE,Nautico PE
+2024-03-17 22:00:00,48537773,Goiania GO,Atletico Goianiense
+2024-03-17 22:00:00,48611567,AD Atletico Gloriense SE,America
+2024-03-17 22:00:00,48286191,America,ABC
 2024-03-17 22:00:00,46927645,Guillermo Brown,San Miguel
 2024-03-17 22:30:00,48442763,Club Oriental,Albion FC
 2024-03-17 22:30:00,47516167,Jeddah Club,Al-Najma
@@ -651,13 +628,16 @@ start_time,parent_match_id,home_team,away_team
 2024-03-17 22:45:00,42821343,Monterosi,CROTONE
 2024-03-17 22:45:00,42820803,Vis Pesaro,Cesena
 2024-03-17 22:45:00,42821345,Foggia,Juve Stabia
+2024-03-17 22:45:00,46230391,Amazonas FC AM,Operario AM
 2024-03-17 22:45:00,42134679,Inter,NAPOLI
 2024-03-17 22:45:00,42004987,MONTPELLIER,PSG
 2024-03-17 23:00:00,46477833,Real Soacha Cundinamarca,Boca Jrs Cali
 2024-03-17 23:00:00,47770431,Los Angeles FC 2,Minnesota United FC 2
 2024-03-17 23:00:00,48369893,ASA AL,CS Esportiva AL
 2024-03-17 23:00:00,41893477,Atletico Madrid,BARCELONA
+2024-03-17 23:00:00,46056327,Icasa,Cariri CE
 2024-03-17 23:00:00,48370045,Fortaleza,Maracana
+2024-03-17 23:00:00,48402939,Paysandu,Bragantino Clube do Para PA
 2024-03-17 23:15:00,46927671,Santiago Estero,Colon Santa Fe
 2024-03-17 23:30:00,42146631,Sporting,BOAVISTA
 2024-03-17 23:30:00,47738901,CD Real Santander,Cucuta Deportivo FC Sa
@@ -673,6 +653,8 @@ start_time,parent_match_id,home_team,away_team
 2024-03-18 00:00:00,47738903,Millonarios FC,Csdc de Pereira
 2024-03-18 00:00:00,48546747,Monagas,Rayo Zuliano
 2024-03-18 00:00:00,47627983,Deportivo Achuapa,Imperial
+2024-03-18 00:00:00,48541473,Luverdense,Cuiaba
+2024-03-18 00:00:00,48432977,Marcilio Dias SC,Brusque
 2024-03-18 00:00:00,46908045,Tauro,Azuero FC
 2024-03-18 00:00:00,46927639,San Martin de T.,Estudiantes BA
 2024-03-18 00:00:00,47100747,Palestino,Union La Calera
@@ -692,6 +674,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-18 01:00:00,47770441,FC Cincinnati 2,Chicago Fire FC II
 2024-03-18 01:00:00,42644243,Coras Tepic,Real Apodaca FC
 2024-03-18 01:00:00,48358359,America MG,Atletico MG
+2024-03-18 01:30:00,48432979,Criciuma,Hercilio Luz
 2024-03-18 01:30:00,48540663,Maringa FC,Coritiba
 2024-03-18 01:30:00,48377355,Nacional,Progreso
 2024-03-18 02:00:00,47770447,Saint Louis City SC 2,Colorado Rapids 2
@@ -706,6 +689,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-18 03:00:00,46656629,Banfield,Talleres
 2024-03-18 03:00:00,46656617,Estudiantes LP,Boca Juniors
 2024-03-18 03:00:00,46188041,Guarani,Trinidense
+2024-03-18 03:00:00,47738907,Asociacion Deportivo Cali,Llaneros FC
 2024-03-18 04:00:00,48566961,Walter Ferreti,Indigenas de Matagalpa FC
 2024-03-18 04:00:00,46345537,San Luis,Pachuca
 2024-03-18 04:00:00,46345529,Toluca,Unam Pumas
