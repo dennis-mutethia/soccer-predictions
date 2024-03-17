@@ -65,7 +65,7 @@ class Autobet:
 
     def place_bet(self, best_slips, profile_id, token):
         balance = self.get_bal(token)
-        stakeable = balance/2
+        stakeable = balance * 0.75
         stake = stakeable/len(best_slips)
         for bet_slip in best_slips:
             body = '{'
