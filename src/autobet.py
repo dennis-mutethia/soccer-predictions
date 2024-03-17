@@ -99,7 +99,7 @@ class Autobet:
                         overs_market = bet_market
                         odds = overs_market.odds
                         for odd in odds:
-                            if float(odd.odd_value) < 1.8 and prediction in odd.display:
+                            if float(odd.odd_value) < 1.8 and prediction in odd.display and '3' not in odd.odd_key:
                                 best_slip = '{'
                                 best_slip = best_slip + f'''
                                     "sub_type_id": "{sub_type_id}",
@@ -136,12 +136,12 @@ class Autobet:
                     prediction = 'OVER' if 'OV' in row['prediction'] else 'UNDER' if 'UN' in row['prediction'] else row['prediction']
 
                     best_slip = self.get_best_slip(parent_match_id, prediction)
-                    if best_slip is not None and  '3' not in best_slip:
+                    if best_slip is not None:
                         count = count + 1
                         bs_str = bs_str + best_slip + ','
 
                         if count == 3:
-                            best_slips.append(bs_str)   
+                            best_slips.append(bs_str)
                             count = 0 
                             bs_str = ''
 
