@@ -136,7 +136,7 @@ class Autobet:
                     prediction = 'OVER' if 'OV' in row['prediction'] else 'UNDER' if 'UN' in row['prediction'] else row['prediction']
 
                     best_slip = self.get_best_slip(parent_match_id, prediction)
-                    if best_slip is not None:
+                    if best_slip is not None and  '3' not in best_slip:
                         count = count + 1
                         bs_str = bs_str + best_slip + ','
 
