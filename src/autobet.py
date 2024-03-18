@@ -140,12 +140,12 @@ class Autobet:
                         count = count + 1
                         bs_str = bs_str + best_slip + ','
 
-                        if count == 3:
+                        if count == 2:
                             best_slips.append(bs_str)
                             count = 0 
                             bs_str = ''
 
-            if count>0 and count < 3:
+            if count>0 and count < 2:
                 best_slips.append(bs_str)
 
         except FileNotFoundError:
