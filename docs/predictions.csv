@@ -143,5 +143,8 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-03-17 16:00:00,42073885,Rugenbergen,Buchholz,OV15,95,90,92,WON,
 2024-03-17 16:30:00,41980571,Heerenveen,Feyenoord,OV25,100,82,91,WON,1.54
 2024-03-17 21:30:00,42187805,Ingolstadt,Verl,OV25,80,83,82,LOST,1.64
-2024-03-19 22:30:00,48394767,Briton Ferry,Afan Lido,OV15,92,95,94,,
-2024-03-19 22:30:00,48562463,Caerau Ely,Pontardawe Town,OV15,97,89,93,,
+2024-03-19 22:30:00,48394767,Briton Ferry,Afan Lido,OV15,92,95,94,WON,
+2024-03-19 22:30:00,48562463,Caerau Ely,Pontardawe Town,OV15,97,89,93,--,
+2024-03-20 16:00:00,46167549,North Macedonia,Ukraine,OV15,86,86,86,,1.25
+2024-03-20 18:00:00,46167395,Kosovo,Austria,OV25,83,86,84,,1.77
+2024-03-20 21:00:00,46167405,Netherlands,Lithuania,OV25,100,100,100,,1.35
