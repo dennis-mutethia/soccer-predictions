@@ -1,5 +1,5 @@
-import csv
-from datetime import datetime, timedelta
+import csv, time, math, concurrent.futures
+from datetime import datetime
 from bet_market import BetMarket
 from helper import Helper 
 
@@ -14,7 +14,7 @@ class Autobet:
         try:            
             with open(self.csv_predictions, mode='r') as csv_file:
                 data = list(csv.DictReader(csv_file))
-
+            
             for row in data:
                 # Check if start_time is less than today and status is empty
                 if row['parent_match_id'] == parent_match_id:
@@ -66,7 +66,7 @@ class Autobet:
     def place_bet(self, best_slips, profile_id, token):
         balance = self.get_bal(token)
         stakeable = balance * 0.5
-        stake = stakeable/len(best_slips)
+        stake = math.ceil(stakeable/len(best_slips))
         for bet_slip in best_slips:
             body = '{'
             body = body + f'''
@@ -87,6 +87,7 @@ class Autobet:
 
             response = self.helper.post_data(url, body)
             print(response)
+            time.sleep(10)
 
     def get_best_slip(self, parent_match_id, prediction):
         best_slip = None
@@ -166,10 +167,11 @@ class Autobet:
             with open(self.csv_profiles, mode='r') as csv_file:
                 data = list(csv.DictReader(csv_file))
 
-            for row in data:
-                profile_id = row['profile_id']
-                token = row['token']
-                self.place_bet(best_slips, profile_id, token)
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                threads = [executor.submit(self.place_bet, best_slips, row['profile_id'], row['token']) for row in data]
+
+                # Wait for all threads to complete
+                concurrent.futures.wait(threads)
 
         except FileNotFoundError:
             print(f'File not found: {self.csv_predictions}')
