@@ -119,8 +119,8 @@ class Main:
                     except Exception as e:
                         match_time = datetime.strptime(row['start_time'], '%d/%m/%Y %H:%M')
 
-                    if match_time < datetime.now():
-                        match_day = match_time.date()
+                    match_day = match_time.date()
+                    if match_day < datetime.now().date():                        
                         home_team = row['home_team'].title()
                         away_team = row['away_team'].title()
                         prediction = row['prediction']

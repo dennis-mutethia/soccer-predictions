@@ -1,4 +1,4 @@
-import csv, time, math, concurrent.futures
+import csv, time, math, re, concurrent.futures
 from datetime import datetime
 from bet_market import BetMarket
 from helper import Helper 
@@ -100,7 +100,7 @@ class Autobet:
                         overs_market = bet_market
                         odds = overs_market.odds
                         for odd in odds:
-                            if float(odd.odd_value) < 1.8 and prediction in odd.display and '3' not in odd.odd_key:
+                            if float(odd.odd_value) > 1.1 and float(odd.odd_value) < 1.6 and prediction in odd.display and float(re.findall(r"[-+]?\d*\.\d+|\d+", odd.odd_key)[0])<3:
                                 best_slip = '{'
                                 best_slip = best_slip + f'''
                                     "sub_type_id": "{sub_type_id}",
@@ -141,12 +141,12 @@ class Autobet:
                         count = count + 1
                         bs_str = bs_str + best_slip + ','
 
-                        if count == 2:
+                        if count == 4:
                             best_slips.append(bs_str)
                             count = 0 
                             bs_str = ''
 
-            if count>0 and count < 2:
+            if count>0 and count < 4:
                 best_slips.append(bs_str)
 
         except FileNotFoundError:

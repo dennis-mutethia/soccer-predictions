@@ -1,61 +1,8 @@
 start_time,parent_match_id,home_team,away_team
-2024-03-26 11:45:00,42590885,Lebanon,Australia
-2024-03-26 12:00:00,48593329,AC Sparta Prague SRL,Hellas Verona SRL
-2024-03-26 12:00:00,48593333,Liverpool FC SRL,FK Crvena Zvezda Belgrade SRL
-2024-03-26 12:00:00,48593331,Maccabi Tel Aviv FC Srl,Spezia Calcio SRL
-2024-03-26 12:30:00,48654851,Bangladesh,Palestine
-2024-03-26 13:00:00,48593337,Southampton FC SRL,CSKA Sofia Ssrl
-2024-03-26 13:00:00,48593335,1. FC Cologne SRL,Legia Warszawa SRL
-2024-03-26 13:00:00,48593339,Club Brugge SRL,OGC Nice SRL
-2024-03-26 14:00:00,46167401,Austria,Spain U19
-2024-03-26 14:00:00,40344487,Armenia U21,Romania U21
-2024-03-26 14:00:00,48593345,Glasgow Rangers SRL,Crystal Palace SRL
-2024-03-26 14:00:00,48593341,NK Osijek Srl,Borussia Dortmund SRL
-2024-03-26 14:00:00,48593343,Athletic Bilbao SRL,Vitesse Arnhem SRL
-2024-03-26 14:00:00,46167403,Slovenia,Kosovo
-2024-03-26 14:00:00,48665803,SC Farense,Portimonense
-2024-03-26 14:00:00,42590823,Philippines,Iraq
-2024-03-26 15:00:00,44659266,China,Singapore
-2024-03-26 15:00:00,40344679,Azerbaijan U21,Ukraine U21
-2024-03-26 15:00:00,48593347,Sparta Rotterdam SRL,FC Barcelona SRL
-2024-03-26 15:00:00,48593349,Sevilla FC SRL,CD Santa Clara SRL
-2024-03-26 15:00:00,48593351,AS Monaco SRL,Sporting CP SRL
-2024-03-26 15:00:00,44659314,Vietnam,Indonesia
-2024-03-26 15:30:00,42590757,Thailand,Republic of Korea
-2024-03-26 16:00:00,46167557,LATVIA U19,North Macedonia
-2024-03-26 16:00:00,40322769,Gibraltar U21,Georgia U21
-2024-03-26 16:00:00,46167545,ROMANIA U19,CROATIA U19
-2024-03-26 16:00:00,40322773,North Macedonia U21,Sweden U21
-2024-03-26 16:00:00,46167543,Germany,Turkey
-2024-03-26 16:00:00,48933203,Portugal U20,Denmark U20
-2024-03-26 16:00:00,42794983,Barnsley,Watford
-2024-03-26 16:00:00,42794985,Fleetwood Town,Charlton Athletic
-2024-03-26 16:00:00,46167555,Ukraine,Switzerland
-2024-03-26 16:00:00,48187433,Swaziland,Somalia
-2024-03-26 16:30:00,44659114,India,Afghanistan
-2024-03-26 16:30:00,46167533,Italy U19,GEORGIA U19
-2024-03-26 16:30:00,46167531,Czech,Scotland
-2024-03-26 17:00:00,42590777,Malaysia,Oman
-2024-03-26 17:00:00,44659284,Kyrgyzstan,Taiwan
-2024-03-26 17:00:00,40322989,Kazakhstan U21,Hungary U21
-2024-03-26 17:00:00,40344493,Montenegro U21,Finland U21
-2024-03-26 17:00:00,48742977,Smederevo,Graficar Beograd
-2024-03-26 17:00:00,40344899,Greece U21,Andorra U21
-2024-03-26 17:00:00,40344335,Poland U21,Bulgaria U21
-2024-03-26 17:00:00,42794987,Coventry City Reserve,Bristol City
-2024-03-26 17:00:00,46167503,Israel,Norway U19
-2024-03-26 17:00:00,42794989,Peterborough United,Ipswich Town
-2024-03-26 17:00:00,48743031,Mitrovica,OFK Belgrade
-2024-03-26 17:00:00,48554017,Czech,England U20
-2024-03-26 17:30:00,44659298,Uzbekistan,Hong Kong
-2024-03-26 18:00:00,42590839,Tajikistan,Saudi Arabia
-2024-03-26 18:00:00,46167519,DENMARK U19,Portugal U19
-2024-03-26 18:00:00,46167521,Greece U19,Serbia
-2024-03-26 18:00:00,48187439,Mauritius,Chad
-2024-03-26 18:00:00,42590793,Turkmenistan,Iran
 2024-03-26 18:15:00,48613007,Triestina,Alessandria
 2024-03-26 18:30:00,48937399,AIK,Valerenga
 2024-03-26 19:00:00,40344489,Albania U21,Switzerland U21
+2024-03-26 19:00:00,40322865,Norway U21,San Marino U21
 2024-03-26 19:00:00,48537763,Romania U20 ,Poland U20
 2024-03-26 19:00:00,48187441,Liberia,Djibouti
 2024-03-26 19:30:00,40345099,Czech U21,Iceland U21
@@ -84,6 +31,7 @@ start_time,parent_match_id,home_team,away_team
 2024-03-26 21:00:00,47256057,Argentinos Juniors Reserves,Racing Club  Reserves
 2024-03-26 21:00:00,47256059,Instituto Cordoba Reserves,Velez Sarsfield Reserves
 2024-03-26 21:00:00,46167505,Montenegro,BOSNIA & HERZEGOVINA U19
+2024-03-26 21:00:00,42080053,B 1908,Horsholm
 2024-03-26 21:00:00,47974503,Avranches,Villefranche
 2024-03-26 21:00:00,47105495,Norway,Slovakia
 2024-03-26 21:00:00,47748529,Hungary,Kosovo
@@ -94,6 +42,8 @@ start_time,parent_match_id,home_team,away_team
 2024-03-26 22:00:00,44659432,Bahrain,Nepal
 2024-03-26 22:00:00,40344655,England U21,Luxemburg U21
 2024-03-26 22:00:00,42952187,Ucd Burlades,CD Huarte
+2024-03-26 22:00:00,42952199,CD Avance Ezcabarte,SD Lagunak
+2024-03-26 22:00:00,48586579,Guyana,Cambodia
 2024-03-26 22:00:00,47105503,Czech Rep.,Armenia
 2024-03-26 22:00:00,42794993,Hull City,Colchester
 2024-03-26 22:00:00,44659434,Yemen,UAE
@@ -109,7 +59,6 @@ start_time,parent_match_id,home_team,away_team
 2024-03-26 22:45:00,48878795,Ukraine,Iceland
 2024-03-26 22:45:00,47815975,Southport,Bishop's Stortford
 2024-03-26 22:45:00,47815983,Truro,Dartford
-2024-03-26 22:45:00,48189585,Tiverton,Winchester
 2024-03-26 22:45:00,48516133,Coalville,Mickleover Sports
 2024-03-26 22:45:00,46186339,Scotland,Northern Ireland
 2024-03-26 22:45:00,47731137,Austria,Turkey
@@ -126,7 +75,6 @@ start_time,parent_match_id,home_team,away_team
 2024-03-26 22:45:00,47660301,Lewes The,Horsham
 2024-03-26 22:45:00,48566673,Cheshunt,Margate
 2024-03-26 22:45:00,48205959,Potters,Dulwich
-2024-03-26 22:45:00,48391759,Whitehawk,Enfield
 2024-03-26 22:45:00,48164971,Gateshead,Hartlepool
 2024-03-26 22:45:00,47105499,Ireland,Switzerland
 2024-03-26 22:45:00,48810297,Solihull Moors,Southend
@@ -137,13 +85,13 @@ start_time,parent_match_id,home_team,away_team
 2024-03-26 22:45:00,47660299,Hornchurch,Concord Rangers
 2024-03-26 23:00:00,48934703,New Zealand,Tunisia
 2024-03-26 23:00:00,48934567,Egypt,Croatia
-2024-03-26 23:00:00,48806511,Nigeria,Mali
 2024-03-26 23:00:00,48744061,Dergview,Welders
 2024-03-26 23:00:00,48928541,Iraq U23,Jordan U23
 2024-03-26 23:00:00,47395897,France,Chile
 2024-03-26 23:00:00,48937431,Australia,Korea Republic U23
 2024-03-26 23:30:00,47105501,Spain,Brazil
 2024-03-26 23:30:00,46669881,Huila,Quindio
+2024-03-27 00:00:00,48806511,Nigeria,Mali
 2024-03-27 00:00:00,46669877,Cartagena,Barranquilla
 2024-03-27 00:00:00,47748531,Algeria,South Africa
 2024-03-27 01:00:00,48805989,Morocco,Mauritania
@@ -159,4 +107,6 @@ start_time,parent_match_id,home_team,away_team
 2024-03-27 03:00:00,48222599,San Antonio FC,Cuniburo FC
 2024-03-27 03:00:00,48625177,Gremio,Caxias
 2024-03-27 03:00:00,46428489,Santos,Guanacasteca
+2024-03-27 04:00:00,47663535,Nautico,Sao Raimundo
 2024-03-27 04:00:00,48666373,Nicaragua,Cuba
+2024-03-27 04:00:00,47648725,Honduras,El Salvador
