@@ -121,7 +121,7 @@ class Main:
 
                     match_day = match_time.date()
                     if match_day < datetime.now().date():  
-                        row['status'] = 'WON'                 
+                        status = 'LOST'                 
                         home_team = row['home_team'].title()
                         away_team = row['away_team'].title()
                         prediction = row['prediction']
@@ -129,25 +129,26 @@ class Main:
                     
                         if host_score is not None and guest_score is not None:
                             total_score = int(host_score) + int(guest_score)
+                            print(total_score)
 
-                            if '15' in prediction and total_score > 1:
-                                row['status'] = 'WON'
-                            elif '25' in prediction and total_score > 2:
-                                row['status'] = 'WON'
+                            if '15' in prediction and int(total_score) > 1:
+                                status = 'WON'
+                            elif '25' in prediction and int(total_score) > 2:
+                                status = 'WON'
                             elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
-                                row['status'] = 'WON'
+                                status = 'WON'
+                            elif 'NG' in prediction and int(host_score) == 0 or int(guest_score) == 0:
+                                status = 'WON'
                             else:
-                                row['status'] = 'LOST'
+                                status = 'LOST'
 
-                            if row['odd'] == '' and row['status'] == 'LOST':
-                                row['status'] = '--'
+                            if row['odd'] == '' and status == 'LOST':
+                                status = '--'
 
                         else:
-                            row['odd'] = '--'
-                            row['status'] = '--'
+                            status = '--'
 
-
-                        print(f'{match_day} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["status"]}')
+                        print(f'{match_day} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {status}')
 
                 # Update the CSV file with the modified data
                 with open(self.csv_predictions, mode='w', newline='') as csv_file:
@@ -173,7 +174,7 @@ class Main:
         for market in self.markets:
             self.load_date(start_date, end_date, market)
 
-        self.update_match_status()
+        #self.update_match_status()
 
         self.fetch_upcoming(self.sport_id)
 
