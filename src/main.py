@@ -126,19 +126,26 @@ class Main:
                         away_team = row['away_team'].title()
                         prediction = row['prediction']
                         host_score, guest_score = self.match_results(home_team, away_team, match_day)
+                    
+                        if host_score is not None and guest_score is not None:
+                            total_score = int(host_score) + int(guest_score)
 
-                        if row['odd'] != '':
-                            if host_score is not None and guest_score is not None:
-                                total_score = int(host_score) + int(guest_score)
+                            if '15' in prediction and total_score > 1:
+                                row['status'] = 'WON'
+                            elif '25' in prediction and total_score > 2:
+                                row['status'] = 'WON'
+                            elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
+                                row['status'] = 'WON'
+                            else:
+                                row['status'] = 'LOST'
 
-                                if '15' in prediction and total_score > 1:
-                                    row['status'] = 'WON'
-                                elif '25' in prediction and total_score > 2:
-                                    row['status'] = 'WON'
-                                elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
-                                    row['status'] = 'WON'
-                                else:
-                                    row['status'] = 'LOST'
+                            if row['odd'] == '' and row['status'] == 'LOST':
+                                row['status'] = '--'
+
+                        else:
+                            row['odd'] = '--'
+                            row['status'] = '--'
+
 
                         print(f'{match_day} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {row["status"]}')
 
