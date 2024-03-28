@@ -2,9 +2,9 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 26/02/2024 21:00,,Warta Poznan,Radomiak Radom,OV15,,,70,LOST,
 26/02/2024 22:45,,Fiorentina,Lazio,OV15,,,74,WON,
 26/02/2024 23:00,,West Ham,Brentford,OV15,,,80,WON,
-26/02/2024 23:00,,Bolivia,Peru,OV15,,,84,--,
-26/02/2024 23:00,,Bolivia,Peru,OV15,,,79,--,
-27/02/2024 16:00,,Fleetwood Town,Burnley,OV15,,,75,--,
+26/02/2024 23:00,,Bolivia,Peru,OV15,,,84,WON,
+26/02/2024 23:00,,Bolivia,Peru,OV15,,,79,WON,
+27/02/2024 16:00,,Fleetwood Town,Burnley,OV15,,,75,WON,
 27/02/2024 18:30,,Botev Plovdiv,Spartak Varna,OV15,,,75,WON,
 27/02/2024 22:30,,Sampdoria,Cremonese,OV15,,,78,WON,
 27/02/2024 22:30,,Caerau Ely,Taffs Well,OV15,,,88,LOST,
@@ -17,14 +17,14 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 28/02/2024 11:00,,Persik Kediri,Barito Putera,OV15,73,94,84,WON,
 28/02/2024 11:00,,Persik Kediri,Barito Putera,OV25,63,84,74,WON,
 28/02/2024 11:00,,Persik Kediri,Barito Putera,GG,59,87,73,WON,
-28/02/2024 13:00,,Samut Sakhon,Chiangmai United,OV15,81,101,91,--,
-28/02/2024 13:00,,Samut Sakhon,Chiangmai United,OV25,71,91,81,--,
+28/02/2024 13:00,,Samut Sakhon,Chiangmai United,OV15,81,101,91,WON,
+28/02/2024 13:00,,Samut Sakhon,Chiangmai United,OV25,71,91,81,WON,
 28/02/2024 19:30,,Jagiellonia,Korona Kielce,OV15,83,71,77,WON,
 28/02/2024 19:30,,Jagiellonia,Korona Kielce,GG,75,65,70,WON,
 28/02/2024 21:00,,Lokomotive Leipzig,Meuselwitz,OV15,80,77,78,WON,
 28/02/2024 22:30,,Wisla Krakow,Widzew Lodz,OV15,77,75,76,WON,
 28/02/2024 23:00,,Liverpool,Southampton,OV15,81,80,80,WON,
-29/02/2024 01:30,,Portuguesa,Palmeiras,OV15,83,70,76,--,
+29/02/2024 01:30,,Portuguesa,Palmeiras,OV15,83,70,76,WON,
 01/03/2024 03:30,,Colo Colo,Godoy Cruz,OV15,75,69,72,LOST,
 01/03/2024 12:00,,Para Hills Knights,Adelaide City,OV15,100,78,89,WON,
 01/03/2024 12:00,,Para Hills Knights,Adelaide City,OV25,90,68,79,WON,
@@ -33,12 +33,12 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 01/03/2024 20:00,,Stal Rzeszow,Miedz Legnica,OV15,80,70,75,WON,
 01/03/2024 20:30,,Schalke 04,St. Pauli,OV15,82,83,82,WON,
 01/03/2024 21:00,,Spartak Myjava,Petrzalka,OV15,83,83,83,WON,
-01/03/2024 22:30,,Briton Ferry,Afan Lido,OV15,92,95,94,--,
-01/03/2024 22:30,,Briton Ferry,Afan Lido,OV25,82,85,84,--,
-01/03/2024 22:30,,Briton Ferry,Afan Lido,OV25,76,71,74,--,
-01/03/2024 22:30,,Briton Ferry,Afan Lido,GG,76,71,74,--,
+01/03/2024 22:30,,Briton Ferry,Afan Lido,OV15,92,95,94,WON,
+01/03/2024 22:30,,Briton Ferry,Afan Lido,OV25,82,85,84,WON,
+01/03/2024 22:30,,Briton Ferry,Afan Lido,OV25,76,71,74,WON,
+01/03/2024 22:30,,Briton Ferry,Afan Lido,GG,76,71,74,WON,
 01/03/2024 22:45,,Finn Harps,Athlone Town,OV15,78,82,80,WON,
-01/03/2024 22:45,,Bray Wanderers,Longford Town,OV15,76,77,76,--,
+01/03/2024 22:45,,Bray Wanderers,Longford Town,OV15,76,77,76,WON,
 02/03/2024 02:30,,Cobreloa,Cobresal,OV15,63,77,70,WON,
 02/03/2024 14:35,,Chengdu Qianbao,Qingdao Jonoon,OV15,73,75,74,WON,
 02/03/2024 15:00,,Hansa Rostock,Kaiserslautern,OV15,72,79,76,WON,
@@ -61,11 +61,11 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 02/03/2024 17:00,,Reutlingen,Oberachern,OV15,95,95,95,LOST,
 02/03/2024 17:00,,Reutlingen,Oberachern,OV25,85,85,85,LOST,
 02/03/2024 17:00,,Carmarthen Town,Taffs Well,OV15,81,83,82,WON,
-02/03/2024 17:00,,Buckley Town,Llanidloes Town,OV15,95,93,94,--,
-02/03/2024 17:00,,Buckley Town,Llanidloes Town,OV25,85,83,84,--,
+02/03/2024 17:00,,Buckley Town,Llanidloes Town,OV15,95,93,94,WON,
+02/03/2024 17:00,,Buckley Town,Llanidloes Town,OV25,85,83,84,WON,
 02/03/2024 17:30,,Guilsfield,Llandudno,OV15,83,86,84,WON,
 02/03/2024 17:30,,Guilsfield,Llandudno,OV25,73,76,74,WON,
-02/03/2024 18:00,,Bradford City,Notts County,OV15,71,84,78,--,
+02/03/2024 18:00,,Bradford City,Notts County,OV15,71,84,78,WON,
 02/03/2024 18:00,,Billericay,Hashtag United,OV15,80,82,81,WON,
 02/03/2024 18:00,,Fulham,Brighton,OV15,76,77,76,WON,
 02/03/2024 18:00,,Brentford,Chelsea,OV15,81,71,76,WON,
@@ -91,22 +91,22 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 04/03/2024 20:00,,Juventus U19,Sassuolo U19,OV15,83,82,82,WON,
 04/03/2024 20:00,,Alanyaspor,Trabzonspor,OV15,82,76,79,WON,
 05/03/2024 14:30,,Fajr Sepasi,Mes Kerman,NG,75,79,77,LOST,
-05/03/2024 16:00,,Cardiff City,Ipswich Town,OV15,72,76,74,--,
-05/03/2024 21:00,,Colo Colo,Boca Juniors,OV15,75,59,67,--,
+05/03/2024 16:00,,Cardiff City,Ipswich Town,OV15,72,76,74,WON,
+05/03/2024 21:00,,Colo Colo,Boca Juniors,OV15,75,59,67,WON,
 05/03/2024 22:45,,Recanatese,Pescara,OV15,70,75,72,WON,
-05/03/2024 22:45,,Peterborough,Northampton,OV15,81,67,74,--,
+05/03/2024 22:45,,Peterborough,Northampton,OV15,81,67,74,WON,
 05/03/2024 22:45,,Altrincham,Dorking Wanderers,OV15,82,83,82,WON,
 05/03/2024 22:45,,Barnet,Rochdale,OV15,84,73,78,WON,
 05/03/2024 22:45,,Gateshead,Solihull Moors,OV15,86,80,83,WON,
 05/03/2024 22:45,,Gateshead,Solihull Moors,OV25,76,70,73,WON,
 06/03/2024 19:30,,Zemplin Michalovce,Spartak Trnava,OV15,74,75,74,WON,
-07/03/2024 01:15,,Santa Fe,Boca Juniors,OV15,91,59,75,--,
-07/03/2024 01:15,,Santa Fe,Boca Juniors,OV25,81,49,65,--,
-07/03/2024 01:15,,Santa Fe,Boca Juniors,OV25,82,38,60,--,
-07/03/2024 01:15,,Santa Fe,Boca Juniors,GG,82,38,60,--,
+07/03/2024 01:15,,Santa Fe,Boca Juniors,OV15,91,59,75,WON,
+07/03/2024 01:15,,Santa Fe,Boca Juniors,OV25,81,49,65,WON,
+07/03/2024 01:15,,Santa Fe,Boca Juniors,OV25,82,38,60,WON,
+07/03/2024 01:15,,Santa Fe,Boca Juniors,GG,82,38,60,WON,
 07/03/2024 12:00,,Adelaide Comets,Adelaide City,OV15,79,78,78,LOST,
 07/03/2024 23:00,,Maccabi Haifa,Fiorentina,OV15,82,76,79,WON,
-08/03/2024 03:30,7084666,Always Ready,Nacional,OV15,86,84,85,--,
+08/03/2024 03:30,7084666,Always Ready,Nacional,OV15,86,84,85,WON,
 2024-03-08 22:30:00,7119230,Caerau Ely,Briton Ferry,OV15,96,89,92,WON,
 2024-03-08 22:30:00,7119246,Taffs Well,Pontardawe Town,OV15,84,90,87,WON,
 2024-03-09 09:00:00,7110148,Cooks Hill United,Broadmeadow,OV15,84,90,87,WON,
@@ -126,7 +126,7 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-03-10 17:00:00,7115932,Dolny Kubin,Spartak Myjava,OV15,89,83,86,WON,
 2024-03-10 19:00:00,6740787,Austria Klagenfurt,Rapid Wien,OV15,83,81,82,WON,
 2024-03-11 22:00:00,41981645,De Graafschap,Jong Ajax,OV15,81,85,83,WON,
-2024-03-12 22:45:00,47259165,Concord Rangers,Enfield,OV15,100,100,100,--,
+2024-03-12 22:45:00,47259165,Concord Rangers,Enfield,OV15,100,100,100,WON,
 2024-03-15 03:30:00,48208687,Nacional,Always Ready,OV15,84,85,84,WON,
 2024-03-15 22:00:00,41981637,Groningen,De Graafschap,OV15,100,81,90,WON,
 2024-03-16 16:30:00,43653343,Cremonese U19,Como U19,OV15,81,89,85,WON,
@@ -154,66 +154,66 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-03-21 16:00:00,40322763,North Macedonia U21,Gibraltar U21,OV25,93,87,90,LOST,1.37
 2024-03-21 19:00:00,42590791,Iran,Turkmenistan,OV25,84,86,85,WON,1.27
 2024-03-21 19:30:00,40344329,Israel U21,Poland U21,OV25,100,100,100,WON,1.77
-2024-03-21 20:00:00,47446391,Russia,Serbia,OV15,92,100,96,--,1.36
+2024-03-21 20:00:00,47446391,Russia,Serbia,OV15,92,100,96,WON,1.36
 2024-03-21 20:00:00,45577134,Georgia,Luxembourg,NG,91,75,83,LOST,
-2024-03-21 20:00:00,48591757,Hungary U21,Moldova U21,NG,84,94,89,--,
+2024-03-21 20:00:00,48591757,Hungary U21,Moldova U21,NG,84,94,89,WON,
 2024-03-21 20:30:00,40344879,Portugal U21,Faroe Islands U21,OV25,88,80,84,WON,1.17
-2024-03-21 21:00:00,47395847,Malta,Slovenia,OV15,86,81,84,--,1.31
-2024-03-21 21:00:00,48404179,Spain U21,Slovakia U21,OV25,100,100,100,--,1.53
+2024-03-21 21:00:00,47395847,Malta,Slovenia,OV15,86,81,84,WON,1.31
+2024-03-21 21:00:00,48404179,Spain U21,Slovakia U21,OV25,100,100,100,WON,1.53
 2024-03-21 21:30:00,44659546,Palestine,Bangladesh,GG,92,90,91,LOST,
-2024-03-21 22:00:00,48585821,Cape Verde,Guyana,OV25,100,100,100,--,1.49
+2024-03-21 22:00:00,48585821,Cape Verde,Guyana,OV25,100,100,100,WON,1.49
 2024-03-21 22:00:00,40322977,Scotland U21,Kazakhstan U21,NG,85,92,88,LOST,
 2024-03-21 22:00:00,40322971,Belgium U21,Malta U21,NG,100,71,86,LOST,
 2024-03-21 22:00:00,44659112,Afghanistan,India,OV15,90,82,86,LOST,1.30
 2024-03-21 22:00:00,42590821,Iraq,Philippines,OV25,88,88,88,LOST,1.36
 2024-03-21 22:45:00,46851537,Gibraltar,Lithuania,OV15,100,100,100,LOST,
-2024-03-21 22:45:00,48566675,Concord Rangers,Enfield,OV25,100,100,100,--,1.61
+2024-03-21 22:45:00,48566675,Concord Rangers,Enfield,OV25,100,100,100,WON,1.61
 2024-03-21 22:45:00,45623318,Israel,Iceland,OV15,100,96,98,WON,1.35
 2024-03-21 22:45:00,45587158,Poland,Estonia,OV25,97,91,94,WON,1.67
-2024-03-22 00:00:00,47748371,South Africa,Andorra,NG,95,88,92,--,
-2024-03-22 01:00:00,47656969,Treze,Botafogo,OV25,100,100,100,--,
+2024-03-22 00:00:00,47748371,South Africa,Andorra,NG,95,88,92,WON,
+2024-03-22 01:00:00,47656969,Treze,Botafogo,OV25,100,100,100,WON,
 2024-03-22 14:30:00,40344897,Belarus U21,Greece U21,OV25,94,94,94,LOST,1.64
 2024-03-22 15:00:00,40344653,Azerbaijan U21,England U21,OV25,92,83,88,WON,1.27
 2024-03-22 17:00:00,40344479,Montenegro U21,Armenia U21,OV25,100,94,97,LOST,1.71
-2024-03-22 17:30:00,48223603,North Macedonia,Moldova,OV15,93,92,92,--,1.36
+2024-03-22 17:30:00,48223603,North Macedonia,Moldova,OV15,93,92,92,WON,1.36
 2024-03-22 19:00:00,40344483,Albania U21,Finland U21,OV25,100,100,100,LOST,1.66
-2024-03-22 19:00:00,47732425,Armenia,Kosovo,OV15,88,83,86,--,1.34
+2024-03-22 19:00:00,47732425,Armenia,Kosovo,OV15,88,83,86,WON,1.34
 2024-03-22 20:00:00,40344331,Germany U21,Kosovo U21,OV25,96,88,92,LOST,1.34
 2024-03-22 20:00:00,40322859,San Marino U21,Ireland U21,OV25,93,94,94,WON,1.16
 2024-03-22 20:15:00,47810807,Italy U21,Latvia U21,NG,73,87,80,LOST,
 2024-03-22 21:00:00,40345093,Wales U21,Lithuania U21,OV25,100,100,100,WON,1.60
-2024-03-22 22:00:00,48586305,Equatorial Guinea,Cambodia,NG,100,90,95,--,
+2024-03-22 22:00:00,48586305,Equatorial Guinea,Cambodia,NG,100,90,95,WON,
 2024-03-22 22:30:00,48060125,Taffs Well,Caerau Ely,OV15,100,100,100,WON,
-2024-03-22 22:45:00,46186281,Netherlands,Scotland,OV15,94,86,90,--,1.26
-2024-03-23 00:00:00,47748327,Algeria,Bolivia,OV25,100,100,100,--,1.74
-2024-03-23 15:00:00,46167411,Belgium,Lithuania,OV25,88,83,86,--,1.34
+2024-03-22 22:45:00,46186281,Netherlands,Scotland,OV15,94,86,90,WON,1.26
+2024-03-23 00:00:00,47748327,Algeria,Bolivia,OV25,100,100,100,WON,1.74
+2024-03-23 15:00:00,46167411,Belgium,Lithuania,OV25,88,83,86,WON,1.34
 2024-03-23 16:00:00,42189019,Denzlingen,Oberachern,OV15,96,95,96,WON,
 2024-03-23 16:00:00,41905865,Illertissen,Memmingen,OV15,83,81,82,WON,
-2024-03-23 16:00:00,46167551,Switzerland,North Macedonia,OV25,94,93,94,--,1.71
+2024-03-23 16:00:00,46167551,Switzerland,North Macedonia,OV25,94,93,94,WON,1.71
 2024-03-23 17:00:00,41946857,Waldgirmes,Eddersheim,OV15,86,81,84,WON,
 2024-03-23 18:00:00,42333763,Billericay,Wingate & Finchley,OV15,80,83,82,WON,
 2024-03-23 18:00:00,42136757,Altrincham,Gateshead,OV25,81,86,84,WON,1.56
 2024-03-23 18:00:00,42334795,Gainsborough,Workington,OV25,80,88,84,WON,1.66
-2024-03-23 18:00:00,46167399,Austria,Slovenia,OV25,83,81,82,--,1.79
+2024-03-23 18:00:00,46167399,Austria,Slovenia,OV25,83,81,82,WON,1.79
 2024-03-23 18:00:00,42138755,Slough Town,Eastbourne,OV25,84,83,84,LOST,1.59
 2024-03-23 18:00:00,42136761,Barnet,Dorking Wanderers,OV25,83,83,83,WON,1.48
-2024-03-23 19:00:00,48810783,Ivory Coast,Benin,UN25,76,83,80,--,
-2024-03-23 20:00:00,42279649,Uerdingen,Hilden,OV25,81,83,82,--,1.51
-2024-03-23 21:00:00,46167501,Israel,Montenegro,OV25,100,83,92,--,1.61
-2024-03-23 23:00:00,46032253,Canada,Trinidad & Tobago,OV25,95,95,95,--,1.44
-2024-03-23 23:00:00,46144927,France,Germany,OV25,100,100,100,--,1.69
+2024-03-23 19:00:00,48810783,Ivory Coast,Benin,UN25,76,83,80,WON,
+2024-03-23 20:00:00,42279649,Uerdingen,Hilden,OV25,81,83,82,WON,1.51
+2024-03-23 21:00:00,46167501,Israel,Montenegro,OV25,100,83,92,WON,1.61
+2024-03-23 23:00:00,46032253,Canada,Trinidad & Tobago,OV25,95,95,95,WON,1.44
+2024-03-23 23:00:00,46144927,France,Germany,OV25,100,100,100,WON,1.69
 2024-03-24 17:00:00,42279655,Schonnebeck,Meerbusch,OV15,92,92,92,WON,
-2024-03-25 13:00:00,48937385,Malaysia,India,NG,100,100,100,--,
-2024-03-25 16:00:00,48500893,Tanzania,Mongolia,UN55,88,75,82,--,1.05
-2024-03-25 18:15:00,48586401,Sri Lanka,Bhutan,NG,100,100,100,--,
-2024-03-25 20:00:00,47748443,Montenegro,North Macedonia,OV15,92,93,92,--,1.39
-2024-03-25 20:00:00,47105491,Cyprus,Serbia,OV25,88,100,94,--,1.65
-2024-03-25 21:00:00,48944911,Malta U21,Slovakia U21,OV25,100,100,100,--,1.58
-2024-03-25 22:00:00,48586493,Guinea,Bermuda,OV25,85,82,84,--,1.43
-2024-03-25 22:00:00,48586403,Cape Verde,Equatorial Guinea,UN55,81,78,80,--,1.01
-2024-03-26 00:00:00,47748363,Bolivia,Andorra,OV15,94,85,90,--,1.42
+2024-03-25 13:00:00,48937385,Malaysia,India,NG,100,100,100,WON,
+2024-03-25 16:00:00,48500893,Tanzania,Mongolia,UN55,88,75,82,WON,1.05
+2024-03-25 18:15:00,48586401,Sri Lanka,Bhutan,NG,100,100,100,WON,
+2024-03-25 20:00:00,47748443,Montenegro,North Macedonia,OV15,92,93,92,WON,1.39
+2024-03-25 20:00:00,47105491,Cyprus,Serbia,OV25,88,100,94,WON,1.65
+2024-03-25 21:00:00,48944911,Malta U21,Slovakia U21,OV25,100,100,100,WON,1.58
+2024-03-25 22:00:00,48586493,Guinea,Bermuda,OV25,85,82,84,WON,1.43
+2024-03-25 22:00:00,48586403,Cape Verde,Equatorial Guinea,UN55,81,78,80,WON,1.01
+2024-03-26 00:00:00,47748363,Bolivia,Andorra,OV15,94,85,90,WON,1.42
 2024-03-26 12:30:00,48654851,Bangladesh,Palestine,NG,100,100,100,LOST,
-2024-03-26 14:00:00,46167403,Slovenia,Kosovo,OV15,92,83,88,--,1.23
+2024-03-26 14:00:00,46167403,Slovenia,Kosovo,OV15,92,83,88,WON,1.23
 2024-03-26 15:00:00,44659266,China,Singapore,OV25,80,82,81,WON,1.45
 2024-03-26 15:00:00,44659314,Vietnam,Indonesia,NG,100,100,100,LOST,
 2024-03-26 16:00:00,40322769,Gibraltar U21,Georgia U21,UN55,62,100,81,LOST,1.10
@@ -226,30 +226,30 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-03-26 18:00:00,42590839,Tajikistan,Saudi Arabia,NG,86,93,90,LOST,
 2024-03-26 18:00:00,48187439,Mauritius,Chad,NG,100,100,100,LOST,
 2024-03-26 19:00:00,48187441,Liberia,Djibouti,OV15,100,100,100,LOST,1.25
-2024-03-26 20:00:00,48898097,Finland,Estonia,OV15,100,91,96,--,1.38
+2024-03-26 20:00:00,48898097,Finland,Estonia,OV15,100,91,96,WON,1.38
 2024-03-26 20:00:00,46851539,Lithuania,Gibraltar,OV15,100,100,100,LOST,
 2024-03-26 20:00:00,40344961,Austria U21,Cyprus U21,OV25,93,80,86,WON,1.46
 2024-03-26 20:00:00,40345095,Denmark U21,Lithuania U21,OV25,100,100,100,WON,1.45
 2024-03-26 20:00:00,48878775,Georgia,Greece,NG,83,91,87,LOST,
-2024-03-26 20:00:00,47732151,Latvia,Liechtenstein,OV15,92,100,96,--,1.22
-2024-03-26 21:00:00,46167413,Belgium,Netherlands,OV15,97,100,98,--,1.18
-2024-03-26 21:00:00,47748529,Hungary,Kosovo,OV15,89,83,86,--,1.34
+2024-03-26 20:00:00,47732151,Latvia,Liechtenstein,OV15,92,100,96,WON,1.22
+2024-03-26 21:00:00,46167413,Belgium,Netherlands,OV15,97,100,98,WON,1.18
+2024-03-26 21:00:00,47748529,Hungary,Kosovo,OV15,89,83,86,WON,1.34
 2024-03-26 22:00:00,44659140,Syria,Myanmar,OV25,100,100,100,WON,1.41
 2024-03-26 22:00:00,44659326,Jordan,Pakistan,NG,100,80,90,LOST,
 2024-03-26 22:00:00,44659432,Bahrain,Nepal,OV25,100,100,100,WON,1.19
-2024-03-26 22:30:00,48845117,Senegal,Benin,UN55,78,83,80,--,1.04
-2024-03-26 22:30:00,48526733,Uruguay,Ivory Coast,NG,85,79,82,--,
+2024-03-26 22:30:00,48845117,Senegal,Benin,UN55,78,83,80,WON,1.04
+2024-03-26 22:30:00,48526733,Uruguay,Ivory Coast,NG,85,79,82,WON,
 2024-03-26 22:45:00,48878795,Ukraine,Iceland,OV15,93,96,94,WON,1.32
 2024-03-26 22:45:00,48878803,Wales,Poland,OV15,91,88,90,LOST,1.51
-2024-03-26 22:45:00,46144951,Germany,Netherlands,OV25,100,100,100,--,1.57
-2024-03-26 22:45:00,47395895,Slovenia,Portugal,NG,96,86,91,--,
-2024-03-26 23:00:00,48934703,New Zealand,Tunisia,NG,67,97,82,--,
-2024-03-26 23:00:00,48806511,Nigeria,Mali,UN25,81,78,80,--,1.51
-2024-03-26 23:30:00,47105501,Spain,Brazil,NG,81,81,81,--,
-2024-03-27 01:00:00,48805989,Morocco,Mauritania,NG,79,89,84,--,
-2024-03-26 18:00:00,48971359,Zimbabwe,Kenya,OV15,86,90,88,--,1.43
+2024-03-26 22:45:00,46144951,Germany,Netherlands,OV25,100,100,100,WON,1.57
+2024-03-26 22:45:00,47395895,Slovenia,Portugal,NG,96,86,91,WON,
+2024-03-26 23:00:00,48934703,New Zealand,Tunisia,NG,67,97,82,WON,
+2024-03-26 23:00:00,48806511,Nigeria,Mali,UN25,81,78,80,WON,1.51
+2024-03-26 23:30:00,47105501,Spain,Brazil,NG,81,81,81,WON,
+2024-03-27 01:00:00,48805989,Morocco,Mauritania,NG,79,89,84,WON,
+2024-03-26 18:00:00,48971359,Zimbabwe,Kenya,OV15,86,90,88,WON,1.43
 2024-03-26 19:00:00,40322865,Norway U21,San Marino U21,OV25,100,100,100,WON,1.03
-2024-03-26 22:00:00,48586579,Guyana,Cambodia,NG,100,90,95,--,
+2024-03-26 22:00:00,48586579,Guyana,Cambodia,NG,100,90,95,WON,
 2024-03-27 18:45:00,47794805,Mes Kerman,Ario Eslamshahr,NG,83,81,82,LOST,
 2024-03-27 22:30:00,41966083,Briton Ferry,Taffs Well,OV15,89,84,86,LOST,
 2024-03-28 16:00:00,48183317,Mekelakeya,Welayta Dicha,UN25,100,69,84,,1.37
