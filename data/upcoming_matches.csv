@@ -1,37 +1,401 @@
 start_time,parent_match_id,home_team,away_team
-2024-03-28 22:30:00,42820885,Carrarese,Perugia
-2024-03-28 22:30:00,48419519,Moghayer AL Sarhan,Al Aqaba
-2024-03-28 22:30:00,42944871,Reus FC Reddis,L'Hospitalet
-2024-03-28 22:45:00,42820119,Padova,Pergolettese
-2024-03-28 22:45:00,42820881,Vis Pesaro,Lucchese
-2024-03-28 22:45:00,42820933,US Fermana,Rimini
-2024-03-28 22:45:00,42820945,Gubbio,Sef Torres
-2024-03-28 22:45:00,42821383,Catania,Giugliano
-2024-03-28 22:45:00,48522965,Manaus,Operario AM
-2024-03-28 23:00:00,48635251,Deportivo Garcilaso,Comerciantes U.
-2024-03-28 23:00:00,42373169,Walton & Hersham,Harrow
-2024-03-28 23:00:00,47256053,Independiente Rivadavia de Mendoza Reserve,River Plate Reserve
-2024-03-28 23:00:00,42950017,Marino,CA Victoria
-2024-03-29 00:00:00,48810681,Audax,Coquimbo Unido
-2024-03-29 00:00:00,47676097,CD Inca,CD Racing Junior de Armenia
-2024-03-29 00:30:00,48222593,Chacaritas FC,Manta
-2024-03-29 00:45:00,47628007,Dep. Guastatoya,Coatepeque
-2024-03-29 01:00:00,48803535,Marrakesh,Husa Hassania
-2024-03-29 01:00:00,48803533,Mas Maghrib,Ittihad Tanger
-2024-03-29 01:00:00,47869395,Arturo Fernandez Vial,CD Trasandino de Los Andes
-2024-03-29 01:00:00,47770561,FC Cincinnati 2,New York R B II
-2024-03-29 02:00:00,46656683,Rosario Central,Barracas
-2024-03-29 02:00:00,48695405,Tachira,Metropolitanos FC
-2024-03-29 02:00:00,47770563,Chicago Fire FC II,Bethlehem Steel
-2024-03-29 02:00:00,48769657,Tuna Luso,Remo
-2024-03-29 02:00:00,48865197,Sao Paulo FC AP,Trem
-2024-03-29 02:30:00,48810685,O Higgins,Deportes Iquique
-2024-03-29 02:30:00,46326789,Charlotte Ind.,Spokane Velocity FC
-2024-03-29 02:30:00,48809765,Athletic Club Sjdr MG,Pouso Alegre MG
-2024-03-29 02:30:00,47770569,Crown Legacy FC,Atlanta United 2
-2024-03-29 03:00:00,46656681,Instituto Atletico,Argentinos Jrs
-2024-03-29 03:00:00,47343635,LDU Quito,Imbabura
-2024-03-29 03:00:00,48724615,Blooming,CD Aurora
-2024-03-29 03:00:00,47770571,Houston Dynamo 2,Austin FC II
-2024-03-29 03:35:00,48713281,Palmeiras,Novorizontino
-2024-03-29 04:00:00,48635255,Alianza Lima,Cultural Santa Rosa
+2024-03-29 08:00:00,48805069,Shenzhen Peng City Srl,Cangzhou Mighty Lions Srl
+2024-03-29 09:00:00,48386187,North Wellington AFC,Waterside Karori
+2024-03-29 11:00:00,47553295,Ural Ekaterinburg Youth,CSKA Moscow Youth
+2024-03-29 11:45:00,43255359,Adelaide,Western United
+2024-03-29 12:00:00,46459777,Brezova,Hrebec
+2024-03-29 12:00:00,48804781,Cadiz CF SRL,Granada CF SRL
+2024-03-29 12:00:00,46672221,Slovan Liberec,FASTAV ZLIN U19
+2024-03-29 12:15:00,48740563,Mohammedan Dhaka,Fortis FC
+2024-03-29 12:15:00,48740469,Abahani Chittagong,Bangladesh Police
+2024-03-29 12:15:00,48740571,Sheikh Jamal,Sheikh Russel KC
+2024-03-29 12:15:00,46459779,Byskovice,Chomutov
+2024-03-29 12:15:00,46678337,Ad. Praha,L. Vltavin
+2024-03-29 12:15:00,46459769,SK Ujezd Praha 4,Steti
+2024-03-29 12:15:00,46477243,FC Vratimov,Havirov
+2024-03-29 12:15:00,46459775,Meteor,SK Slany
+2024-03-29 12:30:00,46461833,Tj Spoje Praha,TJ Velke Hamry
+2024-03-29 12:30:00,42161933,S. Bratislava B,Presov
+2024-03-29 12:30:00,46678585,Kolin,FK Jablonec B
+2024-03-29 12:30:00,46476261,Slavicin,SK Batov 1930
+2024-03-29 12:30:00,46678335,SK Dynamo Ceske Budejovice B,Kraluv Dvur
+2024-03-29 12:30:00,46461843,Dobrovice,Zenit Caslav
+2024-03-29 13:00:00,46527689,FSK Mariupol,Prykarpattya
+2024-03-29 13:00:00,46475785,Zdirec,FC PBS Velka Bites
+2024-03-29 13:00:00,47273055,Tokyo Verdy,Kyoto Sanga
+2024-03-29 13:00:00,47576551,Dinamo Moscow Youth,FC Fakel Voronezh Youth
+2024-03-29 13:00:00,47553227,FK Nizhny Novgorod,Rostov Youth
+2024-03-29 13:30:00,48062367,Leixoes SC,Academico Viseu U23
+2024-03-29 13:30:00,47413091,SC Bengaluru,Prayag Utd
+2024-03-29 13:30:00,46527743,Khmelnytsky,Kremin
+2024-03-29 13:30:00,47413089,Kenkre FC,FC Bengaluru United
+2024-03-29 13:30:00,42945485,UD Castellonense,CD Castellon B
+2024-03-29 13:45:00,42944869,UE Tona,UE Castelldefels
+2024-03-29 14:00:00,43021199,Ironi Modiin,AS Nordia Jerusalem
+2024-03-29 14:00:00,48804331,Lille OSC SRL,RC Lens Srl
+2024-03-29 14:00:00,42946357,CDF Tres Cantos,Parla
+2024-03-29 14:00:00,47542739,SC Farense,Guimaraes U19
+2024-03-29 14:00:00,47093417,Cracovia,Arka
+2024-03-29 14:00:00,42161925,Slavoj Trebisov,Petrzalka
+2024-03-29 14:00:00,42170591,Jagiellonia II Bialystok,Unia Skierniewice
+2024-03-29 14:00:00,42171923,Pogon Szczecin II,Blekitni S.
+2024-03-29 14:00:00,42420565,Raca,FK Podkonice
+2024-03-29 14:00:00,42953857,Casalarreina CF,Alfaro
+2024-03-29 14:00:00,47934433,Zaqatala,Moik Baku
+2024-03-29 14:00:00,42147439,CF Os Belenenses,FEIRENSE
+2024-03-29 14:00:00,42950941,D. Minera,Ucam Murcia II
+2024-03-29 14:00:00,42951347,Fuente de Cantos,CD Azuaga
+2024-03-29 14:00:00,42944857,AE Prat,Olot
+2024-03-29 14:00:00,42944863,Vilafranca,FE Grama
+2024-03-29 14:30:00,43021181,Maccabi Ironi,H. Marmorek
+2024-03-29 14:30:00,42951335,Olivenza FC,CF Jaraiz
+2024-03-29 14:35:00,43021209,Ironi Nesher,H. Raanana
+2024-03-29 14:35:00,47659955,Shenzhen Peng City,Shijiazhuang
+2024-03-29 14:45:00,43021195,Maccabi Ironi,Yavne
+2024-03-29 15:00:00,47226011,Viggbyholms IK FF,IFK Osteraakers
+2024-03-29 15:00:00,47226273,IFK Karlshamn,Hassleholm
+2024-03-29 15:00:00,47553381,Kryliya Sovetov Youth,FC Master Saturn
+2024-03-29 15:00:00,47553225,Chertanovo Moscow,Orenburg Youth
+2024-03-29 15:00:00,48735261,Neustadt,Geestemunde
+2024-03-29 15:00:00,47226277,Osterlen,Nosaby
+2024-03-29 15:00:00,42568233,Pirin,Etar 1924
+2024-03-29 15:00:00,42171965,Gornik Zabrze II,Kluczbork
+2024-03-29 15:00:00,47838009,Crystal Palace,TOTTENHAM RESERVE
+2024-03-29 15:00:00,47934441,Imisli FK,Keshla
+2024-03-29 15:00:00,43021213,M Achi Nazareth,M Kiryat Ata
+2024-03-29 15:00:00,47118199,Lunds,Rosengaard
+2024-03-29 15:00:00,42166311,Berlin II,Lokomotive Leipzig
+2024-03-29 15:15:00,43021197,Maccabi Nujeidat Ahmad,MS Tira
+2024-03-29 15:15:00,48590925,AL Tadamon,Tripoli
+2024-03-29 15:30:00,47120055,Colwyn Bay,Aberystwyth
+2024-03-29 15:30:00,47120053,Barry,Penybont
+2024-03-29 15:30:00,47119989,Connahs Quay,Newtown
+2024-03-29 15:30:00,47120057,Pontypridd Town,Haverfordwest
+2024-03-29 15:30:00,42709189,Gabala,Neftchi Baku
+2024-03-29 15:30:00,41888525,Bristol City,Leicester
+2024-03-29 15:30:00,47099901,Kuressaare,Kalev
+2024-03-29 15:30:00,43021203,SC Hapoel Lod,H. Herzelia
+2024-03-29 15:45:00,48698855,Cibalia,Zrinski Jurjevac
+2024-03-29 16:00:00,41979329,H Nazrat Elit,Bnei Yehuda
+2024-03-29 16:00:00,48945311,Popesti Leordeni,CS Blejoi
+2024-03-29 16:00:00,41979323,H. Kfar Saba,Sectzya Nes Ziona
+2024-03-29 16:00:00,48946869,Unirea Bascov,ACS Oltul Curtisoara
+2024-03-29 16:00:00,48946989,CSM Avantul Periam,Lunca Teuz Cermei
+2024-03-29 16:00:00,48945515,CSC Ghiroda SI Giarmata Vii,Cetate Deva
+2024-03-29 16:00:00,47117457,Vasalunds,Karlbergs
+2024-03-29 16:00:00,48946809,ACS Sepsi Osk Sfantu Gheorghe 2,AFCS Viitorul Curita
+2024-03-29 16:00:00,48946929,CS Gilortul Targu Carbunesti,U Craiova 1948 Sa 2
+2024-03-29 16:00:00,48183413,Adama City,Saint George
+2024-03-29 16:00:00,47226001,Enkoping,Gute
+2024-03-29 16:00:00,46757849,Burnley,Crewe Alexandra
+2024-03-29 16:00:00,47226315,Astrio,Tord
+2024-03-29 16:00:00,41888533,Millwall,WEST BROM
+2024-03-29 16:00:00,42138117,Gloucester,Brackley
+2024-03-29 16:00:00,42548721,Cukaricki,Novi Pazar
+2024-03-29 16:00:00,46168553,Charlton Athletic,Bournemouth
+2024-03-29 16:00:00,48546353,Igman,Sloga
+2024-03-29 16:00:00,48947051,ACS Mse Targu Mures,Industria Galda
+2024-03-29 16:00:00,48945641,Scm Zalau,Csm Sighetu Marmatiei
+2024-03-29 16:00:00,42171949,KS Unia Solec Kujawski,OKS Swit Skolwin Szczecin
+2024-03-29 16:00:00,41979319,Hapoel Kiryat Shmona,El Fahem
+2024-03-29 16:00:00,48945479,Scm Ramnicu Valcea,CS Vedita Colonesti MS
+2024-03-29 16:00:00,46458833,Marianske Lazne,Cesky Krumlov
+2024-03-29 16:00:00,47226243,Forward,Grebbestads
+2024-03-29 16:00:00,47226239,Herrestads,IFK Kumla
+2024-03-29 16:00:00,47226263,Saffle SK,Stenungsunds IF
+2024-03-29 16:00:00,43099099,Kitara FC,Bul FC
+2024-03-29 16:00:00,46459781,Cesky,Ostrov
+2024-03-29 16:00:00,48897893,Highlanders FC,Simba Bhora FC
+2024-03-29 16:00:00,47118201,Torns,Torslanda
+2024-03-29 16:00:00,47226235,Ahlafors,Lidkopings
+2024-03-29 16:00:00,48945309,CS Dinamo Bucuresti,Scm Dunarea Giurgiu
+2024-03-29 16:00:00,41979317,H. Ramat Gan,I. Tiberias
+2024-03-29 16:00:00,41979331,H. Afula,Ironi Rishon
+2024-03-29 16:30:00,43653371,Spal U19,Vicenza U19
+2024-03-29 16:30:00,41960961,Makassar,Pusamania
+2024-03-29 16:30:00,42583103,Madura United,PSS Sleman
+2024-03-29 16:30:00,43653911,Salernitana U19,SS Monopoli
+2024-03-29 16:30:00,42583105,Barito Putera,PSIS Semarang
+2024-03-29 17:00:00,42147445,PACOS FERREIRA,Oliveirense
+2024-03-29 17:00:00,46475777,Tj Sokol Lanzhot,Z. N. Sazavou
+2024-03-29 17:00:00,46475779,SK Lisen B,Velke Mezirici
+2024-03-29 17:00:00,41908319,Ilirija,Triglav
+2024-03-29 17:00:00,47226269,Kristianstad FC,IFK Simrishamn
+2024-03-29 17:00:00,41966085,Baglan Dragons,Llantwit Major
+2024-03-29 17:00:00,41966087,Carmarthen Town,Cwmbran Celtic
+2024-03-29 17:00:00,47553297,Zenit Youth,Akhmat Grozny Youth
+2024-03-29 17:00:00,47553383,PFK Sochi,RUBIN KAZAN YOUTH
+2024-03-29 17:00:00,47553379,FK Spartak Moscow Reserves,Lokomotiv Moscow Youth
+2024-03-29 17:00:00,47553375,Academy Of Konoplev,Strogino Moscow
+2024-03-29 17:00:00,42420553,Malacky,Sered
+2024-03-29 17:00:00,42161923,Puchov,Dolny Kubin
+2024-03-29 17:00:00,42420557,Lok. Zvolen,Nove Mesto
+2024-03-29 17:00:00,42551063,FK Jedinstvo UB,Metalac
+2024-03-29 17:00:00,46476271,Elko Holesov,FC Vsetin
+2024-03-29 17:00:00,46476265,Prerov,Novy Jicin
+2024-03-29 17:00:00,46678587,Banik,FK Mlada Boleslav B
+2024-03-29 17:00:00,42551061,FK Radnicki Beograd,Sloboda
+2024-03-29 17:00:00,48171667,Dnepr Mogilev,FK Arsenal Dzerzhinsk
+2024-03-29 17:00:00,48698957,KF Dinamo Ferizaj,FC Suhareka
+2024-03-29 17:00:00,42721213,Egnatia Rrogozhine,Kukesi
+2024-03-29 17:00:00,47928609,Jelgava,Metta
+2024-03-29 17:00:00,46475791,Polna,Pelhimov
+2024-03-29 17:00:00,43653359,Brescia U19,US Albinoleffe
+2024-03-29 17:00:00,45182698,Apos Blansko,TJ Start Brno
+2024-03-29 17:00:00,46678339,Hostoun,Stechovice
+2024-03-29 17:00:00,48812701,Masitaoka FC,Orapa United
+2024-03-29 17:00:00,45182694,Brod,Fastav Zlin B
+2024-03-29 17:00:00,47225963,Team TG FF,Luleaa
+2024-03-29 17:00:00,47118203,Falkenberg,Trollhattans
+2024-03-29 17:00:00,41907861,Rogaska,Bravo Ljubljana
+2024-03-29 17:30:00,41908327,Jadran Dekani,Tabor Sezana
+2024-03-29 17:30:00,48698949,Solin,NK Jarun Zagreb
+2024-03-29 17:30:00,42568229,Arda Kurdzhali,FC Krumovgrad
+2024-03-29 17:30:00,41966089,Ammanford,Caerau Ely
+2024-03-29 17:30:00,41966093,Trefelin,Goytre Utd
+2024-03-29 17:30:00,41966595,Llandudno,Holywell
+2024-03-29 17:30:00,41966091,Llanelli,Pontardawe Town
+2024-03-29 17:30:00,41966095,Afan Lido,Abergavenny
+2024-03-29 17:30:00,41966607,Porthmadog,Airbus UK
+2024-03-29 17:30:00,42171961,KTS-K Luzino,MKS Notec Czarnkow
+2024-03-29 17:30:00,43653361,Cittadella U19,UDINESE CALCIO U19
+2024-03-29 17:30:00,42419611,Bjelovar,Grobnican
+2024-03-29 17:30:00,42172119,KSZO Ostrowice,Sokol Sieniawa
+2024-03-29 17:30:00,45182686,Frydek Mistek,MFk Karvina B
+2024-03-29 17:50:00,41736957,Istra 1961,Lok Zagreb
+2024-03-29 18:00:00,42334815,Ashton,Whitby
+2024-03-29 18:00:00,42136813,Kidderminster,Altrincham
+2024-03-29 18:00:00,41890963,Forest Green,Stockport
+2024-03-29 18:00:00,48448503,CDC Montalegre,Limianos
+2024-03-29 18:00:00,42138773,Farnborough,Chippenham
+2024-03-29 18:00:00,42138775,Hampton & R,Tonbridge
+2024-03-29 18:00:00,42138777,Havant & W,Worthing
+2024-03-29 18:00:00,42138779,Hemel Hempstead,Aveley
+2024-03-29 18:00:00,42138781,St Albans,Braintree
+2024-03-29 18:00:00,42138787,Welling,Dover
+2024-03-29 18:00:00,42138789,Weston Super Mare,Taunton
+2024-03-29 18:00:00,42138147,Scunthorpe,Kings Lynn
+2024-03-29 18:00:00,41890959,Colchester,Newport
+2024-03-29 18:00:00,41890965,Gillingham,Crewe
+2024-03-29 18:00:00,41890969,Salford,Sutton
+2024-03-29 18:00:00,41890967,MK Dons,Walsall
+2024-03-29 18:00:00,41890973,Wrexham,Mansfield
+2024-03-29 18:00:00,42138105,Buxton,Chester
+2024-03-29 18:00:00,41889767,Port Vale,Bristol Rovers
+2024-03-29 18:00:00,42333795,Folkestone,Lewes The
+2024-03-29 18:00:00,42138097,Blyth,Curzon
+2024-03-29 18:00:00,42138113,Farsley Celtic,Southport
+2024-03-29 18:00:00,41890957,Bradford City,Tranmere
+2024-03-29 18:00:00,42138151,South Shields,Spennymoor
+2024-03-29 18:00:00,41890951,Wimbledon,Harrogate
+2024-03-29 18:00:00,42138093,Banbury,Hereford
+2024-03-29 18:00:00,41890961,Crawley,Doncaster
+2024-03-29 18:00:00,42138143,Scarborough,Warrington
+2024-03-29 18:00:00,41890955,Barrow AFC,Grimsby Town
+2024-03-29 18:00:00,42138109,Darlington,Chorley
+2024-03-29 18:00:00,41890953,Accrington,Morecambe
+2024-03-29 18:00:00,42138089,Alfreton,Rushall
+2024-03-29 18:00:00,42373149,Hungerford,Bracknell
+2024-03-29 18:00:00,42548707,Radnik,Vojvodina
+2024-03-29 18:00:00,42373137,Chesham,Hayes & Y
+2024-03-29 18:00:00,42138101,Boston,Peterborough Sports
+2024-03-29 18:00:00,48546357,Tuzla City,Sarajevo
+2024-03-29 18:00:00,42138769,Chelmsford,Dartford
+2024-03-29 18:00:00,42138791,Yeovil,Torquay
+2024-03-29 18:00:00,42709195,Kapaz,Qarabag
+2024-03-29 18:00:00,42138767,Bath,Weymouth
+2024-03-29 18:00:00,42373139,Telford,Redditch
+2024-03-29 18:00:00,42138155,Tamworth,Bishop's Stortford
+2024-03-29 18:00:00,42138771,Eastbourne,Maidstone
+2024-03-29 18:00:00,42373133,Basingstoke,Gosport
+2024-03-29 18:00:00,41890971,Swindon Town,Notts County
+2024-03-29 18:00:00,46530287,Club America U23,Atletico San Luis U23
+2024-03-29 18:00:00,47199837,Lok Tbilisi,SFC Shturmi Sartichala
+2024-03-29 18:00:00,41888531,Hull,Stoke
+2024-03-29 18:00:00,41888541,Sheffield Wednesday,SWANSEA
+2024-03-29 18:00:00,41888535,Norwich,Plymouth
+2024-03-29 18:00:00,41888543,SOUTHAMPTON,Middlesbrough
+2024-03-29 18:00:00,41888537,Preston,Rotherham
+2024-03-29 18:00:00,41888539,Queens Park Rangers,Birmingham
+2024-03-29 18:00:00,41888527,Cardiff,Sunderland
+2024-03-29 18:00:00,46678599,Slovan Velvary,FK Teplice B
+2024-03-29 18:00:00,42373151,Hitchin,Needham
+2024-03-29 18:00:00,41888529,HUDDERSFIELD,Coventry
+2024-03-29 18:00:00,41889761,Fleetwood,Cheltenham
+2024-03-29 18:00:00,41889771,Shrewsbury,Oxford Utd
+2024-03-29 18:00:00,41889759,Exeter,Charlton
+2024-03-29 18:00:00,41889773,Stevenage,Bolton
+2024-03-29 18:00:00,42373153,Poole Town,Totton
+2024-03-29 18:00:00,41889763,Lincoln City,Leyton Orient London
+2024-03-29 18:00:00,41889777,Wycombe,Portsmouth
+2024-03-29 18:00:00,41889769,Reading,Northampton
+2024-03-29 18:00:00,41889755,Derby,Blackpool
+2024-03-29 18:00:00,41889753,Barnsley,Cambridge
+2024-03-29 18:00:00,41889765,Peterborough,Carlisle
+2024-03-29 18:00:00,41889775,Wigan,Burton
+2024-03-29 18:00:00,42171969,Warta Gorzow Wielkopolski,Gwarek Tarnowskie
+2024-03-29 18:00:00,42137051,Solihull Moors,Barnet
+2024-03-29 18:00:00,42136801,Ebbsfleet,Southend
+2024-03-29 18:00:00,42333791,Cray,Chatham
+2024-03-29 18:00:00,42136805,Gateshead,Rochdale
+2024-03-29 18:00:00,42333797,Haringey,Hastings Utd
+2024-03-29 18:00:00,42137059,York,Chesterfield
+2024-03-29 18:00:00,42137063,Boreham,Dag & Red
+2024-03-29 18:00:00,42136797,Dorking Wanderers,Bromley
+2024-03-29 18:00:00,42137055,Woking,Eastleigh
+2024-03-29 18:00:00,47226233,Kongahalla,Motala
+2024-03-29 18:00:00,42136817,Maidenhead,Aldershot
+2024-03-29 18:00:00,42136825,Oxford,Wealdstone
+2024-03-29 18:00:00,47117459,FBK Karlstad,Taby FK
+2024-03-29 18:00:00,42136821,Oldham,Fylde
+2024-03-29 18:00:00,42136809,Hartlepool,Halifax
+2024-03-29 18:00:00,42944873,UE Rapitenca,Cfj Mollerussa
+2024-03-29 18:30:00,42147451,TONDELA,Vilaverdense
+2024-03-29 18:30:00,46083957,NORDSJAELLAND,AARHUS
+2024-03-29 18:30:00,42146647,Gil Vicente,Famalicao
+2024-03-29 18:30:00,48537401,VOLUNTARI,AFC Hermannstadt
+2024-03-29 18:30:00,48874949,Cerro Largo,Racing Club Mdeo.
+2024-03-29 18:30:00,46678343,Domazlice,FC Viktoria Plzen B
+2024-03-29 18:30:00,46678589,Zivanice,FC Hradec Kralove B
+2024-03-29 19:00:00,42945475,CD Utiel,Ontinyent
+2024-03-29 19:00:00,42161927,Pohronie,Komarno
+2024-03-29 19:00:00,42644285,CF Correcaminos Uat II,Saltillo FC
+2024-03-29 19:00:00,46530285,Mazatlan FC U23,Club Tijuana de Caliente U23
+2024-03-29 19:00:00,48171657,Brest,Smorgon
+2024-03-29 19:00:00,48155315,FK Panevezys B,Be1 Nfa
+2024-03-29 19:00:00,42949181,Felanitx,CD Santanyi
+2024-03-29 19:00:00,45182700,SK Hranice,Brno Bohunice
+2024-03-29 19:00:00,48155313,FK Kauno Zalgiris B,Nevezis
+2024-03-29 19:00:00,48183415,Hadiya Hossana FC,Hambericho Durame
+2024-03-29 19:00:00,42943915,SD Torina,Escobedo
+2024-03-29 19:00:00,48155311,FA Siauliai B,FC Neptunas Klaipeda
+2024-03-29 19:30:00,41907855,Maribor,Radomlje
+2024-03-29 19:30:00,41928325,DINAMO MOSCOW,ROSTOV
+2024-03-29 19:30:00,48281613,Ruzomberok,Dunajska Streda
+2024-03-29 19:30:00,42943911,Laredo,CF Vimenor
+2024-03-29 20:00:00,41736963,Slaven,Osijek
+2024-03-29 20:00:00,46678593,Usti n. L.,FK Chlumec Nad Cidlinou
+2024-03-29 20:00:00,42138785,Truro,Slough Town
+2024-03-29 20:00:00,42568235,Levski Sofia,Slavia Sofia
+2024-03-29 20:00:00,42548709,FK IMT Novi Beograd,FK Zeleznicar Pancevo
+2024-03-29 20:00:00,42548719,FK TSC Backa Topola,Vozdovac
+2024-03-29 20:00:00,47815267,FK Banga,Dziugas
+2024-03-29 20:00:00,42419613,NK Karlovac 1919,Hrvace
+2024-03-29 20:00:00,46678347,Pisek,Dukla Prague B
+2024-03-29 20:00:00,48623371,Doxa,Othellos
+2024-03-29 20:00:00,48623373,Apollon Lim.,Zakakiou
+2024-03-29 20:00:00,41878085,Pribram,Vlasim
+2024-03-29 20:00:00,41878079,Opava,Kromeriz
+2024-03-29 20:00:00,41878089,BRNO,Sparta Prague B
+2024-03-29 20:00:00,41878083,JIHLAVA,Dukla
+2024-03-29 20:10:00,41968233,St Polten,Amstetten
+2024-03-29 20:10:00,41968231,Leoben,Kapfenberger
+2024-03-29 20:30:00,41908323,Krka,Fuzinar Ravne
+2024-03-29 20:30:00,41908331,Rudar,Tolmin
+2024-03-29 20:30:00,41888523,Blackburn,Ipswich
+2024-03-29 21:00:00,42022595,SPG Hogo Wels,Deutschlandsb. SC
+2024-03-29 21:00:00,42146651,BENFICA,CHAVES
+2024-03-29 21:00:00,46083949,SILKEBORG,Fredericia
+2024-03-29 21:00:00,42022589,Gleisdorf,Wac (A)
+2024-03-29 21:00:00,42022069,FC Marchfeld Donauauen,Wiener Linien
+2024-03-29 21:00:00,42022067,Drassburg,Neusiedl
+2024-03-29 21:00:00,42022597,Bad Gleichenberg,Voitsberg
+2024-03-29 21:00:00,42721217,Tirana,Teuta Durres
+2024-03-29 21:00:00,48546711,Simba,Al Ahly
+2024-03-29 21:00:00,47923507,Deportivo Dongu FC,Caja Oblatos Cfd
+2024-03-29 21:00:00,47226307,Varbergs GIF FK,Savedalen
+2024-03-29 21:00:00,41966961,Al Wahda,Shabab AlAhli
+2024-03-29 21:00:00,41966965,Kalba,Ajman
+2024-03-29 21:00:00,42721215,Vllaznia,Erzeni
+2024-03-29 21:00:00,42551059,Gfk Dubocica,Macva
+2024-03-29 21:00:00,46927719,Guillermo Brown,Remedios de Escalada
+2024-03-29 21:26:00,42170579,Bron Radom,Lechia Tomaszow
+2024-03-29 21:30:00,48516873,Al Fehaheel,Qadsia SC
+2024-03-29 21:30:00,46377435,Neuchatel Xamax,Schaffhausen
+2024-03-29 21:30:00,46377433,Stade Nyonnais,SION
+2024-03-29 21:30:00,42337083,Le Mans,Epinal
+2024-03-29 21:30:00,42337079,DIJON,Nimes
+2024-03-29 21:30:00,42337075,Marignane,Versailles
+2024-03-29 21:30:00,48514617,Austria Wien,BW Linz
+2024-03-29 21:30:00,42022077,Traiskirchen,Rapid  Wien II
+2024-03-29 21:30:00,48536797,SEPSI,CFR Cluj
+2024-03-29 21:30:00,42337081,Cholet,Red Star
+2024-03-29 21:30:00,42676031,Al-Shamal,Al Ahli Doha
+2024-03-29 21:30:00,42676033,Umm-Salal,Al-Mu Aidar
+2024-03-29 21:30:00,42022071,Krems,Oberwart
+2024-03-29 21:30:00,42337071,Chateauroux,Martigues
+2024-03-29 21:30:00,47516181,AL Adalh,Al Taraji
+2024-03-29 21:45:00,47516173,AL Qaisoma,Al Safa (Ksa)
+2024-03-29 21:45:00,47516171,AL Faisaly (Ksa),AL Khlood
+2024-03-29 22:00:00,41894605,Beerschot Wilrijk,Jong KRC Genk
+2024-03-29 22:00:00,41894601,CLUB BRUGGE YOUTH,Dender
+2024-03-29 22:00:00,41981673,Emmen,Jong Ajax
+2024-03-29 22:00:00,41981665,ADO Den Haag,GRONINGEN
+2024-03-29 22:00:00,42417113,Al-Akhdoud Club,Al Raed
+2024-03-29 22:00:00,42417109,Al Taawon,Al Hazm
+2024-03-29 22:00:00,41981667,Den Bosch,Dordrecht
+2024-03-29 22:00:00,41981679,Eindhoven,Cambuur
+2024-03-29 22:00:00,41981675,De Graafschap,JONG AZ ALKMAAR
+2024-03-29 22:00:00,41981669,Helmond,Willem II
+2024-03-29 22:00:00,41981671,Telstar,JONG FC UTRECHT
+2024-03-29 22:00:00,41981677,Breda,Maastricht
+2024-03-29 22:00:00,41981681,VENLO,Oss
+2024-03-29 22:00:00,42417107,Al-Ittihad Jeddah,Al Faiha
+2024-03-29 22:00:00,47516183,Al Jabalain,Ohud Medina
+2024-03-29 22:00:00,47516185,Al-Arabi SC (SA),Al Qadisiyah
+2024-03-29 22:00:00,48874889,Penarol,Nacional
+2024-03-29 22:00:00,48546349,Zeljeznicar,FK Velez Mostar
+2024-03-29 22:00:00,42417115,Al Ittifaq,Al Ahli KSA
+2024-03-29 22:00:00,42417117,Dhamk,Al Khaleej
+2024-03-29 22:00:00,41986959,Grevenmacher,Yellow Boys
+2024-03-29 22:00:00,41986961,Jeunesse Canach,Mamer 32
+2024-03-29 22:00:00,48521863,ST. Truidense Youth,RFC Liege
+2024-03-29 22:00:00,41906729,Puskas,Videoton
+2024-03-29 22:15:00,41907859,Domzale,Mura
+2024-03-29 22:15:00,46377437,Bellinzona,AARAU
+2024-03-29 22:30:00,41984539,Burgos,ESPANYOL
+2024-03-29 22:30:00,41968229,SV Ried,Grazer AK
+2024-03-29 22:30:00,41966097,Cambrian & Clydach Vale,Bluebirds
+2024-03-29 22:30:00,48419521,AL Salt,Sahab SC
+2024-03-29 22:45:00,46421631,Longford Town,UC Dublin
+2024-03-29 22:45:00,46547807,Derry City,Galway Utd
+2024-03-29 22:45:00,46547813,Waterford Utd,Sligo Rovers
+2024-03-29 22:45:00,42025099,Ayr,Airdrieonians
+2024-03-29 22:45:00,46421625,Bray Wanderers,Cobh Ramblers
+2024-03-29 22:45:00,46421627,Cork City,Athlone Town
+2024-03-29 22:45:00,48347539,Glentoran,Linfield
+2024-03-29 22:45:00,48719389,GENT,Standard Liege
+2024-03-29 22:45:00,46547811,Shelbourne D.,Dundalk
+2024-03-29 22:45:00,46421629,Kerry FC,Wexford
+2024-03-29 22:45:00,46421633,Treaty United,Finn Harps
+2024-03-29 22:45:00,46547815,Shamrock Rovers,Bohemians D.
+2024-03-29 22:45:00,46547809,Drogheda United,Saint Patrick´s Athletic
+2024-03-29 22:45:00,42333789,Concord Rangers,Carshalton
+2024-03-29 23:00:00,48695413,Zamora,Angostura FC
+2024-03-29 23:00:00,41888545,WATFORD,Leeds
+2024-03-29 23:00:00,41893491,Cadiz,Granada
+2024-03-29 23:00:00,42004997,LILLE,Lens
+2024-03-29 23:30:00,42146661,Estrela Amadora,Sporting
+2024-03-30 00:00:00,48760465,Mostaganem,Hussein Dey
+2024-03-30 00:00:00,47491777,San Felipe,Deportes Limache
+2024-03-30 00:00:00,48761225,Annaba,Constantine
+2024-03-30 00:00:00,48761107,Belouizdad,Olympique Akbou
+2024-03-30 00:00:00,46656669,Defensa Jus.,Estudiantes LP
+2024-03-30 00:00:00,48410773,Estudiantes San Luis,CSB Atenas
+2024-03-30 00:00:00,46656701,Tigre,Belgrano
+2024-03-30 01:00:00,47193653,Alianza FC Valledupar,Tolima
+2024-03-30 01:00:00,48897263,SCC Mohammedia,Youssoufia
+2024-03-30 01:00:00,48897267,Ol. de Khouribga,Difaa Hassani
+2024-03-30 01:05:00,46927721,Agropecuario,Quilmes
+2024-03-30 02:00:00,46326787,Lexington SC,Greenville Triumph SC
+2024-03-30 02:00:00,46327229,Carolina,Hartford Athletic
+2024-03-30 02:00:00,47923511,CF Petroleros De Poza Rica,CD Ayense AC
+2024-03-30 02:30:00,48810689,Cobresal,Palestino
+2024-03-30 02:30:00,46656687,Huracan,CA River Plate
+2024-03-30 03:00:00,47343621,Macara,Barcelona (ECU)
+2024-03-30 03:00:00,42644289,Tecos,Cimarrones Sonora II
+2024-03-30 03:00:00,46511943,C. Celaya,Tlaxcala FC
+2024-03-30 03:00:00,48635261,Cusco FC,Union Comercio
+2024-03-30 03:30:00,46669743,CA Junior,La Equidad
+2024-03-30 04:00:00,46428525,Zeledon,Santos
+2024-03-30 04:00:00,46345539,Puebla,Tigres
