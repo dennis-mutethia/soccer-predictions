@@ -1,180 +1,95 @@
 start_time,parent_match_id,home_team,away_team
-2024-04-10 08:00:00,47219563,Suwon Bluewings,Jeonnam
-2024-04-10 08:00:00,47219569,FC Anyang,Bucheon
-2024-04-10 08:00:00,47219565,Chungbuk Cheongju FC,Gimpo
-2024-04-10 08:00:00,47219567,Seongnam,Seoul E-Land
-2024-04-10 08:00:00,49307345,Cangzhou Mighty Lions Srl,Changchun Yatai Srl
-2024-04-10 08:00:00,49308055,Meizhou Hakka FC Srl,Qingdao Hainiu FC Srl
-2024-04-10 08:00:00,49307259,Qingdao West Coast FC Srl,Tianjin Jinmen Tiger SRL
-2024-04-10 08:00:00,49307883,Chengdu Rongcheng FC Srl,Zhejiang Professional Srl
-2024-04-10 10:00:00,48860627,Beijing Ligong,Dalian Kun City
-2024-04-10 10:30:00,47219573,Cheonan City,Busan
-2024-04-10 10:30:00,47219571,Ansan Greeners,Chungnam Asan FC
-2024-04-10 10:30:00,48860579,Quanzhou Yaxin,Jiangxi Dark Horse Junior
-2024-04-10 10:30:00,48860575,Ganzhou Ruishi FC,Haikou Mingcheng
-2024-04-10 11:00:00,48860583,Guandong GZ-Power FC,Shenzhen Juniors FC
-2024-04-10 11:30:00,48462063,Udon United,Chonburi
-2024-04-10 12:00:00,47297723,Grulla M,Nara
-2024-04-10 12:30:00,48860587,Hunan Xiangtao,Guangxi Hengchen FC
-2024-04-10 13:00:00,47297739,Tegevajaro Miyazaki,Imabari
-2024-04-10 13:00:00,47297737,Giravanz K,Ryukyu
-2024-04-10 13:00:00,47297727,YSCC Yokohama,Omiya A
-2024-04-10 13:00:00,48620339,Lech II Poznan,GKS Jastrzebie
-2024-04-10 13:00:00,47297733,Gifu,Kataller T
-2024-04-10 13:00:00,48462061,Samut Sakhon,Bangkok FC
-2024-04-10 13:00:00,47994075,Yokohama F Marinos,Gamba Osaka
-2024-04-10 13:00:00,47297729,Nagano Parceiro,Gainare T
-2024-04-10 13:00:00,47297731,Azul Claro Numazu,Sagamihara
-2024-04-10 13:00:00,47297735,Osaka,Hachnohe
-2024-04-10 13:00:00,47297725,Fukushima U,Zweigen Kanazawa
-2024-04-10 13:30:00,48453157,Western United FC Youth,Eastern Lions SC
-2024-04-10 14:00:00,47934457,Araz Saatli,Difai Agsu
-2024-04-10 14:00:00,48462055,DP Kanchanaburi FC,Sukhothai
-2024-04-10 14:00:00,47659995,Qingdao West Coast FC,Tianjin Teda
-2024-04-10 14:30:00,48860631,Rizhao Yuqi,Taian Tiankuang
-2024-04-10 14:30:00,47934459,Imisli FK,Irevan
-2024-04-10 14:35:00,47659997,Shijiazhuang,Changchun Yatai
-2024-04-10 14:35:00,47659999,Chengdu Qianbao,Hangzhou Greentown
-2024-04-10 15:00:00,48462057,Bangkok Utd,Lamphun Warrior
-2024-04-10 15:00:00,47660001,Meizhou,Qingdao Jonoon
-2024-04-10 15:45:00,41907879,Celje,Bravo Ljubljana
-2024-04-10 16:00:00,49214625,Paris Saint-Germain SRL,FC Barcelona SRL
-2024-04-10 16:00:00,49214621,Atletico Madrid SRL,Borussia Dortmund SRL
-2024-04-10 16:00:00,42795001,Charlton Athletic,Barnsley
-2024-04-10 16:00:00,46477187,Partizan,Vozdovac
-2024-04-10 16:00:00,42483927,Zanaco,Green Buffaloes
-2024-04-10 16:00:00,49260533,Kampaniakos,PAOK Thessaloniki B
-2024-04-10 17:00:00,49214041,Sao Paulo FC SP SRL,Cobresal Srl
-2024-04-10 17:00:00,49213973,CSD Independiente del Valle SRL,CA San Lorenzo Almagro Srl
-2024-04-10 17:00:00,49213525,Atletico Mineiro MG Srl,CA Rosario Central Srl
-2024-04-10 17:00:00,49213979,CR Flamengo RJ SRL,CD Palestino Srl
-2024-04-10 17:00:00,49213975,Penarol Montevideo SRL,Caracas FC SRL
-2024-04-10 17:00:00,49213885,Cerro Porteno Srl,Alianza Lima SRL
-2024-04-10 17:00:00,47294275,Punjab FC,East Bengal
-2024-04-10 17:00:00,48750251,AFK Csikszereda Miercurea Ciuc,Mioveni
-2024-04-10 17:45:00,41907881,Domzale,Rogaska
-2024-04-10 18:00:00,42722863,Great Olympics,Bechem
-2024-04-10 18:00:00,46477181,Cukaricki,Vojvodina
-2024-04-10 18:00:00,49167701,Kirkenes,Alta
-2024-04-10 18:00:00,42722851,Bibiani Gold Stars FC,Karela United FC
-2024-04-10 18:00:00,47815289,FK Banga,FK Suduva
-2024-04-10 18:00:00,47815291,FA Siauliai,Panevezys
-2024-04-10 18:00:00,48562997,Pafos,Apollon Lim.
-2024-04-10 18:00:00,42722859,Medeama,Hearts of Oak
-2024-04-10 18:45:00,48090009,SV Grimma,Halle
-2024-04-10 19:00:00,49167745,Bjorkelangen,Lillestrom
-2024-04-10 19:00:00,49334473,UE Tona,Pobla de Mafumet
-2024-04-10 19:00:00,49167719,Gjelleraasen,Strommen
-2024-04-10 19:00:00,49167787,Brodd,Sandnes
-2024-04-10 19:00:00,49167775,Trygg/Lade,Stjordals/Blink
-2024-04-10 19:00:00,49167703,Flekkeroy,Sandefjord
-2024-04-10 19:00:00,49167773,Tiller,Ranheim
-2024-04-10 19:00:00,49167799,Sandviken,Bjarg
-2024-04-10 19:00:00,49167771,Nardo,Strindheim
-2024-04-10 19:00:00,49167729,Heming,Lyn
-2024-04-10 19:00:00,49167723,Lorenskog,Ullensaker/Kisa
-2024-04-10 19:00:00,49167759,Senja,Tromsdalen
-2024-04-10 19:00:00,49343613,Spjelkavik,Aalesund
-2024-04-10 19:00:00,49167803,Forde,Sogndal
-2024-04-10 19:00:00,49167779,Traeff,Surnadal
-2024-04-10 19:00:00,49167739,Gamle Oslo FK,Skeid
-2024-04-10 19:00:00,49167791,Madla,Vard Haugesund
-2024-04-10 19:00:00,49167733,Nordstrand,Kjelsaas
-2024-04-10 19:00:00,49167783,Mandalskameratene,Start
-2024-04-10 19:00:00,49167785,Vidar,Egersund
-2024-04-10 19:00:00,49167717,Honefoss,Gjovik-Lyn
-2024-04-10 19:00:00,48181609,Hamburg II,FC Teutonia Ottensen 1905
-2024-04-10 19:00:00,49167735,Oppsal,Follo
-2024-04-10 19:00:00,49167711,Orn-Horten,Mjondalen
-2024-04-10 19:00:00,49167781,Brattvag,Kristiansund BK
-2024-04-10 19:00:00,48457227,Ferencvaros,Diosgyori
-2024-04-10 19:00:00,49167765,Rana FK,Junkeren
-2024-04-10 19:00:00,48394817,Kalju,Kalev
-2024-04-10 19:00:00,48394823,Haapsalu,Viimsi
-2024-04-10 19:00:00,48394825,Paide,Kuressaare
-2024-04-10 19:00:00,47815293,Kauno Zalgiris,Dziugas
-2024-04-10 19:00:00,48750249,Corvinul,Unirea Slobozia
-2024-04-10 19:00:00,49167751,Fjora,Aasane
-2024-04-10 19:00:00,49167705,Fram Larvik,Notodden
-2024-04-10 19:00:00,49167731,Frigg,Grorud
-2024-04-10 19:00:00,49167749,Aaskollen,Odd
-2024-04-10 19:30:00,49167737,Asker,Stabaek
-2024-04-10 19:30:00,49162719,Pontardawe Town,Cambrian & Clydach Vale
-2024-04-10 19:45:00,41907873,Olimp. Ljubljana,Radomlje
-2024-04-10 20:00:00,46477185,Crvena Zvezda,OFK Vrsac
-2024-04-10 20:00:00,49167811,Raade,Kvik-Halden
-2024-04-10 20:00:00,49167809,Skreia,Raufoss
-2024-04-10 20:00:00,48516801,Saarbrucken,Unterhaching
-2024-04-10 20:00:00,49020131,Jeddeloh,Havelse
-2024-04-10 20:00:00,47815295,Vilnius FK Zalgiris,FK Transinvest
-2024-04-10 20:00:00,49241239,El Ejido 2012,Malaga B
-2024-04-10 20:00:00,48619523,SC Verl,BAYER 04 LEVERKUSEN U19
-2024-04-10 20:00:00,48562993,Aris Limassol,Omonia
-2024-04-10 20:30:00,49020135,Norderstedt,Bremer SV
-2024-04-10 21:00:00,49240859,Heesling,Rotenburger SV
-2024-04-10 21:00:00,47256269,Lanus Reserves,Estudiantes de la Plata Reserves
-2024-04-10 21:00:00,47256283, Union Santa Fe Reserve,Sarmiento Junin Reserve
-2024-04-10 21:00:00,47256075,Barracas Central Reserves,Independiente Rivadavia de Mendoza Reserve
-2024-04-10 21:00:00,47256069,Velez Sarsfield Reserves,Deportivo Riestra
-2024-04-10 21:00:00,47256285,Platense Reserves,Huracan Reserves
-2024-04-10 21:00:00,49008881,America FC MG U20,RB Bragantino SP U20
-2024-04-10 21:00:00,49189701,CD Huarte,Pamplona
-2024-04-10 21:00:00,49008871,Santos FC SP U20,Ceara U20
-2024-04-10 21:30:00,46931045,Porvenir,Club Mercedes
-2024-04-10 21:30:00,46931065,CA Atlas,Dep. Espanol
-2024-04-10 21:30:00,46931055,Justo Jose de Urq.,Claypole
-2024-04-10 21:30:00,46931057,D. Paraguayo,Central Ballester
-2024-04-10 21:30:00,46931053,Yupanqui,Juv. Unida S. Miguel
-2024-04-10 21:30:00,46931049,Barracas Bolivar,Puerto Nuevo
-2024-04-10 21:30:00,46931063,Def. de Cambaceres,Centro Espanol
-2024-04-10 21:30:00,46931047,Lujan,Central Cordoba
-2024-04-10 21:30:00,46931051,Berazategui,CA Lugano
-2024-04-10 21:45:00,49051551,Truro,Eastbourne
-2024-04-10 21:45:00,47935027,Havant & W,Welling
-2024-04-10 21:45:00,41888615,Bristol City,Blackburn
-2024-04-10 21:45:00,41888619,Hull,Middlesbrough
-2024-04-10 21:45:00,41888623,Ipswich,WATFORD
-2024-04-10 21:45:00,41888613,Birmingham,Cardiff
-2024-04-10 21:45:00,48395245,Wycombe,Derby
-2024-04-10 21:45:00,48198571,Peterborough,Port Vale
-2024-04-10 21:45:00,48937251,Totton,Bracknell
-2024-04-10 22:00:00,48818847,Dundee FC,GLASGOW RANGERS
-2024-04-10 22:00:00,41888627,SWANSEA,Stoke
-2024-04-10 22:00:00,41888629,WEST BROM,Rotherham
-2024-04-10 22:00:00,48613075,PSG,BARCELONA
-2024-04-10 22:00:00,48613059,Atletico Madrid,DORTMUND
-2024-04-10 23:00:00,49176825,Barracas,San Miguel
-2024-04-10 23:00:00,48222621,CSD Vargas Torres,Gualaceo
-2024-04-11 00:00:00,48966449,Huila,Cartagena
-2024-04-11 00:00:00,48966451,Envigado,Quindio
-2024-04-11 00:00:00,48966455,Llaneros,Jaguares
-2024-04-11 00:00:00,46849283,Santa Tecla,CD Fuerte San Francisco Morazan
-2024-04-11 00:00:00,46849285,CD Platense Municipal Zacatecoluca,FAS
-2024-04-11 00:15:00,46849275,Jocoro FC,Alianza
-2024-04-11 00:30:00,49292565,Noroeste,Velo Clube
-2024-04-11 00:30:00,46849287,Dragon,Municipal Lim
-2024-04-11 00:30:00,46849273,Firpo,Once Municipal
-2024-04-11 01:00:00,48722729,Cerro Porteno,Alianza Lima
-2024-04-11 01:00:00,47256073,River Plate Reserve,Atletico Tucuman Reserves
-2024-04-11 01:00:00,48722573,Ind. Del Valle,San Lorenzo
-2024-04-11 01:00:00,48722471,Fortaleza,Nacional Potosi
-2024-04-11 01:00:00,48722539,Atletico MG,Rosario Central
-2024-04-11 01:00:00,48721819,Defensa Jus.,Always Ready
-2024-04-11 01:00:00,49007879,River Plate,Defensor Sp.
-2024-04-11 01:15:00,49176883,Colon Santa Fe,Atletico Los Andes
-2024-04-11 02:00:00,49314661,Santa Cruz,America
-2024-04-11 02:00:00,49129675,Itapipoca,Tiradentes
-2024-04-11 02:00:00,49244705,Walter Ferreti,Unan Managua
-2024-04-11 03:00:00,48722385,Union La Calera,Universidad Catolica
-2024-04-11 03:00:00,48722435,Internacional,CD Real Tomayapo
-2024-04-11 03:00:00,48722541,Penarol,Caracas
-2024-04-11 03:00:00,48222617,Club Leones Del Norte,Manta
-2024-04-11 03:15:00,48623005,Pachuca,Herediano
-2024-04-11 03:30:00,49075249,Sport Recife,Ceara
-2024-04-11 03:30:00,49075253,Bahia BA,Nautico PE
-2024-04-11 03:30:00,48722939,Sao Paulo,Cobresal
-2024-04-11 03:30:00,48722647,Flamengo,Palestino
-2024-04-11 03:30:00,48721887,Racing Club,Bragantino
-2024-04-11 03:40:00,48966459,Bucaramanga,Patriotas
-2024-04-11 04:00:00,48719205,Xelaju MC,Deportivo Achuapa
-2024-04-11 04:00:00,48547999,Motagua,Real Espana
+2024-04-11 10:30:00,48860643,Shaanxi Union FC,Nantong Haimen Codion
+2024-04-11 10:30:00,48860635,Hongxing,Xian Chongde Ronghai
+2024-04-11 10:30:00,48860591,Guangxi Lanhang,Shanghai Port B
+2024-04-11 10:30:00,48860639,Shandong Taishan B,Langfang Glory City FC
+2024-04-11 14:00:00,47934461,Keshla,Energetik
+2024-04-11 14:00:00,47934453,Karvan Evlakh,Moik Baku
+2024-04-11 14:30:00,47934455,Lokbatan,Zaqatala
+2024-04-11 15:00:00,49012051,FC Van Charentsavan,FC Noah
+2024-04-11 15:00:00,47116667,Samtredia,Telavi
+2024-04-11 16:00:00,49260537,Diagoras,Olympiacos Piraeus B
+2024-04-11 16:00:00,49090869,Aigle Royal,Apejes de Mfou
+2024-04-11 16:00:00,49260535,Egaleo Athens,Panathinaikos B
+2024-04-11 16:00:00,48189381,Ethiopia Nigd Bank,Hawassa Kenema
+2024-04-11 16:00:00,49214779,AC Milan SRL,AS Roma SRL
+2024-04-11 16:00:00,49214781,Bayer 04 Leverkusen SRL,West Ham United SRL
+2024-04-11 16:00:00,49214841,SL Benfica SRL,Olympique Marseille SRL
+2024-04-11 16:00:00,49214843,Liverpool FC SRL,Atalanta BC SRL
+2024-04-11 17:00:00,46477183,Radnicki 1923,Novi Pazar
+2024-04-11 17:00:00,49214229,Club Bolivar SRL,Millonarios FC Srl
+2024-04-11 17:00:00,49214293,CA River Plate (ARG) SRL,Club Nacional de Football SRL
+2024-04-11 17:00:00,49214289,LDU Quito SRL,Botafogo Fr RJ Srl
+2024-04-11 17:00:00,49214291,SE Palmeiras SP SRL,Liverpool Montevideo Srl
+2024-04-11 17:00:00,47294277,Bengaluru,Mohun Bagan Super Giant
+2024-04-11 17:00:00,48061577,Al Masry,Future FC
+2024-04-11 17:45:00,41907875,FC Koper,Aluminij K
+2024-04-11 18:00:00,47116665,Saburtalo,FC Gagra
+2024-04-11 18:00:00,47114225,HJK,Lahti
+2024-04-11 18:00:00,49090933,Astres FC,Fauve Azur de Yaounde
+2024-04-11 18:00:00,49090937,Avion Academy,Bamboutos
+2024-04-11 18:45:00,48563505,CSKA 1948,Ludogorets
+2024-04-11 19:00:00,48868591,AFAD Djekanou,Mimosas
+2024-04-11 19:00:00,47951329,Tampereen Ilves 2,Ilves-Kissat
+2024-04-11 19:00:00,49167815,Askoy,Sotra Sportsklubb
+2024-04-11 19:00:00,49167819,Ullern,Baerum
+2024-04-11 19:00:00,46083951,Fredericia,SILKEBORG
+2024-04-11 19:00:00,48189383,Welayta Dicha,Dire Dawa
+2024-04-11 19:00:00,48750247,Gloria Buzau,CSC 1599 Selimbar
+2024-04-11 19:15:00,41966873,Al Ain,AL Jazira
+2024-04-11 19:45:00,48619025,VIKTORIA PLZEN,FIORENTINA
+2024-04-11 19:45:00,48619015,Olympiacos,Fenerbahce
+2024-04-11 20:00:00,47116671,Torpedo Kutaisi,Samgurali Tskaltubo
+2024-04-11 20:00:00,49167821,Volda,Hodd
+2024-04-11 20:00:00,48061579,Zamalek,Al Ittihad
+2024-04-11 20:00:00,46679323,FC Germania Teveren,Union Schafhausen
+2024-04-11 20:00:00,49167823,Sprint/Jeloy,Moss FK
+2024-04-11 20:00:00,48061581,Masr,Al Ahly
+2024-04-11 20:15:00,49322651,Hoogee,Vantaan Jalkapalloseura 2
+2024-04-11 20:30:00,49167825,Toten,Elverum
+2024-04-11 20:30:00,49344469,Al-Ittihad Jeddah,Al Hilal
+2024-04-11 20:30:00,49167747,Flint,Eik
+2024-04-11 21:00:00,49008869,Flamengo U20,Cuiaba EC MT U20
+2024-04-11 21:00:00,47256077,San Lorenzo  Reserve,Argentinos Juniors Reserves
+2024-04-11 21:00:00,42722857,Asante,Nsoatreman FC
+2024-04-11 21:00:00,47256067,Gimnasia de la Plata Reserve,Banfield Reserves
+2024-04-11 21:00:00,46083965,AARHUS,NORDSJAELLAND
+2024-04-11 21:00:00,47256273,Defensa y Justicia Reserves,CA Tigre Reserves
+2024-04-11 21:00:00,47256277,Godoy Cruz Reserves,Ind Avellaneda Reserves
+2024-04-11 21:30:00,46931061,Argentino Rosario,Victoriano Arenas
+2024-04-11 21:30:00,42849599,Jeugd Royal Francs Borains ,RFC Liege
+2024-04-11 21:45:00,49202785,Farnborough,Chippenham
+2024-04-11 21:45:00,49202783,Fylde,Gateshead
+2024-04-11 21:45:00,49279765,Hanwell,Sholing
+2024-04-11 21:45:00,48516395,Parkway,Salisbury
+2024-04-11 21:45:00,48438213,Wealdstone,Dorking Wanderers
+2024-04-11 21:45:00,48120611,Truro,Yeovil
+2024-04-11 21:45:00,47386989,Spennymoor,Banbury
+2024-04-11 21:45:00,49039895,Taunton,Slough Town
+2024-04-11 22:00:00,48618937,Club Brugge,PAOK
+2024-04-11 22:00:00,48619021,Aston Villa,LILLE
+2024-04-11 22:00:00,48615701,Milan,ROMA
+2024-04-11 22:00:00,48615767,LIVERPOOL,ATALANTA
+2024-04-11 22:00:00,48615783,LEVERKUSEN,WEST HAM
+2024-04-11 22:00:00,48615793,BENFICA,MARSEILLE
+2024-04-11 22:00:00,49166483,Potters,Margate
+2024-04-11 23:00:00,49008887,Atletico Mineiro U20,Goias GO U20
+2024-04-11 23:00:00,47770609,Bethlehem Steel,Orlando City B
+2024-04-11 23:30:00,49332947,AD Vasco Da Gama AC,Independencia FC AC
+2024-04-12 01:00:00,48722701,LDU Quito,Botafogo RJ
+2024-04-12 01:00:00,47256279,Central Cordoba  Reserve,Boca Juniors Reserves
+2024-04-12 01:00:00,48722645,Bolivar,Millonarios
+2024-04-12 01:00:00,46931059,Real Pilar,Mutual L. N. Alem
+2024-04-12 01:00:00,49008885,Fortaleza U20,Botafogo U20
+2024-04-12 01:00:00,48721923,Lanus,Deportivo Garcilaso
+2024-04-12 01:00:00,48721921,Metropolitanos FC,Cuiaba
+2024-04-12 02:00:00,49015977,Real Santa Cruz,The Strongest
+2024-04-12 02:00:00,46327413,Miami,Tampa Bay
+2024-04-12 02:00:00,49129677,Cariri CE,Guarani de Juazeiro
+2024-04-12 02:15:00,49210329,Maranhao,Tuntum MA
+2024-04-12 02:30:00,49220885,CSA AL,CS Esportiva AL
+2024-04-12 03:00:00,48722575,Palmeiras,Liverpool M
+2024-04-12 03:00:00,48722389,Cruzeiro MG,Alianza FC Valledupar
+2024-04-12 03:00:00,48722511,CA River Plate,Nacional
+2024-04-12 03:00:00,48721885,Coquimbo Unido,Sportivo Luqueno
+2024-04-12 03:00:00,48222613,Chacaritas FC,San Antonio FC

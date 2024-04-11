@@ -322,3 +322,5 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-08 21:45:00,49142887,Auxerre,Troyes,UN25,100,67,84,,
 2024-04-08 21:45:00,42134731,Udinese,Inter,OV15,100,100,100,,1.24
 2024-04-10 01:30:00,49210391,Sampaio Correa,Imperatriz,UN25,80,82,81,,1.58
+2024-04-11 22:00:00,48619021,Aston Villa,Lille,GG,93,83,88,,
+2024-04-11 22:00:00,48615767,Liverpool,Atalanta,OV25,94,100,97,,1.41
