@@ -126,21 +126,22 @@ class Main:
                         away_team = row['away_team'].title()
                         prediction = row['prediction']
                         host_score, guest_score = self.match_results(home_team, away_team, match_day)
-                    
+                        
                         if host_score is not None and guest_score is not None:
-                            total_score = int(host_score) + int(guest_score)
-                            print(total_score)
+                            try:
+                                total_score = int(host_score) + int(guest_score)
 
-                            if '15' in prediction and int(total_score) > 1:
-                                status = 'WON'
-                            elif '25' in prediction and int(total_score) > 2:
-                                status = 'WON'
-                            elif 'GG' in prediction and int(host_score) > 0 and int(guest_score) > 0:
-                                status = 'WON'
-                            elif 'NG' in prediction and int(host_score) == 0 or int(guest_score) == 0:
-                                status = 'WON'
-                            else:
-                                status = 'LOST'
+                                if prediction=='OV15' and total_score > 1:
+                                    status = 'WON'
+                                elif prediction=='OV25' and total_score > 2:
+                                    status = 'WON'
+                                elif 'GG' in prediction and host_score > 0 and guest_score > 0:
+                                    status = 'WON'
+                                elif 'NG' in prediction and host_score == 0 or guest_score == 0:
+                                    status = 'WON'
+
+                            except Exception as e:
+                                print(e)
 
                             if row['odd'] == '' and status == 'LOST':
                                 status = '--'
@@ -174,7 +175,7 @@ class Main:
         for market in self.markets:
             self.load_date(start_date, end_date, market)
 
-        #self.update_match_status()
+        self.update_match_status()
 
         self.fetch_upcoming(self.sport_id)
 
