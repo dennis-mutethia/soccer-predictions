@@ -149,6 +149,7 @@ class Main:
                         else:
                             status = '--'
 
+                        row['status'] = status
                         print(f'{match_day} {home_team} vs {away_team} : {host_score} - {guest_score} : {prediction} : {status}')
 
                 # Update the CSV file with the modified data
