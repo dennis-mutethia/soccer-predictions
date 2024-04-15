@@ -100,7 +100,7 @@ class Autobet:
                         overs_market = bet_market
                         odds = overs_market.odds
                         for odd in odds:
-                            if float(odd.odd_value) > 1.1 and float(odd.odd_value) < 1.6 and prediction in odd.display and float(re.findall(r"[-+]?\d*\.\d+|\d+", odd.odd_key)[0])<3:
+                            if float(odd.odd_value) > 1.25 and float(odd.odd_value) < 1.5 and prediction in odd.display and float(re.findall(r"[-+]?\d*\.\d+|\d+", odd.odd_key)[0])<3:
                                 best_slip = '{'
                                 best_slip = best_slip + f'''
                                     "sub_type_id": "{sub_type_id}",
