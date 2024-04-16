@@ -352,4 +352,5 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-14 19:00:00,42134751,Udinese,Roma,UN25,100,71,86,--,
 2024-04-14 21:45:00,42134739,Inter,Cagliari,OV25,100,100,100,WON,1.42
 2024-04-14 21:45:00,42005037,Lyon,Brest,UN25,89,75,82,--,
-2024-04-15 21:00:00,41981723,Jong Ajax,Cambuur,OV25,100,100,100,,1.48
+2024-04-15 21:00:00,41981723,Jong Ajax,Cambuur,OV25,100,100,100,WON,1.48
+2024-04-16 16:00:00,45796591,Japan,China,OV15,81,86,84,,
