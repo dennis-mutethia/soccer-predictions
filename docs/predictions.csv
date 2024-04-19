@@ -355,4 +355,8 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-15 21:00:00,41981723,Jong Ajax,Cambuur,OV25,100,100,100,WON,1.48
 2024-04-16 16:00:00,45796591,Japan,China,OV15,81,86,84,--,
 2024-04-17 19:30:00,48721015,Zenit,Spartak Moscow,OV15,82,80,81,LOST,1.26
-2024-04-18 22:00:00,48615769,Atalanta,Liverpool,OV25,88,81,84,,1.36
+2024-04-18 22:00:00,48615769,Atalanta,Liverpool,OV25,88,81,84,LOST,1.36
+2024-04-19 20:30:00,42297181,Schermbeck,Erkenschwick,OV15,97,96,96,,
+2024-04-19 21:00:00,42168197,Dynamo Schwerin,Tennis Borussia Berlin,OV15,89,83,86,,
+2024-04-19 21:30:00,49374295,Denbigh Town,Flint Town Utd,OV15,92,81,86,,
+2024-04-19 22:00:00,42005051,Nice,Lorient,OV15,100,100,100,,1.29
