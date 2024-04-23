@@ -390,5 +390,5 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-21 17:00:00,42279729,Meerbusch,Uerdingen,OV15,90,81,86,WON,
 2024-04-21 17:00:00,48754649,Kallithea,Ilioupoli,NG,100,62,81,--,
 2024-04-21 22:00:00,48214443,Palmeiras,Flamengo,OV15,91,88,90,LOST,1.33
-2024-04-22 19:30:00,42134765,Roma,Bologna,UN25,88,80,84,,
-2024-04-22 21:45:00,42134761,Milan,Inter,OV15,100,100,100,,
+2024-04-22 19:30:00,42134765,Roma,Bologna,UN25,88,80,84,--,
+2024-04-22 21:45:00,42134761,Milan,Inter,OV15,100,100,100,WON,
