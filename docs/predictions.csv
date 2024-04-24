@@ -392,3 +392,7 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-21 22:00:00,48214443,Palmeiras,Flamengo,OV15,91,88,90,LOST,1.33
 2024-04-22 19:30:00,42134765,Roma,Bologna,UN25,88,80,84,--,
 2024-04-22 21:45:00,42134761,Milan,Inter,OV15,100,100,100,WON,
+2024-04-24 19:45:00,41980661,Twente,Almere City,OV15,100,100,100,,
+2024-04-24 22:00:00,41980659,Ajax,Excelsior,NG,88,83,86,,
+2024-04-24 22:00:00,48910877,Monaco,Lille,OV15,100,100,100,,
+2024-04-25 02:30:00,49059885,Atlanta United 2,Chattanooga,OV15,98,100,99,,
