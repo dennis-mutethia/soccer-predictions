@@ -395,6 +395,10 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-24 19:45:00,41980661,Twente,Almere City,OV15,100,100,100,WON,
 2024-04-24 22:00:00,41980659,Ajax,Excelsior,NG,88,83,86,--,
 2024-04-24 22:00:00,48910877,Monaco,Lille,OV15,100,100,100,--,
-2024-04-25 02:30:00,49059885,Atlanta United 2,Chattanooga,OV15,98,100,99,,
-2024-04-25 17:00:00,49480467,Arbaer,Fram Reykjavik,OV15,100,88,94,,
-2024-04-25 18:00:00,49480487,Grotta,Thor Akureyri,OV25,83,81,82,,1.41
+2024-04-25 02:30:00,49059885,Atlanta United 2,Chattanooga,OV15,98,100,99,--,
+2024-04-25 17:00:00,49480467,Arbaer,Fram Reykjavik,OV15,100,88,94,WON,
+2024-04-25 18:00:00,49480487,Grotta,Thor Akureyri,OV25,83,81,82,WON,1.41
+2024-04-26 12:30:00,47433771,Melbourne Knights,Oakleigh Cannons,OV15,81,88,84,,
+2024-04-26 21:30:00,42023629,Bochum,Hoffenheim,OV25,83,88,86,,1.49
+2024-04-26 21:45:00,46421675,Athlone Town,Cobh Ramblers,OV15,81,80,80,,
+2024-04-26 22:00:00,42005079,Montpellier,Nantes,OV15,100,100,100,,
