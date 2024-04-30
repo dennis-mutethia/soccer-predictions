@@ -430,6 +430,7 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-28 19:00:00,42134773,Atalanta,Empoli,UN25,82,83,82,--,
 2024-04-28 19:00:00,41986509,Swift Hesperange,F91 Dudelange,OV15,88,83,86,WON,
 2024-04-28 20:30:00,42023633,Darmstadt,Heidenheim,OV15,83,81,82,--,
-2024-04-29 21:00:00,46474397,Valur Reykjavik,Fram Reykjavik,OV25,84,88,86,,1.49
-2024-04-29 21:45:00,42134783,Genoa,Cagliari,OV15,87,100,94,,1.41
-2024-04-29 22:00:00,49552113,Barcelona,Valencia,UN25,69,100,84,,
+2024-04-29 21:00:00,46474397,Valur Reykjavik,Fram Reykjavik,OV25,84,88,86,LOST,1.49
+2024-04-29 21:45:00,42134783,Genoa,Cagliari,OV15,87,100,94,WON,1.41
+2024-04-29 22:00:00,49552113,Barcelona,Valencia,UN25,69,100,84,--,
+2024-04-30 20:00:00,41917103,Neudrossenfeld,Ammerthal,OV15,94,95,94,,
