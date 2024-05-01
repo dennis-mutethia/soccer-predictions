@@ -433,4 +433,6 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-29 21:00:00,46474397,Valur Reykjavik,Fram Reykjavik,OV25,84,88,86,LOST,1.49
 2024-04-29 21:45:00,42134783,Genoa,Cagliari,OV15,87,100,94,WON,1.41
 2024-04-29 22:00:00,49552113,Barcelona,Valencia,UN25,69,100,84,--,
-2024-04-30 20:00:00,41917103,Neudrossenfeld,Ammerthal,OV15,94,95,94,,
+2024-04-30 20:00:00,41917103,Neudrossenfeld,Ammerthal,OV15,94,95,94,WON,
+2024-05-01 15:00:00,41917117,Hankofen-Hailing,Fortuna Regensburg,OV15,99,97,98,,
+2024-05-01 21:45:00,49746195,Enfield,Wingate & Finchley,OV15,88,84,86,,
