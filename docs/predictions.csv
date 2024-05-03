@@ -436,3 +436,8 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-30 20:00:00,41917103,Neudrossenfeld,Ammerthal,OV15,94,95,94,WON,
 2024-05-01 15:00:00,41917117,Hankofen-Hailing,Fortuna Regensburg,OV15,99,97,98,WON,
 2024-05-01 21:45:00,49746195,Enfield,Wingate & Finchley,OV15,88,84,86,--,
+2024-05-03 17:00:00,42172223,Zawisza Bydgoszcz,Blekitni Stargard,OV15,100,80,90,,
+2024-05-03 17:00:00,49274495,Al Jazira Al Hamra,Dubai United,OV15,88,86,87,,
+2024-05-03 20:00:00,42005081,Toulouse,Montpellier,GG,86,100,93,,
+2024-05-03 22:00:00,42005091,Lens,Lorient,OV15,100,100,100,,
+2024-05-03 22:15:00,46475615,Afturelding,Grotta,OV25,92,83,88,,1.29
