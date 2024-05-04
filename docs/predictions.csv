@@ -436,8 +436,18 @@ start_time,parent_match_id,home_team,away_team,prediction,home_prob,away_prob,ov
 2024-04-30 20:00:00,41917103,Neudrossenfeld,Ammerthal,OV15,94,95,94,WON,
 2024-05-01 15:00:00,41917117,Hankofen-Hailing,Fortuna Regensburg,OV15,99,97,98,WON,
 2024-05-01 21:45:00,49746195,Enfield,Wingate & Finchley,OV15,88,84,86,--,
-2024-05-03 17:00:00,42172223,Zawisza Bydgoszcz,Blekitni Stargard,OV15,100,80,90,,
-2024-05-03 17:00:00,49274495,Al Jazira Al Hamra,Dubai United,OV15,88,86,87,,
-2024-05-03 20:00:00,42005081,Toulouse,Montpellier,GG,86,100,93,,
-2024-05-03 22:00:00,42005091,Lens,Lorient,OV15,100,100,100,,
-2024-05-03 22:15:00,46475615,Afturelding,Grotta,OV25,92,83,88,,1.29
+2024-05-03 17:00:00,42172223,Zawisza Bydgoszcz,Blekitni Stargard,OV15,100,80,90,--,
+2024-05-03 17:00:00,49274495,Al Jazira Al Hamra,Dubai United,OV15,88,86,87,WON,
+2024-05-03 20:00:00,42005081,Toulouse,Montpellier,GG,86,100,93,--,
+2024-05-03 22:00:00,42005091,Lens,Lorient,OV15,100,100,100,WON,
+2024-05-03 22:15:00,46475615,Afturelding,Grotta,OV25,92,83,88,LOST,1.29
+2024-05-04 06:30:00,48386501,Island Bay United,Wellington Olympic,OV15,100,100,100,,
+2024-05-04 10:00:00,47535655,Floreat Athena,Balcatta,OV15,90,82,86,,
+2024-05-04 10:00:00,47535657,Fremantle City,Perth Glory Youth,OV15,100,84,92,,
+2024-05-04 14:00:00,42254753,Gonsenheim,Karbach,OV15,90,87,88,,
+2024-05-04 15:00:00,41893585,Real Sociedad,Las Palmas,UN25,94,88,91,,
+2024-05-04 15:00:00,41947029,Marburg,Eddersheim,OV15,86,83,84,,
+2024-05-04 17:15:00,41893581,Real Madrid,Cadiz,UN25,88,83,86,,
+2024-05-04 20:00:00,42005095,Metz,Rennes,OV15,100,100,100,,1.28
+2024-05-04 22:00:00,42005097,Brest,Nantes,OV15,100,100,100,,1.33
+2024-05-05 01:30:00,46327987,Charleston Battery,Hartford Athletic,OV25,81,87,84,,1.36
