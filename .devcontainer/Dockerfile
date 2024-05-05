@@ -9,7 +9,7 @@ RUN apt-get update \
 
 #update pip & install dependencies
 RUN pip install --upgrade pip \
-    && pip install requests pandas statsmodels matplotlib scikit-learn pmdarima pystan prophet keras tensorflow
+    && pip install requests pandas statsmodels matplotlib scikit-learn pmdarima pystan prophet keras tensorflow bs4
     
 # Set the timezone to Africa/Nairobi
 RUN ln -sf /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
