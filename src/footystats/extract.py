@@ -1,4 +1,4 @@
-import requests
+import requests, csv
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -10,6 +10,7 @@ class Extract:
             }
 
     def fetch(self, prediction): 
+        self.csv_predictions = './docs/predictions.csv' 
         url = self.base_url + prediction
         team_names = []
 
@@ -33,7 +34,7 @@ class Extract:
                     stat_data = [data_elem.text.strip() for data_elem in match.find_all('div', class_='statData')]
 
                     teams = match_data[0]
-                    match_time = datetime.strptime(match_data[1], "%dth %B at %I:%M%p").replace(year=datetime.now().year).strftime("%d/%m/%Y %H:%M")
+                    match_time = datetime.strptime(match_data[1], "%dth %B at %I:%M%p").replace(year=datetime.now().year).strftime("%d-%m-%Y %H:%M:%S")
 
                     home_perc = float(stat_data[0].replace('%',''))
                     away_perc = float(stat_data[1].replace('%',''))
@@ -49,6 +50,8 @@ class Extract:
                             if teams not in team_names:
                                 team_names.append(teams)
                                 print(f'{match_time} {teams} [{prediction.upper()}] @ {odds}')
+                                teams_array = teams.split(' vs ')
+                                self.append_to_csv(match_time, teams_array[0], teams_array[1], prediction, home_perc, away_perc, (home_perc+away_perc)/2)
 
                 except Exception as e:
                     pass
@@ -56,8 +59,31 @@ class Extract:
         else:
             print("Failed to retrieve the page. Status code:", response.status_code)
 
+    def append_to_csv(self, start_time, home_team, away_team, prediction, home_prob, away_prob, overall_prob):
+        try:
+            with open(self.csv_predictions, mode='a', newline='') as csv_file:
+                fieldnames = ['start_time', 'parent_match_id', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob', 'status', 'odd']
+                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+                # Check if the file is empty, if so write the header
+                if csv_file.tell() == 0:
+                    writer.writeheader()
+
+                writer.writerow({
+                    'start_time': start_time,
+                    'parent_match_id': '',
+                    'home_team': home_team,
+                    'away_team': away_team,
+                    'prediction': prediction,
+                    'home_prob': home_prob,
+                    'away_prob': away_prob,
+                    'overall_prob': overall_prob,
+                    'status': '',
+                    'odd': ''
+                })
+
+        except Exception as e:
+            print(f"An error occurred in append_to_csv: {e}")
+
     def __call__(self):
         self.fetch('btts')
-
-
-Extract()()

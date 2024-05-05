@@ -4,6 +4,7 @@ from prep.load_data import LoadData
 from prep.fetch_upcoming import FetchUpcoming
 from predictions.goal_prediction_model import GoalPredictionModel
 from autobet import Autobet
+from footystats.extract import Extract
 
 class Main:
     """
@@ -24,6 +25,7 @@ class Main:
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
         self.goal_prediction_model = GoalPredictionModel()
         self.autobet = Autobet(self.csv_predictions, self.csv_profiles)
+        self.extract = Extract()
 
     def team_exists_in_match_data(self, team):
         """
@@ -173,16 +175,18 @@ class Main:
         start_date = self.last_inserted_date()
         end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
         
-        for market in self.markets:
-            self.load_date(start_date, end_date, market)
+        #for market in self.markets:
+            #self.load_date(start_date, end_date, market)
 
-        self.update_match_status()
+        #self.update_match_status()
 
-        self.fetch_upcoming(self.sport_id)
+        #self.fetch_upcoming(self.sport_id)
 
-        self.predict_upcoming_matches()
+        #self.predict_upcoming_matches()
 
-        self.autobet()
+        self.extract()
+
+        #self.autobet()
         
         print(f'Execution completed at {datetime.now()}')
 
