@@ -1,5 +1,5 @@
 {
-    "name": "dqf-cfascdodev Container",
+    "name": "SOCCER-PREDICTIONS",
     "dockerFile": "Dockerfile",
     "customizations": {
         "vscode": {
