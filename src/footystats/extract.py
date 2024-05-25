@@ -136,23 +136,24 @@ class Extract:
         sorted_matches = sorted(self.predicted_matches, key=self.get_match_time)
 
         for match in sorted_matches:
-            match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
-            match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV2.5')
-            match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV2.5')
-            match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
-            match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
-            match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
+            if match["prediction"] != 'OV1.5':
+                match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV2.5')
+                match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV2.5')
+                match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
+                match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
               
-            print(f'{match["match_time"]} {match["teams"]} ==> {match["prediction"]}')
+                print(f'{match["match_time"]} {match["teams"]} ==> {match["prediction"]}')
             
-            teams_array = match["teams"].split(' vs ')
-            self.append_to_csv(
-                match["match_time"], 
-                teams_array[0], 
-                teams_array[1], 
-                match["prediction"], 
-                match["home_perc"], 
-                match["away_perc"], 
-                (match["home_perc"]+match["away_perc"])/2
-            )
+                teams_array = match["teams"].split(' vs ')
+                self.append_to_csv(
+                    match["match_time"], 
+                    teams_array[0], 
+                    teams_array[1], 
+                    match["prediction"], 
+                    match["home_perc"], 
+                    match["away_perc"], 
+                    (match["home_perc"]+match["away_perc"])/2
+                )
 
