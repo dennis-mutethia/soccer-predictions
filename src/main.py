@@ -171,8 +171,8 @@ class Main:
         class entry point
         """
 
-        start_date = self.last_inserted_date()
-        end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
+        # start_date = self.last_inserted_date()
+        # end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
         
         #for market in self.markets:
             #self.load_date(start_date, end_date, market)
