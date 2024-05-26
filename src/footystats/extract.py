@@ -144,16 +144,17 @@ class Extract:
                 match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
               
-                print(f'{match["match_time"]} {match["teams"]} ==> {match["prediction"]}')
-            
-                teams_array = match["teams"].split(' vs ')
-                self.append_to_csv(
-                    match["match_time"], 
-                    teams_array[0], 
-                    teams_array[1], 
-                    match["prediction"], 
-                    match["home_perc"], 
-                    match["away_perc"], 
-                    (match["home_perc"]+match["away_perc"])/2
-                )
+                if 'OV2.5' not in match["prediction"]:
+                    print(f'{match["match_time"]} {match["teams"]} ==> {match["prediction"]}')
+                
+                    teams_array = match["teams"].split(' vs ')
+                    self.append_to_csv(
+                        match["match_time"], 
+                        teams_array[0], 
+                        teams_array[1], 
+                        match["prediction"], 
+                        match["home_perc"], 
+                        match["away_perc"], 
+                        (match["home_perc"]+match["away_perc"])/2
+                    )
 
