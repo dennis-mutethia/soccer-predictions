@@ -139,7 +139,7 @@ class Extract:
             match_time_dt = datetime.strptime(match["match_time"], '%d-%m-%Y %H:%M:%S')
             match["match_time"] = match_time_dt + timedelta(hours=2)
             
-            if match["prediction"] != 'OV1.5':
+            if match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
                 match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV2.5')
                 match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV2.5')
