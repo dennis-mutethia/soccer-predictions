@@ -1,5 +1,5 @@
 import requests, csv
-from datetime import datetime
+from datetime import datetime, timedelta
 import concurrent.futures
 from bs4 import BeautifulSoup
 
@@ -136,6 +136,9 @@ class Extract:
         sorted_matches = sorted(self.predicted_matches, key=self.get_match_time)
 
         for match in sorted_matches:
+            match_time_dt = datetime.strptime(match["match_time"], '%d-%m-%Y %H:%M:%S')
+            match["match_time"] = match_time_dt + timedelta(hours=2)
+            
             if match["prediction"] != 'OV1.5':
                 match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV2.5')
