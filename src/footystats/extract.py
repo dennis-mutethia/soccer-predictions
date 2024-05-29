@@ -1,3 +1,4 @@
+import json
 import requests, csv
 from datetime import datetime, timedelta
 import concurrent.futures
@@ -95,7 +96,7 @@ class Extract:
                 match["prediction"] = ' & '.join(map(str, predictions))
                 self.predicted_matches.append(match)
 
-    def append_to_csv(self, start_time, home_team, away_team, prediction, home_prob, away_prob, overall_prob):
+    def append_to_csv(self, start_time, home_team, away_team, prediction, home_prob, away_prob, overall_prob, odds):
         try:
             with open(self.csv_predictions, mode='a', newline='') as csv_file:
                 fieldnames = ['start_time', 'parent_match_id', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob', 'status', 'odd']
@@ -115,7 +116,7 @@ class Extract:
                     'away_prob': away_prob,
                     'overall_prob': overall_prob,
                     'status': '',
-                    'odd': ''
+                    'odd': odds
                 })
 
         except Exception as e:
@@ -124,6 +125,32 @@ class Extract:
     def get_match_time(self, match):
         return match["match_time"]
 
+    def update_match(self, match):
+        try:
+            url = "https://tipspesa.uk/match-update"
+            teams_array = match["teams"].split(' vs ')                        
+            
+            params = f'update_match=update_match&kickoff={match["match_time"]}&home={teams_array[0]}&away={teams_array[1]}&prediction={match["prediction"]}&probability={round((match["home_perc"]+match["away_perc"])/2)}&interval=0&odd={match["odds"]}'
+
+            headers = {
+                "Accept": "application/json",
+                "User-Agent": "PostmanRuntime/7.32.2"
+            }
+
+            response = requests.post(f'{url}?{params}', headers=headers)
+
+            if response.status_code == 200:
+                #reponse_json = json.loads(response.content)
+                print(response.content)
+                
+            else:
+                error_response = response.text
+                # Process the error response if needed
+                print(f"Error: {error_response}")
+
+        except requests.RequestException as e:
+            print(f"Request failed: {e}")
+               
     def __call__(self):    
         matches_1x2 = self.fetch_matches('1x2')     
         matches_btts = self.fetch_matches('btts') 
@@ -148,16 +175,19 @@ class Extract:
                 match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
               
                 if 'OV2.5' not in match["prediction"]:
-                    print(f'{match["match_time"]} {match["teams"]} ==> {match["prediction"]}')
+                    print(f'{match["match_time"]} {match["teams"]} ==> {match["prediction"]} @ {match["odds"]}')
                 
                     teams_array = match["teams"].split(' vs ')
                     self.append_to_csv(
                         match["match_time"], 
                         teams_array[0], 
                         teams_array[1], 
-                        match["prediction"], 
-                        match["home_perc"], 
+                        match["prediction"],
+                        match["home_perc"],
                         match["away_perc"], 
-                        (match["home_perc"]+match["away_perc"])/2
+                        round((match["home_perc"]+match["away_perc"])/2),
+                        match["odds"], 
                     )
+                    
+                    self.update_match(match)
 
