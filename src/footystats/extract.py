@@ -175,11 +175,11 @@ class Extract:
 
             match["start_time"] = start_time_eat.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
             
-            if match["start_time"] > datetime.now() and match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
+            if  match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
                 match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV2.5')
-                match["prediction"] = match["prediction"].replace('1 & OV1.5', '1')
-                match["prediction"] = match["prediction"].replace('1 & OV2.5', '1')
+                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'GG')
+                match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
                 match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
               
