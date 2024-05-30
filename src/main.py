@@ -24,7 +24,6 @@ class Main:
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
         self.goal_prediction_model = GoalPredictionModel()
-        self.extract = Extract()
 
     def team_exists_in_match_data(self, team):
         """
@@ -207,10 +206,10 @@ class Main:
 
         upcoming_matches = self.fetch_upcoming(self.sport_id)
 
-        predicted_matches = self.extract()
+        predicted_matches = Extract()()
         
-        mapped_predicted_matches = self.map_predicted_and_upcoming_matches(upcoming_matches, predicted_matches)    
-        
+        mapped_predicted_matches = self.map_predicted_and_upcoming_matches(upcoming_matches, predicted_matches)  
+               
         Autobet(mapped_predicted_matches, self.csv_profiles)()
   
 Main()()

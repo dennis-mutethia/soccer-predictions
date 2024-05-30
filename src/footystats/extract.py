@@ -1,7 +1,6 @@
-import json
+import pytz
 import requests, csv
 from datetime import datetime, timedelta
-import concurrent.futures
 from bs4 import BeautifulSoup
 
 class Extract:    
@@ -165,21 +164,29 @@ class Extract:
         sorted_matches = sorted(self.predicted_matches, key=self.get_start_time)
 
         for match in sorted_matches:
+            # Parse the start_time string into a naive datetime object
             start_time_dt = datetime.strptime(match["start_time"], '%d-%m-%Y %H:%M:%S')
-            match["start_time"] = start_time_dt + timedelta(hours=2)
+
+            # Timezone for East Africa Time (EAT)
+            eat_tz = pytz.timezone('Africa/Nairobi')
+
+            # Convert UTC time to EAT
+            start_time_eat = start_time_dt.astimezone(eat_tz)
+
+            match["start_time"] = start_time_eat.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
             
-            if match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
+            if match["start_time"] > datetime.now() and match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
                 match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV2.5')
-                match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV2.5')
-                match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
+                match["prediction"] = match["prediction"].replace('1 & OV1.5', '1')
+                match["prediction"] = match["prediction"].replace('1 & OV2.5', '1')
                 match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
               
-                if 'OV2.5' not in match["prediction"]:
+                #if 'OV2.5' not in match["prediction"]:
                     
-                    to_return.append(match)
-                    
-                    self.update_match(match)
+                to_return.append(match)
+                
+                self.update_match(match)
 
         return to_return

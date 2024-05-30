@@ -93,19 +93,19 @@ class Autobet:
         count = 0
         for match in self.matches:
             parent_match_id = match['parent_match_id']
-            prediction = 'OVER' if 'OV' in match['prediction'] else 'UNDER' if 'UN' in match['prediction'] else match['prediction']
-
+            #prediction = 'OVER' if 'OV' in match['prediction'] else 'UNDER' if 'UN' in match['prediction'] else match['prediction']
+            prediction = match['prediction'].replace('OV','OVER ').replace('UN','UNDER ').replace('GG','YES').replace('NG','NO')
             best_slip = self.get_best_slip(parent_match_id, prediction)
             if best_slip is not None:
                 count = count + 1
                 bs_str = bs_str + best_slip + ','
 
-                if count == 3:
+                if count == 5:
                     best_slips.append(bs_str)
                     count = 0 
                     bs_str = ''
 
-        if count>0 and count < 3:
+        if count>0 and count < 5:
             best_slips.append(bs_str)
 
 
