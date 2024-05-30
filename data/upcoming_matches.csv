@@ -1,24 +1,9 @@
 start_time,parent_match_id,home_team,away_team
-2024-05-30 12:00:00,50319955,Hellas Verona SRL,KAA Gent Srl
-2024-05-30 12:00:00,50319951,Everton FC SRL,CD Santa Clara SRL
-2024-05-30 13:00:00,49897377,Hoang Anh Gia Lai,Dong A Thanh Hoa
-2024-05-30 13:00:00,50319961,Stade Brestois 29 SRL,FC Gil Vicente SRL
-2024-05-30 13:00:00,50319959,Qarabag FK Srl,Sheriff Tiraspol Srl
-2024-05-30 13:00:00,50319957,Portimonense SC SRL,Union Berlin SRL
-2024-05-30 14:00:00,50319967,Tottenham Hotspur SRL,Athletic Bilbao SRL
-2024-05-30 14:00:00,50319963,Sassuolo Calcio SRL,Hertha BSC SRL
-2024-05-30 14:00:00,50319965,Spezia Calcio SRL,VfB Stuttgart Srl
-2024-05-30 14:00:00,49897381,Hong Linh Ha Tinh FC,Hanoi Police FC
-2024-05-30 14:00:00,49897379,Binh Dinh FC,Quang Nam FC
-2024-05-30 15:00:00,50201225,Borneo Samarinda,Bali United
-2024-05-30 15:00:00,42020499,Altach II,SK Bischofshofen
-2024-05-30 15:00:00,47093567,Sandecja NS,Polonia Warszawa
-2024-05-30 15:00:00,42020503,SVG Reichenau,VfB Hohenems
-2024-05-30 15:00:00,49666237,Ethiopia Nigd Bank,Bahir Dar Kenema FC
 2024-05-30 15:15:00,49897383,Viettel FC,Haiphong FC
-2024-05-30 16:00:00,42172495,Cartusia Kartuzy,Sks Unia Swarzedz
+2024-05-30 16:00:00,49026369,SD Family FC,FC Altai Oskemen
 2024-05-30 16:30:00,50252931,1899 HOFFENHEIM U19,BORUSSIA DORTMUND U19
 2024-05-30 16:30:00,42020493,FC Wolfurt,Austria Salzburg
+2024-05-30 16:30:00,48153365,FC Chelyabinsk,Krasnodar-2
 2024-05-30 17:00:00,47598721,PFK Dinamo Samarqand,Qizilqum Zarafshon
 2024-05-30 17:00:00,50320507,CA River Plate (ARG) SRL,Deportivo Tachira Srl
 2024-05-30 17:00:00,50320503,SE Palmeiras SP SRL,CA San Lorenzo Almagro Srl
@@ -37,6 +22,8 @@ start_time,parent_match_id,home_team,away_team
 2024-05-30 18:00:00,47098689,JK Haapsalu,Kalju U21
 2024-05-30 18:00:00,42172483,KP Starogard Gdanski,KS Unia Solec Kujawski
 2024-05-30 18:00:00,42020501,SPG Silz / Moetz,FC Kufstein
+2024-05-30 18:00:00,49310443,FC Murom,Chayka Peschanokopskoye
+2024-05-30 18:00:00,49310451,FK Veles Moscow,FC Novosibirsk
 2024-05-30 18:00:00,50255057,Damash Gilan FC,Naft Gachsaran
 2024-05-30 18:00:00,49878511,KuPS Akatemia,FC Vaajakoski
 2024-05-30 18:00:00,50255055,Ario Eslamshahr,Shahin Bandar Ameri
@@ -50,12 +37,12 @@ start_time,parent_match_id,home_team,away_team
 2024-05-30 19:00:00,50423227,USM Alger,Ben Aknoun
 2024-05-30 19:00:00,50344471,C. Budejovice,Mas Taborsko
 2024-05-30 19:00:00,48285981,FA Tartu Kalev,FC Phoenix Johvi
+2024-05-30 19:00:00,50395889,FK Indjija,FK Zeleznicar Pancevo
 2024-05-30 19:00:00,47099175,JK Tabasalu,Welco
 2024-05-30 19:00:00,47926317,JJK Jyvaskyla,Oulun Luistinseura
 2024-05-30 19:00:00,48171811,FC Minsk,FC Shakhter Soligorsk
 2024-05-30 19:00:00,47099177,Flora U21,Harju JK Laagri
 2024-05-30 19:00:00,50344299,POFC Botev Vratsa,Marek Dupnica
-2024-05-30 19:00:00,47099179,Tallinna Kalev U21,FCI Levadia Tallinn
 2024-05-30 19:00:00,50344295,MFk Vyskov,MFK Karvina
 2024-05-30 19:00:00,50255067,Naft Masjed Soleyman FC,SaiPa FC
 2024-05-30 19:30:00,47984471,FK Radnik Bijeljina,FK Rudar Prijedor
@@ -79,10 +66,10 @@ start_time,parent_match_id,home_team,away_team
 2024-05-30 21:30:00,50023215,Independiente Rivadavia,CA Banfield
 2024-05-30 21:30:00,50340543,US Cremonese,Venezia FC
 2024-05-30 21:30:00,50351915,MKS Arka Gdynia,Odra Opole
-2024-05-30 22:00:00,49009015,Cuiaba EC MT U20,Internacional RS U20
 2024-05-30 22:00:00,50290373,Real Santa Cruz,GV Club Deportivo San Jose de Oruro
 2024-05-30 22:00:00,50332449,Ypiranga FC,Figueirense FC SC
 2024-05-30 22:00:00,47743135,B36 Torshavn II,Vikingur Gota II
+2024-05-30 22:30:00,49009027,Cruzeiro U20,Botafogo U20
 2024-05-30 23:15:00,46487389,Breidablik Kopavogur,Vikingur Reykjavik
 2024-05-30 23:30:00,50151465,CSDC Alianza Universidad,Club Ada Jaen
 2024-05-31 01:00:00,48722455,CA Paranaense,Sportivo Ameliano
