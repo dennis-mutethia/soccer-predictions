@@ -24,7 +24,6 @@ class Main:
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
         self.goal_prediction_model = GoalPredictionModel()
-        self.autobet = Autobet(self.csv_predictions, self.csv_profiles)
         self.extract = Extract()
 
     def team_exists_in_match_data(self, team):
@@ -44,31 +43,33 @@ class Main:
 
         return False
 
-    def predict_upcoming_matches(self):
+    def map_predicted_and_upcoming_matches(self, upcoming_matches, predicted_matches):
         """
-        method to predict upcoming matches
+        Method to map upcoming matches and predicted matches
         """
-        try:
-            with open(self.csv_upcoming_matches, mode='r') as csv_file:
-                reader = csv.DictReader(csv_file)
-                for row in reader:
-                    start_time = row['start_time']
-                    parent_match_id = row['parent_match_id']
-                    home_team = row['home_team'].title()
-                    away_team = row['away_team'].title()
-                    if self.team_exists_in_match_data(home_team) and self.team_exists_in_match_data(away_team):
-                        for target in self.targets:
-                            try:
-                                self.goal_prediction_model(self.csv_match_data, start_time, parent_match_id, home_team, away_team, target, self.min_probability)
-                            except ValueError as ex:
-                                print(f"An error occurred: {ex}")
-                                # Continue with the next iteration of the loop
-                                continue
+        mapped_predicted_matches = []
+        for upcoming_match in upcoming_matches:
+            upcoming_match_home_words = set(upcoming_match['home_team'].split())
+            upcoming_match_away_words = set(upcoming_match['away_team'].split())
 
-        except FileNotFoundError:
-            # Handle the case where the file doesn't exist yet
-            pass
+            for predicted_match in predicted_matches:
+                predicted_match_home_words = set(predicted_match['home_team'].split())
+                predicted_match_away_words = set(predicted_match['away_team'].split())
+
+                # Check if any significant word from the home or away teams match
+                home_intersection = upcoming_match_home_words & predicted_match_home_words
+                away_intersection = upcoming_match_away_words & predicted_match_away_words
+
+                if any(len(word) > 2 for word in home_intersection) or any(len(word) > 2 for word in away_intersection):
+                    mapped_predicted_match = {
+                        'parent_match_id': upcoming_match['parent_match_id'],
+                        'prediction': predicted_match['prediction']
+                    }
+                    if mapped_predicted_match not in mapped_predicted_matches:
+                        mapped_predicted_matches.append(mapped_predicted_match)
         
+        return mapped_predicted_matches
+
     def last_inserted_date(self):
         """
         function to get last inserted date
@@ -166,6 +167,31 @@ class Main:
         except Exception as e:
             print(f'An error occurred: {e}')
 
+    def predict_upcoming_matches(self):
+        """
+        method to predict upcoming matches
+        """
+        try:
+            with open(self.csv_upcoming_matches, mode='r') as csv_file:
+                reader = csv.DictReader(csv_file)
+                for row in reader:
+                    start_time = row['start_time']
+                    parent_match_id = row['parent_match_id']
+                    home_team = row['home_team'].title()
+                    away_team = row['away_team'].title()
+                    if self.team_exists_in_match_data(home_team) and self.team_exists_in_match_data(away_team):
+                        for target in self.targets:
+                            try:
+                                self.goal_prediction_model(self.csv_match_data, start_time, parent_match_id, home_team, away_team, target, self.min_probability)
+                            except ValueError as ex:
+                                print(f"An error occurred: {ex}")
+                                # Continue with the next iteration of the loop
+                                continue
+
+        except FileNotFoundError:
+            # Handle the case where the file doesn't exist yet
+            pass
+        
     def __call__(self):
         """
         class entry point
@@ -179,12 +205,12 @@ class Main:
 
         #self.update_match_status()
 
-        #self.fetch_upcoming(self.sport_id)
+        upcoming_matches = self.fetch_upcoming(self.sport_id)
 
-        #self.predict_upcoming_matches()
-
-        self.extract()
-
-        #self.autobet()
+        predicted_matches = self.extract()
         
+        mapped_predicted_matches = self.map_predicted_and_upcoming_matches(upcoming_matches, predicted_matches)    
+        
+        Autobet(mapped_predicted_matches, self.csv_profiles)()
+  
 Main()()

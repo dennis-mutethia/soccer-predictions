@@ -35,8 +35,8 @@ class Extract:
                     match_data = [data_elem.text.strip() for data_elem in match_div.find_all('div', class_='data')]
                     stat_data = [data_elem.text.strip() for data_elem in match_div.find_all('div', class_='statData')]
 
-                    teams = match_data[0]
-                    match_time = datetime.strptime(match_data[1], "%dth %B at %I:%M%p").replace(year=datetime.now().year).strftime("%d-%m-%Y %H:%M:%S")
+                    teams = match_data[0].split(' vs ')
+                    start_time = datetime.strptime(match_data[1], "%dth %B at %I:%M%p").replace(year=datetime.now().year).strftime("%d-%m-%Y %H:%M:%S")
 
                     home_perc = float(stat_data[0].replace('%',''))
                     away_perc = float(stat_data[1].replace('%',''))
@@ -45,12 +45,13 @@ class Extract:
                     points_per_game_away = float(stat_data[3])
 
                     average_goals_home = float(stat_data[4])
-                    average_goals_away = float(stat_data[5])
+                    average_goals_away = float(stat_data[5])                    
 
                     match = {
-                        "teams" : teams,
-                        "odds" : odds,
-                        "match_time" : match_time,
+                        "home_team" : teams[0],
+                        "away_team" : teams[1],
+                        "odd" : odds,
+                        "start_time" : start_time,
                         "home_perc" : home_perc,
                         "away_perc" : away_perc,
                         "points_per_game_home" : points_per_game_home,
@@ -59,7 +60,7 @@ class Extract:
                         "average_goals_away" : average_goals_away
                     }
 
-                    if datetime.now().strftime('%Y-%m-%d') == datetime.strptime(match_time, ("%d-%m-%Y %H:%M:%S")).strftime('%Y-%m-%d'):
+                    if datetime.now().strftime('%Y-%m-%d') == datetime.strptime(start_time, ("%d-%m-%Y %H:%M:%S")).strftime('%Y-%m-%d'):
                         matches.append(match)
 
                 except Exception as e:
@@ -73,6 +74,7 @@ class Extract:
     def predict(self, matches):
         team_names = []
         for match in matches:
+            teams = f'{match["home_team"]} vs {match["away_team"]}'
             predictions = []
 
             if (match["points_per_game_home"] - match["points_per_game_away"]) > 1.5:
@@ -91,8 +93,8 @@ class Extract:
             elif total_possible_goals > 2:
                 predictions.append('OV1.5')
             
-            if match["teams"] not in team_names and predictions:
-                team_names.append(match["teams"])
+            if teams not in team_names and predictions:
+                team_names.append(teams)
                 match["prediction"] = ' & '.join(map(str, predictions))
                 self.predicted_matches.append(match)
 
@@ -122,15 +124,14 @@ class Extract:
         except Exception as e:
             print(f"An error occurred in append_to_csv: {e}")
 
-    def get_match_time(self, match):
-        return match["match_time"]
+    def get_start_time(self, match):
+        return match["start_time"]
 
     def update_match(self, match):
         try:
-            url = "https://tipspesa.uk/match-update"
-            teams_array = match["teams"].split(' vs ')                        
+            url = "https://tipspesa.uk/match-update"                     
             
-            params = f'update_match=update_match&kickoff={match["match_time"]}&home={teams_array[0]}&away={teams_array[1]}&prediction={match["prediction"]}&probability={round((match["home_perc"]+match["away_perc"])/2)}&interval=0&odd={match["odds"]}'
+            params = f'update_match=update_match&kickoff={match["start_time"]}&home={match["home_team"]}&away={match["away_team"]}&prediction={match["prediction"]}&probability={round((match["home_perc"]+match["away_perc"])/2)}&interval=0&odd={match["odd"]}'
 
             headers = {
                 "Accept": "application/json",
@@ -151,7 +152,8 @@ class Extract:
         except requests.RequestException as e:
             print(f"Request failed: {e}")
                
-    def __call__(self):    
+    def __call__(self):   
+        to_return = [] 
         matches_1x2 = self.fetch_matches('1x2')     
         matches_btts = self.fetch_matches('btts') 
         matches_over_15 = self.fetch_matches('over-15-goals') 
@@ -160,11 +162,11 @@ class Extract:
         matches = matches_1x2 + matches_btts + matches_over_15 + matches_over_25
         
         self.predict(matches)
-        sorted_matches = sorted(self.predicted_matches, key=self.get_match_time)
+        sorted_matches = sorted(self.predicted_matches, key=self.get_start_time)
 
         for match in sorted_matches:
-            match_time_dt = datetime.strptime(match["match_time"], '%d-%m-%Y %H:%M:%S')
-            match["match_time"] = match_time_dt + timedelta(hours=2)
+            start_time_dt = datetime.strptime(match["start_time"], '%d-%m-%Y %H:%M:%S')
+            match["start_time"] = start_time_dt + timedelta(hours=2)
             
             if match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
                 match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
@@ -175,19 +177,9 @@ class Extract:
                 match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
               
                 if 'OV2.5' not in match["prediction"]:
-                    print(f'{match["match_time"]} {match["teams"]} ==> {match["prediction"]} @ {match["odds"]}')
-                
-                    teams_array = match["teams"].split(' vs ')
-                    self.append_to_csv(
-                        match["match_time"], 
-                        teams_array[0], 
-                        teams_array[1], 
-                        match["prediction"],
-                        match["home_perc"],
-                        match["away_perc"], 
-                        round((match["home_perc"]+match["away_perc"])/2),
-                        match["odds"], 
-                    )
+                    
+                    to_return.append(match)
                     
                     self.update_match(match)
 
+        return to_return
