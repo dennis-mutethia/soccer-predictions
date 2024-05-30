@@ -177,11 +177,12 @@ class Extract:
             
             if  match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
                 match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'GG')
+                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
                 match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
                 match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
               
                 #if 'OV2.5' not in match["prediction"]:
                     
