@@ -1,29 +1,9 @@
 start_time,parent_match_id,home_team,away_team
-2024-05-31 11:00:00,50319973,Strasbourg Alsace SRL,FSV Mainz SRL
-2024-05-31 11:00:00,50319971,Real Sociedad SRL,Brighton & Hove Albion SRL
-2024-05-31 11:00:00,50319969,Legia Warszawa SRL,Stade Reims SRL
-2024-05-31 11:30:00,47097775,Broadmeadow Magic FC,Cooks Hill United
-2024-05-31 12:00:00,50319977,Deportivo Alaves SRL,Southampton FC SRL
-2024-05-31 12:00:00,50319975,Burnley FC SRL,Vitoria Guimaraes SRL
-2024-05-31 12:00:00,50319979,Eintracht Frankfurt SRL,Famalicao SRL
-2024-05-31 12:15:00,47569721,Heidelberg United FC,Dandenong Thunder
-2024-05-31 12:30:00,46928389,Manly United FC,Sydney FC Youth
-2024-05-31 13:00:00,47934005,Daejeon Korail,Ulsan Citizen FC
-2024-05-31 13:00:00,50319985,Fulham FC,CFR Cluj Srl
-2024-05-31 13:00:00,50319981,Getafe CF SRL,Wolverhampton Wanderers SRL
-2024-05-31 13:00:00,50319983,Panathinaikos Athens SRL,Rayo Vallecano
-2024-05-31 13:00:00,47273295,Sagan Tosu,Tokyo
-2024-05-31 13:30:00,47392311,Brunswick City SC,Caroline Springs George Cross FC
-2024-05-31 13:30:00,47392309,Bentleigh Greens,Melbourne Victory
-2024-05-31 13:30:00,47392323,Kingston City FC,Northcote City
-2024-05-31 14:00:00,50023219,AS Roma,AC Milan
-2024-05-31 14:00:00,49897385,Nam Dinh FC,Song Lam Nghe An
-2024-05-31 14:00:00,49897387,B. Binh Duong,Ho Chi Minh City FC
-2024-05-31 14:00:00,50319991,FC Nantes SRL,1. FC Cologne SRL
-2024-05-31 14:00:00,50319987,UD Levante SRL,Parma Calcio 1913 SRL
-2024-05-31 14:00:00,50319989,Fortuna Dusseldorf SRL,Estac Troyes Srl
-2024-05-31 15:00:00,50201219,Madura United,Persib Bandung
 2024-05-31 15:15:00,49897389,Hanoi FC,K. Khanh Hoa
+2024-05-31 16:00:00,49026373,Okzhetpes,Ulytau FC
+2024-05-31 16:00:00,49366725,Olimpik Mobiuz U19,Pfk Aral
+2024-05-31 16:30:00,48808985,Pobeda Khasavyurt,FC Forte Taganrog
+2024-05-31 16:30:00,48808991,Spartak Nalchik,FC Alania Vladikavkaz-2
 2024-05-31 17:00:00,47598725,FK Termez Surkhon,PFC Sogdiana
 2024-05-31 17:00:00,49977905,AL Mehalla,El Gouna
 2024-05-31 17:00:00,49977903,National Bank Egypt,Petrojet FC
@@ -31,6 +11,7 @@ start_time,parent_match_id,home_team,away_team
 2024-05-31 17:30:00,48171809,FC Smorgon,FC Slavia Mozyr
 2024-05-31 17:30:00,50388049,Korba,Ariana
 2024-05-31 17:30:00,47598727,AGMK FC,PFK Metallurg Bekabad
+2024-05-31 17:30:00,50388041,Omrane,Jendouba Sport
 2024-05-31 17:30:00,50388043,Oued Ellil,Rades
 2024-05-31 18:00:00,48155443,Babrungas Plunge,FK Riteriai
 2024-05-31 18:00:00,47114317,FC Inter Turku,FC Haka Valkeakoski
@@ -43,6 +24,7 @@ start_time,parent_match_id,home_team,away_team
 2024-05-31 18:30:00,47415397,KaPa Kapylan Pallo,PK-35 Helsinki
 2024-05-31 18:30:00,50413501,Otrant Ulcinj,Mladost DG
 2024-05-31 19:00:00,50395887,Mlada Boleslav,Hradec Kralove
+2024-05-31 19:00:00,46476411,SK Batov 1930,Tatran Vsechovice
 2024-05-31 19:00:00,47943081,FC Kiffen,PPJ Helsinki
 2024-05-31 19:00:00,47943083,Nurmijarven Jalkapalloseura,FC Futura
 2024-05-31 19:00:00,46678493,Karlovy Vary,Viktoria Plzen B
@@ -50,11 +32,13 @@ start_time,parent_match_id,home_team,away_team
 2024-05-31 19:00:00,47815377,Dainava Alytus,FC Hegelmann Kaunas
 2024-05-31 19:00:00,48155447,FK Garliava,FK Banga B
 2024-05-31 19:00:00,42022225,SR Donaufeld,FC Marchfeld Donauauen
+2024-05-31 19:00:00,50224689,Al Ittihad,East Riffa
+2024-05-31 19:00:00,46678743,Arsenal Ceska,Slovan Liberec B
+2024-05-31 19:00:00,46678735,SK Zapy,Banik
 2024-05-31 19:00:00,49401619,Aarhus Fremad,Middelfart BK
 2024-05-31 19:00:00,50224691,Al Hidd,Malkiya Club
 2024-05-31 19:00:00,50329431,Marrakesh,Ittifaq Marrakech
 2024-05-31 19:00:00,47926319,FC Jazz,Atlantis FC
-2024-05-31 19:00:00,50329427,St. Marocain,Meknes
 2024-05-31 19:00:00,46678485,Pisek,Kraluv Dvur
 2024-05-31 19:30:00,48171805,Bate Borisov,FC Slutsk
 2024-05-31 19:30:00,49409779,Bronshoj BK,BK Skjold
@@ -75,6 +59,7 @@ start_time,parent_match_id,home_team,away_team
 2024-05-31 20:00:00,47118359,Ljungskile,Falkenbergs
 2024-05-31 20:00:00,49401623,Esbjerg FB,AB Gladsaxe
 2024-05-31 20:00:00,42022727,LASK,Gleisdorf
+2024-05-31 20:00:00,45182902,FC Hlucin,Slovacko B
 2024-05-31 20:00:00,49409785,Sundby,Karlslunde IF
 2024-05-31 20:00:00,49320517,Klaipedos Fsm,FK Transinvest B
 2024-05-31 20:00:00,50371187,FC Copenhagen,Randers FC
@@ -85,7 +70,6 @@ start_time,parent_match_id,home_team,away_team
 2024-05-31 20:00:00,42022733,Deutschlandsberger SC,ASK Klagenfurt
 2024-05-31 20:00:00,50417271,La Luz FC,CS Cerrito
 2024-05-31 20:15:00,47571749,Herrestads,Skovde FK
-2024-05-31 20:25:00,42172615,KSZO Ostrowiec Swietokrzyski,Wislanie Jaskowice
 2024-05-31 20:30:00,42168353,Neustrelitz,Wismar
 2024-05-31 20:30:00,50374599,Kaerjeng 97,Hostert
 2024-05-31 20:30:00,42022211,ASV Drassburg,SC Wiener Viktoria
@@ -96,11 +80,14 @@ start_time,parent_match_id,home_team,away_team
 2024-05-31 20:30:00,42022219,Kremser SC,SV Leobendorf
 2024-05-31 20:30:00,47445811,Berga,Karlskrona
 2024-05-31 20:45:00,42170755,Unia Skierniewice,Lechia Tomaszow Mazowiecki
+2024-05-31 21:00:00,48997403,EC Agua Santa U20,AD Sao Caetano U20
 2024-05-31 21:00:00,47743129,HB Torshavn II,AB Argir
 2024-05-31 21:00:00,48994971,Rio Claro FC U20,XV de Novembro de Jau U20
 2024-05-31 21:00:00,46488863,UMF Selfoss,Throttur Vogum
 2024-05-31 21:00:00,46928067,Arsenal de Sarandi,Racing de Cordoba
 2024-05-31 21:00:00,50351917,Al-Hilal Saudi FC,Al-Nassr FC
+2024-05-31 21:00:00,48995091,Ponte Preta SP U20,Itapirense SP U20
+2024-05-31 21:00:00,48994359,Mirassol FC U20,Tanabi EC U20
 2024-05-31 21:00:00,46488609,UMF Njardvik,Thor Akureyri
 2024-05-31 21:00:00,49008019,Jabaquara AC U20,Maua FC U20
 2024-05-31 21:00:00,48994987,Botafogo FC U20,Comercial FC U20
@@ -131,16 +118,19 @@ Desportivo Brasil U20",EC Sao Bento U20
 2024-05-31 21:45:00,46547923,Saint Patrick´s Athletic FC,Galway United FC
 2024-05-31 22:15:00,46487327,FH Hafnarfjordur,Fram Reykjavik
 2024-05-31 22:15:00,46478389,Augnablik Kopavogur,IH Hafnarfjordur
+2024-05-31 22:15:00,46478387,Vaengir Jupiters,Ellidi
 2024-05-31 22:15:00,46488603,UMF Grindavik,Keflavik IF
 2024-05-31 22:15:00,46488601,Throttur Reykjavik,IR Reykjavik
 2024-05-31 22:15:00,46488599,Leiknir Reykjavik,Afturelding
 2024-05-31 22:15:00,46488867,Reynir Sandgerdi,Vikingur Olafsvik
 2024-05-31 23:00:00,50296481,Cucuta,Llaneros
+2024-05-31 23:00:00,50151477,Ayacucho FC,CC Deportivo Municipal
 2024-05-31 23:00:00,50151471,CSC Deportivo Llacuabamba,FC Carlos Stein
 2024-06-01 01:00:00,48717661,Iguatu CE,ACD Potiguar RN
 2024-06-01 01:00:00,50018117,Ceara SC,Coritiba
 2024-06-01 01:00:00,50411949,La Equidad,Once Caldas
 2024-06-01 01:00:00,50417273,Atenas San Carlos,Albion FC
+2024-06-01 02:00:00,47977899,Tobacco Road FC,West Virginia United
 2024-06-01 02:00:00,47770999,Toronto II,Chicago Fire FC II
 2024-06-01 02:00:00,48811449,FC Frederick,Virginia Beach City FC
 2024-06-01 02:30:00,46364855,New York City FC,San Jose Earthquakes
@@ -150,4 +140,5 @@ Desportivo Brasil U20",EC Sao Bento U20
 2024-06-01 03:10:00,46928087,Colon de Santa Fe,Atletico de Rafaela
 2024-06-01 03:30:00,48423859,Goias,SC Recife PE
 2024-06-01 03:30:00,47119063,Cobreloa,O' Higgins
+2024-06-01 04:00:00,47979547,Birmingham Legion FC 2,Southern Soccer Academy Kings
 2024-06-01 04:00:00,47979869,Utah United,Salt City SC
