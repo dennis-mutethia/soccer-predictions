@@ -76,12 +76,12 @@ class Extract:
             teams = f'{match["home_team"]} vs {match["away_team"]}'
             predictions = []
 
-            if (match["points_per_game_home"] - match["points_per_game_away"]) > 1.5:
+            if (match["average_goals_home"] - match["average_goals_away"]) > 1.5:
                 predictions.append('1')
-            elif (match["points_per_game_away"] - match["points_per_game_home"]) > 1.5:
+            elif (match["average_goals_away"] - match["average_goals_home"]) > 1.5:
                 predictions.append('2')
 
-            if (match["average_goals_home"] > 2 and match["average_goals_away"] > 1) or (match["average_goals_home"] > 1 and match["average_goals_away"] > 2):
+            if (match["average_goals_home"] > 2 and match["average_goals_away"] > 2): # or (match["average_goals_home"] > 1 and match["average_goals_away"] > 2):
                 predictions.append('GG')
             elif match["average_goals_home"] < 1 and match["average_goals_away"] < 1:
                 predictions.append('NG')
@@ -176,16 +176,14 @@ class Extract:
             match["start_time"] = start_time_eat.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
             
             if  match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
-                match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
-                match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
-              
-                #if 'OV2.5' not in match["prediction"]:
-                    
+                # match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
+                # match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
+                # match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
+                # match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
+                # match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
+                # match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
+                # match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
+                                 
                 to_return.append(match)
                 
                 self.update_match(match)

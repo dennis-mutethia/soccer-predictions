@@ -52,6 +52,13 @@ class Main:
             upcoming_match_away_words = set(upcoming_match['away_team'].split())
 
             for predicted_match in predicted_matches:
+                predicted_match["prediction"] = predicted_match["prediction"].replace('GG & OV1.5', 'GG')
+                predicted_match["prediction"] = predicted_match["prediction"].replace('GG & OV2.5', 'GG')
+                predicted_match["prediction"] = predicted_match["prediction"].replace('1 & OV1.5', 'OV1.5')
+                predicted_match["prediction"] = predicted_match["prediction"].replace('1 & OV2.5', 'OV2.5')
+                predicted_match["prediction"] = predicted_match["prediction"].replace('2 & OV1.5', 'OV1.5')
+                predicted_match["prediction"] = predicted_match["prediction"].replace('2 & OV2.5', 'OV1.5')
+                
                 predicted_match_home_words = set(predicted_match['home_team'].split())
                 predicted_match_away_words = set(predicted_match['away_team'].split())
 
