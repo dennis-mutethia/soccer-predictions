@@ -41,7 +41,7 @@ class FetchUpcoming:
                 }
                 to_return.append(my_match)  
 
-        if to_return:
-            self.append_to_csv(to_return, self.csv_filename)
+        #if to_return:
+        #    self.append_to_csv(to_return, self.csv_filename)
 
         return to_return
