@@ -1,4 +1,4 @@
-import pytz
+import pytz, re
 import requests, csv
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
@@ -35,7 +35,17 @@ class Extract:
                     stat_data = [data_elem.text.strip() for data_elem in match_div.find_all('div', class_='statData')]
 
                     teams = match_data[0].split(' vs ')
-                    start_time = datetime.strptime(match_data[1], "%dth %B at %I:%M%p").replace(year=datetime.now().year).strftime("%d-%m-%Y %H:%M:%S")
+                                        
+                    # Remove ordinal suffixes (st, nd, rd, th) using regex
+                    date_str_modified = re.sub(r'(\d+)(st|nd|rd|th)', r'\1', match_data[1])
+
+                    # Define the format without ordinal suffix
+                    date_format = '%d %B at %I:%M%p'
+
+                    # Parse the modified date string
+                    parsed_date = datetime.strptime(date_str_modified, date_format)
+
+                    start_time = parsed_date.replace(year=datetime.now().year).strftime("%d-%m-%Y %H:%M:%S")
 
                     home_perc = float(stat_data[0].replace('%',''))
                     away_perc = float(stat_data[1].replace('%',''))
@@ -58,11 +68,12 @@ class Extract:
                         "average_goals_home" : average_goals_home,
                         "average_goals_away" : average_goals_away
                     }
-
+                    
                     if datetime.now().strftime('%Y-%m-%d') == datetime.strptime(start_time, ("%d-%m-%Y %H:%M:%S")).strftime('%Y-%m-%d'):
                         matches.append(match)
 
                 except Exception as e:
+                    print(e)
                     pass
 
         else:
@@ -157,9 +168,9 @@ class Extract:
         matches_btts = self.fetch_matches('btts') 
         matches_over_15 = self.fetch_matches('over-15-goals') 
         matches_over_25 = self.fetch_matches('over-25-goals')
-
-        matches = matches_1x2 + matches_btts + matches_over_15 + matches_over_25
         
+        matches = matches_1x2 + matches_btts + matches_over_15 + matches_over_25
+                
         self.predict(matches)
         sorted_matches = sorted(self.predicted_matches, key=self.get_start_time)
 
@@ -176,13 +187,13 @@ class Extract:
             match["start_time"] = start_time_eat.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
             
             if  match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
-                # match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
-                # match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
-                # match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
-                # match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
-                # match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
-                # match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
-                # match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
+                match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
+                match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
                                  
                 to_return.append(match)
                 

@@ -64,9 +64,10 @@ class Autobet:
             print(response)
             time.sleep(10)
 
-    def get_best_slip(self, parent_match_id, prediction):
+    def get_best_slip(self, match):
+        prediction = match['prediction'].replace('OV','OVER ').replace('UN','UNDER ').replace('GG','YES').replace('NG','NO')
         best_slip = None
-        bet_markets = self.fetch_bet_markets(parent_match_id)
+        bet_markets = self.fetch_bet_markets(match['parent_match_id'])
         if bet_markets is not None:
             for bet_market in bet_markets:
                 sub_type_id = bet_market.sub_type_id
@@ -80,10 +81,12 @@ class Autobet:
                             "odd_value": "{odd.odd_value}",
                             "outcome_id": "{odd.outcome_id}",
                             "special_bet_value": "{odd.special_bet_value}",
-                            "parent_match_id": "{parent_match_id}",
+                            "parent_match_id": "{match['parent_match_id']}",
                             "bet_type": 7
                         '''
                         best_slip = best_slip + '}'
+                        
+                        match["odd"] = odd.odd_value
                         
                         return best_slip
 
@@ -91,23 +94,21 @@ class Autobet:
         best_slips = []
         bs_str = ''
         count = 0
-        for match in self.matches:
-            parent_match_id = match['parent_match_id']
-            #prediction = 'OVER' if 'OV' in match['prediction'] else 'UNDER' if 'UN' in match['prediction'] else match['prediction']
-            prediction = match['prediction'].replace('OV','OVER ').replace('UN','UNDER ').replace('GG','YES').replace('NG','NO')
-            best_slip = self.get_best_slip(parent_match_id, prediction)
+        total_odd = 1
+        for match in self.matches:            
+            best_slip = self.get_best_slip(match)
             if best_slip is not None:
                 count = count + 1
                 bs_str = bs_str + best_slip + ','
+                total_odd = total_odd * float(match["odd"])
 
-                if count == 5:
+                if total_odd >= 5:
                     best_slips.append(bs_str)
-                    count = 0 
+                    total_odd = 1
                     bs_str = ''
 
-        if count>0 and count < 5:
+        if total_odd>2 and total_odd < 5:
             best_slips.append(bs_str)
-
 
         return best_slips
     
