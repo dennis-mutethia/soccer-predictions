@@ -32,7 +32,7 @@ class FetchUpcoming:
         matches = [UpcomingMatch(match) for match in matches_data]
         
         for match in matches:  
-            if 'Women' not in match.competition_name and 'Int. Friendly Games W' not in match.competition_name: 
+            if 'Women' not in match.competition_name and 'Int. Friendly Games W' not in match.competition_name and ('Srl' not in match.home_team or 'Srl' not in match.away_team): 
                 my_match = {
                     'start_time': match.start_time,
                     'parent_match_id': match.parent_match_id,
