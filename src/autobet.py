@@ -102,13 +102,13 @@ class Autobet:
                 bs_str = bs_str + best_slip + ','
                 total_odd = total_odd * float(match["odd"])
 
-                if total_odd >= 5:
+                if total_odd >= 3:
                     best_slips.append(bs_str)
                     total_odd = 1
                     bs_str = ''
 
-        if total_odd>2 and total_odd < 5:
-            best_slips.append(bs_str)
+        # if total_odd>3:
+        #     best_slips.append(bs_str)
 
         return best_slips
     

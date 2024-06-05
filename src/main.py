@@ -66,7 +66,7 @@ class Main:
                 home_intersection = upcoming_match_home_words & predicted_match_home_words
                 away_intersection = upcoming_match_away_words & predicted_match_away_words
 
-                if any(len(word) > 2 for word in home_intersection) or any(len(word) > 2 for word in away_intersection):
+                if any(len(word) > 2 for word in home_intersection) and any(len(word) > 2 for word in away_intersection):
                     mapped_predicted_match = {
                         'parent_match_id': upcoming_match['parent_match_id'],
                         'prediction': predicted_match['prediction']
