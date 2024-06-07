@@ -1,4 +1,4 @@
-import csv
+import csv, argparse
 from datetime import datetime, timedelta
 from prep.load_data import LoadData
 from prep.fetch_upcoming import FetchUpcoming
@@ -198,25 +198,23 @@ class Main:
             # Handle the case where the file doesn't exist yet
             pass
         
-    def __call__(self):
+    def __call__(self, autobet):
         """
         class entry point
         """
-
-        # start_date = self.last_inserted_date()
-        # end_date = (datetime.now() - timedelta(days=1)).strftime('%Y-%m-%d')
-        
-        #for market in self.markets:
-            #self.load_date(start_date, end_date, market)
-
-        #self.update_match_status()
 
         upcoming_matches = self.fetch_upcoming(self.sport_id)
 
         predicted_matches = Extract()()
         
         mapped_predicted_matches = self.map_predicted_and_upcoming_matches(upcoming_matches, predicted_matches)  
-               
-        Autobet(mapped_predicted_matches, self.csv_profiles)()
+        
+        if int(autobet) == 1:       
+            Autobet(mapped_predicted_matches, self.csv_profiles)()
   
-Main()()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Process some integers.")
+    parser.add_argument("--autobet", type=int, required=True, help="an integer value for x")
+    
+    args = parser.parse_args()
+    Main()(args.autobet)
