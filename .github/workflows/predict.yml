@@ -2,7 +2,7 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '0 5,15 * * *'
+    - cron: '0 3 * * *'
 
 jobs:
   execute:
@@ -22,6 +22,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: execute main.py script # run main.py
+      - name: execute py script # run main.py
         run: python src/main.py --autobet=1
-          
