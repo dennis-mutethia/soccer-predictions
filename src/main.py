@@ -5,6 +5,7 @@ from prep.fetch_upcoming import FetchUpcoming
 from predictions.goal_prediction_model import GoalPredictionModel
 from autobet import Autobet
 from footystats.extract import Extract
+from utils.postgres_crud import PostgresCRUD
 
 class Main:
     """
@@ -24,6 +25,7 @@ class Main:
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
         self.goal_prediction_model = GoalPredictionModel()
+        self.postgres_crud = PostgresCRUD()
 
     def team_exists_in_match_data(self, team):
         """
@@ -206,6 +208,9 @@ class Main:
         upcoming_matches = self.fetch_upcoming(self.sport_id)
 
         predicted_matches = Extract()()
+        
+        for match in predicted_matches:
+            self.postgres_crud.insert_match(match)
         
         mapped_predicted_matches = self.map_predicted_and_upcoming_matches(upcoming_matches, predicted_matches)  
         

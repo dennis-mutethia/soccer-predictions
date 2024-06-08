@@ -33,8 +33,56 @@ class Extract:
                     odds = float(match_div.find('div', class_='odds').text.strip().replace('Odds',''))
                     match_data = [data_elem.text.strip() for data_elem in match_div.find_all('div', class_='data')]
                     stat_data = [data_elem.text.strip() for data_elem in match_div.find_all('div', class_='statData')]
+                    over_0_5_home_perc = over_1_5_home_perc = over_2_5_home_perc = over_3_5_home_perc = 0
+                    over_0_5_away_perc = over_1_5_away_perc = over_2_5_away_perc = over_3_5_away_perc = 0
 
                     teams = match_data[0].split(' vs ')
+                    
+                    hrefs = [url_elem for url_elem in match_div.find_all('a')]
+                    for href in hrefs:
+                        if href.text.strip() == 'View H2H Stats':
+                            match_url = 'https://footystats.org' + href['href']
+                            
+                            # Send the request with headers
+                            response_2 = requests.get(match_url, headers=self.headers)
+
+                            # Check if the request was successful
+                            if response_2.status_code == 200:
+                                html_content_2 = response_2.text
+
+                                # Parse the HTML content
+                                soup_2 = BeautifulSoup(html_content_2, 'html.parser')
+
+                                # Find the div with id "over-prefix-0"
+                                over_prefix_div = soup_2.find('div', id='over-prefix-0')
+                                
+                                # Extract the data rows
+                                data_rows = over_prefix_div.find_all('tr', class_='row')
+
+                                # Iterate over each row to extract the data
+                                for row in data_rows:
+                                    columns = row.find_all('td')
+                                    if columns:
+                                        goal_type = columns[0].text.strip()
+                                        home_team_percentage = columns[1].text.strip().replace('%', '')
+                                        away_team_percentage = columns[2].text.strip().replace('%', '')     
+                                        
+                                        if '0.5' in goal_type:
+                                            over_0_5_home_perc = int(home_team_percentage) 
+                                            over_0_5_away_perc = int(away_team_percentage) 
+                                            
+                                        elif '1.5' in goal_type:
+                                            over_1_5_home_perc = int(home_team_percentage) 
+                                            over_1_5_away_perc = int(away_team_percentage)  
+                                            
+                                        elif '2.5' in goal_type:
+                                            over_2_5_home_perc = int(home_team_percentage) 
+                                            over_2_5_away_perc = int(away_team_percentage)  
+                                            
+                                        elif '3.5' in goal_type:
+                                            over_3_5_home_perc = int(home_team_percentage) 
+                                            over_3_5_away_perc = int(away_team_percentage) 
+            
                                         
                     # Remove ordinal suffixes (st, nd, rd, th) using regex
                     date_str_modified = re.sub(r'(\d+)(st|nd|rd|th)', r'\1', match_data[1])
@@ -66,7 +114,16 @@ class Extract:
                         "points_per_game_home" : points_per_game_home,
                         "points_per_game_away" : points_per_game_away,
                         "average_goals_home" : average_goals_home,
-                        "average_goals_away" : average_goals_away
+                        "average_goals_away" : average_goals_away,
+                        "match_url": match_url,
+                        "over_0_5_home_perc": over_0_5_home_perc,
+                        "over_0_5_away_perc": over_0_5_away_perc,
+                        "over_1_5_home_perc": over_1_5_home_perc,
+                        "over_1_5_away_perc": over_1_5_away_perc,
+                        "over_2_5_home_perc": over_2_5_home_perc,
+                        "over_2_5_away_perc": over_2_5_away_perc,
+                        "over_3_5_home_perc": over_3_5_home_perc,
+                        "over_3_5_away_perc": over_3_5_away_perc
                     }
                     
                     if datetime.now().strftime('%Y-%m-%d') == datetime.strptime(start_time, ("%d-%m-%Y %H:%M:%S")).strftime('%Y-%m-%d'):
