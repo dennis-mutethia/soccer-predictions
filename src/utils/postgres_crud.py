@@ -9,8 +9,7 @@ class PostgresCRUD:
         db_pass = 'Mmxsp65$$$Mmxsp65'
         
         try:
-            self.conn = psycopg2.connect(database=db_name, user=db_user, password=db_pass, host=db_host, port=db_port)        
-            print("Opened database successfully")
+            self.conn = psycopg2.connect(database=db_name, user=db_user, password=db_pass, host=db_host, port=db_port)   
             
         except Exception as e:
             print(f'An error occurred: {e}')
@@ -20,7 +19,7 @@ class PostgresCRUD:
         home_team = match['home_team']
         away_team = match['away_team']
         prediction = match['prediction']
-        match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{start_time}{home_team}{away_team}{prediction}'))
+        match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{start_time.date()}{home_team}{away_team}{prediction}'))
         odd = match['odd']
         match_url = match['match_url']
         average_goals_home = match['average_goals_home']

@@ -1,4 +1,4 @@
-import pytz, re
+import pytz, tzlocal, re
 import requests, csv
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
@@ -75,11 +75,11 @@ class Extract:
                                             over_1_5_home_perc = int(home_team_percentage) 
                                             over_1_5_away_perc = int(away_team_percentage)  
                                             
-                                        elif '2.5' in goal_type:
+                                        elif '3.5' in goal_type:
                                             over_2_5_home_perc = int(home_team_percentage) 
                                             over_2_5_away_perc = int(away_team_percentage)  
                                             
-                                        elif '3.5' in goal_type:
+                                        elif '2.5' in goal_type:
                                             over_3_5_home_perc = int(home_team_percentage) 
                                             over_3_5_away_perc = int(away_team_percentage) 
             
@@ -107,6 +107,7 @@ class Extract:
                     match = {
                         "home_team" : teams[0],
                         "away_team" : teams[1],
+                        "prediction" : "",
                         "odd" : odds,
                         "start_time" : start_time,
                         "home_perc" : home_perc,
@@ -125,7 +126,7 @@ class Extract:
                         "over_3_5_home_perc": over_3_5_home_perc,
                         "over_3_5_away_perc": over_3_5_away_perc
                     }
-                    
+                                        
                     if datetime.now().strftime('%Y-%m-%d') == datetime.strptime(start_time, ("%d-%m-%Y %H:%M:%S")).strftime('%Y-%m-%d'):
                         matches.append(match)
 
@@ -138,7 +139,7 @@ class Extract:
 
         return matches
 
-    def predict(self, matches):
+    def predict_old(self, matches):
         team_names = []
         for match in matches:
             teams = f'{match["home_team"]} vs {match["away_team"]}'
@@ -159,6 +160,45 @@ class Extract:
                 predictions.append('OV2.5')
             elif total_possible_goals > 2:
                 predictions.append('OV1.5')
+            
+            if teams not in team_names and predictions:
+                team_names.append(teams)
+                match["prediction"] = ' & '.join(map(str, predictions))
+                self.predicted_matches.append(match)
+
+    def predict_over(self, match):
+        over = None
+        total_possible_goals = match["average_goals_home"] + match["average_goals_away"]
+                
+        if total_possible_goals > 1 and (match["over_0_5_home_perc"] >= 80 or match["over_0_5_away_perc"] >= 80):
+            over = 'OV0.5'
+        if total_possible_goals > 2 and (match["over_1_5_home_perc"] >= 80 or match["over_1_5_away_perc"] >= 80):
+            over = 'OV1.5'
+        if total_possible_goals > 3 and (match["over_2_5_home_perc"] >= 80 or match["over_2_5_away_perc"] >= 80):
+            over = 'OV2.5'
+        if total_possible_goals > 4 and (match["over_3_5_home_perc"] >= 80 or match["over_3_5_away_perc"] >= 80):
+            over = 'OV3.5'
+        
+        return over
+    
+    def predict(self, matches):
+        team_names = []
+        for match in matches:
+            teams = f'{match["home_team"]} vs {match["away_team"]}'
+            predictions = []
+
+            # if (match["average_goals_home"] - match["average_goals_away"]) > 1.5:
+            #     predictions.append('1')
+            # elif (match["average_goals_away"] - match["average_goals_home"]) > 1.5:
+            #     predictions.append('2')
+
+            # if (match["average_goals_home"] > 2 and match["average_goals_away"] > 2): 
+            #     predictions.append('GG')
+            # elif match["average_goals_home"] < 1 and match["average_goals_away"] < 1:
+            #     predictions.append('NG')
+            
+            if self.predict_over(match) is not None:
+                predictions.append(self.predict_over(match))
             
             if teams not in team_names and predictions:
                 team_names.append(teams)
@@ -218,7 +258,13 @@ class Extract:
 
         except requests.RequestException as e:
             print(f"Request failed: {e}")
-               
+    
+    def get_local_timezone(self):
+        try:
+            return tzlocal.get_localzone()
+        except Exception as e:
+            return pytz.timezone('Africa/Nairobi') 
+            
     def __call__(self):   
         to_return = [] 
         matches_1x2 = self.fetch_matches('1x2')     
@@ -234,26 +280,22 @@ class Extract:
         for match in sorted_matches:
             # Parse the start_time string into a naive datetime object
             start_time_dt = datetime.strptime(match["start_time"], '%d-%m-%Y %H:%M:%S')
-
-            # Timezone for East Africa Time (EAT)
-            eat_tz = pytz.timezone('Africa/Nairobi')
-
-            # Convert UTC time to EAT
-            start_time_eat = start_time_dt.astimezone(eat_tz)
-
-            match["start_time"] = start_time_eat.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
             
-            if  match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
-                match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
-                match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
-                match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
+            start_time_local = start_time_dt.astimezone(self.get_local_timezone())
+
+            match["start_time"] = start_time_local.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
+            
+            # if  match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
+            #     match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
+            #     match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
+            #     match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
+            #     match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
+            #     match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
+            #     match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
+            #     match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
                                  
-                to_return.append(match)
-                
-                self.update_match(match)
+            to_return.append(match)
+            
+            self.update_match(match)
 
         return to_return

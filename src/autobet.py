@@ -71,9 +71,10 @@ class Autobet:
         if bet_markets is not None:
             for bet_market in bet_markets:
                 sub_type_id = bet_market.sub_type_id
+                sub_type_name = bet_market.name
                 odds = bet_market.odds
                 for odd in odds:
-                    if prediction == odd.display:
+                    if prediction == odd.display and sub_type_name in ["1X2", "TOTAL", "BOTH TEAMS TO SCORE (GG/NG)"]:
                         best_slip = '{'
                         best_slip = best_slip + f'''
                             "sub_type_id": "{sub_type_id}",
@@ -102,13 +103,10 @@ class Autobet:
                 bs_str = bs_str + best_slip + ','
                 total_odd = total_odd * float(match["odd"])
 
-                if total_odd >= 3:
+                if total_odd >= 2.6:
                     best_slips.append(bs_str)
                     total_odd = 1
                     bs_str = ''
-
-        # if total_odd>3:
-        #     best_slips.append(bs_str)
 
         return best_slips
     
