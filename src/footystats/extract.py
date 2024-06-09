@@ -170,31 +170,31 @@ class Extract:
         over = None
         total_possible_goals = match["average_goals_home"] + match["average_goals_away"]
         
-        if total_possible_goals >= 2.5 and (match["over_1_5_home_perc"] >= 80 or match["over_1_5_away_perc"] >= 80):
+        if total_possible_goals >= 2.5 and (match["over_1_5_home_perc"] >= 90 or match["over_1_5_away_perc"] >= 90):
             over = 'TOTAL OV1.5'
              
-        if match["average_goals_away"] >= 1.5 and match["over_0_5_away_perc"] >= 80:
+        if match["average_goals_away"] >= 1.5 and match["over_0_5_away_perc"] >= 90:
             over = 'AWAY TOTAL OV0.5'  
                       
-        if match["average_goals_home"] >= 1.5 and (match["over_0_5_home_perc"] >= 80):
+        if match["average_goals_home"] >= 1.5 and (match["over_0_5_home_perc"] >= 90):
             over = 'HOME TOTAL OV0.5'        
                          
-        if total_possible_goals >= 3.5 and (match["over_2_5_home_perc"] >= 80 or match["over_2_5_away_perc"] >= 80):
+        if total_possible_goals >= 3.5 and (match["over_2_5_home_perc"] >= 90 or match["over_2_5_away_perc"] >= 90):
             over = 'TOTAL OV2.5'
             
-        if match["average_goals_away"] >= 2.5 and match["over_1_5_away_perc"] >= 80:
+        if match["average_goals_away"] >= 2.5 and match["over_1_5_away_perc"] >= 90:
             over = 'AWAY TOTAL OV1.5'      
             
-        if match["average_goals_home"] >= 2.5 and (match["over_1_5_home_perc"] >= 80):
+        if match["average_goals_home"] >= 2.5 and (match["over_1_5_home_perc"] >= 90):
             over = 'HOME TOTAL OV1.5'  
                   
-        if total_possible_goals >= 4.5 and (match["over_3_5_home_perc"] >= 80 or match["over_3_5_away_perc"] >= 80):
+        if total_possible_goals >= 4.5 and (match["over_3_5_home_perc"] >= 90 or match["over_3_5_away_perc"] >= 90):
             over = 'TOTAL OV3.5'
             
-        if match["average_goals_away"] >= 3.5 and match["over_2_5_away_perc"] >= 80:
+        if match["average_goals_away"] >= 3.5 and match["over_2_5_away_perc"] >= 90:
             over = 'AWAY TOTAL OV2.5'      
             
-        if match["average_goals_home"] >= 3.5 and (match["over_2_5_home_perc"] >= 80):
+        if match["average_goals_home"] >= 3.5 and (match["over_2_5_home_perc"] >= 90):
             over = 'HOME TOTAL OV2.5'  
         
         return over
