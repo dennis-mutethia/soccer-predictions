@@ -16,10 +16,12 @@ class PostgresCRUD:
 
     def insert_match(self, match):
         start_time = match['start_time']
+        start_date = start_time.date()
+        print(start_date)
         home_team = match['home_team']
         away_team = match['away_team']
         prediction = match['prediction']
-        match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{start_time.date()}{home_team}{away_team}{prediction}'))
+        match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{start_date}{home_team}{away_team}{prediction}'))
         odd = match['odd']
         match_url = match['match_url']
         average_goals_home = match['average_goals_home']
