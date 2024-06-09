@@ -17,7 +17,6 @@ class PostgresCRUD:
     def insert_match(self, match):
         start_time = match['start_time']
         start_date = start_time.date()
-        print(start_date)
         home_team = match['home_team']
         away_team = match['away_team']
         prediction = match['prediction']
