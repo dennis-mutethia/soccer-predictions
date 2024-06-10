@@ -13,6 +13,24 @@ class Extract:
             }
         self.predicted_matches = []
 
+    def fetch_results(self, soup, start_time):
+        home_results = None 
+        away_results = None
+        # Extract the first <a> element with the specified class
+        a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
+
+        # Extract the date and convert it to a datetime.date object
+        date_str = a_tag.find('time').text.strip()
+        match_date = datetime.strptime(date_str, '%b %d, %Y').date()
+
+        # Extract the results
+        if match_date == start_time.date():
+            teams = a_tag.find_all('div', class_='team')
+            home_results = int(teams[0].find('span').text)
+            away_results = int(teams[1].find('span').text)
+        
+        return home_results, away_results
+
     def fetch_matches(self, endpoint):     
         url = self.base_url + endpoint
         matches = []
@@ -103,7 +121,9 @@ class Extract:
                     points_per_game_away = float(stat_data[3])
 
                     average_goals_home = float(stat_data[4])
-                    average_goals_away = float(stat_data[5])                    
+                    average_goals_away = float(stat_data[5])   
+                    
+                    home_results, away_results = self.fetch_results(soup_2, parsed_date)                 
 
                     match = {
                         "home_team" : unidecode(teams[0]),
@@ -125,7 +145,9 @@ class Extract:
                         "over_2_5_home_perc": over_2_5_home_perc,
                         "over_2_5_away_perc": over_2_5_away_perc,
                         "over_3_5_home_perc": over_3_5_home_perc,
-                        "over_3_5_away_perc": over_3_5_away_perc
+                        "over_3_5_away_perc": over_3_5_away_perc,
+                        "home_results": home_results,
+                        "away_results": away_results
                     }
                                         
                     if datetime.now().strftime('%Y-%m-%d') == datetime.strptime(start_time, ("%d-%m-%Y %H:%M:%S")).strftime('%Y-%m-%d'):

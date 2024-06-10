@@ -33,6 +33,8 @@ class PostgresCRUD:
         over_2_5_away_perc = match['over_2_5_away_perc']
         over_3_5_home_perc = match['over_3_5_home_perc']
         over_3_5_away_perc = match['over_3_5_away_perc']
+        home_results = match['home_results'] if match['home_results'] is not None else 'NULL'
+        away_results = match['away_results'] if match['away_results'] is not None else 'NULL'
           
         cur = self.conn.cursor()
         query = f"""
@@ -40,7 +42,9 @@ class PostgresCRUD:
             over_0_5_home_perc,over_0_5_away_perc,over_1_5_home_perc,over_1_5_away_perc,over_2_5_home_perc,over_2_5_away_perc,over_3_5_home_perc,over_3_5_away_perc)
             VALUES('{match_id}','{start_time}','{home_team}','{away_team}','{prediction}',{odd}, '{match_url}',{average_goals_home},{average_goals_away},
             {over_0_5_home_perc},{over_0_5_away_perc},{over_1_5_home_perc},{over_1_5_away_perc},{over_2_5_home_perc},{over_2_5_away_perc},{over_3_5_home_perc},{over_3_5_away_perc})
-            ON CONFLICT (match_id) DO NOTHING;
+            ON CONFLICT (match_id) DO UPDATE SET
+                home_results = {home_results},
+                away_results = {away_results};
         """
 
         cur.execute(query)
