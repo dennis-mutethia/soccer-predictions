@@ -65,31 +65,30 @@ class Autobet:
             time.sleep(10)
 
     def get_best_slip(self, match):
-        prediction = match['prediction'].replace('OV','OVER ').replace('UN','UNDER ').replace('GG','YES').replace('NG','NO')
         best_slip = None
         bet_markets = self.fetch_bet_markets(match['parent_match_id'])
         if bet_markets is not None:
             for bet_market in bet_markets:
                 sub_type_id = bet_market.sub_type_id
-                sub_type_name = bet_market.name
-                odds = bet_market.odds
-                for odd in odds:
-                    if prediction == odd.display and sub_type_name in ["1X2", "TOTAL", "BOTH TEAMS TO SCORE (GG/NG)"]:
-                        best_slip = '{'
-                        best_slip = best_slip + f'''
-                            "sub_type_id": "{sub_type_id}",
-                            "bet_pick": "{odd.odd_key}",
-                            "odd_value": "{odd.odd_value}",
-                            "outcome_id": "{odd.outcome_id}",
-                            "special_bet_value": "{odd.special_bet_value}",
-                            "parent_match_id": "{match['parent_match_id']}",
-                            "bet_type": 7
-                        '''
-                        best_slip = best_slip + '}'
-                        
-                        match["odd"] = odd.odd_value
-                        
-                        return best_slip
+                if int(sub_type_id) == int(match['sub_type_id']):
+                    odds = bet_market.odds
+                    for odd in odds:
+                        if match['prediction'] in odd.display:
+                            best_slip = '{'
+                            best_slip = best_slip + f'''
+                                "sub_type_id": "{sub_type_id}",
+                                "bet_pick": "{odd.odd_key}",
+                                "odd_value": "{odd.odd_value}",
+                                "outcome_id": "{odd.outcome_id}",
+                                "special_bet_value": "{odd.special_bet_value}",
+                                "parent_match_id": "{match['parent_match_id']}",
+                                "bet_type": 7
+                            '''
+                            best_slip = best_slip + '}'
+                            
+                            match["odd"] = odd.odd_value
+                            
+                            return best_slip
 
     def generate_betslips(self):
         best_slips = []
@@ -103,11 +102,14 @@ class Autobet:
                 bs_str = bs_str + best_slip + ','
                 total_odd = total_odd * float(match["odd"])
 
-                if total_odd >= 2.6:
+                if total_odd >= 4.0:
                     best_slips.append(bs_str)
                     total_odd = 1
                     bs_str = ''
 
+        if total_odd > 1:
+            best_slips.append(bs_str)
+                    
         return best_slips
     
     def __call__(self):

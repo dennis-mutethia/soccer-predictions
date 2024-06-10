@@ -168,59 +168,73 @@ class Extract:
 
     def predict_over(self, match):
         over = None
+        sub_type_id = None
+        overall_prob = 0
         total_possible_goals = match["average_goals_home"] + match["average_goals_away"]
         
         if total_possible_goals >= 2.5 and (match["over_1_5_home_perc"] >= 90 or match["over_1_5_away_perc"] >= 90):
-            over = 'TOTAL OV1.5'
+            over = 'TOTAL OVER 1.5'
+            sub_type_id = 18
+            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2
              
         if match["average_goals_away"] >= 1.5 and match["over_0_5_away_perc"] >= 90:
-            over = 'AWAY TOTAL OV0.5'  
+            over = 'AWAY TOTAL OVER 0.5'
+            sub_type_id = 20
+            overall_prob = match["over_0_5_away_perc"]
                       
         if match["average_goals_home"] >= 1.5 and (match["over_0_5_home_perc"] >= 90):
-            over = 'HOME TOTAL OV0.5'        
+            over = 'HOME TOTAL OVER 0.5'  
+            sub_type_id = 19    
+            overall_prob = match["over_0_5_home_perc"] 
                          
         if total_possible_goals >= 3.5 and (match["over_2_5_home_perc"] >= 90 or match["over_2_5_away_perc"] >= 90):
-            over = 'TOTAL OV2.5'
+            over = 'TOTAL OVER 2.5'
+            sub_type_id = 18
+            overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2
             
         if match["average_goals_away"] >= 2.5 and match["over_1_5_away_perc"] >= 90:
-            over = 'AWAY TOTAL OV1.5'      
+            over = 'AWAY TOTAL OVER 1.5'  
+            sub_type_id = 20
+            overall_prob = match["over_1_5_away_perc"] 
             
         if match["average_goals_home"] >= 2.5 and (match["over_1_5_home_perc"] >= 90):
-            over = 'HOME TOTAL OV1.5'  
+            over = 'HOME TOTAL OVER 1.5'
+            sub_type_id = 19
+            overall_prob = match["over_1_5_home_perc"] 
                   
         if total_possible_goals >= 4.5 and (match["over_3_5_home_perc"] >= 90 or match["over_3_5_away_perc"] >= 90):
-            over = 'TOTAL OV3.5'
+            over = 'TOTAL OVER 3.5'
+            sub_type_id = 18
+            overall_prob = (match["over_3_5_home_perc"] + match["over_3_5_away_perc"])/2
             
         if match["average_goals_away"] >= 3.5 and match["over_2_5_away_perc"] >= 90:
-            over = 'AWAY TOTAL OV2.5'      
+            over = 'AWAY TOTAL OVER 2.5'
+            sub_type_id = 20   
+            overall_prob = match["over_2_5_away_perc"]   
             
         if match["average_goals_home"] >= 3.5 and (match["over_2_5_home_perc"] >= 90):
-            over = 'HOME TOTAL OV2.5'  
+            over = 'HOME TOTAL OVER 2.5'
+            sub_type_id = 19 
+            overall_prob = match["over_2_5_home_perc"] 
         
-        return over
+        return over, sub_type_id, overall_prob
     
     def predict(self, matches):
         team_names = []
         for match in matches:
             teams = f'{match["home_team"]} vs {match["away_team"]}'
             predictions = []
-
-            # if (match["average_goals_home"] - match["average_goals_away"]) > 1.5:
-            #     predictions.append('1')
-            # elif (match["average_goals_away"] - match["average_goals_home"]) > 1.5:
-            #     predictions.append('2')
-
-            # if (match["average_goals_home"] > 2 and match["average_goals_away"] > 2): 
-            #     predictions.append('GG')
-            # elif match["average_goals_home"] < 1 and match["average_goals_away"] < 1:
-            #     predictions.append('NG')
             
-            if self.predict_over(match) is not None:
-                predictions.append(self.predict_over(match))
+            
+            prediction, sub_type_id, overall_prob = self.predict_over(match)
+            if prediction is not None:
+                predictions.append(prediction)
             
             if teams not in team_names and predictions:
                 team_names.append(teams)
                 match["prediction"] = ' & '.join(map(str, predictions))
+                match["sub_type_id"] = sub_type_id
+                match["overall_prob"] = overall_prob
                 self.predicted_matches.append(match)
 
     def append_to_csv(self, start_time, home_team, away_team, prediction, home_prob, away_prob, overall_prob, odds):
@@ -256,7 +270,7 @@ class Extract:
         try:
             url = "https://tipspesa.uk/match-update"                     
             
-            params = f'update_match=update_match&kickoff={match["start_time"]}&home={match["home_team"]}&away={match["away_team"]}&prediction={match["prediction"]}&probability={round((match["home_perc"]+match["away_perc"])/2)}&interval=0&odd={match["odd"]}'
+            params = f'update_match=update_match&kickoff={match["start_time"]}&home={match["home_team"]}&away={match["away_team"]}&prediction={match["prediction"]}&probability={round(match["overall_prob"])}&interval=0&odd={match["odd"]}'
 
             headers = {
                 "Accept": "application/json",
@@ -302,18 +316,9 @@ class Extract:
             start_time_local = start_time_dt.astimezone(self.get_local_timezone())
 
             match["start_time"] = start_time_local.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
-            
-            # if  match["prediction"] != 'OV1.5' and 'NG' not in match["prediction"]:
-            #     match["prediction"] = match["prediction"].replace('GG & OV1.5', 'OV1.5')
-            #     match["prediction"] = match["prediction"].replace('GG & OV2.5', 'OV1.5')
-            #     match["prediction"] = match["prediction"].replace('1 & OV1.5', 'OV1.5')
-            #     match["prediction"] = match["prediction"].replace('1 & OV2.5', 'OV2.5')
-            #     match["prediction"] = match["prediction"].replace('2 & OV1.5', 'OV1.5')
-            #     match["prediction"] = match["prediction"].replace('2 & OV2.5', 'OV1.5')
-            #     match["prediction"] = match["prediction"].replace('GG', 'OV1.5')
-                                 
+                                             
             to_return.append(match)
-            
+                        
             self.update_match(match)
 
         return to_return

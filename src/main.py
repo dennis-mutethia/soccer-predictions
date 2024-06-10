@@ -71,7 +71,8 @@ class Main:
                 if any(len(word) > 2 for word in home_intersection) and any(len(word) > 2 for word in away_intersection):
                     mapped_predicted_match = {
                         'parent_match_id': upcoming_match['parent_match_id'],
-                        'prediction': predicted_match['prediction']
+                        'sub_type_id': predicted_match['sub_type_id'],
+                        'prediction': predicted_match['prediction'].split()[-1]
                     }
                     if mapped_predicted_match not in mapped_predicted_matches:
                         mapped_predicted_matches.append(mapped_predicted_match)
