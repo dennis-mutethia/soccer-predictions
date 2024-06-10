@@ -2,6 +2,7 @@ import pytz, tzlocal, re
 import requests, csv
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+from unidecode import unidecode
 
 class Extract:    
     def __init__(self):
@@ -105,8 +106,8 @@ class Extract:
                     average_goals_away = float(stat_data[5])                    
 
                     match = {
-                        "home_team" : teams[0],
-                        "away_team" : teams[1],
+                        "home_team" : unidecode(teams[0]),
+                        "away_team" : unidecode(teams[1]),
                         "prediction" : "",
                         "odd" : odds,
                         "start_time" : start_time,

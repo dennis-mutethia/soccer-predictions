@@ -12,3 +12,4 @@ tensorflow
 bs4
 psycopg2-binary
 tzlocal
+unidecode
