@@ -45,7 +45,8 @@ class PostgresCRUD:
             {over_0_5_home_perc},{over_0_5_away_perc},{over_1_5_home_perc},{over_1_5_away_perc},{over_2_5_home_perc},{over_2_5_away_perc},{over_3_5_home_perc},{over_3_5_away_perc})
             ON CONFLICT (match_id) DO UPDATE SET
                 home_results = {home_results},
-                away_results = {away_results};
+                away_results = {away_results},
+                prediction = '{prediction}';
         """
 
         cur.execute(query)
