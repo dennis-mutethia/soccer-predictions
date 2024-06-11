@@ -107,7 +107,7 @@ class Autobet:
                     total_odd = 1
                     bs_str = ''
 
-        if total_odd > 1:
+        if total_odd > 2:
             best_slips.append(bs_str)
                     
         return best_slips
