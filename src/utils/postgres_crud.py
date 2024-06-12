@@ -23,6 +23,7 @@ class PostgresCRUD:
         match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{start_date}{home_team}{away_team}'))
         odd = match['odd']
         match_url = match['match_url']
+        meetings = match['meetings']
         average_goals_home = match['average_goals_home']
         average_goals_away = match['average_goals_away']
         overall_prob = match['overall_prob']
@@ -40,9 +41,9 @@ class PostgresCRUD:
           
         cur = self.conn.cursor()
         query = f"""
-            INSERT INTO matches(match_id,kickoff,home_team,away_team,prediction,odd,match_url,average_goals_home,average_goals_away,overall_prob,
+            INSERT INTO matches(match_id,kickoff,home_team,away_team,prediction,odd,match_url,meetings,average_goals_home,average_goals_away,overall_prob,
             over_0_5_home_perc,over_0_5_away_perc,over_1_5_home_perc,over_1_5_away_perc,over_2_5_home_perc,over_2_5_away_perc,over_3_5_home_perc,over_3_5_away_perc,analysis)
-            VALUES('{match_id}','{start_time}','{home_team}','{away_team}','{prediction}',{odd}, '{match_url}',{average_goals_home},{average_goals_away},{overall_prob},
+            VALUES('{match_id}','{start_time}','{home_team}','{away_team}','{prediction}',{odd}, '{match_url}',{meetings}, {average_goals_home},{average_goals_away},{overall_prob},
             {over_0_5_home_perc},{over_0_5_away_perc},{over_1_5_home_perc},{over_1_5_away_perc},{over_2_5_home_perc},{over_2_5_away_perc},{over_3_5_home_perc},{over_3_5_away_perc},
             '{analysis}')
             ON CONFLICT (match_id) DO UPDATE SET

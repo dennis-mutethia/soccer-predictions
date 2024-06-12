@@ -141,6 +141,7 @@ class Extract:
                         "start_time" : start_time,
                         "home_perc" : home_perc,
                         "away_perc" : away_perc,
+                        "meetings": re.search(r'(\d+)\s+meetings', analysis).group(1),
                         "points_per_game_home" : points_per_game_home,
                         "points_per_game_away" : points_per_game_away,
                         "average_goals_home" : average_goals_home,
@@ -227,20 +228,19 @@ class Extract:
     def predict(self, matches):
         team_names = []
         for match in matches:
-            teams = f'{match["home_team"]} vs {match["away_team"]}'
-            predictions = []
-            
-            
-            prediction, sub_type_id, overall_prob = self.predict_over(match)
-            if prediction is not None:
-                predictions.append(prediction)
-            
-            if teams not in team_names and predictions:
-                team_names.append(teams)
-                match["prediction"] = ' & '.join(map(str, predictions))
-                match["sub_type_id"] = sub_type_id
-                match["overall_prob"] = overall_prob
-                self.predicted_matches.append(match)
+            if int(match["meetings"]) >=5:
+                teams = f'{match["home_team"]} vs {match["away_team"]}'
+                predictions = []
+                prediction, sub_type_id, overall_prob = self.predict_over(match)
+                if prediction is not None:
+                    predictions.append(prediction)
+                
+                if teams not in team_names and predictions:
+                    team_names.append(teams)
+                    match["prediction"] = ' & '.join(map(str, predictions))
+                    match["sub_type_id"] = sub_type_id
+                    match["overall_prob"] = overall_prob
+                    self.predicted_matches.append(match)
 
     def append_to_csv(self, start_time, home_team, away_team, prediction, home_prob, away_prob, overall_prob, odds):
         try:
