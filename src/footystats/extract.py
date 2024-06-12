@@ -71,7 +71,15 @@ class Extract:
 
                                 # Parse the HTML content
                                 soup_2 = BeautifulSoup(html_content_2, 'html.parser')
-
+                                
+                                #h2h-trailing-text w90 cf m0Auto
+                                analysis = soup_2.find('p', class_='h2h-trailing-text w90 cf m0Auto').text.strip()
+                                
+                                stats = soup_2.find_all('div', class_='lh14e stat-human')
+                                for stat in stats:
+                                    #print(stat)
+                                    analysis = analysis + '<br />' +stat.text.strip()
+                                    
                                 # Find the div with id "over-prefix-0"
                                 over_prefix_div = soup_2.find('div', id='over-prefix-0')
                                 
@@ -147,7 +155,8 @@ class Extract:
                         "over_3_5_home_perc": over_3_5_home_perc,
                         "over_3_5_away_perc": over_3_5_away_perc,
                         "home_results": home_results,
-                        "away_results": away_results
+                        "away_results": away_results,
+                        "analysis": unidecode(analysis)
                     }
                                         
                     if datetime.now().strftime('%Y-%m-%d') == datetime.strptime(start_time, ("%d-%m-%Y %H:%M:%S")).strftime('%Y-%m-%d'):
@@ -161,33 +170,6 @@ class Extract:
             print("Failed to retrieve the page. Status code:", response.status_code)
 
         return matches
-
-    def predict_old(self, matches):
-        team_names = []
-        for match in matches:
-            teams = f'{match["home_team"]} vs {match["away_team"]}'
-            predictions = []
-
-            if (match["average_goals_home"] - match["average_goals_away"]) > 1.5:
-                predictions.append('1')
-            elif (match["average_goals_away"] - match["average_goals_home"]) > 1.5:
-                predictions.append('2')
-
-            if (match["average_goals_home"] > 2 and match["average_goals_away"] > 2): # or (match["average_goals_home"] > 1 and match["average_goals_away"] > 2):
-                predictions.append('GG')
-            elif match["average_goals_home"] < 1 and match["average_goals_away"] < 1:
-                predictions.append('NG')
-            
-            total_possible_goals = match["average_goals_home"] + match["average_goals_away"]
-            if total_possible_goals > 4:
-                predictions.append('OV2.5')
-            elif total_possible_goals > 2:
-                predictions.append('OV1.5')
-            
-            if teams not in team_names and predictions:
-                team_names.append(teams)
-                match["prediction"] = ' & '.join(map(str, predictions))
-                self.predicted_matches.append(match)
 
     def predict_over(self, match):
         over = None
@@ -322,12 +304,13 @@ class Extract:
             
     def __call__(self):   
         to_return = [] 
+        matches = self.fetch_matches('')   
         matches_1x2 = self.fetch_matches('1x2')     
         matches_btts = self.fetch_matches('btts') 
         matches_over_15 = self.fetch_matches('over-15-goals') 
         matches_over_25 = self.fetch_matches('over-25-goals')
         
-        matches = matches_1x2 + matches_btts + matches_over_15 + matches_over_25
+        matches = matches + matches_1x2 + matches_btts + matches_over_15 + matches_over_25
                 
         self.predict(matches)
         sorted_matches = sorted(self.predicted_matches, key=self.get_start_time)

@@ -7,8 +7,7 @@
                 "ms-azuretools.vscode-docker",
                 "github.vscode-github-actions",
                 "ms-python.pylint",
-                "mechatroner.rainbow-csv",
-                "fabioz.vscode-pydev"
+                "mechatroner.rainbow-csv"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux#": "/bin/bash"
