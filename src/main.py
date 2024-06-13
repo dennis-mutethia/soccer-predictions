@@ -1,5 +1,5 @@
 import csv, argparse
-from datetime import datetime, timedelta
+from datetime import datetime
 from prep.load_data import LoadData
 from prep.fetch_upcoming import FetchUpcoming
 from predictions.goal_prediction_model import GoalPredictionModel
@@ -69,13 +69,10 @@ class Main:
                 away_intersection = upcoming_match_away_words & predicted_match_away_words
 
                 if any(len(word) > 2 for word in home_intersection) and any(len(word) > 2 for word in away_intersection):
-                    mapped_predicted_match = {
-                        'parent_match_id': upcoming_match['parent_match_id'],
-                        'sub_type_id': predicted_match['sub_type_id'],
-                        'prediction': predicted_match['prediction'].split()[-1]
-                    }
-                    if mapped_predicted_match not in mapped_predicted_matches:
-                        mapped_predicted_matches.append(mapped_predicted_match)
+                    predicted_match['parent_match_id'] = upcoming_match['parent_match_id']
+                                        
+                    if predicted_match not in mapped_predicted_matches:
+                        mapped_predicted_matches.append(predicted_match)
         
         return mapped_predicted_matches
 
@@ -107,7 +104,7 @@ class Main:
                     matches.append(row)
                 
                 for row in reversed(matches):                    
-                    if home_team == row['host_name'] and away_team == row['guest_name'] and match_day == datetime.strptime(row['match_day'], '%Y-%m-%d').date():
+                    if home_team == row['host_name'] and away_team == row['guest_name']: # and match_day == datetime.strptime(row['match_day'], '%Y-%m-%d').date():
                         host_score = row['host_score']
                         guest_score = row['guest_score']
                         break
@@ -214,7 +211,7 @@ class Main:
             self.postgres_crud.insert_match(match)
         
         mapped_predicted_matches = self.map_predicted_and_upcoming_matches(upcoming_matches, predicted_matches)  
-        
+                
         if int(autobet) == 1:       
             Autobet(mapped_predicted_matches, self.csv_profiles)()
   

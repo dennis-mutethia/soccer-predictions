@@ -58,11 +58,41 @@ class PostgresCRUD:
         self.conn.commit()
         
         #self.conn.close()
-        
-    #def __call__(self):
-        
-        
-        
+    
+    def insert_betslip(self, match_id, profile_id):
+        betslip_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{match_id}{profile_id}'))
+        with self.conn.cursor() as cur:
+            query = f"""
+                INSERT INTO betslips(betslip_id,match_id,profile_id)
+                VALUES('{betslip_id}','{match_id}','{profile_id}')
+                ON CONFLICT (betslip_id) DO NOTHING;
+            """
+            
+            cur.execute(query)
+            self.conn.commit()
+            
+    def update_placed(self, match_id):
+        with self.conn.cursor() as cur:
+            query = f"""
+                UPDATE matches
+                SET placed=1
+                WHERE match_id = '{match_id}'
+            """
+            
+            cur.execute(query)
+            self.conn.commit()
+          
+    def is_placed(self, match_id):
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT COUNT(*) 
+                FROM betslips
+                WHERE match_id = %s;
+            """
+            cur.execute(query, (match_id,))
+            data = cur.fetchone()[0]
+            return data != 0
+      
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()
