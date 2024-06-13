@@ -102,7 +102,7 @@ class Autobet:
                 bs_str = bs_str + best_slip + ','
                 total_odd = total_odd * float(match["odd"])
 
-                if total_odd >= 4.0:
+                if total_odd >= 3.0:
                     best_slips.append(bs_str)
                     total_odd = 1
                     bs_str = ''
