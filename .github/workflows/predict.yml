@@ -2,7 +2,7 @@ name: predict only
 
 on:
   schedule:
-    - cron: '0 3,9,18 * * *'
+    - cron: '0 4,6,8,10,12,14,16,18,20 * * *'
 
 jobs:
   execute:
