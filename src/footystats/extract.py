@@ -230,7 +230,7 @@ class Extract:
     def predict(self, matches):
         team_names = []
         for match in matches:
-            if int(match["meetings"]) >=5 and 'High' in match["analysis"]:
+            if int(match["meetings"]) >=7 and 'High' in match["analysis"]:
                 teams = f'{match["home_team"]} vs {match["away_team"]}'
                 predictions = []
                 prediction, sub_type_id, overall_prob = self.predict_over(match)
