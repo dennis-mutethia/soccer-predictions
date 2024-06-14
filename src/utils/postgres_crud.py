@@ -45,7 +45,7 @@ class PostgresCRUD:
         prediction = match['prediction']
         match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{start_date}{home_team}{away_team}'))
         odd = match['odd']
-        match_url = match['match_url'].replace("#","-")
+        match_url = match['match_url'].replace("#","*")
         meetings = match['meetings']
         average_goals_home = match['average_goals_home']
         average_goals_away = match['average_goals_away']
