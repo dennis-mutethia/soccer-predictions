@@ -193,13 +193,23 @@ class Extract:
             over = 'TOTAL OVER 2.5'
             sub_type_id = 18
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2
+                      
+        elif match["average_goals_home"] >= 2.5 and (match["over_1_5_home_perc"] == 100):
+            over = 'HOME TOTAL OVER 1.5'  
+            sub_type_id = 19    
+            overall_prob = match["over_1_5_home_perc"] 
+             
+        elif match["average_goals_away"] >= 2.5 and match["over_1_5_away_perc"] == 100:
+            over = 'AWAY TOTAL OVER 1.5'
+            sub_type_id = 20
+            overall_prob = match["over_1_5_away_perc"]   
             
         elif match["over_0_5_home_perc"] == 100 and match["over_0_5_away_perc"] == 100 and (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2 > 80:
             over = 'TOTAL OVER 1.5'
             sub_type_id = 18
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2
         
-        if total_possible_goals >= 2.5 and (match["over_1_5_home_perc"] >= 90 or match["over_1_5_away_perc"] >= 90):
+        elif total_possible_goals >= 2.5 and (match["over_1_5_home_perc"] >= 90 or match["over_1_5_away_perc"] >= 90):
             over = 'TOTAL OVER 1.5'
             sub_type_id = 18
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2
@@ -214,27 +224,6 @@ class Extract:
             sub_type_id = 20
             overall_prob = match["over_0_5_away_perc"]   
             
-             
-        # if match["average_goals_away"] >= 2.5 and match["over_1_5_away_perc"]== 100:
-        #     over = 'AWAY TOTAL OVER 1.5'  
-        #     sub_type_id = 20
-        #     overall_prob = match["over_1_5_away_perc"] 
-            
-        # if match["average_goals_home"] >= 2.5 and (match["over_1_5_home_perc"] == 100):
-        #     over = 'HOME TOTAL OVER 1.5'
-        #     sub_type_id = 19
-        #     overall_prob = match["over_1_5_home_perc"]         
-          
-            
-        # if match["average_goals_away"] >= 3.5 and match["over_2_5_away_perc"] == 100:
-        #     over = 'AWAY TOTAL OVER 2.5'
-        #     sub_type_id = 20
-        #     overall_prob = match["over_2_5_away_perc"]   
-            
-        # if match["average_goals_home"] >= 3.5 and (match["over_2_5_home_perc"] == 100):
-        #     over = 'HOME TOTAL OVER 2.5'
-        #     sub_type_id = 19 
-        #     overall_prob = match["over_2_5_home_perc"] 
         
         return over, sub_type_id, overall_prob
     
