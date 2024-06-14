@@ -188,12 +188,12 @@ class Extract:
             sub_type_id = 18
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2
         
-        elif match["over_1_5_home_perc"] == 100 and match["over_1_5_away_perc"] == 100:
+        elif match["over_1_5_home_perc"] == 100 and match["over_1_5_away_perc"] == 100 and (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2 > 80:
             over = 'TOTAL OVER 2.5'
             sub_type_id = 18
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2
             
-        elif match["over_0_5_home_perc"] == 100 and match["over_0_5_away_perc"] == 100:
+        elif match["over_0_5_home_perc"] == 100 and match["over_0_5_away_perc"] == 100 and (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2 > 80:
             over = 'TOTAL OVER 1.5'
             sub_type_id = 18
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2
@@ -287,7 +287,7 @@ class Extract:
         try:
             url = "https://tipspesa.uk/match-update"                     
             
-            params = f'update_match=update_match&kickoff={match["start_time"]}&home={match["home_team"]}&away={match["away_team"]}&prediction={match["prediction"]}&probability={round(match["overall_prob"])}&interval=0&odd={match["odd"]}'
+            params = f'update_predictions=true&kickoff={match["start_time"]}&home={match["home_team"]}&away={match["away_team"]}&prediction={match["prediction"]}&probability={round(match["overall_prob"])}&interval=0&odd={match["odd"]}'
 
             headers = {
                 "Accept": "application/json",
@@ -337,6 +337,4 @@ class Extract:
                                              
             to_return.append(match)
                         
-            self.update_match(match)
-
         return to_return
