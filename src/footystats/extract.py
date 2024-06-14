@@ -164,11 +164,12 @@ class Extract:
                         matches.append(match)
 
                 except Exception as e:
-                    print(e)
+                    #print(e)
                     pass
 
         else:
-            print("Failed to retrieve the page. Status code:", response.status_code)
+            pass
+            #print("Failed to retrieve the page. Status code:", response.status_code)
 
         return matches
 
@@ -254,60 +255,9 @@ class Extract:
                     match["overall_prob"] = overall_prob
                     self.predicted_matches.append(match)
 
-    def append_to_csv(self, start_time, home_team, away_team, prediction, home_prob, away_prob, overall_prob, odds):
-        try:
-            with open(self.csv_predictions, mode='a', newline='') as csv_file:
-                fieldnames = ['start_time', 'parent_match_id', 'home_team', 'away_team', 'prediction', 'home_prob', 'away_prob', 'overall_prob', 'status', 'odd']
-                writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-
-                # Check if the file is empty, if so write the header
-                if csv_file.tell() == 0:
-                    writer.writeheader()
-
-                writer.writerow({
-                    'start_time': start_time,
-                    'parent_match_id': '',
-                    'home_team': home_team,
-                    'away_team': away_team,
-                    'prediction': prediction,
-                    'home_prob': home_prob,
-                    'away_prob': away_prob,
-                    'overall_prob': overall_prob,
-                    'status': '',
-                    'odd': odds
-                })
-
-        except Exception as e:
-            print(f"An error occurred in append_to_csv: {e}")
-
     def get_start_time(self, match):
         return match["start_time"]
 
-    def update_match(self, match):
-        try:
-            url = "https://tipspesa.uk/match-update"                     
-            
-            params = f'update_predictions=true&kickoff={match["start_time"]}&home={match["home_team"]}&away={match["away_team"]}&prediction={match["prediction"]}&probability={round(match["overall_prob"])}&interval=0&odd={match["odd"]}'
-
-            headers = {
-                "Accept": "application/json",
-                "User-Agent": "PostmanRuntime/7.32.2"
-            }
-
-            response = requests.post(f'{url}?{params}', headers=headers)
-
-            if response.status_code == 200:
-                #reponse_json = json.loads(response.content)
-                print(response.content)
-                
-            else:
-                error_response = response.text
-                # Process the error response if needed
-                print(f"Error: {error_response}")
-
-        except requests.RequestException as e:
-            print(f"Request failed: {e}")
-    
     def get_local_timezone(self):
         try:
             return tzlocal.get_localzone()
