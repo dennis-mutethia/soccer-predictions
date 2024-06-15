@@ -13,25 +13,38 @@ class Extract:
             }
         self.predicted_matches = []
 
-    def fetch_results(self, soup, start_time):
+    def fetch_results(self, kickoff, match_url):
         home_results = None 
         away_results = None
-        # Extract the first <a> element with the specified class
-        a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
-
-        # Extract the date and convert it to a datetime.date object
-        date_str = a_tag.find('time').text.strip()
         
-        start_date = datetime.strptime(start_time, '%d-%m-%Y %H:%M:%S').date()
-        match_date = datetime.strptime(date_str, '%b %d, %Y').date()
+        try:
+            # Send the request with headers
+            response = requests.get(match_url, headers=self.headers)
 
-        teams = a_tag.find_all('div', class_='team')
-            
-        # Extract the results
-        if match_date == start_date:
-            teams = a_tag.find_all('div', class_='team')
-            home_results = int(teams[0].find('span').text)
-            away_results = int(teams[1].find('span').text)        
+            # Check if the request was successful
+            if response.status_code == 200:
+                html_content = response.text
+
+                # Parse the HTML content
+                soup = BeautifulSoup(html_content, 'html.parser')
+                # Extract the first <a> element with the specified class
+                a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
+
+                # Extract the date and convert it to a datetime.date object
+                date_str = a_tag.find('time').text.strip()
+                
+                start_date = kickoff.date()
+                match_date = datetime.strptime(date_str, '%b %d, %Y').date()
+
+                teams = a_tag.find_all('div', class_='team')
+                    
+                # Extract the results
+                if match_date == start_date:
+                    teams = a_tag.find_all('div', class_='team')
+                    home_results = int(teams[0].find('span').text)
+                    away_results = int(teams[1].find('span').text)        
+        except Exception as e:
+            pass
         
         return home_results, away_results
 
@@ -133,9 +146,7 @@ class Extract:
                     points_per_game_away = float(stat_data[3])
 
                     average_goals_home = float(stat_data[4])
-                    average_goals_away = float(stat_data[5])   
-                    
-                    home_results, away_results = self.fetch_results(soup_2, start_time)                 
+                    average_goals_away = float(stat_data[5])  
 
                     match = {
                         "home_team" : unidecode(teams[0]),
@@ -159,8 +170,8 @@ class Extract:
                         "over_2_5_away_perc": over_2_5_away_perc,
                         "over_3_5_home_perc": over_3_5_home_perc,
                         "over_3_5_away_perc": over_3_5_away_perc,
-                        "home_results": home_results,
-                        "away_results": away_results,
+                        "home_results": None,
+                        "away_results": None,
                         "analysis": unidecode(analysis)
                     }
                                         

@@ -74,8 +74,6 @@ class PostgresCRUD:
             {over_0_5_home_perc},{over_0_5_away_perc},{over_1_5_home_perc},{over_1_5_away_perc},{over_2_5_home_perc},{over_2_5_away_perc},{over_3_5_home_perc},{over_3_5_away_perc},
             '{analysis}')
             ON CONFLICT (match_id) DO UPDATE SET
-                home_results = {home_results},
-                away_results = {away_results},
                 prediction = '{prediction}',
                 overall_prob = {overall_prob},
                 analysis = '{analysis}';
@@ -83,7 +81,34 @@ class PostgresCRUD:
         
         cur.execute(query)
         self.conn.commit()
+    
+    def fetch_open_matches(self):
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT *
+                FROM matches
+                WHERE home_results IS NULL 
+                    AND away_results IS NULL
+            """
+            cur.execute(query)
+            return cur.fetchall()
+    
+    def update_match_results(self, match_id, home_results, away_results, status):
+        params = f'update_results=true&match_id={match_id}&home_results={home_results}&away_results={away_results}&status={status}' 
+        self.update_match(params)   
         
+        cur = self.conn.cursor()
+        query = f"""
+            UPDATE matches SET
+                home_results = {home_results},
+                away_results = {away_results},
+                status = '{status}'
+            WHERE match_id = '{match_id}'
+        """
+        
+        cur.execute(query)
+        self.conn.commit()
+              
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()

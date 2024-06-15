@@ -25,6 +25,7 @@ class Main:
         self.load_date = LoadData(self.csv_match_data)
         self.fetch_upcoming = FetchUpcoming(self.csv_upcoming_matches)
         self.goal_prediction_model = GoalPredictionModel()
+        self.extract = Extract()
         self.postgres_crud = PostgresCRUD()
 
     def team_exists_in_match_data(self, team):
@@ -201,6 +202,35 @@ class Main:
             # Handle the case where the file doesn't exist yet
             pass
         
+    def update_results(self):
+        open_matches = self.postgres_crud.fetch_open_matches()
+        for match in open_matches:  
+            match_id = match[0] 
+            kickoff = match[1] 
+            prediction = match[4] 
+            match_url = match[6].replace("*","#")
+            home_results, away_results = self.extract.fetch_results(kickoff, match_url)   
+            if home_results is not None or away_results is not None:
+                status = None
+                total_goals = home_results + away_results
+                if prediction == 'TOTAL OVER 3.5' and total_goals>3:
+                    status = 'WON'
+                if prediction == 'TOTAL OVER 2.5' and total_goals>2:
+                    status = 'WON'
+                if prediction == 'TOTAL OVER 1.5' and total_goals>1:
+                    status = 'WON'
+                    
+                if prediction == 'HOME TOTAL OVER 1.5' and home_results>1:
+                    status = 'WON'
+                if prediction == 'AWAY TOTAL OVER 1.5' and away_results>1:
+                    status = 'WON'
+                if prediction == 'HOME TOTAL OVER 0.5' and home_results>0:
+                    status = 'WON'
+                if prediction == 'AWAY TOTAL OVER 0.5' and away_results>0:
+                    status = 'WON'
+                
+                self.postgres_crud.update_match_results(match_id, home_results, away_results, status)
+           
     def __call__(self, autobet):
         """
         class entry point
@@ -208,7 +238,7 @@ class Main:
 
         upcoming_matches = self.fetch_upcoming(self.sport_id)
 
-        predicted_matches = Extract()()
+        predicted_matches = self.extract()
         
         for match in predicted_matches:
             self.postgres_crud.insert_match(match)
@@ -217,6 +247,8 @@ class Main:
         
         if int(autobet) == 1:       
             Autobet(mapped_predicted_matches, self.csv_profiles)()
+        
+        self.update_results()
   
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process some integers.")
