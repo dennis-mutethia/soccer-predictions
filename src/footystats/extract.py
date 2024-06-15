@@ -30,9 +30,8 @@ class Extract:
         # Extract the results
         if match_date == start_date:
             teams = a_tag.find_all('div', class_='team')
-            print(teams)
             home_results = int(teams[0].find('span').text)
-            away_results = int(teams[1].find('span').text)
+            away_results = int(teams[1].find('span').text)        
         
         return home_results, away_results
 
