@@ -21,11 +21,16 @@ class Extract:
 
         # Extract the date and convert it to a datetime.date object
         date_str = a_tag.find('time').text.strip()
+        
+        start_date = datetime.strptime(start_time, '%d-%m-%Y %H:%M:%S').date()
         match_date = datetime.strptime(date_str, '%b %d, %Y').date()
 
+        teams = a_tag.find_all('div', class_='team')
+            
         # Extract the results
-        if match_date == start_time.date():
+        if match_date == start_date:
             teams = a_tag.find_all('div', class_='team')
+            print(teams)
             home_results = int(teams[0].find('span').text)
             away_results = int(teams[1].find('span').text)
         
@@ -131,7 +136,7 @@ class Extract:
                     average_goals_home = float(stat_data[4])
                     average_goals_away = float(stat_data[5])   
                     
-                    home_results, away_results = self.fetch_results(soup_2, parsed_date)                 
+                    home_results, away_results = self.fetch_results(soup_2, start_time)                 
 
                     match = {
                         "home_team" : unidecode(teams[0]),
