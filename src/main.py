@@ -211,7 +211,7 @@ class Main:
             match_url = match[6].replace("*","#")
             home_results, away_results = self.extract.fetch_results(kickoff, match_url)   
             if home_results is not None or away_results is not None:
-                status = None
+                status = ''
                 total_goals = home_results + away_results
                 if prediction == 'TOTAL OVER 3.5' and total_goals>3:
                     status = 'WON'
@@ -229,7 +229,9 @@ class Main:
                 if prediction == 'AWAY TOTAL OVER 0.5' and away_results>0:
                     status = 'WON'
                 
-                self.postgres_crud.update_match_results(match_id, home_results, away_results, status)
+                
+                print(f'prediction={prediction} home_results={home_results} away_results={away_results} status={status}')
+                #self.postgres_crud.update_match_results(match_id, home_results, away_results, status)
            
     def __call__(self, autobet):
         """
