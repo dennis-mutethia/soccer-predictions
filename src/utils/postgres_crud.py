@@ -62,7 +62,7 @@ class PostgresCRUD:
         away_results = match['away_results'] if match['away_results'] is not None else 'NULL'
         analysis = match['analysis']        
         
-        params = f'update_predictions=true&match_id={match_id}&kickoff={start_time}&home_team={home_team}&away_team={away_team}&prediction={prediction}&odd={odd}&match_url={match_url}&meetings={meetings}&average_goals_home={average_goals_home}&average_goals_away={average_goals_away}&overall_prob={overall_prob}&over_0_5_home_perc={over_0_5_home_perc}&over_0_5_away_perc={over_0_5_away_perc}&over_1_5_home_perc={over_1_5_home_perc}&over_1_5_away_perc={over_1_5_away_perc}&over_2_5_home_perc={over_2_5_home_perc}&over_2_5_away_perc={over_2_5_away_perc}&over_3_5_home_perc={over_3_5_home_perc}&over_3_5_away_perc={over_3_5_away_perc}&analysis={analysis}&home_results={home_results}&away_results={away_results}' 
+        params = f'update_predictions=true&match_id={match_id}&kickoff={start_time}&home_team={home_team}&away_team={away_team}&prediction={prediction}&odd={odd}&match_url={match_url}&meetings={meetings}&average_goals_home={average_goals_home}&average_goals_away={average_goals_away}&overall_prob={overall_prob}&over_0_5_home_perc={over_0_5_home_perc}&over_0_5_away_perc={over_0_5_away_perc}&over_1_5_home_perc={over_1_5_home_perc}&over_1_5_away_perc={over_1_5_away_perc}&over_2_5_home_perc={over_2_5_home_perc}&over_2_5_away_perc={over_2_5_away_perc}&over_3_5_home_perc={over_3_5_home_perc}&over_3_5_away_perc={over_3_5_away_perc}&analysis={analysis}' 
         self.update_match(params)   
         
         analysis = match['analysis'].replace("'","''")

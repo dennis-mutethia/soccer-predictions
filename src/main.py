@@ -230,8 +230,8 @@ class Main:
                     status = 'WON'
                 
                 
-                print(f'prediction={prediction} home_results={home_results} away_results={away_results} status={status}')
-                #self.postgres_crud.update_match_results(match_id, home_results, away_results, status)
+                #print(f'prediction={prediction} home_results={home_results} away_results={away_results} status={status}')
+                self.postgres_crud.update_match_results(match_id, home_results, away_results, status)
            
     def __call__(self, autobet):
         """
