@@ -209,7 +209,7 @@ class Main:
             kickoff = match[1] 
             prediction = match[4] 
             match_url = match[6].replace("*","#")
-            home_results, away_results = self.extract.fetch_results(kickoff, match_url)   
+            home_results, away_results = self.extract.fetch_results(match_url)   
             if home_results is not None or away_results is not None:
                 status = ''
                 total_goals = home_results + away_results

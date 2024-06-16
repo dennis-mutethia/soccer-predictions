@@ -89,6 +89,7 @@ class PostgresCRUD:
                 FROM matches
                 WHERE home_results IS NULL 
                     AND away_results IS NULL
+                    AND DATE(kickoff) >= CURRENT_DATE - 1
             """
             cur.execute(query)
             return cur.fetchall()

@@ -13,7 +13,7 @@ class Extract:
             }
         self.predicted_matches = []
 
-    def fetch_results(self, kickoff, match_url):
+    def fetch_results(self, match_url):
         home_results = None 
         away_results = None
         
@@ -29,20 +29,15 @@ class Extract:
                 soup = BeautifulSoup(html_content, 'html.parser')
                 # Extract the first <a> element with the specified class
                 a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
-
-                # Extract the date and convert it to a datetime.date object
-                date_str = a_tag.find('time').text.strip()
                 
-                start_date = kickoff.date()
-                match_date = datetime.strptime(date_str, '%b %d, %Y').date()
+                p_results = soup.find('p', class_='ac fs14e bold')
+                if p_results is not None:
+                    parts = p_results.text.strip().split(" - ")
 
-                teams = a_tag.find_all('div', class_='team')
-                    
-                # Extract the results
-                if match_date == start_date:
-                    teams = a_tag.find_all('div', class_='team')
-                    home_results = int(teams[0].find('span').text)
-                    away_results = int(teams[1].find('span').text)        
+                    # Convert the split parts to integers
+                    home_results = int(parts[0])
+                    away_results = int(parts[1])
+                     
         except Exception as e:
             pass
         
