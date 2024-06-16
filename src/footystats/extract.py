@@ -30,7 +30,7 @@ class Extract:
                 # Extract the first <a> element with the specified class
                 a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
                 
-                p_results = soup.find('p', class_='ac fs14e bold')
+                p_results = soup.find('p', class_='ac fs14e')
                 if p_results is not None:
                     parts = p_results.text.strip().split(" - ")
 
