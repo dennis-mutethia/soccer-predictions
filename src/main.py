@@ -209,9 +209,10 @@ class Main:
             kickoff = match[1] 
             prediction = match[4] 
             match_url = match[6].replace("*","#")
+            #print(f'match_id={match_id} kickoff={kickoff} prediction={prediction} match_url={match_url}')
             home_results, away_results = self.extract.fetch_results(match_url)   
-            if home_results is not None or away_results is not None:
-                status = ''
+            if home_results is not None and (home_results != 0 or home_results != 0):
+                status = 'LOST'
                 total_goals = home_results + away_results
                 if prediction == 'TOTAL OVER 3.5' and total_goals>3:
                     status = 'WON'
