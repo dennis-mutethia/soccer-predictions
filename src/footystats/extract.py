@@ -16,6 +16,7 @@ class Extract:
     def fetch_results(self, match_url):
         home_results = None 
         away_results = None
+        live = False
         
         try:
             # Send the request with headers
@@ -30,7 +31,11 @@ class Extract:
                 # Extract the first <a> element with the specified class
                 a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
                 
-                p_results = soup.find('p', class_='ac fs14e')
+                p_results = soup.find('p', class_='ac fs14e bold')
+                if p_results is None:
+                    p_results = soup.find('p', class_='ac fs2e bold') 
+                    live = True
+                
                 if p_results is not None:
                     parts = p_results.text.strip().split(" - ")
 
@@ -41,7 +46,7 @@ class Extract:
         except Exception as e:
             pass
         
-        return home_results, away_results
+        return home_results, away_results, live
 
     def fetch_matches(self, endpoint):     
         url = self.base_url + endpoint

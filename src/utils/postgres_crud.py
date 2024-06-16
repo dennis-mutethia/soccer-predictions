@@ -87,8 +87,7 @@ class PostgresCRUD:
             query = """
                 SELECT *
                 FROM matches
-                WHERE home_results IS NULL 
-                    AND away_results IS NULL
+                WHERE (status IS NULL OR status = 'LIVE')
                     AND DATE(kickoff) >= CURRENT_DATE - 1
             """
             cur.execute(query)

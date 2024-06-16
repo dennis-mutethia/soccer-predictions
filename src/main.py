@@ -209,9 +209,9 @@ class Main:
             kickoff = match[1] 
             prediction = match[4] 
             match_url = match[6].replace("*","#")
-            #print(f'match_id={match_id} kickoff={kickoff} prediction={prediction} match_url={match_url}')
-            home_results, away_results = self.extract.fetch_results(match_url)   
-            if home_results is not None and (home_results != 0 or home_results != 0):
+            print(f'match_id={match_id} kickoff={kickoff} prediction={prediction} match_url={match_url}')
+            home_results, away_results, live = self.extract.fetch_results(match_url)   
+            if home_results is not None and (home_results != 0 or away_results != 0):
                 status = 'LOST'
                 total_goals = home_results + away_results
                 if prediction == 'TOTAL OVER 3.5' and total_goals>3:
@@ -228,9 +228,9 @@ class Main:
                 if prediction == 'HOME TOTAL OVER 0.5' and home_results>0:
                     status = 'WON'
                 if prediction == 'AWAY TOTAL OVER 0.5' and away_results>0:
-                    status = 'WON'
+                    status = 'WON'                
                 
-                
+                status = 'LIVE' if live else status
                 #print(f'prediction={prediction} home_results={home_results} away_results={away_results} status={status}')
                 self.postgres_crud.update_match_results(match_id, home_results, away_results, status)
            
