@@ -1,4 +1,4 @@
-import psycopg2, uuid, requests
+import uuid, requests, psycopg2
 
 class PostgresCRUD:
     def __init__(self):
@@ -27,6 +27,7 @@ class PostgresCRUD:
 
             if response.status_code == 200:
                 #reponse_json = json.loads(response.content)
+                print('Received json')
                 print(response.content)
                 
             else:
@@ -58,8 +59,6 @@ class PostgresCRUD:
         over_2_5_away_perc = match['over_2_5_away_perc']
         over_3_5_home_perc = match['over_3_5_home_perc']
         over_3_5_away_perc = match['over_3_5_away_perc']
-        home_results = match['home_results'] if match['home_results'] is not None else 'NULL'
-        away_results = match['away_results'] if match['away_results'] is not None else 'NULL'
         analysis = match['analysis']        
         
         params = f'update_predictions=true&match_id={match_id}&kickoff={start_time}&home_team={home_team}&away_team={away_team}&prediction={prediction}&odd={odd}&match_url={match_url}&meetings={meetings}&average_goals_home={average_goals_home}&average_goals_away={average_goals_away}&overall_prob={overall_prob}&over_0_5_home_perc={over_0_5_home_perc}&over_0_5_away_perc={over_0_5_away_perc}&over_1_5_home_perc={over_1_5_home_perc}&over_1_5_away_perc={over_1_5_away_perc}&over_2_5_home_perc={over_2_5_home_perc}&over_2_5_away_perc={over_2_5_away_perc}&over_3_5_home_perc={over_3_5_home_perc}&over_3_5_away_perc={over_3_5_away_perc}&analysis={analysis}' 

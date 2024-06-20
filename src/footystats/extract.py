@@ -6,14 +6,14 @@ from unidecode import unidecode
 
 class Extract:    
     def __init__(self):
-        self.base_url = 'https://footystats.org/predictions/'
+        self.base_url = 'https://footystats.org/'
         self.csv_predictions = './docs/predictions.csv' 
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
             }
         self.predicted_matches = []
 
-    def fetch_results(self, match_url):
+    def fetch_results(self, match_url, kickoff):
         home_results = None 
         away_results = None
         live = False
@@ -28,13 +28,22 @@ class Extract:
 
                 # Parse the HTML content
                 soup = BeautifulSoup(html_content, 'html.parser')
-                # Extract the first <a> element with the specified class
-                a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
                 
                 p_results = soup.find('p', class_='ac fs14e bold')
                 if p_results is None:
-                    p_results = soup.find('p', class_='ac fs2e bold') 
+                    p_results = soup.find('p', class_='ac fs2e bold')
                     live = True
+                
+                    # Extract the first <a> element with the specified class
+                    a_tag = soup.find('a', class_='fixture changeH2HDataButton_neo')
+                    if a_tag is not None:                    
+                        start_time = a_tag.find('time', class_='timezone-convert-match-h2h-neo').text.strip()
+                        start_time = datetime.strptime(start_time, "%b %d, %Y")
+                        if start_time.date() == kickoff.date():
+                            results = a_tag.find_all('span')
+                            home_results = int(results[0].text.strip())
+                            away_results = int(results[1].text.strip())
+                            live = False  
                 
                 if p_results is not None:
                     parts = p_results.text.strip().split(" - ")
@@ -263,12 +272,13 @@ class Extract:
     def __call__(self):   
         to_return = [] 
         matches = self.fetch_matches('')   
-        matches_1x2 = self.fetch_matches('1x2')     
-        matches_btts = self.fetch_matches('btts') 
-        matches_over_15 = self.fetch_matches('over-15-goals') 
-        matches_over_25 = self.fetch_matches('over-25-goals')
+        matches_1x2 = self.fetch_matches('predictions/1x2')     
+        matches_btts = self.fetch_matches('predictions/btts') 
+        matches_over_15 = self.fetch_matches('predictions/over-15-goals') 
+        matches_over_25 = self.fetch_matches('predictions/over-25-goals')
+        matches_tomorrow = self.fetch_matches('tomorrow')    
         
-        matches = matches + matches_1x2 + matches_btts + matches_over_15 + matches_over_25
+        matches = matches + matches_1x2 + matches_btts + matches_over_15 + matches_over_25 + matches_tomorrow
                 
         self.predict(matches)
         sorted_matches = sorted(self.predicted_matches, key=self.get_start_time)

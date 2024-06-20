@@ -210,7 +210,7 @@ class Main:
             prediction = match[4] 
             match_url = match[6].replace("*","#")
             print(f'match_id={match_id} kickoff={kickoff} prediction={prediction} match_url={match_url}')
-            home_results, away_results, live = self.extract.fetch_results(match_url)   
+            home_results, away_results, live = self.extract.fetch_results(match_url, kickoff)   
             if home_results is not None and (home_results != 0 or away_results != 0):
                 status = 'LOST'
                 total_goals = home_results + away_results
