@@ -56,7 +56,24 @@ class Extract:
             pass
         
         return home_results, away_results, live
-
+    
+    def predict_home_away_total(self, home_analysis, away_analysis):
+        prediction = None
+        if 'Very High Chance' in home_analysis and 'Very High Chance' in away_analysis:
+            prediction = 'TOTAL OVER 2.5'
+        if 'High Chance' in home_analysis and 'High Chance' in away_analysis:
+            prediction = 'TOTAL OVER 1.5'
+        elif 'Very High Chance' in home_analysis:
+            prediction = 'HOME TOTAL OVER 1.5'
+        elif 'Very High Chance' in away_analysis:
+            prediction = 'AWAY TOTAL OVER 1.5'
+        elif 'High Chance' in home_analysis:
+            prediction = 'HOME TOTAL OVER 0.5'
+        elif 'High Chance' in away_analysis:
+            prediction = 'AWAY TOTAL OVER 0.5'
+        
+        return prediction
+    
     def fetch_matches(self, endpoint):     
         url = self.base_url + endpoint
         matches = []
@@ -102,6 +119,8 @@ class Extract:
                                 analysis = soup_2.find('p', class_='h2h-trailing-text w90 cf m0Auto').text.strip()
                                 
                                 stats = soup_2.find_all('div', class_='lh14e stat-human')
+                                home_analysis = stats[0].text.strip()
+                                away_analysis = stats[1].text.strip()
                                 for stat in stats:
                                     #print(stat)
                                     analysis = analysis + '<br />' +stat.text.strip()
@@ -160,7 +179,7 @@ class Extract:
                     match = {
                         "home_team" : unidecode(teams[0]),
                         "away_team" : unidecode(teams[1]),
-                        "prediction" : "",
+                        "prediction" : self.predict_home_away_total(home_analysis, away_analysis),
                         "odd" : odds,
                         "start_time" : start_time,
                         "home_perc" : home_perc,
@@ -243,13 +262,50 @@ class Extract:
         
         return over, sub_type_id, overall_prob
     
+    def map_prediction(self, match):
+        over = None
+        sub_type_id = None
+        overall_prob = 0   
+             
+        if match["prediction"] == 'TOTAL OVER 2.5':
+            over = 'TOTAL OVER 2.5'
+            sub_type_id = 18
+            overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2             
+             
+        elif match["prediction"] == 'TOTAL OVER 1.5':
+            over = 'TOTAL OVER 1.5'
+            sub_type_id = 18
+            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2    
+            
+        if match["prediction"] == 'HOME TOTAL OVER 1.5':
+            over = 'HOME TOTAL OVER 1.5'  
+            sub_type_id = 19    
+            overall_prob = match["over_1_5_home_perc"] 
+             
+        elif match["prediction"] == 'AWAY TOTAL OVER 1.5':
+            over = 'AWAY TOTAL OVER 1.5'
+            sub_type_id = 20
+            overall_prob = match["over_1_5_away_perc"]  
+               
+        elif match["prediction"] == 'HOME TOTAL OVER 0.5':
+            over = 'HOME TOTAL OVER 0.5'  
+            sub_type_id = 19    
+            overall_prob = match["over_0_5_home_perc"] 
+             
+        elif match["prediction"] == 'AWAY TOTAL OVER 0.5':
+            over = 'AWAY TOTAL OVER 0.5'
+            sub_type_id = 20
+            overall_prob = match["over_0_5_away_perc"] 
+            
+        return over, sub_type_id, overall_prob
+    
     def predict(self, matches):
         team_names = []
         for match in matches:
             if int(match["meetings"]) >=7 and 'High' in match["analysis"]:
                 teams = f'{match["home_team"]} vs {match["away_team"]}'
                 predictions = []
-                prediction, sub_type_id, overall_prob = self.predict_over(match)
+                prediction, sub_type_id, overall_prob = self.map_prediction(match) # self.predict_over(match)
                 if prediction is not None:
                     predictions.append(prediction)
                 
