@@ -59,9 +59,13 @@ class Extract:
     
     def predict_home_away_total(self, home_analysis, away_analysis):
         prediction = None
-        if 'Very High Chance' in home_analysis and 'Very High Chance' in away_analysis:
+        if 'Very High Chance' in home_analysis and ('Very High Chance' in away_analysis or 'High Chance' in away_analysis):
             prediction = 'TOTAL OVER 2.5'
-        if 'High Chance' in home_analysis and 'High Chance' in away_analysis:
+        if 'Very High Chance' in away_analysis and ('Very High Chance' in home_analysis or 'High Chance' in home_analysis):
+            prediction = 'TOTAL OVER 2.5'
+        if 'High Chance' in home_analysis and ('High Chance' in away_analysis or 'Moderate Chance' in away_analysis):
+            prediction = 'TOTAL OVER 1.5'
+        if 'High Chance' in away_analysis and ('High Chance' in home_analysis or 'Moderate Chance' in home_analysis):
             prediction = 'TOTAL OVER 1.5'
         elif 'Very High Chance' in home_analysis:
             prediction = 'HOME TOTAL OVER 1.5'
