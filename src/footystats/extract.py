@@ -271,32 +271,32 @@ class Extract:
         sub_type_id = None
         overall_prob = 0   
              
-        if match["prediction"] == 'TOTAL OVER 2.5':
+        if match["prediction"] == 'TOTAL OVER 2.5' and (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2>=90:
             over = 'TOTAL OVER 2.5'
             sub_type_id = 18
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2             
              
-        elif match["prediction"] == 'TOTAL OVER 1.5':
+        elif match["prediction"] == 'TOTAL OVER 1.5' and ((match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2)>=90:
             over = 'TOTAL OVER 1.5'
             sub_type_id = 18
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2    
             
-        if match["prediction"] == 'HOME TOTAL OVER 1.5':
+        if match["prediction"] == 'HOME TOTAL OVER 1.5' and match["over_1_5_home_perc"]>=90:
             over = 'HOME TOTAL OVER 1.5'  
             sub_type_id = 19    
             overall_prob = match["over_1_5_home_perc"] 
              
-        elif match["prediction"] == 'AWAY TOTAL OVER 1.5':
+        elif match["prediction"] == 'AWAY TOTAL OVER 1.5' and match["over_1_5_away_perc"]>=90:
             over = 'AWAY TOTAL OVER 1.5'
             sub_type_id = 20
             overall_prob = match["over_1_5_away_perc"]  
                
-        elif match["prediction"] == 'HOME TOTAL OVER 0.5':
+        elif match["prediction"] == 'HOME TOTAL OVER 0.5' and match["over_0_5_home_perc"]>=90:
             over = 'HOME TOTAL OVER 0.5'  
             sub_type_id = 19    
             overall_prob = match["over_0_5_home_perc"] 
              
-        elif match["prediction"] == 'AWAY TOTAL OVER 0.5':
+        elif match["prediction"] == 'AWAY TOTAL OVER 0.5' and match["over_0_5_away_perc"]>=90:
             over = 'AWAY TOTAL OVER 0.5'
             sub_type_id = 20
             overall_prob = match["over_0_5_away_perc"] 
