@@ -68,9 +68,9 @@ class Extract:
         elif 'High Chance' in away_analysis and ('High Chance' in home_analysis or 'Moderate Chance' in home_analysis):
             prediction = 'TOTAL OVER 1.5'
         elif 'Very High Chance' in home_analysis:
-            prediction = 'HOME TOTAL OVER 1.5'
+            prediction = 'HOME TOTAL OVER 0.5'
         elif 'Very High Chance' in away_analysis:
-            prediction = 'AWAY TOTAL OVER 1.5'
+            prediction = 'AWAY TOTAL OVER 0.5'
         elif 'High Chance' in home_analysis:
             prediction = 'HOME TOTAL OVER 0.5'
         elif 'High Chance' in away_analysis:
