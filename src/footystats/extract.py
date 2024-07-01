@@ -249,9 +249,7 @@ class Extract:
         elif total_possible_goals >= 2.5 and (match["over_1_5_home_perc"] >= 90 or match["over_1_5_away_perc"] >= 90):
             over = 'TOTAL OVER 1.5'
             sub_type_id = 18
-            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2
-            
-            
+            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2   
                       
         elif match["average_goals_home"] >= 1.5 and (match["over_0_5_home_perc"] == 100):
             over = 'HOME TOTAL OVER 0.5'  
@@ -267,7 +265,6 @@ class Extract:
         return over, sub_type_id, overall_prob
     
     def map_prediction_v2(self, match):
-        print(match)
         over = None
         sub_type_id = None
         overall_prob = 0  
