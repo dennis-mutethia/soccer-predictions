@@ -2,7 +2,7 @@ name: predict only
 
 on:
   schedule:
-    - cron: '0 * * * *'  # This runs the job every hour at the 0th minute
+    - cron: '0 3-21 * * *'  # This runs the job every hour between 3 & 21 at the 0th minute
 
 jobs:
   execute:
