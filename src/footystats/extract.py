@@ -282,17 +282,17 @@ class Extract:
         elif match["over_3_5_home_perc"] > 80:
             over = 'HOME TOTAL OVER 2.5'  
             sub_type_id = 19    
-            overall_prob = match["over_2_5_home_perc"] 
+            overall_prob = (match["over_2_5_home_perc"] + match["over_3_5_home_perc"])/2
         
         elif match["over_3_5_away_perc"] > 80:
             over = 'AWAY TOTAL OVER 2.5'  
             sub_type_id = 19    
-            overall_prob = match["over_2_5_away_perc"] 
+            overall_prob = (match["over_2_5_away_perc"] + match["over_3_5_away_perc"])/2
         
         elif match["over_2_5_home_perc"] == 100 and match["over_2_5_away_perc"] == 100:
             over = 'TOTAL OVER 3.5'
             sub_type_id = 18
-            overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2   
+            overall_prob = (match["over_3_5_home_perc"] + match["over_3_5_away_perc"])/2   
         
         elif match["over_2_5_home_perc"] > 80 and match["over_2_5_away_perc"] > 80:
             over = 'TOTAL OVER 2.5'
@@ -302,17 +302,17 @@ class Extract:
         elif match["over_2_5_home_perc"] > 80:
             over = 'HOME TOTAL OVER 1.5'  
             sub_type_id = 19    
-            overall_prob = match["over_1_5_home_perc"] 
+            overall_prob = (match["over_1_5_home_perc"] + match["over_2_5_home_perc"])/2
         
         elif match["over_2_5_away_perc"] > 80:
             over = 'AWAY TOTAL OVER 1.5'  
             sub_type_id = 19    
-            overall_prob = match["over_1_5_away_perc"] 
+            overall_prob = (match["over_1_5_away_perc"] + match["over_2_5_away_perc"])/2
         
         elif match["over_1_5_home_perc"] == 100 and match["over_1_5_away_perc"] == 100:
             over = 'TOTAL OVER 2.5'
             sub_type_id = 18
-            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2   
+            overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2   
         
         elif match["over_1_5_home_perc"] > 80 and match["over_1_5_away_perc"] > 80:
             over = 'TOTAL OVER 1.5'
@@ -322,12 +322,12 @@ class Extract:
         elif match["over_1_5_home_perc"] > 80:
             over = 'HOME TOTAL OVER 0.5'  
             sub_type_id = 19    
-            overall_prob = match["over_0_5_home_perc"] 
+            overall_prob = (match["over_0_5_home_perc"] + match["over_1_5_home_perc"])/2
         
         elif match["over_1_5_away_perc"] > 80:
             over = 'AWAY TOTAL OVER 0.5'  
             sub_type_id = 19    
-            overall_prob = match["over_0_5_away_perc"] 
+            overall_prob = (match["over_0_5_away_perc"] + match["over_1_5_away_perc"])/2   
         
         return over, sub_type_id, overall_prob
         
