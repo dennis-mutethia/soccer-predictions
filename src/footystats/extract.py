@@ -396,12 +396,12 @@ class Extract:
             
     def __call__(self):   
         to_return = [] 
-        matches = self.fetch_matches('')   
+        matches = self.fetch_matches('predictions')   
         matches_1x2 = self.fetch_matches('predictions/1x2')     
         matches_btts = self.fetch_matches('predictions/btts') 
         matches_over_15 = self.fetch_matches('predictions/over-15-goals') 
         matches_over_25 = self.fetch_matches('predictions/over-25-goals')
-        matches_tomorrow = self.fetch_matches('tomorrow')    
+        matches_tomorrow = self.fetch_matches('predictions/tomorrow')    
         
         matches = matches + matches_1x2 + matches_btts + matches_over_15 + matches_over_25 + matches_tomorrow
                 
