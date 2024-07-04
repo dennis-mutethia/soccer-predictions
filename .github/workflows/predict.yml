@@ -1,4 +1,4 @@
-name: predict & fetch results
+name: predict and fetch results
 
 on:
   schedule:
