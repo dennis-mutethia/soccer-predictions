@@ -1,6 +1,7 @@
 name: Pylint
 
-on: [workflow-call]
+on:      
+  workflow_call:
 
 jobs:
   build:
