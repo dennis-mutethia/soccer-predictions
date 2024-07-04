@@ -373,17 +373,18 @@ class Extract:
         for match in matches:
             if int(match["meetings"]) >=7 and 'High' in match["analysis"]:
                 teams = f'{match["home_team"]} vs {match["away_team"]}'
-                predictions = []
-                prediction, sub_type_id, overall_prob = self.map_prediction_v2(match) # self.predict_over(match)
-                if prediction is not None:
-                    predictions.append(prediction)
-                
-                if teams not in team_names and predictions:
-                    team_names.append(teams)
-                    match["prediction"] = ' & '.join(map(str, predictions))
-                    match["sub_type_id"] = sub_type_id
-                    match["overall_prob"] = overall_prob
-                    self.predicted_matches.append(match)
+                if 'Women' not in teams:
+                    predictions = []
+                    prediction, sub_type_id, overall_prob = self.map_prediction_v2(match) # self.predict_over(match)
+                    if prediction is not None:
+                        predictions.append(prediction)
+                    
+                    if teams not in team_names and predictions:
+                        team_names.append(teams)
+                        match["prediction"] = ' & '.join(map(str, predictions))
+                        match["sub_type_id"] = sub_type_id
+                        match["overall_prob"] = overall_prob
+                        self.predicted_matches.append(match)
 
     def get_start_time(self, match):
         return match["start_time"]
