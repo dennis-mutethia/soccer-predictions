@@ -1,6 +1,6 @@
 name: Pylint
 
-on: [push]
+on: [workflow-call]
 
 jobs:
   build:
