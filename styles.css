@@ -3,30 +3,3 @@ body, html {
     margin: 0;
     padding: 0;
 }
-
-/* Style for the table */
-.styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-}
-
-.styled-table th, .styled-table td {
-    padding: 8px;
-    text-align: left;
-}
-
-.styled-table th {
-    background-color: #f2f2f2;
-}
-
-.styled-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.styled-table tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Additional styles for specific elements */
-/* Customize as per your specific needs */
