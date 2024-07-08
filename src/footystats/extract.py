@@ -206,47 +206,47 @@ class Extract:
         sub_type_id = None
         overall_prob = 0  
         
-        if match["over_3_5_home_perc"] == 100 and 'High' in match["home_analysis"] and match["over_3_5_away_perc"] == 100 and 'High' in match["away_analysis"]:
+        if match["over_3_5_home_perc"] == 100 and 'Very High' in match["home_analysis"] and match["over_3_5_away_perc"] == 100 and 'Very High' in match["away_analysis"]:
             prediction = 'TOTAL OVER 4.5'
             sub_type_id = 18
             overall_prob = (match["over_3_5_home_perc"] + match["over_3_5_away_perc"])/2  
         
-        elif match["over_3_5_home_perc"] == 100 and 'High' in match["home_analysis"]:
+        elif match["over_3_5_home_perc"] == 100 and 'Very High' in match["home_analysis"]:
             prediction = 'HOME TOTAL OVER 3.5'  
             sub_type_id = 19    
             overall_prob = match["over_3_5_home_perc"]
         
-        elif match["over_3_5_away_perc"] == 100 and 'High' in match["away_analysis"]:
+        elif match["over_3_5_away_perc"] == 100 and 'Very High' in match["away_analysis"]:
             prediction = 'AWAY TOTAL OVER 3.5'  
             sub_type_id = 19    
             overall_prob = match["over_3_5_away_perc"]
             
-        elif match["over_2_5_home_perc"] == 100 and 'High' in match["home_analysis"] and match["over_2_5_away_perc"] == 100 and 'High' in match["away_analysis"]:
+        elif match["over_2_5_home_perc"] == 100 and 'Very High' in match["home_analysis"] and match["over_2_5_away_perc"] == 100 and 'Very High' in match["away_analysis"]:
             prediction = 'TOTAL OVER 3.5'
             sub_type_id = 18
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2  
         
-        elif match["over_2_5_home_perc"] == 100 and 'High' in match["home_analysis"]:
+        elif match["over_2_5_home_perc"] == 100 and 'Very High' in match["home_analysis"]:
             prediction = 'HOME TOTAL OVER 2.5'  
             sub_type_id = 19    
             overall_prob = match["over_2_5_home_perc"]
         
-        elif match["over_2_5_away_perc"] == 100 and 'High' in match["away_analysis"]:
+        elif match["over_2_5_away_perc"] == 100 and 'Very High' in match["away_analysis"]:
             prediction = 'AWAY TOTAL OVER 2.5'  
             sub_type_id = 19    
             overall_prob = match["over_2_5_away_perc"]
         
-        elif match["over_1_5_home_perc"] == 100 and 'High' in match["home_analysis"] and match["over_1_5_away_perc"] == 100 and 'High' in match["away_analysis"]:
+        elif match["over_1_5_home_perc"] == 100 and 'Very High' in match["home_analysis"] and match["over_1_5_away_perc"] == 100 and 'Very High' in match["away_analysis"]:
             prediction = 'TOTAL OVER 2.5'
             sub_type_id = 18
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2  
         
-        elif match["over_1_5_home_perc"] == 100 and 'High' in match["home_analysis"]:
+        elif match["over_1_5_home_perc"] == 100 and 'Very High' in match["home_analysis"]:
             prediction = 'HOME TOTAL OVER 1.5'  
             sub_type_id = 19    
             overall_prob = match["over_1_5_home_perc"]
         
-        elif match["over_1_5_away_perc"] == 100 and 'High' in match["away_analysis"]:
+        elif match["over_1_5_away_perc"] == 100 and 'Very High' in match["away_analysis"]:
             prediction = 'AWAY TOTAL OVER 1.5'  
             sub_type_id = 19    
             overall_prob = match["over_1_5_away_perc"]
