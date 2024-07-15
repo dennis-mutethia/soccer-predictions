@@ -226,6 +226,11 @@ class Extract:
             sub_type_id = 18
             overall_prob = (match["over_0_5_home_perc"] + match["over_0_5_away_perc"])/2  
         
+        elif (match["over_0_5_home_perc"] == 100 and 'High' in match["home_analysis"] and 'Uncertainty' in match["away_analysis"]) or (match["over_0_5_away_perc"] == 100 and 'High' in match["away_analysis"] and 'Uncertainty' in match["home_analysis"]):
+            prediction = 'TOTAL OVER 1.5'
+            sub_type_id = 18
+            overall_prob = (match["over_0_5_home_perc"] + match["over_0_5_away_perc"])/2  
+        
         elif match["over_0_5_home_perc"] == 100 and 'High' in match["home_analysis"]:
             prediction = 'HOME TOTAL OVER 0.5'  
             sub_type_id = 19    
