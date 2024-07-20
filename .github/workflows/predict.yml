@@ -22,5 +22,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: execute main.py script # run main.py
-        run: python src/main.py --autobet=0
+      - name: execute prediction script # run predict.py
+        run: python src/predict.py --autobet=0

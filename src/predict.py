@@ -7,7 +7,7 @@ from autobet import Autobet
 from footystats.extract import Extract
 from utils.postgres_crud import PostgresCRUD
 
-class Main:
+class Predict:
     """
         main class
     """
@@ -258,4 +258,4 @@ if __name__ == "__main__":
     parser.add_argument("--autobet", type=int, required=True, help="an integer value for x")
     
     args = parser.parse_args()
-    Main()(args.autobet)
+    Predict()(args.autobet)
