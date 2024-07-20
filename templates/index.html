@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords"
+        content="Today Games Predictions app, Tipspesa Betting Predictions, Football Soccer Prediction Tips">
+    <meta name="description"
+        content="Download the Today Games Predictions app from Tipspesa Betting Predictions for accurate Football Soccer Prediction Tips. Visit tipspesa.uk for expert betting advice and daily game predictions.">
+    <meta name="author" content="Dennis Muga - Tipspesa Systems" />
+
+    <title>Tipspesa Betting Games Predictions App & Football Soccer Tips</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon.png') }}" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='plugin.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Open Graph and Twitter Card meta tags -->
+    <meta property="og:title" content="Tipspesa App">
+    <meta property="og:description"
+        content="Tipspesa App provides accurate and reliable betting predictions for sports enthusiasts. Get expert tips and increase your chances of winning.">
+    <meta property="og:image" content="{{ url_for('static', filename='favicon.png') }}">
+    <meta property="og:url" content="https://tipspesa.uk">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://tipspesa.uk" />
+
+    <!-- Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-site-verification" content="15AUFZEGoq7OBjdz6bUMXfriQsiDQqnm0VisaE6XZi4" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Tipspesa App">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    <nav class="mobile-nav mobile-nav-top">
+        <div class="mobile-nav__item">
+            <h4 class="mobile-nav__item-content">
+                {{ header }}
+            </h4>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            {% if matches | length == 0 %}
+            <h4 class="py-5 text-center">No Matches Predicted Yet <br /> Please Check Later</h4>
+            {% endif %}
+
+            {% for match in matches %}
+            {% if match.status is none %}
+            <a class="col-12 col-sm-4" style="color: black;">
+                <div class="card box-shadow my-2">
+                    <div class="card-header text-center">
+                        <b>{{ match.home_team }} vs {{ match.away_team }}</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <small class="col-5 col-sm-5 text-left">{{ match.kickoff }}</small>
+                            <small class="col-2 col-sm-2 text-center"><b>{{ match.overall_prob }}%</b></small>
+                            <small class="col-5 col-sm-5 text-right"><b>{{ match.prediction }}</b></small>
+                        </div>
+                        <div class="text-center">
+                            <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
+                        </div>
+                        <div class="row">
+                            <b class="col-3 col-sm-3 text-left">Goals</b>
+                            <b class="col-3 col-sm-3 text-center">Home</b>
+                            <b class="col-3 col-sm-3 text-center">Away</b>
+                            <b class="col-3 col-sm-3 text-center">Average</b>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: lightblue">Over 0.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_0_5_home_perc) }}">{{
+                                match.over_0_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_0_5_away_perc) }}">{{
+                                match.over_0_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) }}">{{
+                                ((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: powderblue">Over 1.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_1_5_home_perc) }}">{{
+                                match.over_1_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_1_5_away_perc) }}">{{
+                                match.over_1_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) }}">{{
+                                ((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: lightskyblue">Over 2.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_2_5_home_perc) }}">{{
+                                match.over_2_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_2_5_away_perc) }}">{{
+                                match.over_2_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) }}">{{
+                                ((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: skyblue">Over 3.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_3_5_home_perc) }}">{{
+                                match.over_3_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_3_5_away_perc) }}">{{
+                                match.over_3_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) }}">{{
+                                ((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="text-left">
+                            <small>{{ highlight_analysis(match.analysis) | safe }}</small>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12 col-sm-offset-4 text-center">
+                <div class="my-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for match in matches %}
+            {% if match.status is not none %}
+            <a class="col-12 col-sm-4" style="color: black;">
+                <div class="card box-shadow my-2">
+                    <div class="card-header text-center">
+                        <b>{{ match.home_team }} vs {{ match.away_team }}</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <small class="col-5 col-sm-5 text-left">{{ match.kickoff }}</small>
+                            <small class="col-2 col-sm-2 text-center"><b>{{ match.home_results }} - {{
+                                    match.away_results }}</b></small>
+                            <small class="col-5 col-sm-5 text-right"><b>{{ match.prediction }}</b></small>
+                            <small class="col-5 col-sm-5 text-left"></small>
+                            <small class="col-12 col-sm-2 text-center {{ match.status.lower() }}"><b><i
+                                        class="material-icons">{{ 'do_not_disturb_on' if match.status == 'LOST' else
+                                        ('check_circle' if match.status == 'WON' else 'autorenew') }}</i></b></small>
+                        </div>
+
+                        <div class="text-center">
+                            <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
+                        </div>
+                        <div class="row">
+                            <b class="col-3 col-sm-3 text-left">Goals</b>
+                            <b class="col-3 col-sm-3 text-center">Home</b>
+                            <b class="col-3 col-sm-3 text-center">Away</b>
+                            <b class="col-3 col-sm-3 text-center">Average</b>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: lightblue">Over 0.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_0_5_home_perc) }}">{{
+                                match.over_0_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_0_5_away_perc) }}">{{
+                                match.over_0_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) }}">{{
+                                ((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: powderblue">Over 1.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_1_5_home_perc) }}">{{
+                                match.over_1_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_1_5_away_perc) }}">{{
+                                match.over_1_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) }}">{{
+                                ((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: lightskyblue">Over 2.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_2_5_home_perc) }}">{{
+                                match.over_2_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_2_5_away_perc) }}">{{
+                                match.over_2_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) }}">{{
+                                ((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="row">
+                            <small class="col-3 col-sm-3 text-left" style="background: skyblue">Over 3.5</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_3_5_home_perc) }}">{{
+                                match.over_3_5_home_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color(match.over_3_5_away_perc) }}">{{
+                                match.over_3_5_away_perc }}%</small>
+                            <small class="col-3 col-sm-3 text-center"
+                                style="background: {{ get_background_color((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) }}">{{
+                                ((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) | int }}%</small>
+                        </div>
+                        <div class="text-left">
+                            <small>{{ highlight_analysis(match.analysis) | safe }}</small>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <nav class="mobile-nav mobile-nav-bottom">
+        <div class="mobile-nav__item">
+            <a class="mobile-nav__item-content" href="{{ url_for('history') }}">
+                <i class="material-icons">history</i>
+                History
+            </a>
+        </div>
+        <div class="mobile-nav__item">
+            <a class="mobile-nav__item-content" href="{{ url_for('yesterday') }}">
+                <i class="material-icons">done_all</i>
+                Yesterday
+            </a>
+        </div>
+        <div class="mobile-nav__item">
+            <a class="mobile-nav__item-content" href="{{ url_for('today') }}">
+                <i class="material-icons">home</i>
+                Today
+            </a>
+        </div>
+        <div class="mobile-nav__item">
+            <a class="mobile-nav__item-content" href="{{ url_for('tomorrow') }}">
+                <i class="material-icons">visibility</i>
+                Tomorrow
+            </a>
+        </div>
+        <div class="mobile-nav__item">
+            <a class="mobile-nav__item-content" href="{{ url_for('download') }}">
+                <i class="material-icons">install_mobile</i>
+                Download App
+            </a>
+        </div>
+    </nav>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Script JS -->
+    <script src="{{ url_for('static', filename='plugin.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        var pStart = { x: 0, y: 0 };
+        var pStop = { x: 0, y: 0 };
+
+        function swipeStart(e) {
+            if (typeof e["targetTouches"] !== "undefined") {
+                var touch = e.targetTouches[0];
+                pStart.x = touch.screenX;
+                pStart.y = touch.screenY;
+            } else {
+                pStart.x = e.screenX;
+                pStart.y = e.screenY;
+            }
+        }
+
+        function swipeEnd(e) {
+            if (typeof e["changedTouches"] !== "undefined") {
+                var touch = e.changedTouches[0];
+                pStop.x = touch.screenX;
+                pStop.y = touch.screenY;
+            } else {
+                pStop.x = e.screenX;
+                pStop.y = e.screenY;
+            }
+
+            swipeCheck();
+        }
+
+        function swipeCheck() {
+            var changeY = pStart.y - pStop.y;
+            var changeX = pStart.x - pStop.x;
+            if (isPullDown(changeY, changeX)) {
+                window.location.reload();
+            }
+        }
+
+        function isPullDown(dY, dX) {
+            // methods of checking slope, length, direction of line created by swipe action
+            return (
+                dY < 0 &&
+                ((Math.abs(dX) <= 100 && Math.abs(dY) >= 300) ||
+                    (Math.abs(dX) / Math.abs(dY) <= 0.3 && dY >= 60))
+            );
+        }
+
+        document.addEventListener(
+            "touchstart",
+            function (e) {
+                swipeStart(e);
+            },
+            false
+        );
+        document.addEventListener(
+            "touchend",
+            function (e) {
+                swipeEnd(e);
+            },
+            false
+        );
+
+        const played = {{ played | safe }};
+        const won = {{ won | safe }};
+
+        if (played > 0) {
+            $(document).ready(function () {
+                $(".my-progress-bar")
+                    .circularProgress({
+                        line_width: 6,
+                        color: 100 * won / played > 75 ? 'green' : 100 * won / played > 50 ? 'yellow' : 100 * won / played > 25 ? 'orange' : 'red',
+                        starting_position: 0, // 12.00 o' clock position, 25 stands for 3.00 o'clock (clock-wise)
+                        percent: 0, // percent starts from
+                        percentage: true,
+                        text: won + ' of ' + played + ' Predicted Games Won'
+                    })
+                    .circularProgress("animate", 100 * won / played, 1000);
+            });
+        }
+
+        setInterval(() => {
+            const elements = document.querySelectorAll('.blinking-text');
+            elements.forEach(element => {
+                element.style.visibility = (element.style.visibility === 'hidden') ? 'visible' : 'hidden';
+            });
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

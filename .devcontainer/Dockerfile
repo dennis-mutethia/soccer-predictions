@@ -7,9 +7,10 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+COPY requirements.txt . 
+
 #update pip & install dependencies
-RUN pip install --upgrade pip \
-    && pip install pylint autopep8 requests pandas statsmodels matplotlib scikit-learn pmdarima pystan prophet keras tensorflow bs4 psycopg2-binary tzlocal unidecode
+RUN pip install --upgrade pip 
     
 # Set the timezone to Africa/Nairobi
 RUN ln -sf /usr/share/zoneinfo/Africa/Nairobi /etc/localtime

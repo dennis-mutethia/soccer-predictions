@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <p>Welcome, {{ current_user.username }}!</p>
+
+    <h2>Add a Website</h2>
+    <form action="{{ url_for('dashboard') }}" method="post">
+        <label for="website_name">Website Name:</label><br>
+        <input type="text" id="website_name" name="website_name" required><br>
+        <label for="website_url">Website URL:</label><br>
+        <input type="text" id="website_url" name="website_url" required><br><br>
+        <button type="submit">Add Website</button>
+    </form>
+
+    <h2>List of Websites</h2>
+    <ul>
+        {% for website in websites %}
+            <li>
+                <a href="{{website.url}}">{{website.name}}</a>
+                <form action="{{ url_for('delete', website_id=website.id) }}" method="post">
+                    <input class="danger" type="submit" value="Delete">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

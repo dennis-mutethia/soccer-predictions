@@ -1,0 +1,21 @@
+{
+    "name": "Tipspesa Betting Predictions",
+    "short_name": "Tipspesa",
+    "description": "Tipspesa App provides accurate and reliable betting predictions for sports enthusiasts.",
+    "start_url": "./index.php",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "./favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./favicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

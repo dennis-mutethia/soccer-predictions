@@ -92,6 +92,16 @@ class PostgresCRUD:
             cur.execute(query)
             return cur.fetchall()
     
+    def fetch_matches(self, day, comparator, status):            
+        with self.conn.cursor() as cur:
+            query = f"""
+                SELECT *
+                FROM matches
+                WHERE DATE(kickoff) {comparator} CURRENT_DATE {day} {status}
+            """
+            cur.execute(query)
+            return cur.fetchall()
+    
     def update_match_results(self, match_id, home_results, away_results, status):
         params = f'update_results=true&match_id={match_id}&home_results={home_results}&away_results={away_results}&status={status}' 
         self.update_match(params)   
