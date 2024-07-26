@@ -2,7 +2,7 @@ name: predict and fetch results
 
 on:
   schedule:
-    - cron: '0 * * * *'  # This runs the job every hour between 8 & 22 at the 0th minute
+    - cron: '0 * * * *'  # This runs the job every hour at the 0th minute
 
 jobs:
   execute:
