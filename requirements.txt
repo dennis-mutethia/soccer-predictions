@@ -1,7 +1,4 @@
 pylint
-pandas
-scikit-learn 
-bs4
 requests 
 psycopg2-binary
 tzlocal
