@@ -1,6 +1,6 @@
-import requests, csv, pandas
-from match_day import MatchData
-from helper import Helper
+import csv, pandas
+from utils.entities import MatchData
+from utils.helper import Helper
 
 class LoadData:
     def __init__(self, csv_filename):

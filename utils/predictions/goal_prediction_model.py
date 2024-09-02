@@ -1,7 +1,7 @@
 import csv
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
-from prep.filters import Filters
+from utils.prep.filters import Filters
 
 class GoalPredictionModel:
     def __init__(self):

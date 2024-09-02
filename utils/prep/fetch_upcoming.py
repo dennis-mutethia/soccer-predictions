@@ -1,6 +1,6 @@
 import csv
-from upcoming_match import UpcomingMatch
-from helper import Helper 
+from utils.entities import UpcomingMatch
+from utils.helper import Helper 
 
 class FetchUpcoming:
     def __init__(self, csv_filename):

@@ -1,11 +1,11 @@
+
 import csv, argparse
-from datetime import datetime, timedelta
-from prep.load_data import LoadData
-from prep.fetch_upcoming import FetchUpcoming
-from predictions.goal_prediction_model import GoalPredictionModel
-from autobet import Autobet
-from footystats.extract import Extract
+from datetime import datetime
+from utils.footystats.extract import Extract
 from utils.postgres_crud import PostgresCRUD
+from utils.predictions.goal_prediction_model import GoalPredictionModel
+from utils.prep.fetch_upcoming import FetchUpcoming
+from utils.prep.load_data import LoadData
 
 class Predict:
     """
