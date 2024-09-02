@@ -98,6 +98,7 @@ class PostgresCRUD:
                 SELECT *
                 FROM matches
                 WHERE DATE(kickoff) {comparator} CURRENT_DATE {day} {status}
+                ORDER BY status DESC
             """
             cur.execute(query)
             return cur.fetchall()
