@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+import uuid
+from datetime import datetime
+from flask import Flask, redirect, render_template, url_for
 from src.utils.postgres_crud import PostgresCRUD
 
 app = Flask(__name__)
@@ -79,30 +81,37 @@ def fetch_matches(day, comparator='=', status="AND status IS NOT NULL"):
             won += 0 if match.status == 'LOST' else 1
             
     return matches, played, won
-             
-@app.route('/')
-def today(): 
+
+today_code = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).replace('-', '')[:8]
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # Redirect to a specific endpoint, like 'today', or a custom 404 page
+    return redirect(url_for('today', code='guest')), 302
+  
+@app.route('/<code>')
+def today(code): 
     matches, played, won = fetch_matches('', '=', '')
-    return render_template('index.html', header="Today Games Predictions", matches = matches, played = played, won = won, get_background_color=get_background_color, highlight_analysis=highlight_analysis )
+    return render_template('index.html', today_code=today_code, code=code, header="Today Games Predictions", matches=matches, played=played, won=won, get_background_color=get_background_color, highlight_analysis=highlight_analysis)
 
-@app.route('/tomorrow')
-def tomorrow():    
+@app.route('/tomorrow/<code>')
+def tomorrow(code):    
     matches, played, won = fetch_matches('+1', '=', '')
-    return render_template('index.html', header="Tomorrow Games Predictions", matches = matches, played = played, won = won, get_background_color=get_background_color, highlight_analysis=highlight_analysis )
+    return render_template('index.html', today_code=today_code, code=code, header="Tomorrow Games Predictions", matches = matches, played = played, won = won, get_background_color=get_background_color, highlight_analysis=highlight_analysis )
 
-@app.route('/yesterday')
-def yesterday():    
+@app.route('/yesterday/<code>')
+def yesterday(code):    
     matches, played, won = fetch_matches('-1', '=')
-    return render_template('index.html', header="Yesterday's Predictions Results", matches = matches, played = played, won = won, get_background_color=get_background_color, highlight_analysis=highlight_analysis )
+    return render_template('index.html', today_code=today_code, code=code, header="Yesterday's Predictions Results", matches = matches, played = played, won = won, get_background_color=get_background_color, highlight_analysis=highlight_analysis )
 
-@app.route('/history')
-def history():    
+@app.route('/history/<code>')
+def history(code):    
     matches, played, won = fetch_matches('-7', '>=')
-    return render_template('index.html', header="Last 7-Days Predictions Results", matches = matches, played = played, won = won, get_background_color=get_background_color, highlight_analysis=highlight_analysis )
+    return render_template('index.html', today_code=today_code, code=code, header="Last 7-Days Predictions Results", matches = matches, played = played, won = won, get_background_color=get_background_color, highlight_analysis=highlight_analysis )
 
-@app.route('/download')
-def download():    
-    return render_template('download.html')
+@app.route('/download/<code>')
+def download(code):    
+    return render_template('download.html', today_code=today_code, code=code)
 
 if __name__ == '__main__':
     app.run(debug=True)

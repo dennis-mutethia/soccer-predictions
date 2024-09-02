@@ -1,6 +1,8 @@
 {
     "name": "SOCCER-PREDICTIONS",
-    "dockerFile": "Dockerfile",
+    "runServices": ["app"],
+    "service": "app",
+    "workspaceFolder": "/workspace",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -13,5 +15,7 @@
                 "terminal.integrated.defaultProfile.linux#": "/bin/bash"
             }
         }
-    }
+    },
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "forwardPorts": [5000]
 }

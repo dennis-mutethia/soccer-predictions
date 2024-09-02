@@ -1,0 +1,32 @@
+<nav class="mobile-nav mobile-nav-bottom">
+    <div class="mobile-nav__item">
+        <a class="mobile-nav__item-content" href="{{ url_for('history', code=code) }}">
+            <i class="material-icons">history</i>
+            History
+        </a>
+    </div>
+    <div class="mobile-nav__item">
+        <a class="mobile-nav__item-content" href="{{ url_for('yesterday', code=code) }}">
+            <i class="material-icons">done_all</i>
+            Yesterday
+        </a>
+    </div>
+    <div class="mobile-nav__item">
+        <a class="mobile-nav__item-content" href="{{ url_for('today', code=code) }}">
+            <i class="material-icons">home</i>
+            Today
+        </a>
+    </div>
+    <div class="mobile-nav__item">
+        <a class="mobile-nav__item-content" href="{{ url_for('tomorrow', code=code) }}">
+            <i class="material-icons">visibility</i>
+            Tomorrow
+        </a>
+    </div>
+    <div class="mobile-nav__item">
+        <a class="mobile-nav__item-content" href="{{ url_for('download', code=code) }}">
+            <i class="material-icons">install_mobile</i>
+            Download App
+        </a>
+    </div>
+</nav>
