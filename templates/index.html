@@ -45,10 +45,11 @@ N/B: New Unique Link is Sent daily
                                 {% endif %}
                             </b></small>
                     </div>
+{% if code in today_codes %}
                     <div class="text-center">
                         <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
                     </div>
-                    {% if code in today_codes %}
+                    
                     <div class="row">
                         <b class="col-3 col-sm-3 text-left">Goals</b>
                         <b class="col-3 col-sm-3 text-center">Home</b>
@@ -108,7 +109,7 @@ N/B: New Unique Link is Sent daily
                     </div>
                     {% else %}
                     <div class="text-center">
-                        <small><b class="py-5">Click to Subscribe & View Statistics</b></small>
+                        <small><b class="py-5">Click to Subscribe & View {{ match.home_team }} vs {{ match.away_team }} Statistics</b></small>
                     </div>
 
                     {% endif %}
