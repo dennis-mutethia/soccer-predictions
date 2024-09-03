@@ -17,7 +17,8 @@
             {% if code not in today_codes and code != 'guest' and matches | length > 0 %}
             <h6 class="py-5 text-center text-danger">
                 Sorry, Link Expired! <br />
-                Use the new Link sent to subscribed number via SMS
+                Use the new Link sent via SMS to the Subscribed Number <br />
+N/B: New Unique Link is Sent daily
             </h6>
             {% endif %}
             {% if matches | length == 0 %}
