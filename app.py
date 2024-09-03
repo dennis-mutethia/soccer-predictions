@@ -4,6 +4,7 @@ from datetime import datetime
 from flask import Flask, redirect, render_template, request, url_for
 
 from utils.helper import Helper
+from utils.postgres_crud import PostgresCRUD
 
 app = Flask(__name__)
 
@@ -43,7 +44,10 @@ def subscribe(code):
     if request.method == 'POST':     
         if request.form['action'] == 'subscribe':
             phone = request.form['phone']
+            formatted_number = "254" + phone[-9:]
             #send subscribe push 
+            
+            PostgresCRUD().add_subscriber(formatted_number)
             
             return redirect(url_for('today', code=code))
     

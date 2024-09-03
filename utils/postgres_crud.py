@@ -150,6 +150,18 @@ class PostgresCRUD:
             """
             cur.execute(query, (status,))
             return cur.fetchall()
+    
+    def add_subscriber(self, phone):         
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            query = """
+                INSERT INTO subscribers(phone, created_at)
+                VALUES(%s, NOW())
+                ON CONFLICT (phone, status) DO NOTHING
+            """
+            
+            cur.execute(query, (phone,)) 
+            self.conn.commit()
                
 # Example usage:
 if __name__ == "__main__":
