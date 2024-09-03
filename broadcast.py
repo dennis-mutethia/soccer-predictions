@@ -1,5 +1,5 @@
 
-import os, uuid, requests
+import os, uuid, requests, random
 import urllib.parse
 from datetime import datetime
 from dotenv import load_dotenv
@@ -42,7 +42,8 @@ Reply with 1 to get Today Sure Tips'''.strip()
         matches, played, won = self.helper.fetch_matches('', '=', '')
         
         if len(matches) > played:
-            today_code = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).replace('-', '')[:8]
+            today_codes = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).split('-')
+            
             sms = f'''Today Tips
 '''
             for match in matches:
@@ -51,7 +52,7 @@ Reply with 1 to get Today Sure Tips'''.strip()
 '''
 
             sms = sms[:95] + f'''...
-All Tips - https://tipspesa.uk/{today_code}'''.strip()
+All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''.strip()
 
             print(sms)
             return sms  

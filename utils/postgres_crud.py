@@ -127,16 +127,16 @@ class PostgresCRUD:
         self.update_match(params)   
         
         self.ensure_connection()
-        with self.conn.cursor() as cursor:
-            query = f"""
+        with self.conn.cursor() as cur:
+            query = """
                 UPDATE matches SET
-                    home_results = {home_results},
-                    away_results = {away_results},
-                    status = '{status}'
-                WHERE match_id = '{match_id}'
+                    home_results = %s,
+                    away_results = %s,
+                    status = %s
+                WHERE match_id = %s
             """
             
-            cursor.execute(query)
+            cur.execute(query, (home_results, away_results, status, match_id)) 
             self.conn.commit()
     
         
@@ -146,7 +146,7 @@ class PostgresCRUD:
             query = """
                 SELECT phone
                 FROM subscribers
-                WHERE status = %s
+                WHERE status = %s AND (last_delivered_at IS NULL OR DATE(last_delivered_at) < current_date)
             """
             cur.execute(query, (status,))
             return cur.fetchall()
