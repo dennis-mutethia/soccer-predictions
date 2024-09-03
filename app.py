@@ -1,7 +1,7 @@
 
 import uuid
 from datetime import datetime
-from flask import Flask, redirect, render_template, url_for
+from flask import Flask, redirect, render_template, request, url_for
 
 from utils.helper import Helper
 
@@ -37,6 +37,17 @@ def history(code):
 @app.route('/download/<code>')
 def download(code):    
     return render_template('download.html', today_codes=today_codes, code=code)
+
+@app.route('/subscribe/<code>', methods=['GET', 'POST'])
+def subscribe(code):   
+    if request.method == 'POST':     
+        if request.form['action'] == 'subscribe':
+            phone = request.form['phone']
+            #send subscribe push 
+            
+            return redirect(url_for('today', code=code))
+    
+    return render_template('subscribe.html', today_codes=today_codes, code=code)
 
 if __name__ == '__main__':
     app.run(debug=True)

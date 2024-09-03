@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'head.html' %}
+
+<body>
+
+    <nav class="mobile-nav mobile-nav-top">
+        <div class="mobile-nav__item">
+            <h4 class="mobile-nav__item-content">
+                Subscribe to Get Daily Sure Predictions
+            </h4>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+
+            <div class="container-fluid table-responsive">
+                <div class="pt-3 pb-3 border-bottom border-secondary">
+                    <form method="POST" class="form-horizontal" id="new_frm">
+                        <h6 class="text-center">Enter your Safaricom Phone Number to Subscribe for our Sure Daily Tips</h6> <br />
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input required="required" type="number" name="phone" id="phone"
+                                    min="100000000" max="999999999" class="form-control input-sm"
+                                    placeholder="Enter Your Safaricom Phone Number">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" id="action" name="action" value="subscribe" class="btn">
+                                    <img src="{{ url_for('static', filename='subscribe.png') }}" alt="homepage"
+                                        class="light-logo" width="200" />
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <h6 class="text-center">Subscription Guide</h6>
+                    <ol>
+                        <li>You will Receive a STK Push to Your Phone</li>
+                        <li>Reply with "1"</li>
+                        <li>You will receive a Subscription Confirmation SMS</li>
+                        <li>We will send you daily Tips everyday - With a unique link to view all our predictions</li>
+                    </ol>
+                    <div class="col-12 text-center">
+                        Terms and conditions apply.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'nav.html' %}
+
+</body>
+
+</html>
