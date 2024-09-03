@@ -13,7 +13,6 @@ class PostgresCRUD:
             'password': os.getenv('DB_PASSWORD')
         }
         
-        print(self.conn_params)
         self.conn = None
         self.ensure_connection()
     
