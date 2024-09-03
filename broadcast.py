@@ -28,12 +28,11 @@ class Broadcast():
                     sms = sms + f'''{match.home_team} vs {match.away_team} - {match.prediction}
 '''
 
-            sms = sms[:65] + f'''...
-https://tipspesa.uk/yesterday/guest
-Reply with 1 to get Today Sure Tips'''.strip()
+            sms = sms[:55] + f''' ...
+Details - https://tipspesa.uk/yesterday/guest
+Reply with 1 to get Today Sure Tips'''
 
-            print(sms)
-            return sms  
+            return sms.strip()  
         else:
             return None
         
@@ -51,21 +50,21 @@ Reply with 1 to get Today Sure Tips'''.strip()
                 sms = sms + f'''{match.home_team} vs {match.away_team} - {match.prediction}
 '''
 
-            sms = sms[:95] + f'''...
-All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''.strip()
+            sms = sms[:95] + f''' ...
+All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
 
-            print(sms)
-            return sms  
+            return sms.strip()
         else:
             return None
     
-    def send_premium(self, sms):        
-        active_subscribers = self.postgres_crud.fetch_subscribers(1)
+    def send_bulk_sms_to_unsubscribed(self, sms):  
+        active_subscribers = self.postgres_crud.fetch_subscribers(0)
         recipients = ''
         for subscriber in active_subscribers:
             recipients = recipients + f'{subscriber[0]},'
         
         if len(recipients) > 0:  
+            print(sms) 
             encoded_sms = urllib.parse.quote(sms)
             url = f"https://bsms.smsairworks.com/smsnew/HTTP/?username={self.sms_username}&password={self.sms_password}&thread_text={encoded_sms}&thread_recievers={recipients[:-1]}&sender={self.sender}&coding=1&sms_type=promo"
 
@@ -86,9 +85,11 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''.strip()
 
         
         sms = self.yesterday_sms()
-        sms = self.upcoming_sms()
+        self.send_bulk_sms_to_unsubscribed(sms)
         
-        self.send_premium(sms)
+        #sms = self.upcoming_sms()
+        
+        #self.send_premium(sms)
         
             
 if __name__ == "__main__":
