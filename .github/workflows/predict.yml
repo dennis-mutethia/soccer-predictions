@@ -2,7 +2,7 @@ name: predict and fetch results
 
 on:
   schedule:
-    - cron: '0 * * * *'  # This runs the job every hour at the 0th minute
+    - cron: '18 * * * *'  # This runs the job every hour at the 0th minute
     
   workflow_dispatch:
 
