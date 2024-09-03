@@ -1,19 +1,34 @@
-import uuid, requests, psycopg2
+import os, uuid, requests, psycopg2
+from dotenv import load_dotenv
 
 class PostgresCRUD:
     def __init__(self):
-        db_host = 'aws-0-eu-central-1.pooler.supabase.com'
-        db_name = 'postgres'
-        db_port = '6543'
-        db_user = 'postgres.rjqbkiuwthhyriaybcpr'
-        db_pass = 'Mmxsp65$$$Mmxsp65'
+        # Load environment variables from .env file
+        load_dotenv()
+        self.conn_params = {
+            'host': os.getenv('DB_HOST'),
+            'database': os.getenv('DB_NAME'),
+            'port': os.getenv('DB_PORT'),
+            'user': os.getenv('DB_USER'),
+            'password': os.getenv('DB_PASSWORD')
+        }
         
+        self.conn = None
+        self.ensure_connection()
+    
+    def ensure_connection(self):
         try:
-            self.conn = psycopg2.connect(database=db_name, user=db_user, password=db_pass, host=db_host, port=db_port)   
-            
+            # Check if the connection is open
+            if self.conn is None or self.conn.closed:
+                self.conn = psycopg2.connect(**self.conn_params)
+            else:
+                # Test the connection
+                with self.conn.cursor() as cursor:
+                    cursor.execute("SELECT 1")
         except Exception as e:
-            print(f'An error occurred: {e}')
-
+            # Reconnect if the connection is invalid
+            self.conn = psycopg2.connect(**self.conn_params)
+            
     def update_match(self, params):
         try:
             url = f"https://tipspesa.uk/match-update?{params}"
@@ -65,23 +80,26 @@ class PostgresCRUD:
         self.update_match(params)   
         
         analysis = match['analysis'].replace("'","''")
-        cur = self.conn.cursor()
-        query = f"""
-            INSERT INTO matches(match_id,kickoff,home_team,away_team,prediction,odd,match_url,meetings,average_goals_home,average_goals_away,overall_prob,
-            over_0_5_home_perc,over_0_5_away_perc,over_1_5_home_perc,over_1_5_away_perc,over_2_5_home_perc,over_2_5_away_perc,over_3_5_home_perc,over_3_5_away_perc,analysis)
-            VALUES('{match_id}','{start_time}','{home_team}','{away_team}','{prediction}',{odd}, '{match_url}',{meetings}, {average_goals_home},{average_goals_away},{overall_prob},
-            {over_0_5_home_perc},{over_0_5_away_perc},{over_1_5_home_perc},{over_1_5_away_perc},{over_2_5_home_perc},{over_2_5_away_perc},{over_3_5_home_perc},{over_3_5_away_perc},
-            '{analysis}')
-            ON CONFLICT (match_id) DO UPDATE SET
-                prediction = '{prediction}',
-                overall_prob = {overall_prob},
-                analysis = '{analysis}';
-        """
         
-        cur.execute(query)
-        self.conn.commit()
+        self.ensure_connection()
+        with self.conn.cursor() as cursor:
+            query = f"""
+                INSERT INTO matches(match_id,kickoff,home_team,away_team,prediction,odd,match_url,meetings,average_goals_home,average_goals_away,overall_prob,
+                over_0_5_home_perc,over_0_5_away_perc,over_1_5_home_perc,over_1_5_away_perc,over_2_5_home_perc,over_2_5_away_perc,over_3_5_home_perc,over_3_5_away_perc,analysis)
+                VALUES('{match_id}','{start_time}','{home_team}','{away_team}','{prediction}',{odd}, '{match_url}',{meetings}, {average_goals_home},{average_goals_away},{overall_prob},
+                {over_0_5_home_perc},{over_0_5_away_perc},{over_1_5_home_perc},{over_1_5_away_perc},{over_2_5_home_perc},{over_2_5_away_perc},{over_3_5_home_perc},{over_3_5_away_perc},
+                '{analysis}')
+                ON CONFLICT (match_id) DO UPDATE SET
+                    prediction = '{prediction}',
+                    overall_prob = {overall_prob},
+                    analysis = '{analysis}';
+            """
+        
+            cursor.execute(query)
+            self.conn.commit()
     
     def fetch_open_matches(self):
+        self.ensure_connection()
         with self.conn.cursor() as cur:
             query = """
                 SELECT *
@@ -92,7 +110,8 @@ class PostgresCRUD:
             cur.execute(query)
             return cur.fetchall()
     
-    def fetch_matches(self, day, comparator, status):            
+    def fetch_matches(self, day, comparator, status): 
+        self.ensure_connection()           
         with self.conn.cursor() as cur:
             query = f"""
                 SELECT *
@@ -107,18 +126,31 @@ class PostgresCRUD:
         params = f'update_results=true&match_id={match_id}&home_results={home_results}&away_results={away_results}&status={status}' 
         self.update_match(params)   
         
-        cur = self.conn.cursor()
-        query = f"""
-            UPDATE matches SET
-                home_results = {home_results},
-                away_results = {away_results},
-                status = '{status}'
-            WHERE match_id = '{match_id}'
-        """
+        self.ensure_connection()
+        with self.conn.cursor() as cursor:
+            query = f"""
+                UPDATE matches SET
+                    home_results = {home_results},
+                    away_results = {away_results},
+                    status = '{status}'
+                WHERE match_id = '{match_id}'
+            """
+            
+            cursor.execute(query)
+            self.conn.commit()
+    
         
-        cur.execute(query)
-        self.conn.commit()
-              
+    def fetch_subscribers(self, status):
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT phone
+                FROM subscribers
+                WHERE status = %s
+            """
+            cur.execute(query, (status,))
+            return cur.fetchall()
+               
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()

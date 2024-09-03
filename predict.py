@@ -7,11 +7,6 @@ class Predict:
         main class
     """
     def __init__(self):
-        self.markets = ['1x2','uo','bts', 'dbc', 'ah']
-        self.targets = ['ov15', 'ov25', 'gg']
-        self.min_probability = 80
-        self.sport_id='14'
-
         self.extract = Extract()
         self.postgres_crud = PostgresCRUD()
 

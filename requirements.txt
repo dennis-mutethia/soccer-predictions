@@ -6,3 +6,4 @@ psycopg2-binary
 tzlocal
 unidecode
 flask
+python-dotenv
