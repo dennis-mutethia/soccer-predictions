@@ -1,13 +1,12 @@
 import pytz, tzlocal, re
-import requests, csv
-from datetime import datetime, timedelta
+import requests
+from datetime import datetime
 from bs4 import BeautifulSoup
 from unidecode import unidecode
 
 class Extract:    
     def __init__(self):
         self.base_url = 'https://footystats.org/'
-        self.csv_predictions = './docs/predictions.csv' 
         self.headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36'
             }

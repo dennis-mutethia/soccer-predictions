@@ -6,5 +6,4 @@ psycopg2-binary
 tzlocal
 unidecode
 flask
-scikit-learn
-pandas
+python-dotenv

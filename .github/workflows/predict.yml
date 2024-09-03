@@ -11,6 +11,16 @@ jobs:
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
+      
+      - name: Set environment variables
+        run: |
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
+          echo "DB_PORT=${{ secrets.DB_PORT }}" >> $GITHUB_ENV
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
+          echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
+          echo "SMS_USERNAME=${{ secrets.SMS_USERNAME }}" >> $GITHUB_ENV
+          echo "SMS_PASSWORD=${{ secrets.SMS_PASSWORD }}" >> $GITHUB_ENV
 
       - name: setup python
         uses: actions/setup-python@v4
@@ -23,4 +33,4 @@ jobs:
           pip install -r requirements.txt
           
       - name: execute prediction script # run predict.py
-        run: python predict.py --autobet=0
+        run: python predict.py

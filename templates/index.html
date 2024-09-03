@@ -14,6 +14,12 @@
 
     <div class="container py-5">
         <div class="row justify-content-center">
+            {% if today_code != code and code != 'guest' and matches | length > 0 %}
+            <h6 class="py-5 text-center text-danger">
+                Sorry, Link Expired! <br />
+                Use the new Link sent to subscribed number via SMS
+            </h6>
+            {% endif %}
             {% if matches | length == 0 %}
             <h4 class="py-5 text-center">No Matches Predicted Yet <br /> Please Check Later</h4>
             {% endif %}
