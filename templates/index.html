@@ -35,9 +35,9 @@ N/B: New Unique Link is Sent daily
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <small class="col-4 col-sm-4 text-left">{{ match.kickoff.strftime('%Y-%m-%d') }}</small>
+                        <small class="col-5 col-sm-5 text-left">{{ match.kickoff.strftime('%Y-%m-%d') }}</small>
                         <small class="col-2 col-sm-2 text-center"><b>{{ match.overall_prob }}%</b></small>
-                        <small class="col-6 col-sm-6 text-right"><b>
+                        <small class="col-5 col-sm-5 text-right"><b>
                                 {% if code in today_codes %}
                                 {{ match.prediction }}
                                 {% else %}
