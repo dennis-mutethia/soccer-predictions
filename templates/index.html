@@ -14,7 +14,7 @@
 
     <div class="container py-5">
         <div class="row justify-content-center">
-            {% if today_code != code and code != 'guest' and matches | length > 0 %}
+            {% if code not in today_codes and code != 'guest' and matches | length > 0 %}
             <h6 class="py-5 text-center text-danger">
                 Sorry, Link Expired! <br />
                 Use the new Link sent to subscribed number via SMS
@@ -36,7 +36,7 @@
                             <small class="col-5 col-sm-5 text-left">{{ match.kickoff }}</small>
                             <small class="col-2 col-sm-2 text-center"><b>{{ match.overall_prob }}%</b></small>
                             <small class="col-5 col-sm-5 text-right"><b>
-                                {% if today_code==code %}
+                                {% if code in today_codes %}
                                     {{ match.prediction }}
                                 {% else %}
                                     Subscribe to View Prediction
@@ -46,7 +46,7 @@
                         <div class="text-center">
                             <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
                         </div>
-                        {% if today_code==code %}
+                        {% if code in today_codes %}
                         <div class="row">
                             <b class="col-3 col-sm-3 text-left">Goals</b>
                             <b class="col-3 col-sm-3 text-center">Home</b>
