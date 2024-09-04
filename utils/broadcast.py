@@ -49,7 +49,7 @@ Terms and conditions apply.'''
                     sms = sms + f'''{match.home_team} vs {match.away_team} - {match.prediction}
 '''
 
-            sms = sms[:55] + ''' ...
+            sms = sms[:70] + ''' ...
 Details - https://tipspesa.uk/yesterday/guest
 Reply with 1 to get Today Sure Tips'''
 
@@ -71,7 +71,7 @@ Reply with 1 to get Today Sure Tips'''
                 sms = sms + f'''{match.home_team} vs {match.away_team} - {match.prediction}
 '''
 
-            sms = sms[:95] + f''' ...
+            sms = sms[:110] + f''' ...
 All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
 
             return sms.strip()

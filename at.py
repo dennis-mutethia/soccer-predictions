@@ -25,7 +25,7 @@ class AT():
     
     def send_premium_sms_to_subscribed(self):  
         message = self.broadcast.upcoming_sms()
-        active_subscribers = self.postgres_crud.fetch_subscribers(0)
+        active_subscribers = self.postgres_crud.fetch_subscribers(1)
         recipients = ''
         for subscriber in active_subscribers:
             recipients = recipients + f'+{subscriber[0]},'
@@ -44,7 +44,7 @@ class AT():
                                                 
              
 if __name__ == '__main__':
-    AT().send_sub_push("+254105565532")
+    #AT().send_sub_push("+254105565532")
     #AT().fetch_and_save_subs()
-    #AT().send_premium_sms_to_subscribed()
+    AT().send_premium_sms_to_subscribed()
         
