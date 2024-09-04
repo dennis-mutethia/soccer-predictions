@@ -17,8 +17,7 @@
             {% if code not in today_codes and code != 'guest' and matches | length > 0 %}
             <h6 class="py-5 text-center text-danger">
                 Sorry, Link Expired! <br />
-                Use the new Link sent via SMS to the Subscribed Number <br />
-N/B: New Unique Link is Sent daily
+                Use the new Link sent to subscribed number via SMS
             </h6>
             {% endif %}
             {% if matches | length == 0 %}
@@ -35,21 +34,20 @@ N/B: New Unique Link is Sent daily
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <small class="col-5 col-sm-5 text-left">{{ match.kickoff.strftime('%Y-%m-%d') }}</small>
+                        <small class="col-5 col-sm-5 text-left">{{ match.kickoff }}</small>
                         <small class="col-2 col-sm-2 text-center"><b>{{ match.overall_prob }}%</b></small>
                         <small class="col-5 col-sm-5 text-right"><b>
                                 {% if code in today_codes %}
                                 {{ match.prediction }}
                                 {% else %}
-                                Click to Subscribe & View Prediction
+                                Subscribe to View Prediction
                                 {% endif %}
                             </b></small>
                     </div>
-{% if code in today_codes %}
                     <div class="text-center">
                         <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
                     </div>
-                    
+                    {% if code in today_codes %}
                     <div class="row">
                         <b class="col-3 col-sm-3 text-left">Goals</b>
                         <b class="col-3 col-sm-3 text-center">Home</b>
@@ -109,7 +107,7 @@ N/B: New Unique Link is Sent daily
                     </div>
                     {% else %}
                     <div class="text-center">
-                        <small><b class="py-5">Click to Subscribe & View {{ match.home_team }} vs {{ match.away_team }} Statistics</b></small>
+                        <small><b class="py-5">Subscribe to View Statistics</b></small>
                     </div>
 
                     {% endif %}
@@ -305,7 +303,7 @@ N/B: New Unique Link is Sent daily
                         starting_position: 0, // 12.00 o' clock position, 25 stands for 3.00 o'clock (clock-wise)
                         percent: 0, // percent starts from
                         percentage: true,
-                        text: won + ' of ' + played + ' Predicted Games Won (Verified Results)'
+                        text: won + ' of ' + played + ' Predicted Games Won'
                     })
                     .circularProgress("animate", 100 * won / played, 1000);
             });
