@@ -1,7 +1,7 @@
 
 import uuid
 from datetime import datetime
-from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask import Flask, Response, jsonify, redirect, render_template, request, url_for
 
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
@@ -61,47 +61,18 @@ def terms_and_conditions():
 def privacy_policy():    
     return render_template('privacy-policy.html')
 
-@app.route('/dlr', methods=['POST'])
-def dlr():
-    try:
-        if request.method == 'POST':
-            # Extracting form data
-            print(str(request))
-            id = request.form.get('id', '')
-            status = request.form.get('status', '')
-            phone_number = request.form.get('phoneNumber', '')
-            network_code = request.form.get('networkCode', '')
-            failure_reason = request.form.get('failureReason', '')
-            retry_count = request.form.get('retryCount', '')
-            
-            # Print the extracted data
-            print(f"""
-                  id: {id}
-                  status: {status}
-                  phone_number: {phone_number}
-                  network_code: {network_code}
-                  failure_reason: {failure_reason}
-                  retry_count: {retry_count} 
-                  """)
-
-            # If the status is 'Success', update the subscriber in the database
-            if status == 'Success': 
-                formatted_number = "254" + phone_number[-9:]
-                PostgresCRUD().update_subscriber_on_dlr(formatted_number)
-
-            # Return a success response
-            return 'success', 200
-
-    except KeyError as e:
-        # Handle missing form data
-        error_message = f"Missing required form field: {str(e)}"
-        print(error_message)
-        return jsonify({"error": error_message}), 400
-
-    except Exception as e:
-        error_message = f"An error occurred: {str(e)}"
-        print(error_message)
-        return jsonify({"error": error_message}), 500
+@app.route('/delivery-reports', methods=['POST'])
+def delivery_reports():
+    data = request.get_json(force=True)
+    print(data) 
+    
+    status = data['status']
+    phone_number = data['phoneNumber']
+    if status == 'Success': 
+        formatted_number = "254" + phone_number[-9:]
+        PostgresCRUD().update_subscriber_on_dlr(formatted_number)
+        
+    return Response(status=200)
 
 if __name__ == '__main__':
     app.run(debug=True)
