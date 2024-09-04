@@ -3,6 +3,7 @@ import os, uuid, requests, random
 import urllib.parse
 from datetime import datetime
 from dotenv import load_dotenv
+import xml.etree.ElementTree as ET
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
 
@@ -12,7 +13,8 @@ class Broadcast():
         load_dotenv()
         self.sms_username = os.getenv('SMS_USERNAME')
         self.sms_password = os.getenv('SMS_PASSWORD')
-        self.sender = 'M_SOURCE_SMS'
+        self.bulk_base_url = 'https://kenyasms.rpdigitalphone.com/smsnew/HTTP/'
+        self.bulk_sender = 'M_SOURCESMS'
         
         self.helper = Helper()
         self.postgres_crud = PostgresCRUD()
@@ -66,7 +68,28 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
         if len(recipients) > 0:  
             print(sms) 
             encoded_sms = urllib.parse.quote(sms)
-            url = f"https://bsms.smsairworks.com/smsnew/HTTP/?username={self.sms_username}&password={self.sms_password}&thread_text={encoded_sms}&thread_recievers={recipients[:-1]}&sender={self.sender}&coding=1&sms_type=promo"
+            url = f"{self.bulk_base_url}?username={self.sms_username}&password={self.sms_password}&thread_text={encoded_sms}&thread_recievers={recipients[:-1]}&sender={self.bulk_sender}&coding=1&sms_type=trans"
+
+            payload={}
+            headers = {}
+
+            print(url)
+            
+            response = requests.request("GET", url, headers=headers, data=payload)  
+            print(response) 
+            
+            #self.update_db_on_send(recipients, response)         
+    
+    def send_bulk_sms_to_subscribed(self, sms):  
+        active_subscribers = self.postgres_crud.fetch_subscribers(1)
+        recipients = ''
+        for subscriber in active_subscribers:
+            recipients = recipients + f'{subscriber[0]},'
+        
+        if len(recipients) > 0:  
+            print(sms) 
+            encoded_sms = urllib.parse.quote(sms)
+            url = f"{self.bulk_base_url}?username={self.sms_username}&password={self.sms_password}&thread_text={encoded_sms}&thread_recievers={recipients[:-1]}&sender={self.bulk_sender}&coding=1&sms_type=trans"
 
             payload={}
             headers = {}
@@ -74,20 +97,33 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
             print(url)
             
             response = requests.request("GET", url, headers=headers, data=payload)
+            print(response)
+            
+            self.update_db_on_send(recipients, response)
+    
+    def update_db_on_send(self, recipients, response):
 
-            print(response.text)
-        
+        # Parse the XML
+        root = ET.fromstring(response.text)
 
+        # Extract guid and submitdate
+        smsguid_element = root.find('smsguid')
+        if smsguid_element is not None:
+            guid_value = smsguid_element.get('guid')
+            submitdate_value = smsguid_element.get('submitdate')
+            self.postgres_crud.update_subscriber_on_send(recipients[:-1], guid_value, submitdate_value)
+       
     def __call__(self):
         """
         class entry point
         """
 
         
-        sms = self.yesterday_sms()
-        self.send_bulk_sms_to_unsubscribed(sms)
+        #sms = self.yesterday_sms()
+        #self.send_bulk_sms_to_unsubscribed(sms)
         
-        #sms = self.upcoming_sms()
+        sms = self.upcoming_sms()
+        self.send_bulk_sms_to_subscribed(sms)
         
         #self.send_premium(sms)
         

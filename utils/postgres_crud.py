@@ -162,6 +162,18 @@ class PostgresCRUD:
             
             cur.execute(query, (phone,)) 
             self.conn.commit()
+    
+    def update_subscriber_on_send(self, recipients, last_guid, last_submitted_at):         
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            query = f"""
+                UPDATE subscribers
+                SET last_guid=%s, last_submitted_at=%s
+                WHERE phone IN ({recipients})
+            """
+            
+            cur.execute(query, (last_guid, last_submitted_at)) 
+            self.conn.commit()
                
 # Example usage:
 if __name__ == "__main__":
