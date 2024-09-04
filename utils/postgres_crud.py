@@ -163,6 +163,19 @@ class PostgresCRUD:
             cur.execute(query, (phone,)) 
             self.conn.commit()
     
+    def update_subscriber_on_opt(self, phone, status):         
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            query = """
+                UPDATE subscribers
+                SET status=%s, updated_at=NOW()
+                WHERE phone = %s
+            """
+            
+            cur.execute(query, (status, phone)) 
+            self.conn.commit()
+               
+    
     def update_subscriber_on_send(self, recipients, last_guid, last_submitted_at):         
         self.ensure_connection()
         with self.conn.cursor() as cur:

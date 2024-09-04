@@ -19,6 +19,13 @@ class Broadcast():
         self.helper = Helper()
         self.postgres_crud = PostgresCRUD()
 
+    def subscribe(self, phone):
+        sms = '''Welcome to TipsPesa Sure Betting Tips.
+We will send TIPS everyday with a unique link to view all predicted games.
+Terms and conditions apply.'''
+
+        self.postgres_crud.update_subscriber_on_opt(phone, 1)
+        
     def yesterday_sms(self):
         matches, played, won = self.helper.fetch_matches('-1', '=')
         
@@ -30,7 +37,7 @@ class Broadcast():
                     sms = sms + f'''{match.home_team} vs {match.away_team} - {match.prediction}
 '''
 
-            sms = sms[:55] + f''' ...
+            sms = sms[:55] + ''' ...
 Details - https://tipspesa.uk/yesterday/guest
 Reply with 1 to get Today Sure Tips'''
 
@@ -80,7 +87,7 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
             
             #self.update_db_on_send(recipients, response)         
     
-    def send_bulk_sms_to_subscribed(self, sms):  
+    def send_premium_sms_to_subscribed(self, sms):  
         active_subscribers = self.postgres_crud.fetch_subscribers(1)
         recipients = ''
         for subscriber in active_subscribers:
@@ -123,7 +130,7 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
         #self.send_bulk_sms_to_unsubscribed(sms)
         
         sms = self.upcoming_sms()
-        self.send_bulk_sms_to_subscribed(sms)
+        self.send_premium_sms_to_subscribed(sms)
         
         #self.send_premium(sms)
         
