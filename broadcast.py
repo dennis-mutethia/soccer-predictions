@@ -20,11 +20,23 @@ class Broadcast():
         self.postgres_crud = PostgresCRUD()
 
     def subscribe(self, phone):
+        self.postgres_crud.update_subscriber_on_opt(phone, 1) 
+        
         sms = '''Welcome to TipsPesa Sure Betting Tips.
 We will send TIPS everyday with a unique link to view all predicted games.
 Terms and conditions apply.'''
 
-        self.postgres_crud.update_subscriber_on_opt(phone, 1)
+        print(sms) 
+        encoded_sms = urllib.parse.quote(sms)
+        url = f"{self.bulk_base_url}?username={self.sms_username}&password={self.sms_password}&thread_text={encoded_sms}&thread_recievers={recipients[:-1]}&sender={self.bulk_sender}&coding=1&sms_type=trans"
+
+        payload={}
+        headers = {}
+
+        print(url)
+        
+        response = requests.request("GET", url, headers=headers, data=payload)
+        print(response)
         
     def yesterday_sms(self):
         matches, played, won = self.helper.fetch_matches('-1', '=')
@@ -83,7 +95,7 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
             print(url)
             
             response = requests.request("GET", url, headers=headers, data=payload)  
-            print(response) 
+            print(response.text)
             
             #self.update_db_on_send(recipients, response)         
     
@@ -104,7 +116,7 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
             print(url)
             
             response = requests.request("GET", url, headers=headers, data=payload)
-            print(response)
+            print(response.text)
             
             self.update_db_on_send(recipients, response)
     
@@ -132,7 +144,6 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
         sms = self.upcoming_sms()
         self.send_premium_sms_to_subscribed(sms)
         
-        #self.send_premium(sms)
         
             
 if __name__ == "__main__":
