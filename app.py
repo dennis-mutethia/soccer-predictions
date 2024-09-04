@@ -53,5 +53,10 @@ def subscribe(code):
     
     return render_template('subscribe.html', today_codes=today_codes, code=code)
 
+
+@app.route('/terms-and-conditions')
+def terms_and_conditions():    
+    return render_template('terms-and-conditions.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
