@@ -7,3 +7,4 @@ tzlocal
 unidecode
 flask
 python-dotenv
+africastalking

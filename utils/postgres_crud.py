@@ -151,41 +151,43 @@ class PostgresCRUD:
             cur.execute(query, (status,))
             return cur.fetchall()
     
-    def add_subscriber(self, phone):         
+    def add_or_remove_subscriber(self, phone, status=1):         
         self.ensure_connection()
         with self.conn.cursor() as cur:
             query = """
-                INSERT INTO subscribers(phone, created_at)
-                VALUES(%s, NOW())
-                ON CONFLICT (phone, status) DO NOTHING
+                INSERT INTO subscribers(phone, status, created_at)
+                VALUES(%s, %s, NOW())
+                ON CONFLICT (phone) DO UPDATE SET
+                    status = %s;
             """
             
-            cur.execute(query, (phone,)) 
+            cur.execute(query, (phone, status, status)) 
             self.conn.commit()
+         
     
-    def update_subscriber_on_opt(self, phone, status):         
+    def update_subscriber_on_send(self, phone, last_message_id, last_message_status):         
         self.ensure_connection()
         with self.conn.cursor() as cur:
             query = """
                 UPDATE subscribers
-                SET status=%s, updated_at=NOW()
+                SET last_message_id=%s, last_message_status=%s, last_submitted_at=NOW()
                 WHERE phone = %s
             """
             
-            cur.execute(query, (status, phone)) 
+            cur.execute(query, (last_message_id, last_message_status, phone)) 
             self.conn.commit()
-               
+         
     
-    def update_subscriber_on_send(self, recipients, last_guid, last_submitted_at):         
+    def update_subscriber_on_dlr(self, phone):         
         self.ensure_connection()
         with self.conn.cursor() as cur:
-            query = f"""
+            query = """
                 UPDATE subscribers
-                SET last_guid=%s, last_submitted_at=%s
-                WHERE phone IN ({recipients})
+                SET last_delivered_at=NOW()
+                WHERE phone = %s
             """
             
-            cur.execute(query, (last_guid, last_submitted_at)) 
+            cur.execute(query, (phone, )) 
             self.conn.commit()
                
 # Example usage:
