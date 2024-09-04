@@ -44,10 +44,10 @@ def subscribe(code):
     if request.method == 'POST':     
         if request.form['action'] == 'subscribe':
             phone = request.form['phone']
-            formatted_number = "+254" + phone[-9:]
+            formatted_number = "254" + phone[-9:]
             #send subscribe push 
             
-            PostgresCRUD().add_subscriber(formatted_number)
+            PostgresCRUD().add_or_remove_subscriber(formatted_number, 0)
             
             return redirect(url_for('today', code=code))
     
@@ -66,12 +66,13 @@ def dlr():
     try:
         if request.method == 'POST':
             # Extracting form data
-            id = request.form['id']
-            status = request.form['status']
-            phone_number = request.form['phoneNumber']
-            network_code = request.form['networkCode']
-            failure_reason = request.form['failureReason']
-            retry_count = request.form['retryCount']
+            print(str(request))
+            id = request.form.get('id', '')
+            status = request.form.get('status', '')
+            phone_number = request.form.get('phoneNumber', '')
+            network_code = request.form.get('networkCode', '')
+            failure_reason = request.form.get('failureReason', '')
+            retry_count = request.form.get('retryCount', '')
             
             # Print the extracted data
             print(f"""
@@ -85,7 +86,8 @@ def dlr():
 
             # If the status is 'Success', update the subscriber in the database
             if status == 'Success': 
-                PostgresCRUD().update_subscriber_on_dlr(phone_number)
+                formatted_number = "254" + phone_number[-9:]
+                PostgresCRUD().update_subscriber_on_dlr(formatted_number)
 
             # Return a success response
             return 'success', 200
