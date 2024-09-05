@@ -1,6 +1,5 @@
 from __future__ import print_function
 from dotenv import load_dotenv
-from utils.postgres_crud import PostgresCRUD
 
 import os
 import africastalking

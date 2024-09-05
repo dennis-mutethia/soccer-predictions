@@ -74,5 +74,22 @@ def delivery_reports():
         
     return Response(status=200)
 
+@app.route('/subscriptions', methods=['POST'])
+def subscription():
+    data = request.get_json(force=True)
+    print(data) 
+    
+    phone_number = data['phoneNumber']
+    short_code = data['shortCode']
+    keyword = data['keyword']
+    update_type = data['updateType']
+    formatted_number = "254" + phone_number[-9:]
+    status = 1 if update_type == "addition" else 2
+    
+    if keyword.lower() == 'tip':
+        PostgresCRUD().add_or_remove_subscriber(formatted_number, status)
+        
+    return Response(status=200)
+
 if __name__ == '__main__':
     app.run(debug=True)
