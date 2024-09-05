@@ -28,31 +28,7 @@ class PostgresCRUD:
         except Exception as e:
             # Reconnect if the connection is invalid
             self.conn = psycopg2.connect(**self.conn_params)
-            
-    def update_match(self, params):
-        try:
-            url = f"https://tipspesa.uk/match-update?{params}"
-                        
-            headers = {
-                "Accept": "application/json",
-                "User-Agent": "PostmanRuntime/7.32.2"
-            }
-
-            response = requests.post(url, headers=headers)
-
-            if response.status_code == 200:
-                #reponse_json = json.loads(response.content)
-                print('Received json')
-                print(response.content)
-                
-            else:
-                error_response = response.text
-                # Process the error response if needed
-                print(f"Error: {error_response}")
-
-        except requests.RequestException as e:
-            print(f"Request failed: {e}")
-            
+          
     def insert_match(self, match):
         start_time = match['start_time']
         start_date = start_time.date()
@@ -75,9 +51,6 @@ class PostgresCRUD:
         over_3_5_home_perc = match['over_3_5_home_perc']
         over_3_5_away_perc = match['over_3_5_away_perc']
         analysis = match['analysis']        
-        
-        params = f'update_predictions=true&match_id={match_id}&kickoff={start_time}&home_team={home_team}&away_team={away_team}&prediction={prediction}&odd={odd}&match_url={match_url}&meetings={meetings}&average_goals_home={average_goals_home}&average_goals_away={average_goals_away}&overall_prob={overall_prob}&over_0_5_home_perc={over_0_5_home_perc}&over_0_5_away_perc={over_0_5_away_perc}&over_1_5_home_perc={over_1_5_home_perc}&over_1_5_away_perc={over_1_5_away_perc}&over_2_5_home_perc={over_2_5_home_perc}&over_2_5_away_perc={over_2_5_away_perc}&over_3_5_home_perc={over_3_5_home_perc}&over_3_5_away_perc={over_3_5_away_perc}&analysis={analysis}' 
-        self.update_match(params)   
         
         analysis = match['analysis'].replace("'","''")
         
@@ -122,10 +95,7 @@ class PostgresCRUD:
             cur.execute(query)
             return cur.fetchall()
     
-    def update_match_results(self, match_id, home_results, away_results, status):
-        params = f'update_results=true&match_id={match_id}&home_results={home_results}&away_results={away_results}&status={status}' 
-        self.update_match(params)   
-        
+    def update_match_results(self, match_id, home_results, away_results, status):        
         self.ensure_connection()
         with self.conn.cursor() as cur:
             query = """
