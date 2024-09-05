@@ -63,12 +63,11 @@ def privacy_policy():
 
 @app.route('/delivery-reports', methods=['POST'])
 def delivery_reports():
-    data = request.get_json(force=True)
-    print(data) 
+    print(str(request.form)) 
     
-    status = data['status']
-    phone_number = data['phoneNumber']
-    if status == 'Success': 
+    status = request.form.get('status')
+    phone_number = request.form.get('phoneNumber')
+    if phone_number is not None and status == 'Success': 
         formatted_number = "254" + phone_number[-9:]
         PostgresCRUD().update_subscriber_on_dlr(formatted_number)
         
@@ -76,17 +75,16 @@ def delivery_reports():
 
 @app.route('/subscription-notifications', methods=['POST'])
 def subscription_notifications():
-    data = request.get_json(force=True)
-    print(data) 
+    print(str(request.form)) 
     
-    phone_number = data['phoneNumber']
-    short_code = data['shortCode']
-    keyword = data['keyword']
-    update_type = data['updateType']
-    formatted_number = "254" + phone_number[-9:]
-    status = 1 if update_type == "addition" else 2
+    phone_number = request.form.get('phoneNumber')
+    short_code = request.form.get('shortCode')
+    keyword = request.form.get('keyword')
+    update_type = request.form.get('updateType')
     
-    if keyword.lower() == 'tip':
+    if phone_number is not None and keyword is not None and keyword.lower() == 'tip':
+        formatted_number = "254" + phone_number[-9:]
+        status = 1 if update_type == "addition" else 2
         PostgresCRUD().add_or_remove_subscriber(formatted_number, status)
         
     return Response(status=200)
