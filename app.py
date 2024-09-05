@@ -74,8 +74,8 @@ def delivery_reports():
         
     return Response(status=200)
 
-@app.route('/subscriptions', methods=['POST'])
-def subscription():
+@app.route('/subscription-notifications', methods=['POST'])
+def subscription_notifications():
     data = request.get_json(force=True)
     print(data) 
     
