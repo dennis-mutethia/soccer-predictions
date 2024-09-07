@@ -1,12 +1,17 @@
 
-import uuid
+import os, uuid
 from datetime import datetime
 from flask import Flask, Response, jsonify, redirect, render_template, request, url_for
+from dotenv import load_dotenv
 
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
 
 app = Flask(__name__)
+
+load_dotenv()
+waapi_instance_id = os.getenv('WAAPI_INSTANCE_ID')
+waapi_token = os.getenv('WAAPI_TOKEN')
 
 today_codes = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).split('-')
 today_codes = ['guest']
@@ -90,5 +95,46 @@ def subscription_notifications():
         
     return Response(status=200)
 
+@app.route(f'/webhooks/whatsapp/{waapi_token}', methods=['POST'])
+def handle_webhook(security_token):
+    data = request.get_json()
+
+    if not data or 'instanceId' not in data or 'event' not in data or 'data' not in data:
+        print('Invalid request')
+        return '', 400
+
+    instance_id = data['instanceId']
+    event_name = data['event']
+    event_data = data['data']
+
+    # check if the security token and the instanceId match in our records
+    if str(instance_id) != waapi_instance_id  or waapi_token != security_token:
+        print('Authentication failed')
+        return '', 401
+
+    # the request is validated and the requester authenticated
+    if event_name == 'message':
+        print('Handle message event...')
+        
+        print(str(message_data))
+
+        message_data = event_data['message']
+        message_type = message_data['type']
+
+        if message_type == 'chat':
+            message_sender_id = message_data['from']  # unique WhatsApp ID
+            message_created_at = datetime.datetime.fromtimestamp(message_data['timestamp'])  # timestamp is in seconds
+            message_content = message_data['body']
+
+            # this is the phone number of the message sender
+            message_sender_phone_number = message_sender_id.replace('@c.us', '')
+
+            # run your business logic: someone has sent you a WhatsApp message
+
+        return '', 200
+    else:
+        print(f"Cannot handle this event: {event_name}")
+        return '', 404
+    
 if __name__ == '__main__':
     app.run(debug=True)
