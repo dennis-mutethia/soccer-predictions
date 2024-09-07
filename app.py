@@ -123,7 +123,7 @@ def handle_webhook(security_token):
         
         if message_type == 'chat':
             message_sender_id = message_data['from']  # unique WhatsApp ID
-            message_created_at = datetime.datetime.fromtimestamp(message_data['timestamp'])  # timestamp is in seconds
+            message_created_at = datetime.fromtimestamp(message_data['timestamp'])  # timestamp is in seconds
             message_content = message_data['body']
 
             # this is the phone number of the message sender
