@@ -18,9 +18,6 @@ Terms and conditions apply.'''
 
         self.waapi.send_message(phone, message)
         
-        message = self.upcoming_message()
-        self.waapi.send_message(phone, message)
-
     def send_goodbye_message(self, phone):        
         message = '''It's sad to see you leave.
 We will NOT send you any more Predictions.
