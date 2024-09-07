@@ -18,7 +18,7 @@ Additionally, there will be a unique link to view all predicted games for that d
 
 N/B: The received link expires after 24hrs - So, each day, you will use the new link sent on that particular day.
 
-Bet responsibility. Terms and conditions apply.'''
+Terms and conditions apply. Bet responsibly'''
 
         self.waapi.send_message(phone, message)
         
