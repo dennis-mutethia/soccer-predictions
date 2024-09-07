@@ -66,7 +66,9 @@ Reply with 1 to get Today Sure Tips'''
 
             message = message + f''' ...
             
-All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
+All Tips - https://tipspesa.uk/{random.choice(today_codes)}
+
+Reply with the word "unsubscribe" to STOP receiving our Predictions'''
 
             return message.strip()
         else:
