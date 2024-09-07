@@ -26,6 +26,6 @@ class WaAPI:
         
         response = requests.post(url, json=payload, headers=self.headers)
 
-        print(response.text)
+        return response.json()
         
         

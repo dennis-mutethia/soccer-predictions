@@ -71,11 +71,16 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
         else:
             return None
     
-    def send_message(self, message, status):  
-        active_subscribers = self.postgres_crud.fetch_subscribers(status)
+    def send_predictions_to_subscribed(self, message):  
+        active_subscribers = self.postgres_crud.fetch_subscribers(1)
         for subscriber in active_subscribers:
             phone = subscriber[0]
-            self.waapi.send_message(phone, message)            
+            response = self.waapi.send_message(phone, message)  
+            
+            data = response['data']   
+            status = data['status'] 
+            if status == 'success':
+                self.postgres_crud.update_subscriber_on_send(phone) 
      
     def __call__(self):
         """
@@ -85,7 +90,7 @@ All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
         #message = self.yesterday_message()
         
         message = self.upcoming_message()
-        self.send_message(message, 1)
+        self.send_predictions_to_subscribed(message)
               
             
 if __name__ == "__main__":

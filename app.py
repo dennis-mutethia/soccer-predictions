@@ -133,8 +133,7 @@ def handle_webhook(security_token):
                 
             if 'unsubscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)                
-                Broadcast().send_goodbye_message(message_sender_phone_number)
-                
+                Broadcast().send_goodbye_message(message_sender_phone_number)        
 
         return '', 200
     else:

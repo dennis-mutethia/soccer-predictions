@@ -1,7 +1,7 @@
 
 from utils.africastalking.premium_sms import PremiumSMS
 from utils.africastalking.subscription import Subscription
-from utils.broadcast import Broadcast
+from broadcast import Broadcast
 from utils.postgres_crud import PostgresCRUD
 
 class AT():
