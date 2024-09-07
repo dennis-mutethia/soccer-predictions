@@ -28,6 +28,8 @@ jobs:
           echo "AT_CONTENT_URL=${{ secrets.AT_CONTENT_URL }}" >> $GITHUB_ENV
           echo "AT_USERNAME=${{ secrets.AT_USERNAME }}" >> $GITHUB_ENV
           echo "AT_API_KEY=${{ secrets.AT_API_KEY }}" >> $GITHUB_ENV
+          echo "WAAPI_INSTANCE_ID=${{ secrets.WAAPI_INSTANCE_ID }}" >> $GITHUB_ENV
+          echo "WAAPI_TOKEN=${{ secrets.WAAPI_TOKEN }}" >> $GITHUB_ENV
       
       - name: setup python
         uses: actions/setup-python@v4
