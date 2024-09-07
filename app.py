@@ -98,6 +98,8 @@ def subscription_notifications():
 @app.route(f'/webhooks/whatsapp/{waapi_token}', methods=['POST'])
 def handle_webhook(security_token):
     data = request.get_json()
+    
+    print(str(data))
 
     if not data or 'instanceId' not in data or 'event' not in data or 'data' not in data:
         print('Invalid request')
@@ -115,12 +117,10 @@ def handle_webhook(security_token):
     # the request is validated and the requester authenticated
     if event_name == 'message':
         print('Handle message event...')
-        
-        print(str(message_data))
 
         message_data = event_data['message']
         message_type = message_data['type']
-
+        
         if message_type == 'chat':
             message_sender_id = message_data['from']  # unique WhatsApp ID
             message_created_at = datetime.datetime.fromtimestamp(message_data['timestamp'])  # timestamp is in seconds
