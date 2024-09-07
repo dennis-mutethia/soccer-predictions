@@ -8,3 +8,4 @@ unidecode
 flask
 python-dotenv
 africastalking
+pillow
