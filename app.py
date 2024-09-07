@@ -127,13 +127,14 @@ def handle_webhook(security_token):
             message_sender_phone_number = message_sender_id.replace('@c.us', '')
             
             # run your business logic: someone has sent you a WhatsApp message
-            if 'subscribe' in message_content.lower():
-                PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 1)
-                Broadcast().send_welcome_message(message_sender_phone_number)
                 
             if 'unsubscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)                
                 Broadcast().send_goodbye_message(message_sender_phone_number)        
+
+            elif 'subscribe' in message_content.lower():
+                PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 1)
+                Broadcast().send_welcome_message(message_sender_phone_number)
 
         return '', 200
     else:
