@@ -9,6 +9,7 @@ from utils.postgres_crud import PostgresCRUD
 app = Flask(__name__)
 
 today_codes = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).split('-')
+today_codes = ['guest']
 
 @app.errorhandler(404)
 def page_not_found(e):
