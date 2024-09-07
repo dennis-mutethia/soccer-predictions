@@ -1,9 +1,10 @@
 
 import os, uuid
 from datetime import datetime
-from flask import Flask, Response, jsonify, redirect, render_template, request, url_for
+from flask import Flask, Response, redirect, render_template, request, url_for
 from dotenv import load_dotenv
 
+from broadcast import Broadcast
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
 
@@ -128,9 +129,11 @@ def handle_webhook(security_token):
             # run your business logic: someone has sent you a WhatsApp message
             if 'subscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 1)
+                Broadcast().send_welcome_message(message_sender_phone_number)
                 
             if 'unsubscribe' in message_content.lower():
-                PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)
+                PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)                
+                Broadcast().send_goodbye_message(message_sender_phone_number)
                 
 
         return '', 200

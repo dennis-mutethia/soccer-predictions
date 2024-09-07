@@ -40,5 +40,5 @@ jobs:
           pip install -r requirements.txt
       
       # execute prediction script i.e run predict.py
-      - name: execute AT script 
-        run: python at.py
+      - name: execute broadcast script 
+        run: python broadcast.py
