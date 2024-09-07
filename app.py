@@ -95,7 +95,7 @@ def subscription_notifications():
         
     return Response(status=200)
 
-@app.route(f'/webhooks/whatsapp/{waapi_token}', methods=['POST'])
+@app.route(f'/webhooks/whatsapp/<security_token>', methods=['POST'])
 def handle_webhook(security_token):
     data = request.get_json()
     
