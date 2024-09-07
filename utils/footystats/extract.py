@@ -246,7 +246,7 @@ class Extract:
         prediction = None
         sub_type_id = None
         overall_prob = 0  
-        
+                
         if match["over_3_5_home_perc"] >= 90 and match["over_3_5_away_perc"] >= 100:
             prediction = 'TOTAL OVER 4.5'
             sub_type_id = 18
@@ -268,7 +268,7 @@ class Extract:
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2 
         
         elif match["over_1_5_home_perc"] >= 90 and match["over_1_5_away_perc"] >= 90:
-            prediction = 'TOTAL OVER 4.5'
+            prediction = 'TOTAL OVER 2.5'
             sub_type_id = 18
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2             
         
@@ -276,6 +276,11 @@ class Extract:
             prediction = 'TOTAL OVER 1.5'
             sub_type_id = 18
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2  
+        
+        elif match["over_0_5_home_perc"] >= 90 and match["over_0_5_away_perc"] >= 90:
+            prediction = 'TOTAL OVER 1.5'
+            sub_type_id = 18
+            overall_prob = (match["over_0_5_home_perc"] + match["over_0_5_away_perc"])/2   
         
         elif match["over_0_5_home_perc"] >= 90:
             prediction = 'HOME TOTAL OVER 0.5'  
@@ -316,14 +321,16 @@ class Extract:
     def __call__(self):   
         to_return = [] 
         matches = self.fetch_matches('predictions')   
+        matches_home_wins = self.fetch_matches('predictions/home-wins')    
+        matches_away_wins = self.fetch_matches('predictions/away-wins')    
         matches_1x2 = self.fetch_matches('predictions/1x2')     
         matches_btts = self.fetch_matches('predictions/btts') 
         matches_over_15 = self.fetch_matches('predictions/over-15-goals') 
         matches_over_25 = self.fetch_matches('predictions/over-25-goals')
         matches_tomorrow = self.fetch_matches('predictions/tomorrow')    
         
-        matches = matches + matches_1x2 + matches_btts + matches_over_15 + matches_over_25 + matches_tomorrow
-                
+        matches = matches + matches_home_wins + matches_away_wins + matches_1x2 + matches_btts + matches_over_15 + matches_over_25 + matches_tomorrow
+                        
         self.predict(matches)
         sorted_matches = sorted(self.predicted_matches, key=self.get_start_time)
 
