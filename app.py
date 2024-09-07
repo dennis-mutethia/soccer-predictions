@@ -98,8 +98,6 @@ def subscription_notifications():
 @app.route(f'/webhooks/whatsapp/<security_token>', methods=['POST'])
 def handle_webhook(security_token):
     data = request.get_json()
-    
-    print(str(data))
 
     if not data or 'instanceId' not in data or 'event' not in data or 'data' not in data:
         print('Invalid request')
@@ -116,8 +114,6 @@ def handle_webhook(security_token):
 
     # the request is validated and the requester authenticated
     if event_name == 'message':
-        print('Handle message event...')
-
         message_data = event_data['message']
         message_type = message_data['type']
         
@@ -128,8 +124,14 @@ def handle_webhook(security_token):
 
             # this is the phone number of the message sender
             message_sender_phone_number = message_sender_id.replace('@c.us', '')
-
+            
             # run your business logic: someone has sent you a WhatsApp message
+            if 'subscribe' in message_content.lower():
+                PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 1)
+                
+            if 'unsubscribe' in message_content.lower():
+                PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)
+                
 
         return '', 200
     else:
