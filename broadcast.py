@@ -13,8 +13,10 @@ class Broadcast():
 
     def send_welcome_message(self, phone):        
         message = '''Welcome to TipsPesa Sure Betting Tips.
-We will send Predictions everyday with a unique link to view all predicted games.
-Terms and conditions apply.'''
+We will send you Predictions everyday.
+Additionally, will be a unique link to view all predicted games for that day.
+N/B: The received link expires after 24hrs - So the each day, you will use the new link sentbthat particular day.
+Bet responsibility. Terms and conditions apply.'''
 
         self.waapi.send_message(phone, message)
         
