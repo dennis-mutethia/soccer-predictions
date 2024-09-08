@@ -44,7 +44,7 @@ To Subscribe back, Reply with the word "subscribe".'''
             message = message[:200] + ''' ...
             
 Details - https://tipspesa.uk/yesterday/guest
-Reply with 1 to get Today Sure Tips'''
+Reply with The word "subscribe" to get Sure Tips daily'''
 
             return message.strip()  
         else:

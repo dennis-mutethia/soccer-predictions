@@ -140,12 +140,12 @@ def handle_webhook(security_token):
             elif 'today' in message_content.lower():
                 message = Broadcast().upcoming_message()
                 WaAPI().send_message(message_sender_phone_number, message)
-                PostgresCRUD().postgres_crud.update_subscriber_on_send(message_sender_phone_number)  
+                PostgresCRUD().update_subscriber_on_send(message_sender_phone_number)  
 
             elif 'yesterday' in message_content.lower():
                 message = Broadcast().yesterday_message()
                 WaAPI().send_message(message_sender_phone_number, message)
-                PostgresCRUD().postgres_crud.update_subscriber_on_send(message_sender_phone_number) 
+                PostgresCRUD().update_subscriber_on_send(message_sender_phone_number) 
 
         return '', 200
     else:
