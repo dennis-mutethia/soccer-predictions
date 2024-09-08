@@ -30,12 +30,11 @@ class PostgresCRUD:
             self.conn = psycopg2.connect(**self.conn_params)
           
     def insert_match(self, match):
-        start_time = match['start_time']
-        start_date = start_time.date()
+        kickoff = match['start_time']
         home_team = match['home_team'].replace("'","''")
         away_team = match['away_team'].replace("'","''")
         prediction = match['prediction']
-        match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{start_date}{home_team}{away_team}'))
+        match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{kickoff.date()}{home_team}{away_team}'))
         odd = match['odd']
         match_url = match['match_url'].replace("#","*")
         meetings = match['meetings']
@@ -56,19 +55,19 @@ class PostgresCRUD:
         
         self.ensure_connection()
         with self.conn.cursor() as cursor:
-            query = f"""
-                INSERT INTO matches(match_id,kickoff,home_team,away_team,prediction,odd,match_url,meetings,average_goals_home,average_goals_away,overall_prob,
-                over_0_5_home_perc,over_0_5_away_perc,over_1_5_home_perc,over_1_5_away_perc,over_2_5_home_perc,over_2_5_away_perc,over_3_5_home_perc,over_3_5_away_perc,analysis)
-                VALUES('{match_id}','{start_time}','{home_team}','{away_team}','{prediction}',{odd}, '{match_url}',{meetings}, {average_goals_home},{average_goals_away},{overall_prob},
-                {over_0_5_home_perc},{over_0_5_away_perc},{over_1_5_home_perc},{over_1_5_away_perc},{over_2_5_home_perc},{over_2_5_away_perc},{over_3_5_home_perc},{over_3_5_away_perc},
-                '{analysis}')
+            query = """
+                INSERT INTO matches(match_id, kickoff, home_team, away_team, prediction, odd, match_url, meetings, average_goals_home, average_goals_away, overall_prob,
+                over_0_5_home_perc, over_0_5_away_perc, over_1_5_home_perc, over_1_5_away_perc, over_2_5_home_perc, over_2_5_away_perc, over_3_5_home_perc, over_3_5_away_perc, analysis)
+                VALUES(%s, %s + INTERVAL '2 hours', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (match_id) DO UPDATE SET
-                    prediction = '{prediction}',
-                    overall_prob = {overall_prob},
-                    analysis = '{analysis}';
+                    kickoff = %s + INTERVAL '2 hours',
+                    prediction = %s,
+                    overall_prob = %s,
+                    analysis = %s
             """
-        
-            cursor.execute(query)
+            cursor.execute(query, (match_id, kickoff, home_team, away_team, prediction, odd, match_url , meetings, average_goals_home, average_goals_away, overall_prob, 
+                                   over_0_5_home_perc, over_0_5_away_perc, over_1_5_home_perc, over_1_5_away_perc, over_2_5_home_perc, over_2_5_away_perc, over_3_5_home_perc,
+                                   over_3_5_away_perc, analysis, kickoff, prediction, overall_prob, analysis))
             self.conn.commit()
     
     def fetch_open_matches(self):
@@ -128,7 +127,9 @@ class PostgresCRUD:
                 INSERT INTO subscribers(phone, status, created_at)
                 VALUES(%s, %s, NOW())
                 ON CONFLICT (phone) DO UPDATE SET
-                    status = %s;
+                    status = %s,
+                    last_delivered_at = NULL,
+                    updated_at = NOW()
             """
             
             cur.execute(query, (phone, status, status)) 

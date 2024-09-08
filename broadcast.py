@@ -41,7 +41,7 @@ To Subscribe back, Reply with the word "subscribe".'''
                     message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction} [{match.home_results}-{match.away_results}]
 '''
 
-            message = message + ''' ...
+            message = message[:256] + ''' ...
             
 Details - https://tipspesa.uk/yesterday/guest
 Reply with 1 to get Today Sure Tips'''
@@ -64,7 +64,7 @@ Reply with 1 to get Today Sure Tips'''
                 message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction}
 '''
 
-            message = message + f''' ...
+            message = message[:256] + f''' ...
             
 All Tips - https://tipspesa.uk/{random.choice(today_codes)}
 
