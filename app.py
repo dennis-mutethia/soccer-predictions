@@ -133,10 +133,9 @@ def handle_webhook(security_token):
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)                
                 Broadcast().send_goodbye_message(message_sender_phone_number)        
 
-            elif 'subscribe' in message_content.lower() or 'today' in message_content.lower():
+            elif 'subscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 1)
                 Broadcast().send_welcome_message(message_sender_phone_number)
-                Broadcast()()
 
         return '', 200
     else:
