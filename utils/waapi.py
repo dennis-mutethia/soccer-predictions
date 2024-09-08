@@ -28,4 +28,14 @@ class WaAPI:
 
         return response.json()
         
-        
+    def get_all_chats(self):
+        url = f"{self.base_url}/get-chats"
+        response = requests.post(url, headers=self.headers)
+
+        return response.json()
+
+# Example usage:
+if __name__ == "__main__":
+    waapi = WaAPI()
+    chats = waapi.get_all_chats()
+    print(chats)
