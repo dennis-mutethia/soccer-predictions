@@ -126,7 +126,7 @@ def handle_webhook(security_token):
             message_content = message_data['body']
 
             # this is the phone number of the message sender
-            message_sender_phone_number = message_sender_id.replace('@c.us', '')
+            message_sender_phone_number = message_sender_id #.replace('@c.us', '')
             
             # run your business logic: someone has sent you a WhatsApp message
                 

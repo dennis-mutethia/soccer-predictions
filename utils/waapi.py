@@ -18,7 +18,7 @@ class WaAPI:
     def send_message(self, phone_number, message):
         url = f"{self.base_url}/send-message"
         payload = {
-            "chatId": f"{phone_number}@c.us",
+            "chatId": f"{phone_number}",
             "message": message
             #"mentions": ["{phone_number}@c.us", "987654321@c.us"],
             #"replyToMessageId": "<bool>_<xxxxx>@c.us>_<megssageHash>"
