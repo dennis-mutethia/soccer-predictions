@@ -16,7 +16,7 @@ waapi_instance_id = os.getenv('WAAPI_INSTANCE_ID')
 waapi_token = os.getenv('WAAPI_TOKEN')
 
 today_codes = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).split('-')
-today_codes = ['guest']
+#today_codes = ['guest']
 
 @app.errorhandler(404)
 def page_not_found(e):
