@@ -1,14 +1,15 @@
 
 import requests
 
+from utils.entities import Event, Jackpot, Odds
+
 class Betika():
     def __init__(self):
         self.base_url = "https://api.betika.com/v1/jackpot"
         
         #https://api.betika.com/v1/jackpot/event?id=2419
      
-    def fetch_data(self):
-        url = f'{self.base_url}/events'
+    def fetch_data(self, url):        
         
         try:
             response = requests.get(url)
@@ -27,28 +28,35 @@ class Betika():
         except Exception as err:
             print(f"Unexpected error: {err}")
     
-    def get_jackpot_selections(self):
-        jackpot_selections = []
-        response = self.fetch_data()
-        data = response["params"]["jackpots"]
-        for datum in data:
-            if datum["status"] == 1:
-                id = datum["id"]
-                for event in datum["events"]:
-                    event_id = event["id"]
-                    title = event["title"]
-                    event_start_date = event["event_start_date"]
-                    home = event["home"]
-                    away = event["away"]
-                    home_odds = draw_odds = away_odds = 1
-                    for selection in event["selections"]:
-                        home_odds = selection['odd'] if selection["name"] == "1" else home_odds
-                        draw_odds = selection['odd'] if selection["name"] == "X" else draw_odds
-                        away_odds = selection['odd'] if selection["name"] == "2" else away_odds
+    def get_jackpot_selections(self):        
+        url = f'{self.base_url}/events'
+        data = self.fetch_data(url)
+        jackpots = []
+        for datum in data: 
+            id = datum["id"]
+            title = f'{datum["event_name"]} (BETIKA)'
+            url = f'{self.base_url}/event?id={id}'
+            response = self.fetch_data(url)
+        
+            events = []
+            data_ = response["data"]
+            for datum_ in data_:
+                event_id = datum_["parent_match_id"]
+                home = datum_["home_team"]
+                away = datum_["away_team"]
+                start_time = datum_["start_time"]
                 
-                    jackpot_selection = JackpotSelections(id, f'{title} (SHABIKI)', event_id, event_start_date, home, away, home_odds, draw_odds, away_odds)
-                    print(f"{jackpot_selection.id} - {jackpot_selection.event_id} - {jackpot_selection.start_date} - {jackpot_selection.home} vs {jackpot_selection.away} : {jackpot_selection.home_odds} - {jackpot_selection.draw_odds} - {jackpot_selection.away_odds}") 
-                    jackpot_selections.append(jackpot_selection)
-            
-        return jackpot_selections
+                odds = []
+                home_odds = draw_odds = away_odds = 1
+                for odd in datum_["odds"]:
+                    home_odds = odd["odd_value"] if odd["display"] == "1" else home_odds
+                    draw_odds = odd['odd_value'] if odd["display"] == "X" else draw_odds
+                    away_odds = odd['odd_value'] if odd["display"] == "2" else away_odds
+                
+                odds.append(Odds(home_odds, draw_odds, away_odds))
+                events.append(Event(event_id, start_time, home, away, odds))    
+                    
+            jackpots.append(Jackpot(id, title, events)) 
+        
+        return jackpots
     
