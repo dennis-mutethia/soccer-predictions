@@ -46,8 +46,8 @@ class Shabiki():
                         home_odds = selection['odd'] if selection["name"] == "1" else home_odds
                         draw_odds = selection['odd'] if selection["name"] == "X" else draw_odds
                         away_odds = selection['odd'] if selection["name"] == "2" else away_odds
-                        odds.append(Odds(home_odds, draw_odds, away_odds))
-
+                    
+                    odds.append(Odds(home_odds, draw_odds, away_odds))
                     events.append(Event(event_id, start_date, home, away, odds))
                 jackpots.append(Jackpot(id, f'{title} (SHABIKI)', events))
             
