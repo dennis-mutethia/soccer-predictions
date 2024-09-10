@@ -27,7 +27,7 @@ class Shabiki():
             print(f"Unexpected error: {err}")
     
     def get_jackpot_selections(self):
-        jackpots = []
+        jackpot_selections = []
         response = self.fetch_data()
         data = response["params"]["jackpots"]
         for datum in data:
@@ -35,6 +35,7 @@ class Shabiki():
                 id = datum["id"]
                 for event in datum["events"]:
                     event_id = event["id"]
+                    title = event["title"]
                     event_start_date = event["event_start_date"]
                     home = event["home"]
                     away = event["away"]
@@ -44,9 +45,9 @@ class Shabiki():
                         draw_odds = selection['odd'] if selection["name"] == "X" else draw_odds
                         away_odds = selection['odd'] if selection["name"] == "2" else away_odds
                 
-                    jackpot_selection = JackpotSelections(id, 'shabiki', event_id, event_start_date, home, away, home_odds, draw_odds, away_odds)
+                    jackpot_selection = JackpotSelections(id, f'{title} (SHABIKI)', event_id, event_start_date, home, away, home_odds, draw_odds, away_odds)
                     print(f"{jackpot_selection.id} - {jackpot_selection.event_id} - {jackpot_selection.start_date} - {jackpot_selection.home} vs {jackpot_selection.away} : {jackpot_selection.home_odds} - {jackpot_selection.draw_odds} - {jackpot_selection.away_odds}") 
-                    jackpots.append(jackpot_selection)
+                    jackpot_selections.append(jackpot_selection)
             
-        return jackpots
+        return jackpot_selections
     

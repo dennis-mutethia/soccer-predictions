@@ -24,6 +24,12 @@
         </a>
     </div>
     <div class="mobile-nav__item">
+        <a class="mobile-nav__item-content" href="{{ url_for('jackpots', code=code) }}">
+            <i class="material-icons">star</i>
+            Jackpots
+        </a>
+    </div>
+    <div class="mobile-nav__item">
         <a class="mobile-nav__item-content" href="{{ url_for('subscribe', code=code) }}">
             <i class="material-icons">create_new_folder</i>
             Subscribe

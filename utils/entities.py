@@ -84,15 +84,21 @@ class UpcomingMatch:
         self.is_esport = data.get("is_esport", False)
         self.is_srl = data.get("is_srl", False)
         self.odds = data.get("odds") 
-
-class JackpotSelections():    
-    def __init__(self, id, provider, event_id, start_date, home, away, home_odds, draw_odds, away_odds):
+class Jackpot():    
+    def __init__(self, id, provider, events=None):
         self.id = id
         self.provider = provider
-        self.event_id = event_id
+        self.events = events
+class Event():    
+    def __init__(self, id, start_date, home, away, odds=None):
+        self.id = id
         self.start_date = start_date
         self.home = home
         self.away = away
+        self.odds = odds
+class Odds():    
+    def __init__(self,home_odds, draw_odds, away_odds, created_at=None):
         self.home_odds = home_odds
         self.draw_odds = draw_odds
         self.away_odds = away_odds 
+        self.created_at = created_at

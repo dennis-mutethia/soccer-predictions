@@ -1,5 +1,7 @@
-import os, uuid, requests, psycopg2
+import os, uuid, psycopg2
 from dotenv import load_dotenv
+
+from utils.entities import Event, Jackpot, Odds
 
 class PostgresCRUD:
     def __init__(self):
@@ -161,8 +163,7 @@ class PostgresCRUD:
             cur.execute(query, (phone, )) 
             self.conn.commit()
     
-    
-            
+                
     def add_jackpot_selectionss(self, jackpot_selections):         
         self.ensure_connection()
         with self.conn.cursor() as cur:
@@ -176,8 +177,58 @@ class PostgresCRUD:
                 
             self.conn.commit()
             self.conn.close()
+    
+        
+    def fetch_jackpots(self):
+        self.ensure_connection()
+        selections = []
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT DISTINCT id, provider
+                FROM jackpot_selections
+            """
+            cur.execute(query)
+            data = cur.fetchall()
+            for datum in data:
+                events = self.fetch_events(datum[0])
+                selections.append(Jackpot(datum[0], datum[1], events))
                   
-                        
+        return selections
+      
+    def fetch_events(self, jackpot_id):
+        self.ensure_connection()
+        events = []
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT DISTINCT event_id, start_date, home, away
+                FROM jackpot_selections
+                WHERE id = %s
+            """
+            cur.execute(query,(jackpot_id, ))
+            data = cur.fetchall()
+            for datum in data:
+                odds = self.fetch_odds(datum[0])
+                events.append(Event(datum[0], datum[1], datum[2], datum[3], odds))
+                  
+        return events
+    
+    def fetch_odds(self, event_id):
+        self.ensure_connection()
+        selection_odds = []
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT home_odds, draw_odds, away_odds, created_at
+                FROM jackpot_selections
+                WHERE event_id = %s
+                ORDER BY created_at
+            """
+            cur.execute(query,(event_id,))
+            data = cur.fetchall()
+            for datum in data:
+                selection_odds.append(Odds(datum[0], datum[1], datum[2], datum[3]))
+                  
+        return selection_odds
+                 
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()

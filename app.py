@@ -16,7 +16,7 @@ waapi_instance_id = os.getenv('WAAPI_INSTANCE_ID')
 waapi_token = os.getenv('WAAPI_TOKEN')
 
 today_codes = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).split('-')
-#today_codes = ['guest']
+today_codes = ['guest']
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -43,9 +43,10 @@ def history(code):
     matches, played, won = Helper().fetch_matches('-7', '>=')
     return render_template('index.html', today_codes=today_codes, code=code, header="Last 7-Days Predictions Results", matches = matches, played = played, won = won, get_background_color=Helper().get_background_color, highlight_analysis=Helper().highlight_analysis )
 
-@app.route('/download/<code>')
-def download(code):    
-    return render_template('download.html', today_codes=today_codes, code=code)
+@app.route('/jackpots/<code>')
+def jackpots(code): 
+    jackpots = PostgresCRUD().fetch_jackpots()   
+    return render_template('jackpots.html', today_codes=today_codes, code=code, header="Jackpot Predictions", jackpots = jackpots )
 
 @app.route('/subscribe/<code>', methods=['GET', 'POST'])
 def subscribe(code):   
