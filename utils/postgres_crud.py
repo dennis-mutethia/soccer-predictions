@@ -160,7 +160,24 @@ class PostgresCRUD:
             
             cur.execute(query, (phone, )) 
             self.conn.commit()
-               
+    
+    
+            
+    def add_jackpot_selectionss(self, jackpot_selections):         
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            query = """
+                INSERT INTO jackpot_selections(id, event_id, start_date, home, away, home_odds, draw_odds, away_odds, created_at)
+                VALUES(%s, %s, %s, %s, %s, %s, %s, %s, NOW())
+            """
+            
+            for selection in jackpot_selections:
+                cur.execute(query, (selection.id, selection.event_id, selection.start_date, selection.home, selection.away, selection.home_odds, selection.draw_odds, selection.away_odds)) 
+                
+            self.conn.commit()
+            self.conn.close()
+                  
+                        
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()

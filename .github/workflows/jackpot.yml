@@ -1,0 +1,38 @@
+name: Jackpot data
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # This runs the job every hour at the 0th minute
+    
+  workflow_dispatch:
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout the repository content to github runner
+      - name: checkout repo content
+        uses: actions/checkout@v2 
+      
+      # pick .env variables from github secrets
+      - name: Set environment variables
+        run: |
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
+          echo "DB_PORT=${{ secrets.DB_PORT }}" >> $GITHUB_ENV
+          echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
+          echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
+      
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      # execute app script i.e run app.py
+      - name: execute jackpots script 
+        run: python jackpots.py

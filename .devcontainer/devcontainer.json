@@ -9,7 +9,8 @@
                 "ms-azuretools.vscode-docker",
                 "github.vscode-github-actions",
                 "ms-python.pylint",
-                "mechatroner.rainbow-csv"
+                "mechatroner.rainbow-csv",
+                "eamodio.gitlens"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux#": "/bin/bash"

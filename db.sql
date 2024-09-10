@@ -9,3 +9,16 @@ CREATE TABLE IF NOT EXISTS subscribers (
   updated_at TIMESTAMP,
   UNIQUE (phone, status)
 );
+
+-- Table structure for table selections
+CREATE TABLE IF NOT EXISTS jackpot_selections (
+  id BIGINT,
+  event_id BIGINT,
+  start_date TIMESTAMP,
+  home TEXT,
+  away TEXT,
+  home_odds DOUBLE PRECISION,
+  draw_odds DOUBLE PRECISION,
+  away_odds DOUBLE PRECISION,
+  created_at TIMESTAMP
+);
