@@ -68,6 +68,9 @@ Reply with The word "subscribe" to get Sure Tips daily'''
             
 All Tips - https://tipspesa.uk/{random.choice(today_codes)}
 
+Kindly note: Our A.I adds new Predictions every hour; So to get the best of us, refresh above URL at regular intervals for updates.
+
+We will NEVER span your inbox. We only send one message per day.
 Reply with the word "unsubscribe" to STOP receiving our Predictions'''
 
             return message.strip()
