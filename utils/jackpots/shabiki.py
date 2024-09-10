@@ -44,7 +44,7 @@ class Shabiki():
                         draw_odds = selection['odd'] if selection["name"] == "X" else draw_odds
                         away_odds = selection['odd'] if selection["name"] == "2" else away_odds
                 
-                    jackpot_selection = JackpotSelections(id, event_id, event_start_date, home, away, home_odds, draw_odds, away_odds)
+                    jackpot_selection = JackpotSelections(id, 'shabiki', event_id, event_start_date, home, away, home_odds, draw_odds, away_odds)
                     print(f"{jackpot_selection.id} - {jackpot_selection.event_id} - {jackpot_selection.start_date} - {jackpot_selection.home} vs {jackpot_selection.away} : {jackpot_selection.home_odds} - {jackpot_selection.draw_odds} - {jackpot_selection.away_odds}") 
                     jackpots.append(jackpot_selection)
             

@@ -167,12 +167,12 @@ class PostgresCRUD:
         self.ensure_connection()
         with self.conn.cursor() as cur:
             query = """
-                INSERT INTO jackpot_selections(id, event_id, start_date, home, away, home_odds, draw_odds, away_odds, created_at)
-                VALUES(%s, %s, %s, %s, %s, %s, %s, %s, NOW())
+                INSERT INTO jackpot_selections(id, provider, event_id, start_date, home, away, home_odds, draw_odds, away_odds, created_at)
+                VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
             """
             
             for selection in jackpot_selections:
-                cur.execute(query, (selection.id, selection.event_id, selection.start_date, selection.home, selection.away, selection.home_odds, selection.draw_odds, selection.away_odds)) 
+                cur.execute(query, (selection.id, selection.provider, selection.event_id, selection.start_date, selection.home, selection.away, selection.home_odds, selection.draw_odds, selection.away_odds)) 
                 
             self.conn.commit()
             self.conn.close()

@@ -7,12 +7,13 @@ CREATE TABLE IF NOT EXISTS subscribers (
   last_delivered_at TIMESTAMP,
   created_at TIMESTAMP,
   updated_at TIMESTAMP,
-  UNIQUE (phone, status)
+  UNIQUE (phone)
 );
 
 -- Table structure for table selections
 CREATE TABLE IF NOT EXISTS jackpot_selections (
   id BIGINT,
+  provider TEXT,
   event_id BIGINT,
   start_date TIMESTAMP,
   home TEXT,
