@@ -10,8 +10,8 @@ class Jackpots():
         self.postgres_crud = PostgresCRUD()
 
     def __call__(self):
-        selections = self.shabiki.get_jackpot_selections()
-        self.postgres_crud.add_jackpot_selectionss(selections)
+        jackpots = self.shabiki.get_jackpot_selections()
+        self.postgres_crud.add_jackpot_selections(jackpots)
         
 
 if __name__ == '__main__':

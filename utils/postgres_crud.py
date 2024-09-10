@@ -164,7 +164,7 @@ class PostgresCRUD:
             self.conn.commit()
     
                 
-    def add_jackpot_selectionss(self, jackpot_selections):         
+    def add_jackpot_selections(self, jackpots):         
         self.ensure_connection()
         with self.conn.cursor() as cur:
             query = """
@@ -172,8 +172,10 @@ class PostgresCRUD:
                 VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
             """
             
-            for selection in jackpot_selections:
-                cur.execute(query, (selection.id, selection.provider, selection.event_id, selection.start_date, selection.home, selection.away, selection.home_odds, selection.draw_odds, selection.away_odds)) 
+            for jackpot in jackpots:
+                for event in jackpot.events:
+                    for odds in event.odds:
+                        cur.execute(query, (jackpot.id, jackpot.provider, event.id, event.start_date, event.home, event.away, odds.home_odds, odds.draw_odds, odds.away_odds)) 
                 
             self.conn.commit()
             self.conn.close()
@@ -202,7 +204,7 @@ class PostgresCRUD:
             query = """
                 SELECT DISTINCT event_id, start_date, home, away
                 FROM jackpot_selections
-                WHERE id = %s
+                WHERE id = %s AND start_date > NOW()
             """
             cur.execute(query,(jackpot_id, ))
             data = cur.fetchall()
