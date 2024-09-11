@@ -44,12 +44,13 @@
                                         <small class="col-6 col-sm-5 text-left">{{ event.start_date }}</small>
                                         <small class="col-6 col-sm-5 text-right"><b>
                                                 {% if code in today_codes %}
-                                                {{ '' }}
+                                                {{ event.prediction }}
                                                 {% else %}
                                                 Click to Subscribe & View Prediction
                                                 {% endif %}
                                             </b></small>
-                                    </div>
+                                     </div>
+                                     <!--
                                     {% if code in today_codes %}
                                     <div class="text-center">
                                         <small>Odds Trend</small>
@@ -78,7 +79,7 @@
                                         <small><b class="py-5">Click to Subscribe & View Odds Trend</b></small>
                                     </div>
 
-                                    {% endif %}
+                                    {% endif %} -->
                                 </div>
                             </div>
                         </a>

@@ -9,3 +9,4 @@ flask
 python-dotenv
 africastalking
 pillow
+pandas

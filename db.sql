@@ -21,5 +21,6 @@ CREATE TABLE IF NOT EXISTS jackpot_selections (
   home_odds DOUBLE PRECISION,
   draw_odds DOUBLE PRECISION,
   away_odds DOUBLE PRECISION,
+  prediction TEXT,
   created_at TIMESTAMP
 );

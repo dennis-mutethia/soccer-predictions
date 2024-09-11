@@ -90,12 +90,13 @@ class Jackpot():
         self.provider = provider
         self.events = events
 class Event():    
-    def __init__(self, id, start_date, home, away, odds=None):
+    def __init__(self, id, start_date, home, away, odds=None, prediction=None):
         self.id = id
         self.start_date = start_date
         self.home = home
         self.away = away
         self.odds = odds
+        self.prediction = prediction
 class Odds():    
     def __init__(self,home_odds, draw_odds, away_odds, created_at=None):
         self.home_odds = home_odds

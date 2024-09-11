@@ -1,5 +1,6 @@
 import os, uuid, psycopg2
 from dotenv import load_dotenv
+import pandas as pd
 
 from utils.entities import Event, Jackpot, Odds
 
@@ -202,7 +203,7 @@ class PostgresCRUD:
         events = []
         with self.conn.cursor() as cur:
             query = """
-                SELECT DISTINCT event_id, start_date, home, away
+                SELECT DISTINCT event_id, start_date, home, away, prediction
                 FROM jackpot_selections
                 WHERE id = %s AND start_date > NOW()
             """
@@ -210,7 +211,7 @@ class PostgresCRUD:
             data = cur.fetchall()
             for datum in data:
                 odds = self.fetch_odds(datum[0])
-                events.append(Event(datum[0], datum[1], datum[2], datum[3], odds))
+                events.append(Event(datum[0], datum[1], datum[2], datum[3], odds, datum[4]))
                   
         return events
     
@@ -228,9 +229,34 @@ class PostgresCRUD:
             data = cur.fetchall()
             for datum in data:
                 selection_odds.append(Odds(datum[0], datum[1], datum[2], datum[3]))
-                  
+            
         return selection_odds
-                 
+    
+    def fetch_all_odds(self):
+        self.ensure_connection()
+        query = """
+            SELECT event_id, home_odds, draw_odds, away_odds, created_at
+            FROM jackpot_selections
+            ORDER BY created_at
+        """
+            
+        return pd.read_sql_query(query, self.conn)
+                
+    def update_prediction_to_jackpot_selections(self, odds_df):         
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            for index, row in odds_df.iterrows():
+                query = """
+                UPDATE jackpot_selections
+                SET prediction = %s
+                WHERE event_id = %s
+                """
+                cur.execute(query, (row['prediction'], row['event_id']))
+                
+            self.conn.commit()
+            self.conn.close()
+    
+                
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()
