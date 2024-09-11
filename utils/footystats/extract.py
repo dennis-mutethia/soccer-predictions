@@ -247,40 +247,40 @@ class Extract:
         sub_type_id = None
         overall_prob = 0  
                 
-        if match["over_3_5_home_perc"] >= 100 and match["over_3_5_away_perc"] >= 100:
-            prediction = 'TOTAL OVER 4.5'
-            sub_type_id = 18
-            overall_prob = (match["over_3_5_home_perc"] + match["over_3_5_away_perc"])/2             
+        # if match["over_3_5_home_perc"] >= 100 and match["over_3_5_away_perc"] >= 100:
+        #     prediction = 'TOTAL OVER 4.5'
+        #     sub_type_id = 18
+        #     overall_prob = (match["over_3_5_home_perc"] + match["over_3_5_away_perc"])/2             
         
-        elif match["over_3_5_home_perc"] >= 90 or match["over_3_5_away_perc"] >= 90:
+        if match["over_3_5_home_perc"] >= 90 or match["over_3_5_away_perc"] >= 90:
             prediction = 'TOTAL OVER 3.5'
             sub_type_id = 18
             overall_prob = (match["over_3_5_home_perc"] + match["over_3_5_away_perc"])/2 
         
-        elif match["over_2_5_home_perc"] >= 100 and match["over_2_5_away_perc"] >= 100:
-            prediction = 'TOTAL OVER 3.5'
-            sub_type_id = 18
-            overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2             
+        # elif match["over_2_5_home_perc"] >= 100 and match["over_2_5_away_perc"] >= 100:
+        #     prediction = 'TOTAL OVER 3.5'
+        #     sub_type_id = 18
+        #     overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2             
         
         elif match["over_2_5_home_perc"] >= 90 or match["over_2_5_away_perc"] >= 90:
             prediction = 'TOTAL OVER 2.5'
             sub_type_id = 18
             overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2 
         
-        elif match["over_1_5_home_perc"] >= 100 and match["over_1_5_away_perc"] >= 100:
-            prediction = 'TOTAL OVER 2.5'
-            sub_type_id = 18
-            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2             
+        # elif match["over_1_5_home_perc"] >= 100 and match["over_1_5_away_perc"] >= 100:
+        #     prediction = 'TOTAL OVER 2.5'
+        #     sub_type_id = 18
+        #     overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2             
         
         elif match["over_1_5_home_perc"] >= 90 or match["over_1_5_away_perc"] >= 90:
             prediction = 'TOTAL OVER 1.5'
             sub_type_id = 18
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2  
         
-        elif match["over_0_5_home_perc"] >= 100 and match["over_0_5_away_perc"] >= 100:
-            prediction = 'TOTAL OVER 1.5'
-            sub_type_id = 18
-            overall_prob = (match["over_0_5_home_perc"] + match["over_0_5_away_perc"])/2   
+        # elif match["over_0_5_home_perc"] >= 100 and match["over_0_5_away_perc"] >= 100:
+        #     prediction = 'TOTAL OVER 1.5'
+        #     sub_type_id = 18
+        #     overall_prob = (match["over_0_5_home_perc"] + match["over_0_5_away_perc"])/2   
         
         # elif match["over_0_5_home_perc"] >= 100:
         #     prediction = 'HOME TOTAL OVER 0.5'  
