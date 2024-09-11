@@ -12,10 +12,9 @@ class Jackpots():
         self.postgres_crud = PostgresCRUD()
 
     def __call__(self):
-        jackpots_shabiki = self.shabiki.get_jackpot_selections()
-        jackpots_betika = self.betika.get_jackpot_selections()
+        #jackpots_shabiki = self.shabiki.get_jackpot_selections()
+        jackpots = self.betika.get_jackpot_selections()
         
-        jackpots = jackpots_shabiki + jackpots_betika
         self.postgres_crud.add_jackpot_selections(jackpots)
         
 
