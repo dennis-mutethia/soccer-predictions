@@ -206,7 +206,6 @@ class PostgresCRUD:
                 SELECT DISTINCT event_id, start_date, home, away, prediction
                 FROM jackpot_selections
                 WHERE id = %s AND start_date > NOW()
-                ORDER BY created_at DESC
             """
             cur.execute(query,(jackpot_id, ))
             data = cur.fetchall()
@@ -250,7 +249,7 @@ class PostgresCRUD:
                 query = """
                 UPDATE jackpot_selections
                 SET prediction = %s
-                WHERE event_id = %s AND created_at >= NOW() - INTERVAL '1 hour';
+                WHERE event_id = %s 
                 """
                 cur.execute(query, (row['prediction'], row['event_id']))
                 
