@@ -2,6 +2,7 @@
 
 from utils.jackpots.betika import Betika
 from utils.jackpots.shabiki import Shabiki
+from utils.jackpots.sportpesa import Sportpesa
 from utils.postgres_crud import PostgresCRUD
 
 
@@ -9,6 +10,7 @@ class Jackpots():
     def __init__(self):
         self.shabiki = Shabiki()
         self.betika = Betika()
+        self.sportpesa = Sportpesa()
         self.postgres_crud = PostgresCRUD()
 
     def predict(self):        
@@ -52,8 +54,10 @@ class Jackpots():
          
     def __call__(self):
         #jackpots_shabiki = self.shabiki.get_jackpot_selections()
-        jackpots = self.betika.get_jackpot_selections()
+        bkj = self.betika.get_jackpot_selections()
+        spj = self.sportpesa.get_jackpot_selections()
         
+        jackpots = bkj + spj
         self.postgres_crud.add_jackpot_selections(jackpots)
         
         
