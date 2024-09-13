@@ -30,7 +30,7 @@ jobs:
           echo "BULK_PACKAGE_ID=${{ secrets.BULK_PACKAGE_ID }}" >> $GITHUB_ENV
           echo "API_PASSWORD=${{ secrets.API_PASSWORD }}" >> $GITHUB_ENV
           echo "CP_ID=${{ secrets.CP_ID }}" >> $GITHUB_ENV
-          echo "PREMIUM_SMS_OFFER_CODE=${{ secrets.CP_ID }}" >> $PREMIUM_SMS_OFFER_CODE
+          echo "PREMIUM_SMS_OFFER_CODE=${{ secrets.PREMIUM_SMS_OFFER_CODE }}" >> $GITHUB_ENV
       
       - name: setup python
         uses: actions/setup-python@v4
