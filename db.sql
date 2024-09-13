@@ -24,3 +24,13 @@ CREATE TABLE IF NOT EXISTS jackpot_selections (
   prediction TEXT,
   created_at TIMESTAMP
 );
+
+-- Table structure for table safaricom_callback
+CREATE TABLE IF NOT EXISTS safaricom_callback (
+  id SERIAL PRIMARY KEY,
+  response TEXT,
+  status INT DEFAULT 0,
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP
+);
+

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from broadcast import Broadcast
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
+from utils.safaricom.utils import Utils
 from utils.waapi import WaAPI
 
 app = Flask(__name__)
@@ -70,34 +71,6 @@ def terms_and_conditions():
 def privacy_policy():    
     return render_template('privacy-policy.html')
 
-@app.route('/delivery-reports', methods=['POST'])
-def delivery_reports():
-    print(str(request.form)) 
-    
-    status = request.form.get('status')
-    phone_number = request.form.get('phoneNumber')
-    if phone_number is not None and status == 'Success': 
-        formatted_number = "254" + phone_number[-9:]
-        PostgresCRUD().update_subscriber_on_dlr(formatted_number)
-        
-    return Response(status=200)
-
-@app.route('/subscription-notifications', methods=['POST'])
-def subscription_notifications():
-    print(str(request.form)) 
-    
-    phone_number = request.form.get('phoneNumber')
-    short_code = request.form.get('shortCode')
-    keyword = request.form.get('keyword')
-    update_type = request.form.get('updateType')
-    
-    if phone_number is not None and keyword is not None and keyword.lower() == 'tip':
-        formatted_number = "254" + phone_number[-9:]
-        status = 1 if update_type == "addition" else 2
-        PostgresCRUD().add_or_remove_subscriber(formatted_number, status)
-        
-    return Response(status=200)
-
 @app.route(f'/webhooks/whatsapp/<security_token>', methods=['POST'])
 def handle_webhook(security_token):
     data = request.get_json()
@@ -142,6 +115,16 @@ def handle_webhook(security_token):
     else:
         print(f"Cannot handle this event: {event_name}")
         return '', 404
+
+@app.route('/api/public/SDP/callback/dlr', methods=['POST'])
+def delivery_reports():
+    response = Utils().get_callback()
     
+    print(response) 
+    
+    PostgresCRUD().save_safaricom_callback(response)
+    
+    return '', 200
+
 if __name__ == '__main__':
     app.run(debug=True)

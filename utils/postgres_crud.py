@@ -112,7 +112,7 @@ class PostgresCRUD:
             self.conn.commit()
     
         
-    def fetch_subscribers(self, status):
+    def fetch_subscribers(self, status, sms=None):
         self.ensure_connection()
         with self.conn.cursor() as cur:
             query = """
@@ -120,7 +120,18 @@ class PostgresCRUD:
                 FROM subscribers
                 WHERE status = %s AND (last_delivered_at IS NULL OR DATE(last_delivered_at) < current_date)
             """
-            cur.execute(query, (status,))
+            if sms is None:
+                # If sms is None, find subscribers whose phone contains "a"
+                query += " AND phone LIKE %s"
+                phone_filter = '%@%'  # Look for phones containing 'a'
+            else:
+                # If sms is not None, find subscribers whose phone does not contain "a"
+                query += " AND phone NOT LIKE %s"
+                phone_filter = '%@%'  # Look for phones that do not contain 'a'
+            
+            # Execute the query with both status and phone_filter
+            cur.execute(query, (status, phone_filter))
+        
             return cur.fetchall()
     
     def add_or_remove_subscriber(self, phone, status=1):         
@@ -262,8 +273,20 @@ class PostgresCRUD:
                 
             self.conn.commit()
             self.conn.close()
-    
                 
+    def save_safaricom_callback(self, response):         
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            query = """
+            INSERT INTO safaricom_callback(response, created_at)
+            VALUES(%s, NOW())
+            """
+            cur.execute(query, (response,))
+                
+            self.conn.commit()
+            self.conn.close()
+    
+            
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()
