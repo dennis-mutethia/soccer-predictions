@@ -38,3 +38,8 @@ jobs:
       # execute prediction script i.e run predict.py
       - name: execute prediction script 
         run: python predict.py
+
+      # execute jackpots script i.e run jackpots.py
+      - name: execute jackpots script 
+        run: python jackpots.py
+

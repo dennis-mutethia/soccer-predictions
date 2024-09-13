@@ -22,6 +22,10 @@ class Predict:
             if home_results is not None and (home_results != 0 or away_results != 0):
                 status = 'LOST'
                 total_goals = home_results + away_results
+                if prediction == 'HOME WIN' and home_results>away_results:
+                    status = 'WON'
+                if prediction == 'AWAY WIN' and away_results>home_results:
+                    status = 'WON'
                 if prediction == 'TOTAL OVER 3.5' and total_goals>3:
                     status = 'WON'
                 if prediction == 'TOTAL OVER 2.5' and total_goals>2:

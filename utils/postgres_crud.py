@@ -235,7 +235,7 @@ class PostgresCRUD:
     def fetch_all_odds(self):
         self.ensure_connection()
         query = """
-            SELECT event_id, home_odds, draw_odds, away_odds, created_at
+            SELECT id, event_id, home_odds, draw_odds, away_odds, created_at
             FROM jackpot_selections
             ORDER BY created_at
         """
@@ -249,9 +249,9 @@ class PostgresCRUD:
                 query = """
                 UPDATE jackpot_selections
                 SET prediction = %s
-                WHERE event_id = %s 
+                WHERE id=%s AND event_id = %s 
                 """
-                cur.execute(query, (row['prediction'], row['event_id']))
+                cur.execute(query, (row['prediction'], row['id'], row['event_id']))
                 
             self.conn.commit()
             self.conn.close()
