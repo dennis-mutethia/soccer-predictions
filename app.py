@@ -122,7 +122,13 @@ def delivery_reports():
     
     print(response) 
     
-    PostgresCRUD().save_safaricom_callback(response)
+    PostgresCRUD().save_safaricom_callback(str(response))
+    
+    if response["success"]:
+        for datum in response["data"]["requestParam"]["data"]:
+            if datum["name"] == "Msisdn":
+                phone = datum["value"]
+                PostgresCRUD().update_subscriber_on_send(phone) 
     
     return '', 200
 
