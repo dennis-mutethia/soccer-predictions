@@ -22,14 +22,15 @@ jobs:
           echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
           echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
-          echo "SMS_USERNAME=${{ secrets.SMS_USERNAME }}" >> $GITHUB_ENV
-          echo "SMS_PASSWORD=${{ secrets.SMS_PASSWORD }}" >> $GITHUB_ENV          
-          echo "AT_TOKEN_URL=${{ secrets.AT_TOKEN_URL }}" >> $GITHUB_ENV
-          echo "AT_CONTENT_URL=${{ secrets.AT_CONTENT_URL }}" >> $GITHUB_ENV
-          echo "AT_USERNAME=${{ secrets.AT_USERNAME }}" >> $GITHUB_ENV
-          echo "AT_API_KEY=${{ secrets.AT_API_KEY }}" >> $GITHUB_ENV
           echo "WAAPI_INSTANCE_ID=${{ secrets.WAAPI_INSTANCE_ID }}" >> $GITHUB_ENV
-          echo "WAAPI_TOKEN=${{ secrets.WAAPI_TOKEN }}" >> $GITHUB_ENV
+          echo "SDP_BASE_URL=${{ secrets.SDP_BASE_URL }}" >> $GITHUB_ENV
+          echo "BULK_SMS_CALLBACK_URL=${{ secrets.BULK_SMS_CALLBACK_URL }}" >> $GITHUB_ENV
+          echo "API_USERNAME=${{ secrets.API_USERNAME }}" >> $GITHUB_ENV          
+          echo "BULK_USERNAME=${{ secrets.BULK_USERNAME }}" >> $GITHUB_ENV
+          echo "BULK_PACKAGE_ID=${{ secrets.BULK_PACKAGE_ID }}" >> $GITHUB_ENV
+          echo "API_PASSWORD=${{ secrets.API_PASSWORD }}" >> $GITHUB_ENV
+          echo "CP_ID=${{ secrets.CP_ID }}" >> $GITHUB_ENV
+          echo "PREMIUM_SMS_OFFER_CODE=${{ secrets.CP_ID }}" >> $PREMIUM_SMS_OFFER_CODE
       
       - name: setup python
         uses: actions/setup-python@v4
