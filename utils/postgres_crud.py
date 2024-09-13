@@ -203,9 +203,16 @@ class PostgresCRUD:
         events = []
         with self.conn.cursor() as cur:
             query = """
-                SELECT DISTINCT event_id, start_date, home, away, prediction
-                FROM jackpot_selections
-                WHERE id = %s AND start_date > NOW()
+                WITH latest_selections AS (
+                    SELECT event_id, start_date, home, away, prediction, created_at,
+                        ROW_NUMBER() OVER (PARTITION BY event_id ORDER BY created_at DESC) AS rn
+                    FROM jackpot_selections
+                    WHERE id = %s AND start_date > NOW()
+                )
+                SELECT event_id, start_date, home, away, prediction, created_at
+                FROM latest_selections
+                WHERE rn = 1
+                ORDER BY created_at DESC
             """
             cur.execute(query,(jackpot_id, ))
             data = cur.fetchall()
@@ -249,7 +256,7 @@ class PostgresCRUD:
                 query = """
                 UPDATE jackpot_selections
                 SET prediction = %s
-                WHERE id=%s AND event_id = %s 
+                WHERE id=%s AND event_id = %s AND prediction IS NULL
                 """
                 cur.execute(query, (row['prediction'], row['id'], row['event_id']))
                 
