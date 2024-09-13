@@ -27,7 +27,7 @@ class SDP:
         self.cp_id = os.getenv('CP_ID')
 
         self.sandbox_base_url = os.getenv('SANDBOX_BASE_URL')
-        self.live_base_url = os.getenv('LIVE_BASE_URL')
+        self.live_base_url = os.getenv('SDP_BASE_URL')
         
         self.debug_level = debug_level
 
