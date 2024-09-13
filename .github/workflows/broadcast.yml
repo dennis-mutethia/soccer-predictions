@@ -2,7 +2,7 @@ name: broadcast premium tips
 
 on:
   schedule:
-    - cron: '0 6-18 * * *'  # This runs the job every 0 minute of the hour between 6am and 6pm UTC
+    - cron: '0 7-15 * * *'  # This runs the job every 0 minute of the hour between 10am and 6pm EAT(+3)
     
   workflow_dispatch:
 
