@@ -247,11 +247,11 @@ class Extract:
         overall_prob = 0  
         print(match)  
         
-        if match["home_perc"] >= 80:
+        if match["home_perc"] >= 80 and match["over_1_5_home_perc"] > 80:
             prediction = 'HOME WIN'
             overall_prob = match["home_perc"] 
         
-        elif match["away_perc"] >= 80:
+        elif match["away_perc"] >= 80 and match["over_1_5_away_perc"] > 80:
             prediction = 'AWAY WIN'
             overall_prob = match["away_perc"]   
         
