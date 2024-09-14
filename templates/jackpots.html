@@ -33,8 +33,11 @@
                     <div class="row">
 
                         {% for event in jackpot.events %}
-                        <a class="col-12 col-sm-3" style="color: black;"
-                            href="{{ url_for('subscribe', code=code) if code not in today_codes else '#' }}">
+                        <a class="col-12 col-sm-3" style="color: black;" 
+                            {% if code not in today_codes %}
+                                href="{{ url_for('subscribe', code=code) }}" 
+                            {% endif %}
+                        >
                             <div class="card box-shadow my-2">
                                 <div class="card-header text-center" style="background-color: skyblue;">
                                     <b>{{ event.home }} vs {{ event.away }}</b>
