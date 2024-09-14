@@ -5,7 +5,7 @@ from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
 from utils.waapi import WaAPI
 
-class Broadcast():
+class BroadcastW():
     def __init__(self):        
         self.helper = Helper()
         self.postgres_crud = PostgresCRUD()
@@ -41,7 +41,7 @@ To Subscribe back, Reply with the word "subscribe".'''
                     message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction} [{match.home_results}-{match.away_results}]
 '''
 
-            message = message[:200] + ''' ...
+            message = message[:250] + ''' ...
             
 Details - https://tipspesa.uk/yesterday/guest
 Reply with The word "subscribe" to get Sure Tips daily'''
@@ -63,12 +63,11 @@ Reply with The word "subscribe" to get Sure Tips daily'''
                 #if match.status is None:
                 message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction}'''
 
-            message = message[:120] + f'''...
+            message = message[:250] + f'''...
 
 All Tips - https://tipspesa.uk/{random.choice(today_codes)}
 
-New Predictions added every hour. Just Refresh above Link for Latest Predictions
-STOP *456*20#'''
+New Predictions added every hour. Just Refresh above Link for Latest Predictions'''
 
             return message.strip()
         else:
@@ -97,4 +96,4 @@ STOP *456*20#'''
               
             
 if __name__ == "__main__":
-    Broadcast()()
+    BroadcastW()()

@@ -5,6 +5,7 @@ from flask import Flask, Response, redirect, render_template, request, url_for
 from dotenv import load_dotenv
 
 from broadcast import Broadcast
+from broadcast_w import BroadcastW
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
 from utils.safaricom.utils import Utils
@@ -105,11 +106,11 @@ def handle_webhook(security_token):
                 
             if 'unsubscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)                
-                Broadcast().send_goodbye_message(message_sender_phone_number)        
+                BroadcastW().send_goodbye_message(message_sender_phone_number)        
 
             elif 'subscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 1)
-                Broadcast().send_welcome_message(message_sender_phone_number)
+                BroadcastW().send_welcome_message(message_sender_phone_number)
 
         return '', 200
     else:

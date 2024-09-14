@@ -42,6 +42,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
-      # execute prediction script i.e run predict.py
+      # execute broadcast script i.e run broadcast.py
       - name: execute broadcast script 
         run: python broadcast.py
+      
+      # execute broadcast_w script i.e run broadcast_w.py
+      - name: execute broadcast_w script 
+        run: python broadcast_w.py
