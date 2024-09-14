@@ -28,7 +28,10 @@ N/B: New Unique Link is Sent daily
             {% for match in matches %}
             {% if match.status is none %}
             <a class="col-12 col-sm-4" style="color: black;"
-                href="{{ url_for('subscribe', code=code) if code not in today_codes else '#' }}">
+                {%  if code not in today_codes %} 
+                 href="{{ url_for('subscribe', code=code) }}"
+                {% endif %}
+            >
             <div class="card box-shadow my-2">
                 <div class="card-header text-center">
                     <b>{{ match.home_team }} vs {{ match.away_team }}</b>
