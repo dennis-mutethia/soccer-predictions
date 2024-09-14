@@ -59,7 +59,7 @@ class Jackpots():
         elif total_draw_change < 0 and total_home_change >= 0 and total_away_change >= 0:
             return "Draw"
         else:
-            return "---"
+            return "No Clear Prediction"
         
     def __call__(self):
         #jackpots_shabiki = self.shabiki.get_jackpot_selections()
