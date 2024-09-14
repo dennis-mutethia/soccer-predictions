@@ -31,7 +31,7 @@ N/B: New Unique Link is Sent daily
             {% set ns.counter = ns.counter + 1 %}
             <a class="col-12 col-sm-4" style="color: black;"
                 {%  if code not in today_codes and ns.counter != 1 %} 
-                 href="{{ url_for('subscribe', code=code) }}"
+                 href="https://api.whatsapp.com/send/?phone=254759697757&text=subscribe"
                 {% endif %}
             >
             <div class="card box-shadow my-2">
