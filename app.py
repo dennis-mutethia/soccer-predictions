@@ -117,7 +117,7 @@ def handle_webhook(security_token):
         print(f"Cannot handle this event: {event_name}")
         return '', 404
 
-@app.route('/api/public/SDP/callback', methods=['POST'])
+@app.route('/games_callback', methods=['POST'])
 def delivery_reports():
     response = Utils().get_callback()
     
