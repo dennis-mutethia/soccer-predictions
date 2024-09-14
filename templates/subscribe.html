@@ -18,22 +18,21 @@
 
             <div class="container-fluid table-responsive">
                 <div class="pt-3 pb-3 border-bottom border-secondary">
-                    <div class="text-center">
-                    <a href="https://api.whatsapp.com/send/?phone=254759697757&text=subscribe"
-                        title="Subscribe to Tipspesa" target="_blank" >
-                        <img src="{{ url_for('static', filename='subscribe.png') }}" alt="homepage"
-                            width="200" />
-                    </a>
-                </div>
                     <h5 class="text-center"><u>Subscription Guide</u></h5>
                     <ol>
-                        <li>Click Subscribe Button</li>
+                        <li>Click <b><i>Subscribe Now Button</i></b> below</li>
                         <li>You will be redirected to Whatsapp</li>
-                        <li>Confirm Send the word "<b>subscribe</b>" to our <b>A.I.</b> Whatsapp no - <b>+254 759 697757</b></li>
+                        <li>Confirm Send the word "<b>subscribe</b>" to our Tipspesa Official Whatsapp no - <b>+254 759
+                                697757</b></li>
                         <li>We will send you our predictions daily via Whatsapp - With a unique link to view all our
                             predictions</li>
                     </ol>
                     <div class="col-12 text-center">
+                        <a href="https://api.whatsapp.com/send/?phone=254759697757&text=subscribe"
+                            title="Subscribe to Tipspesa" target="_blank">
+                            <img src="{{ url_for('static', filename='subscribe.png') }}" alt="homepage" width="200" />
+                        </a>
+                        <br />
                         <a href="{{ url_for('terms_and_conditions') }}">Terms and conditions</a> apply.
                     </div>
                 </div>
