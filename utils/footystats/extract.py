@@ -246,31 +246,35 @@ class Extract:
         prediction = None
         overall_prob = 0  
         
-        if match["home_perc"] >= 80 and match["over_1_5_home_perc"] > 80:
-            prediction = 'HOME WIN'
-            overall_prob = match["home_perc"] 
+        if match["over_1_5_home_perc"] >= 90 and match["over_1_5_away_perc"] >= 90 and 'High' in match["home_analysis"] and 'High' in match["away_analysis"]:
+            prediction = 'BOTH TEAMS TO SCORE'
+            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2  
         
-        elif match["away_perc"] >= 80 and match["over_1_5_away_perc"] > 80:
-            prediction = 'AWAY WIN'
-            overall_prob = match["away_perc"]   
-        
-        elif match["over_3_5_home_perc"] >= 90 or match["over_3_5_away_perc"] >= 90:
+        elif (match["over_3_5_home_perc"] >= 90 and 'High' in match["home_analysis"]) or (match["over_3_5_away_perc"] >= 90 and 'High' in match["away_analysis"]):
             prediction = 'TOTAL OVER 3.5'
             overall_prob = (match["over_3_5_home_perc"] + match["over_3_5_away_perc"])/2            
         
-        elif match["over_2_5_home_perc"] >= 90 or match["over_2_5_away_perc"] >= 90:
+        elif (match["over_2_5_home_perc"] >= 90 and 'High' in match["home_analysis"]) or (match["over_2_5_away_perc"] >= 90 and 'High' in match["away_analysis"]):
             prediction = 'TOTAL OVER 2.5'
-            overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2           
+            overall_prob = (match["over_2_5_home_perc"] + match["over_2_5_away_perc"])/2    
+            
+        elif match["home_perc"] >= 80 and match["over_1_5_home_perc"] > 80 and 'High' in match["home_analysis"]:
+            prediction = 'HOME WIN'
+            overall_prob = match["home_perc"] 
         
-        elif match["over_1_5_home_perc"] >= 90 or match["over_1_5_away_perc"] >= 90:
+        elif match["away_perc"] >= 80 and match["over_1_5_away_perc"] > 80 and 'High' in match["away_analysis"]:
+            prediction = 'AWAY WIN'
+            overall_prob = match["away_perc"]           
+        
+        elif (match["over_1_5_home_perc"] >= 90 and 'High' in match["home_analysis"]) or (match["over_1_5_away_perc"] >= 90 and 'High' in match["away_analysis"]):
             prediction = 'TOTAL OVER 1.5'
-            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2  
+            overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2    
         
-        elif match["over_0_5_home_perc"] >= 90 and match["over_0_5_home_perc"] > match["over_0_5_away_perc"]:
+        elif match["over_0_5_home_perc"] >= 90 and 'High' in match["home_analysis"]:
             prediction = 'HOME TOTAL OVER 0.5'  
             overall_prob = match["over_0_5_home_perc"]
         
-        elif match["over_0_5_away_perc"] >= 90 and match["over_0_5_away_perc"] > match["over_0_5_home_perc"]:
+        elif match["over_0_5_away_perc"] >= 90 and 'High' in match["away_analysis"]:
             prediction = 'AWAY TOTAL OVER 0.5'  
             overall_prob = match["over_0_5_away_perc"]
         

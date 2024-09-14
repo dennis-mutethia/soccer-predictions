@@ -40,7 +40,12 @@ class Predict:
                 if prediction == 'HOME TOTAL OVER 0.5' and home_results>0:
                     status = 'WON'
                 if prediction == 'AWAY TOTAL OVER 0.5' and away_results>0:
-                    status = 'WON'                
+                    status = 'WON'  
+                    
+                if prediction == 'BOTH TEAMS TO SCORE' and home_results>0 and away_results>0:
+                    status = 'WON'  
+                    
+                                  
                 
                 status = 'LIVE' if live else status
                 #print(f'prediction={prediction} home_results={home_results} away_results={away_results} status={status}')
