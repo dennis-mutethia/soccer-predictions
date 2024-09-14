@@ -61,7 +61,8 @@ Reply with The word "subscribe" to get Sure Tips daily'''
 '''
             for match in matches:
                 #if match.status is None:
-                message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction}'''
+                message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction}
+'''
 
             message = message[:250] + f'''...
 
