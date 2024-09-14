@@ -245,7 +245,6 @@ class Extract:
     def predict_overs(self, match):
         prediction = None
         overall_prob = 0  
-        print(match)  
         
         if match["home_perc"] >= 80 and match["over_1_5_home_perc"] > 80:
             prediction = 'HOME WIN'
