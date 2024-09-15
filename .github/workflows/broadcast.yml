@@ -23,6 +23,7 @@ jobs:
           echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
           echo "WAAPI_INSTANCE_ID=${{ secrets.WAAPI_INSTANCE_ID }}" >> $GITHUB_ENV
+          echo "WAAPI_TOKEN=${{ secrets.WAAPI_TOKEN }}" >> $GITHUB_ENV
           echo "SDP_BASE_URL=${{ secrets.SDP_BASE_URL }}" >> $GITHUB_ENV
           echo "BULK_SMS_CALLBACK_URL=${{ secrets.BULK_SMS_CALLBACK_URL }}" >> $GITHUB_ENV
           echo "API_USERNAME=${{ secrets.API_USERNAME }}" >> $GITHUB_ENV          
