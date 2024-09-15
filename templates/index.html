@@ -46,7 +46,7 @@ N/B: New Unique Link is Sent daily
                                 {% if code in today_codes or ns.counter == 1 %}
                                 {{ match.prediction }}
                                 {% else %}
-                                Click to Subscribe & View Prediction
+                                Subscribe & View Predictions - It's <b>FREE!!!</b>
                                 {% endif %}
                             </b></small>
                     </div>
@@ -112,11 +112,6 @@ N/B: New Unique Link is Sent daily
                     <div class="text-left">
                         <small>{{ highlight_analysis(match.analysis) | safe }}</small>
                     </div>
-                    {% else %}
-                    <div class="text-center">
-                        <small><b class="py-5">Click to Subscribe & View {{ match.home_team }} vs {{ match.away_team }} Statistics</b></small>
-                    </div>
-
                     {% endif %}
                 </div>
             </div>
