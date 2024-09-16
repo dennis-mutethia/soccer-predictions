@@ -259,7 +259,7 @@ class Extract:
             prediction = 'TOTAL OVER 2.5'
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2     
             
-        elif match["over_1_5_home_perc"] >= 80 and match["over_1_5_away_perc"] >= 80 and re.search(r"High|Medium", match["home_analysis"]) and re.search(r"High|Medium", match["away_analysis"]):
+        elif match["over_1_5_home_perc"] > 80 and match["over_1_5_away_perc"] > 80 and re.search(r"High|Medium", match["home_analysis"]) and re.search(r"High|Medium", match["away_analysis"]):
             prediction = 'BOTH TEAMS TO SCORE'
             overall_prob = (match["over_0_5_home_perc"] + match["over_0_5_away_perc"])/2        
             
