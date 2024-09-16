@@ -275,11 +275,11 @@ class Extract:
             prediction = 'TOTAL OVER 1.5'
             overall_prob = (match["over_1_5_home_perc"] + match["over_1_5_away_perc"])/2    
         
-        elif match["over_0_5_home_perc"] >= 90 and re.search(r"High|Medium", match["home_analysis"]):
+        elif match["over_0_5_home_perc"] >= 90 and match["over_1_5_home_perc"]>match["over_1_5_away_perc"] and re.search(r"High|Medium", match["home_analysis"]):
             prediction = 'HOME TOTAL OVER 0.5'  
             overall_prob = match["over_0_5_home_perc"]
         
-        elif match["over_0_5_away_perc"] >= 90 and re.search(r"High|Medium", match["away_analysis"]) :
+        elif match["over_0_5_away_perc"] >= 90 and match["over_1_5_away_perc"]>match["over_1_5_home_perc"] and re.search(r"High|Medium", match["away_analysis"]) :
             prediction = 'AWAY TOTAL OVER 0.5'  
             overall_prob = match["over_0_5_away_perc"]
         
@@ -290,7 +290,7 @@ class Extract:
     def predict(self, matches):
         team_names = []
         for match in matches:
-            if int(match["meetings"]) >=10 and re.search(r"High|Medium", match["analysis"]):
+            if int(match["meetings"]) >=15 and re.search(r"High|Medium", match["analysis"]):
                 teams = f'{match["home_team"]} vs {match["away_team"]}'
                 if 'Women' not in teams:
                     prediction, overall_prob = self.predict_overs(match) # self.predict_over(match)
