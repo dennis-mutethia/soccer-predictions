@@ -63,7 +63,6 @@ class PostgresCRUD:
                 over_0_5_home_perc, over_0_5_away_perc, over_1_5_home_perc, over_1_5_away_perc, over_2_5_home_perc, over_2_5_away_perc, over_3_5_home_perc, over_3_5_away_perc, analysis)
                 VALUES(%s, %s + INTERVAL '2 hours', %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 ON CONFLICT (match_id) DO UPDATE SET
-                    kickoff = %s + INTERVAL '2 hours',
                     prediction = %s,
                     overall_prob = %s,
                     analysis = %s
