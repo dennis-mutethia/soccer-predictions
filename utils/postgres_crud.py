@@ -69,7 +69,7 @@ class PostgresCRUD:
             """
             cursor.execute(query, (match_id, kickoff, home_team, away_team, prediction, odd, match_url , meetings, average_goals_home, average_goals_away, overall_prob, 
                                    over_0_5_home_perc, over_0_5_away_perc, over_1_5_home_perc, over_1_5_away_perc, over_2_5_home_perc, over_2_5_away_perc, over_3_5_home_perc,
-                                   over_3_5_away_perc, analysis, kickoff, prediction, overall_prob, analysis))
+                                   over_3_5_away_perc, analysis, prediction, overall_prob, analysis))
             self.conn.commit()
     
     def fetch_open_matches(self):
