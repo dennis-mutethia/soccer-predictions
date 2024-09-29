@@ -71,7 +71,8 @@ class Jackpots():
             
             
 if __name__ == '__main__':
-    jackpots = Jackpots()
-    jackpots()
-    jackpots.predict()
+    # jackpots = Jackpots()
+    # jackpots()
+    # jackpots.predict()
+    print('skipped')
     
