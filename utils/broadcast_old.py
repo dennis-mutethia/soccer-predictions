@@ -50,7 +50,7 @@ Terms and conditions apply.'''
 '''
 
             sms = sms[:70] + ''' ...
-Details - https://tipspesa.uk/yesterday/guest
+Details - https://soccer-predictions-swart.vercel.app/yesterday/guest
 Reply with 1 to get Today Sure Tips'''
 
             return sms.strip()  
@@ -72,7 +72,7 @@ Reply with 1 to get Today Sure Tips'''
 '''
 
             sms = sms[:110] + f''' ...
-All Tips - https://tipspesa.uk/{random.choice(today_codes)}'''
+All Tips - https://soccer-predictions-swart.vercel.app/{random.choice(today_codes)}'''
 
             return sms.strip()
         else:

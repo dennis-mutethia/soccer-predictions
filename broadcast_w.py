@@ -43,7 +43,7 @@ To Subscribe back, Reply with the word "subscribe".'''
 
             message = message[:250] + ''' ...
             
-Details - https://tipspesa.uk/yesterday/guest
+Details - https://soccer-predictions-swart.vercel.app/yesterday/guest
 Reply with The word "subscribe" to get Sure Tips daily'''
 
             return message.strip()  
@@ -66,7 +66,7 @@ Reply with The word "subscribe" to get Sure Tips daily'''
 
             message = message[:250] + f'''...
 
-All Tips - https://tipspesa.uk/{random.choice(today_codes)}
+All Tips - https://soccer-predictions-swart.vercel.app/{random.choice(today_codes)}
 
 New Predictions added every hour. Just Refresh above Link for Latest Predictions'''
 

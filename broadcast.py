@@ -39,7 +39,7 @@ Terms and conditions apply. Bet responsibly'''
 
             message = message[:150] + '''...
     
-Details - https://tipspesa.uk/yesterday/guest
+Details - https://soccer-predictions-swart.vercel.app/yesterday/guest
 
 Reply with "1" to get Sure Predictions daily'''
 
@@ -63,7 +63,7 @@ Reply with "1" to get Sure Predictions daily'''
 
             message = message[:120] + f'''...
 
-All Tips - https://tipspesa.uk/{random.choice(today_codes)}
+All Tips - https://soccer-predictions-swart.vercel.app/{random.choice(today_codes)}
 
 New Predictions added every hour. Just Refresh above Link for Latest Predictions
 STOP *456*20#'''
