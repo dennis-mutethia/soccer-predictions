@@ -41,7 +41,7 @@ To Subscribe back, Reply with the word "subscribe".'''
                     message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction} [{match.home_results}-{match.away_results}]
 '''
 
-            message = message[:250] + ''' ...
+            message = message + ''' ...
             
 Details - https://soccer-predictions-swart.vercel.app/yesterday/guest
 Reply with The word "subscribe" to get Sure Tips daily'''
@@ -64,7 +64,7 @@ Reply with The word "subscribe" to get Sure Tips daily'''
                 message = message + f'''{match.home_team} vs {match.away_team} - {match.prediction}
 '''
 
-            message = message[:250] + f'''...
+            message = message + f'''...
 
 All Tips - https://soccer-predictions-swart.vercel.app/{random.choice(today_codes)}
 
