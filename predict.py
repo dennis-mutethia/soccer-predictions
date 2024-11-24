@@ -43,10 +43,8 @@ class Predict:
                     status = 'WON'  
                     
                 if prediction == 'BOTH TEAMS TO SCORE' and home_results>0 and away_results>0:
-                    status = 'WON'  
-                    
-                                  
-                
+                    status = 'WON' 
+                                      
                 status = 'LIVE' if live else status
                 #print(f'prediction={prediction} home_results={home_results} away_results={away_results} status={status}')
                 self.postgres_crud.update_match_results(match_id, home_results, away_results, status)

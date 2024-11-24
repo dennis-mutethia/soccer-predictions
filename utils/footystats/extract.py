@@ -283,7 +283,7 @@ class Extract:
             prediction = 'AWAY TOTAL OVER 0.5'  
             overall_prob = match["over_0_5_away_perc"]
         
-        print(f'{match["home_team"]} vs {match["away_team"]} - {prediction}')
+        print(f'{match["start_time"]} {match["home_team"]} vs {match["away_team"]} - {prediction}')
         
         return prediction, overall_prob
        
@@ -332,7 +332,7 @@ class Extract:
             
             start_time_local = start_time_dt.astimezone(self.get_local_timezone())
 
-            match["start_time"] = start_time_local.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
+            match["start_time"] = start_time_dt #start_time_local.replace(tzinfo=None) #utc_time.astimezone(eat_tz).astimezone(eat_tz)
                                              
             to_return.append(match)
                         
