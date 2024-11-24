@@ -2,7 +2,7 @@ name: predict and fetch results
 
 on:
   schedule:
-    - cron: '0 * * * *'  # This runs the job every hour at the 0th minute
+    - cron: '30 3-15 * * *'  # This runs the job every 30 minute of the hour from 6:30am to 6:30pm EAT(+3)
     
   workflow_dispatch:
 
@@ -38,6 +38,6 @@ jobs:
         run: python predict.py
 
       # execute jackpots script i.e run jackpots.py
-      - name: execute jackpots script 
-        run: python jackpots.py
+      #- name: execute jackpots script 
+      #  run: python jackpots.py
 
