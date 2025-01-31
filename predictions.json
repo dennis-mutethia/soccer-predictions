@@ -1,0 +1,844 @@
+[
+    {
+        "home_team": "USM Annaba",
+        "away_team": "HB Chelghoum Laid",
+        "parent_match_id": "57468687",
+        "start_time": "2025-01-31 17:00:00",
+        "predictions": {
+            "1": 30,
+            "X": 35,
+            "2": 35,
+            "OVER 1.5": 75,
+            "OVER 2.5": 50,
+            "BOTH TEAMS TO SCORE": 50
+        }
+    },
+        {
+            "home_team": "NAC Breda",
+            "away_team": "Heracles Almelo",
+            "parent_match_id": "50868337",
+            "start_time": "2025-01-31 22:00:00",
+            "predictions": {
+                "1": 45,
+                "X": 30,
+                "2": 25,
+                "OVER 1.5": 70,
+                "OVER 2.5": 50,
+                "BOTH TEAMS TO SCORE": 60
+            }
+        },
+        {
+            "home_team": "Gornik Leczna",
+            "away_team": "Vion Zlate Moravce - Vrable",
+            "parent_match_id": "57679165",
+            "start_time": "2025-01-31 16:00:00",
+            "predictions": {
+                "1": 50,
+                "X": 25,
+                "2": 25,
+                "OVER 1.5": 65,
+                "OVER 2.5": 45,
+                "BOTH TEAMS TO SCORE": 55
+            }
+        },
+        {
+            "home_team": "Lillestrom SK",
+            "away_team": "Stroemsgodset IF",
+            "parent_match_id": "57642513",
+            "start_time": "2025-01-31 17:00:00",
+            "predictions": {
+                "1": 40,
+                "X": 30,
+                "2": 30,
+                "OVER 1.5": 75,
+                "OVER 2.5": 55,
+                "BOTH TEAMS TO SCORE": 60
+            }
+        },
+        {
+            "home_team": "Dundalk FC",
+            "away_team": "Drogheda United FC",
+            "parent_match_id": "57659349",
+            "start_time": "2025-01-31 22:45:00",
+            "predictions": {
+                "1": 60,
+                "X": 25,
+                "2": 15,
+                "OVER 1.5": 70,
+                "OVER 2.5": 50,
+                "BOTH TEAMS TO SCORE": 50
+            }
+        },
+        {
+            "home_team": "GKS Katowice",
+            "away_team": "Stal Mielec",
+            "parent_match_id": "50592875",
+            "start_time": "2025-01-31 20:00:00",
+            "predictions": {
+                "1": 55,
+                "X": 25,
+                "2": 20,
+                "OVER 1.5": 65,
+                "OVER 2.5": 45,
+                "BOTH TEAMS TO SCORE": 55
+            }
+        },
+            {
+                "home_team": "El Mansurah",
+                "away_team": "Abo Qair Semads",
+                "parent_match_id": "56806651",
+                "start_time": "2025-01-31 15:30:00",
+                "predictions": {
+                    "1": 45,
+                    "X": 30,
+                    "2": 25,
+                    "OVER 1.5": 70,
+                    "OVER 2.5": 55,
+                    "BOTH TEAMS TO SCORE": 60
+                }
+            },
+            {
+                "home_team": "Foolad KHouzestan FC",
+                "away_team": "Persepolis FC",
+                "parent_match_id": "56555311",
+                "start_time": "2025-01-31 15:30:00",
+                "predictions": {
+                    "1": 30,
+                    "X": 30,
+                    "2": 40,
+                    "OVER 1.5": 80,
+                    "OVER 2.5": 60,
+                    "BOTH TEAMS TO SCORE": 70
+                }
+            },
+            {
+                "home_team": "Hapoel Acre FC",
+                "away_team": "Hapoel Ra`anana FC",
+                "parent_match_id": "54000417",
+                "start_time": "2025-01-31 16:00:00",
+                "predictions": {
+                    "1": 40,
+                    "X": 25,
+                    "2": 35,
+                    "OVER 1.5": 65,
+                    "OVER 2.5": 50,
+                    "BOTH TEAMS TO SCORE": 55
+                }
+            },
+            {
+                "home_team": "Hapoel Rishon Lezion FC",
+                "away_team": "Maccabi Kabilio Jaffa",
+                "parent_match_id": "51088871",
+                "start_time": "2025-01-31 16:00:00",
+                "predictions": {
+                    "1": 35,
+                    "X": 30,
+                    "2": 35,
+                    "OVER 1.5": 75,
+                    "OVER 2.5": 60,
+                    "BOTH TEAMS TO SCORE": 65
+                }
+            },
+            {
+                "home_team": "Hapoel Nof Hagalil FC",
+                "away_team": "FC Kafr Qasim",
+                "parent_match_id": "51088863",
+                "start_time": "2025-01-31 16:00:00",
+                "predictions": {
+                    "1": 50,
+                    "X": 25,
+                    "2": 25,
+                    "OVER 1.5": 70,
+                    "OVER 2.5": 55,
+                    "BOTH TEAMS TO SCORE": 60
+                }
+            },
+            {
+                "home_team": "Ajman Club",
+                "away_team": "Al Wahda FC (UAE)",
+                "parent_match_id": "56300155",
+                "start_time": "2025-01-31 16:15:00",
+                "predictions": {
+                    "1": 30,
+                    "X": 30,
+                    "2": 40,
+                    "OVER 1.5": 80,
+                    "OVER 2.5": 65,
+                    "BOTH TEAMS TO SCORE": 70
+                }
+            },
+            {
+                "home_team": "Orbit College FC",
+                "away_team": "Upington City FC",
+                "parent_match_id": "52888323",
+                "start_time": "2025-01-31 16:30:00",
+                "predictions": {
+                    "1": 40,
+                    "X": 30,
+                    "2": 30,
+                    "OVER 1.5": 60,
+                    "OVER 2.5": 45,
+                    "BOTH TEAMS TO SCORE": 50
+                }
+            },
+            {
+                "home_team": "Casric Stars FC",
+                "away_team": "Jdr Stars",
+                "parent_match_id": "52888317",
+                "start_time": "2025-01-31 16:30:00",
+                "predictions": {
+                    "1": 45,
+                    "X": 25,
+                    "2": 30,
+                    "OVER 1.5": 70,
+                    "OVER 2.5": 55,
+                    "BOTH TEAMS TO SCORE": 60
+                }
+            },
+            {
+                "home_team": "Al-Fayha FC",
+                "away_team": "Al-Taawoun FC",
+                "parent_match_id": "52034593",
+                "start_time": "2025-01-31 16:45:00",
+                "predictions": {
+                    "1": 35,
+                    "X": 30,
+                    "2": 35,
+                    "OVER 1.5": 75,
+                    "OVER 2.5": 60,
+                    "BOTH TEAMS TO SCORE": 65
+                }
+            },
+            {
+                "home_team": "Genoa CFC",
+                "away_team": "US Cremonese",
+                "parent_match_id": "51828471",
+                "start_time": "2025-01-31 17:00:00",
+                "predictions": {
+                    "1": 50,
+                    "X": 25,
+                    "2": 25,
+                    "OVER 1.5": 70,
+                    "OVER 2.5": 55,
+                    "BOTH TEAMS TO SCORE": 60
+                }
+            },
+                {
+                    "home_team": "Al-Ittifaq FC",
+                    "away_team": "Al-Shabab FC (SA)",
+                    "parent_match_id": "52034605",
+                    "start_time": "2025-01-31 20:00:00",
+                    "predictions": {
+                        "1": 40,
+                        "X": 30,
+                        "2": 30,
+                        "OVER 1.5": 65,
+                        "OVER 2.5": 40,
+                        "BOTH TEAMS TO SCORE": 55
+                    }
+                },
+                {
+                    "home_team": "Konyaspor",
+                    "away_team": "Bodrumspor",
+                    "parent_match_id": "51472197",
+                    "start_time": "2025-01-31 20:00:00",
+                    "predictions": {
+                        "1": 50,
+                        "X": 25,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 45,
+                        "BOTH TEAMS TO SCORE": 50
+                    }
+                },
+                {
+                    "home_team": "Eyupspor",
+                    "away_team": "Sivasspor",
+                    "parent_match_id": "51472181",
+                    "start_time": "2025-01-31 20:00:00",
+                    "predictions": {
+                        "1": 45,
+                        "X": 30,
+                        "2": 25,
+                        "OVER 1.5": 60,
+                        "OVER 2.5": 35,
+                        "BOTH TEAMS TO SCORE": 45
+                    }
+                },
+                {
+                    "home_team": "Corum",
+                    "away_team": "Bandirmaspor",
+                    "parent_match_id": "51856939",
+                    "start_time": "2025-01-31 20:00:00",
+                    "predictions": {
+                        "1": 40,
+                        "X": 35,
+                        "2": 25,
+                        "OVER 1.5": 60,
+                        "OVER 2.5": 35,
+                        "BOTH TEAMS TO SCORE": 50
+                    }
+                },
+                {
+                    "home_team": "Digenis Morphou",
+                    "away_team": "PAEEK",
+                    "parent_match_id": "57150101",
+                    "start_time": "2025-01-31 20:00:00",
+                    "predictions": {
+                        "1": 35,
+                        "X": 30,
+                        "2": 35,
+                        "OVER 1.5": 60,
+                        "OVER 2.5": 40,
+                        "BOTH TEAMS TO SCORE": 55
+                    }
+                },
+                {
+                    "home_team": "Elversberg",
+                    "away_team": "Karlsruhe",
+                    "parent_match_id": "51270029",
+                    "start_time": "2025-01-31 20:30:00",
+                    "predictions": {
+                        "1": 40,
+                        "X": 25,
+                        "2": 35,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                    }
+                },
+                {
+                    "home_team": "Frankfurt Women ",
+                    "away_team": "Leverkusen Women ",
+                    "parent_match_id": "51773531",
+                    "start_time": "2025-01-31 20:30:00",
+                    "predictions": {
+                        "1": 35,
+                        "X": 30,
+                        "2": 35,
+                        "OVER 1.5": 75,
+                        "OVER 2.5": 55,
+                        "BOTH TEAMS TO SCORE": 70
+                    }
+                },
+                {
+                    "home_team": "Durban City FC 2024",
+                    "away_team": "Kruger United",
+                    "parent_match_id": "52888315",
+                    "start_time": "2025-01-31 20:30:00",
+                    "predictions": {
+                        "1": 45,
+                        "X": 30,
+                        "2": 25,
+                        "OVER 1.5": 65,
+                        "OVER 2.5": 40,
+                        "BOTH TEAMS TO SCORE": 50
+                    }
+                },
+                
+                    {
+                      "home_team": "Stade Lausanne Ouchy",
+                      "away_team": "Etoile Carouge",
+                      "parent_match_id": "56616913",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 55,
+                        "X": 25,
+                        "2": 20,
+                        "OVER 1.5": 75,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Paris 13 Atletico",
+                      "away_team": "FC Villefranche Beaujolais",
+                      "parent_match_id": "51628525",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 40,
+                        "X": 30,
+                        "2": 30,
+                        "OVER 1.5": 65,
+                        "OVER 2.5": 45,
+                        "BOTH TEAMS TO SCORE": 55
+                      }
+                    },
+                    {
+                      "home_team": "Le Mans FC",
+                      "away_team": "Sochaux-Montbeliard",
+                      "parent_match_id": "51628517",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 35,
+                        "X": 30,
+                        "2": 35,
+                        "OVER 1.5": 60,
+                        "OVER 2.5": 40,
+                        "BOTH TEAMS TO SCORE": 50
+                      }
+                    },
+                    {
+                      "home_team": "Nimes Olympique",
+                      "away_team": "Valenciennes FC",
+                      "parent_match_id": "51628521",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 45,
+                        "X": 25,
+                        "2": 30,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Football Bourg-En-Bresse Peronnas",
+                      "away_team": "LB Chateauroux",
+                      "parent_match_id": "51628513",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 40,
+                        "X": 30,
+                        "2": 30,
+                        "OVER 1.5": 65,
+                        "OVER 2.5": 45,
+                        "BOTH TEAMS TO SCORE": 55
+                      }
+                    },
+                    {
+                      "home_team": "Nancy-Lorraine",
+                      "away_team": "FC Versailles 78",
+                      "parent_match_id": "51628519",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 50,
+                        "X": 25,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "US Orleans",
+                      "away_team": "FC Rouen",
+                      "parent_match_id": "51628523",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 45,
+                        "X": 30,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Schaffhausen",
+                      "away_team": "FC Thun",
+                      "parent_match_id": "56616915",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 45,
+                        "X": 30,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Duisburg",
+                      "away_team": "Oberhausen",
+                      "parent_match_id": "51469349",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 55,
+                        "X": 25,
+                        "2": 20,
+                        "OVER 1.5": 75,
+                        "OVER 2.5": 55,
+                        "BOTH TEAMS TO SCORE": 65
+                      }
+                    },
+                    {
+                      "home_team": "Gutersloh",
+                      "away_team": "Uerdingen",
+                      "parent_match_id": "51469339",
+                      "start_time": "2025-01-31 21:30:00",
+                      "predictions": {
+                        "1": 45,
+                        "X": 30,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "RFC Liege",
+                      "away_team": "RFC Seraing",
+                      "parent_match_id": "50716177",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 50,
+                        "X": 25,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Fluminense EC PI",
+                      "away_team": "AA Altos PI",
+                      "parent_match_id": "56516045",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 55,
+                        "X": 25,
+                        "2": 20,
+                        "OVER 1.5": 75,
+                        "OVER 2.5": 55,
+                        "BOTH TEAMS TO SCORE": 65
+                      }
+                    },
+                    {
+                      "home_team": "Grenoble Foot",
+                      "away_team": "Rodez Aveyron Football",
+                      "parent_match_id": "50956665",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 50,
+                        "X": 25,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "SC Bastia",
+                      "away_team": "FC Metz",
+                      "parent_match_id": "50956677",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 40,
+                        "X": 30,
+                        "2": 30,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Pau FC",
+                      "away_team": "Stade Lavallois MFC",
+                      "parent_match_id": "50956673",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 45,
+                        "X": 30,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Hearts of Oak",
+                      "away_team": "Heart of Lions",
+                      "parent_match_id": "57220391",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 60,
+                        "X": 20,
+                        "2": 20,
+                        "OVER 1.5": 75,
+                        "OVER 2.5": 55,
+                        "BOTH TEAMS TO SCORE": 65
+                      }
+                    },
+                    {
+                      "home_team": "Clermont Foot 63",
+                      "away_team": "AC Ajaccio",
+                      "parent_match_id": "50956679",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 50,
+                        "X": 25,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Real Madrid",
+                      "away_team": "RCD Espanyol Barcelona",
+                      "parent_match_id": "52756097",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 70,
+                        "X": 20,
+                        "2": 10,
+                        "OVER 1.5": 80,
+                        "OVER 2.5": 65,
+                        "BOTH TEAMS TO SCORE": 55
+                      }
+                    },
+                    {
+                      "home_team": "Leeds United Reserves",
+                      "away_team": "Birmingham",
+                      "parent_match_id": "53030693",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 45,
+                        "X": 30,
+                        "2": 25,
+                        "OVER 1.5": 70,
+                        "OVER 2.5": 50,
+                        "BOTH TEAMS TO SCORE": 60
+                      }
+                    },
+                    {
+                      "home_team": "Chelsea Reserves",
+                      "away_team": "DERBY COUNTY RESERVE",
+                      "parent_match_id": "53030719",
+                      "start_time": "2025-01-31 22:00:00",
+                      "predictions": {
+                        "1": 60,
+                        "X": 25,
+                        "2": 15,
+                        "OVER 1.5": 75,
+                        "OVER 2.5": 55,
+                        "BOTH TEAMS TO SCORE": 65
+                      }
+                    },
+                        {
+                            "home_team": "LEICESTER CITY RESERVE",
+                            "away_team": "Coventry City",
+                            "parent_match_id": "53030551",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 45,
+                                "X": 25,
+                                "2": 30,
+                                "OVER 1.5": 70,
+                                "OVER 2.5": 50,
+                                "BOTH TEAMS TO SCORE": 60
+                            }
+                        },
+                        {
+                            "home_team": "Huddersfield (R)",
+                            "away_team": "Sheff Utd",
+                            "parent_match_id": "53030597",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 30,
+                                "X": 25,
+                                "2": 45,
+                                "OVER 1.5": 65,
+                                "OVER 2.5": 45,
+                                "BOTH TEAMS TO SCORE": 55
+                            }
+                        },
+                        {
+                            "home_team": "Southampton Reserves",
+                            "away_team": "SWANSEA CITY RESERVES",
+                            "parent_match_id": "53030577",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 50,
+                                "X": 30,
+                                "2": 20,
+                                "OVER 1.5": 75,
+                                "OVER 2.5": 55,
+                                "BOTH TEAMS TO SCORE": 65
+                            }
+                        },
+                        {
+                            "home_team": "Blackburn Reserves",
+                            "away_team": "Queens Park Rangers",
+                            "parent_match_id": "53030623",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 40,
+                                "X": 25,
+                                "2": 35,
+                                "OVER 1.5": 70,
+                                "OVER 2.5": 50,
+                                "BOTH TEAMS TO SCORE": 60
+                            }
+                        },
+                        {
+                            "home_team": "WEST BROMWICH ALBION RESERVES",
+                            "away_team": "Fleetwood Town",
+                            "parent_match_id": "53030581",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 55,
+                                "X": 25,
+                                "2": 20,
+                                "OVER 1.5": 75,
+                                "OVER 2.5": 55,
+                                "BOTH TEAMS TO SCORE": 60
+                            }
+                        },
+                        {
+                            "home_team": "Colchester",
+                            "away_team": "Preston North End",
+                            "parent_match_id": "53030627",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 30,
+                                "X": 30,
+                                "2": 40,
+                                "OVER 1.5": 65,
+                                "OVER 2.5": 45,
+                                "BOTH TEAMS TO SCORE": 55
+                            }
+                        },
+                        {
+                            "home_team": "Amiens SC",
+                            "away_team": "FC Annecy",
+                            "parent_match_id": "50956667",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 50,
+                                "X": 30,
+                                "2": 20,
+                                "OVER 1.5": 70,
+                                "OVER 2.5": 50,
+                                "BOTH TEAMS TO SCORE": 60
+                            }
+                        },
+                        {
+                            "home_team": "West Ham Reserve",
+                            "away_team": "STOKE CITY RESERVE",
+                            "parent_match_id": "56879463",
+                            "start_time": "2025-01-31 22:00:00",
+                            "predictions": {
+                                "1": 55,
+                                "X": 25,
+                                "2": 20,
+                                "OVER 1.5": 75,
+                                "OVER 2.5": 55,
+                                "BOTH TEAMS TO SCORE": 65
+                            }
+                        },
+                        {
+                            "home_team": "Wil 1900",
+                            "away_team": "Neuchatel Xamax",
+                            "parent_match_id": "56616917",
+                            "start_time": "2025-01-31 22:15:00",
+                            "predictions": {
+                                "1": 40,
+                                "X": 30,
+                                "2": 30,
+                                "OVER 1.5": 65,
+                                "OVER 2.5": 45,
+                                "BOTH TEAMS TO SCORE": 55
+                            }
+                        },
+                        {
+                            "home_team": "Mutilvera",
+                            "away_team": "Pena Sport",
+                            "parent_match_id": "53064709",
+                            "start_time": "2025-01-31 22:15:00",
+                            "predictions": {
+                                "1": 50,
+                                "X": 30,
+                                "2": 20,
+                                "OVER 1.5": 70,
+                                "OVER 2.5": 50,
+                                "BOTH TEAMS TO SCORE": 60
+                            }
+                        },
+                        {
+                            "home_team": "Sliema",
+                            "away_team": "Hibernians",
+                            "parent_match_id": "56858275",
+                            "start_time": "2025-01-31 22:15:00",
+                            "predictions": {
+                                "1": 35,
+                                "X": 30,
+                                "2": 35,
+                                "OVER 1.5": 65,
+                                "OVER 2.5": 45,
+                                "BOTH TEAMS TO SCORE": 55
+                            }
+                        },
+                            {
+                                "home_team": "KV Kortrijk Youth",
+                                "away_team": "KVC Westerlo Youth",
+                                "parent_match_id": "52491975",
+                                "start_time": "2025-01-31 22:30:00",
+                                "predictions": {
+                                    "1": 40,
+                                    "X": 25,
+                                    "2": 35,
+                                    "OVER 1.5": 70,
+                                    "OVER 2.5": 50,
+                                    "BOTH TEAMS TO SCORE": 60
+                                }
+                            },
+                            {
+                                "home_team": "Bala Town FC",
+                                "away_team": "Caernarfon Town FC",
+                                "parent_match_id": "57401037",
+                                "start_time": "2025-01-31 22:45:00",
+                                "predictions": {
+                                    "1": 45,
+                                    "X": 30,
+                                    "2": 25,
+                                    "OVER 1.5": 65,
+                                    "OVER 2.5": 45,
+                                    "BOTH TEAMS TO SCORE": 55
+                                }
+                            },
+                            {
+                                "home_team": "Oud-Heverlee Leuven",
+                                "away_team": "Yellow-Red KV Mechelen",
+                                "parent_match_id": "50715225",
+                                "start_time": "2025-01-31 22:45:00",
+                                "predictions": {
+                                    "1": 40,
+                                    "X": 30,
+                                    "2": 30,
+                                    "OVER 1.5": 70,
+                                    "OVER 2.5": 50,
+                                    "BOTH TEAMS TO SCORE": 60
+                                }
+                            },
+                            {
+                                "home_team": "Falkirk FC",
+                                "away_team": "Livingston FC",
+                                "parent_match_id": "51116419",
+                                "start_time": "2025-01-31 22:45:00",
+                                "predictions": {
+                                    "1": 50,
+                                    "X": 25,
+                                    "2": 25,
+                                    "OVER 1.5": 75,
+                                    "OVER 2.5": 55,
+                                    "BOTH TEAMS TO SCORE": 65
+                                }
+                            },
+                            {
+                                "home_team": "Glentoran FC",
+                                "away_team": "Linfield FC",
+                                "parent_match_id": "56953117",
+                                "start_time": "2025-01-31 22:45:00",
+                                "predictions": {
+                                    "1": 35,
+                                    "X": 30,
+                                    "2": 35,
+                                    "OVER 1.5": 70,
+                                    "OVER 2.5": 50,
+                                    "BOTH TEAMS TO SCORE": 60
+                                }
+                            }
+                        ]
+                  
