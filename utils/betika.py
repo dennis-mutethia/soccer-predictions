@@ -20,7 +20,26 @@ class Betika():
                 
             }
         ]
-        
+    
+    def get_balance(self):
+        url = 'https://api.betika.com/v1/balance'
+        payload = {
+            "profile_id": str(BETIKA_PROFILE_ID),
+            "src": "MOBILE_WEB",
+            "token": BETIKA_TOKEN,
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+            "app_version": "6.0.0"
+        }
+                        
+        headers = {"Content-Type": "application/json"}
+
+        # Sending the POST request
+        response = requests.post(url, data=json.dumps(payload), headers=headers)
+
+        # Print response
+        data = response.json().get('data')
+        return data.get('balance'), data.get('bonus')        
+       
     def place_bet(self, betslips, total_odd, stake):
         url = 'https://api.betika.com/v2/bet'
         payload = {
