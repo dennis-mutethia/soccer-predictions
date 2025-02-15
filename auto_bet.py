@@ -75,14 +75,14 @@ class AutoBet():
                 placeable = (balance+bonus) #*0.75
                 min_stake = placeable/min_odd
                 equal_stake = placeable/len(composite_betslips)
-                stake = round(max(min_stake, equal_stake))
+                stake = int(max(min_stake, equal_stake))
                 #stake = round(equal_stake)
                 if stake > 0:
                     for cb in composite_betslips:
                         ttl_odd = cb['total_odd']
                         slips = cb['betslips']
                         print(f'TOTAL ODD: {ttl_odd}')
-                        self.betika.place_bet(slips, ttl_odd, stake)
+                        #self.betika.place_bet(slips, ttl_odd, stake)
                         time.sleep(5)
              
 if __name__ == '__main__':
