@@ -12,7 +12,7 @@ BETIKA_TOKEN = os.getenv("BETIKA_TOKEN")
 
 class Betika():
     def __init__(self):
-        self.base_url = "https://api.betika.com/v1/uo/matches?tab=&sub_type_id=1,186,340&sport_id=14&tag_id=&sort_id=2&period_id=-1&esports=false"
+        self.base_url = "https://api.betika.com"
         self.sub_types = [
             {
                 "id": 1,
@@ -22,7 +22,7 @@ class Betika():
         ]
     
     def get_balance(self):
-        url = 'https://api.betika.com/v1/balance'
+        url = f'{self.base_url}/v1/balance'
         payload = {
             "profile_id": str(BETIKA_PROFILE_ID),
             "src": "MOBILE_WEB",
@@ -41,7 +41,7 @@ class Betika():
         return data.get('balance'), data.get('bonus')        
        
     def place_bet(self, betslips, total_odd, stake):
-        url = 'https://api.betika.com/v2/bet'
+        url = f'{self.base_url}/v2/bet'
         payload = {
             "profile_id": str(BETIKA_PROFILE_ID),
             "stake": str(stake),
@@ -59,11 +59,23 @@ class Betika():
                         
         headers = {"Content-Type": "application/json"}
 
-        # Sending the POST request
-        response = requests.post(url, data=json.dumps(payload), headers=headers)
+        try:
+            # Sending the POST request
+            response = requests.post(url, data=json.dumps(payload), headers=headers)
 
-        # Print response
-        print(response.json())
+            # Print response
+            print(response.json())
+            
+        except requests.exceptions.HTTPError as http_err:
+            print(f"HTTP error occurred: {http_err}")
+        except requests.exceptions.ConnectionError as conn_err:
+            print(f"Connection error occurred: {conn_err}")
+        except requests.exceptions.Timeout as timeout_err:
+            print(f"Timeout error occurred: {timeout_err}")
+        except requests.exceptions.RequestException as req_err:
+            print(f"An error occurred: {req_err}")
+        except Exception as err:
+            print(f"Unexpected error: {err}")
         
                  
     def fetch_data(self, url):   
@@ -85,7 +97,7 @@ class Betika():
             print(f"Unexpected error: {err}")
     
     def compose_question(self, limit, page):        
-        url = f'{self.base_url}&limit={limit}&page={page}'
+        url = f'{self.base_url}/v1/uo/matches?tab=&sub_type_id=1,186,340&sport_id=14&tag_id=&sort_id=2&period_id=-1&esports=false&limit={limit}&page={page}'
         response = self.fetch_data(url)
         upcoming_matches = response.get('data')
         events = []
