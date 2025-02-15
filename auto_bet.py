@@ -59,7 +59,6 @@ class AutoBet():
                                             added_parent_match_ids.add(parent_match_id)
                                             total_odd *= double(odd_value)
                                             if total_odd > min_odd:
-                                                print(total_odd)
                                                 composite_betslip = {
                                                     'total_odd': total_odd,
                                                     'betslips': betslips
