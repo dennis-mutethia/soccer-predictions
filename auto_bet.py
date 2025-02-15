@@ -22,7 +22,7 @@ class AutoBet():
     
     def __call__(self):
         betslips = []
-        min_odd = 7
+        min_odd = 10
         total_odd = 1
         composite_betslips = []
         # Load JSON data from a file
@@ -39,7 +39,7 @@ class AutoBet():
                         prediction = prediction if prediction is not None else (predictions.get('BTTS') if predictions else datum.get('BTTS'))
                     key = key.replace('BTTS','YES').replace('BOTH TEAMS TO SCORE', 'YES')
                     prediction = prediction if isinstance(prediction, int) else double(prediction.replace('%', ''))
-                    if (key=='OVER 1.5' and prediction>=80) or (key=='OVER 2.5' and prediction>=70) or (key=='YES' and prediction>=60):  
+                    if (key=='OVER 1.5' and prediction>=85) or (key in ['OVER 2.5','YES'] and prediction>=75):  
                         url = f'https://api.betika.com/v1/uo/match?parent_match_id={parent_match_id}'
                         match_details = self.betika.fetch_data(url)
                         data = match_details.get('data')
