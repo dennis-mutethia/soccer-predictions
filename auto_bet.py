@@ -24,6 +24,7 @@ class AutoBet():
         betslips = []
         min_odd = 10
         total_odd = 1
+        composite_betslip = None
         composite_betslips = []
         # Load JSON data from a file
         with open('predictions.json', 'r') as file:
@@ -32,12 +33,9 @@ class AutoBet():
             for datum in data:
                 parent_match_id= datum.get('parent_match_id')
                 predictions = datum.get('predictions')
-                keys = [ "1", "X", "2", "OVER 1.5", "OVER 2.5", "BOTH TEAMS TO SCORE" ]
-                for key in keys:
-                    prediction = predictions.get(key) if predictions else datum.get(key)
-                    if key == "BOTH TEAMS TO SCORE":
-                        prediction = prediction if prediction is not None else (predictions.get('BTTS') if predictions else datum.get('BTTS'))
-                    key = key.replace('BTTS','YES').replace('BOTH TEAMS TO SCORE', 'YES')
+                for key in predictions:
+                    prediction = predictions.get(key)
+                    key = key.replace('BTTS','YES')
                     prediction = prediction if isinstance(prediction, int) else double(prediction.replace('%', ''))
                     if (key in ['1', 'X', '2', 'OVER 2.5', 'YES'] and prediction>=75) or (key=='OVER 1.5' and prediction>=85):  
                         url = f'https://api.betika.com/v1/uo/match?parent_match_id={parent_match_id}'
