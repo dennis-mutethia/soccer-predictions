@@ -82,7 +82,7 @@ class AutoBet():
                         ttl_odd = cb['total_odd']
                         slips = cb['betslips']
                         print(f'TOTAL ODD: {ttl_odd}')
-                        #self.betika.place_bet(slips, ttl_odd, stake)
+                        self.betika.place_bet(slips, ttl_odd, stake)
                         time.sleep(5)
              
 if __name__ == '__main__':
