@@ -22,7 +22,7 @@ if __name__ == '__main__':
             # Clean and parse the JSON response
             cleaned_response = response.replace('```json', '').replace('```', '').strip()
             data = json.loads(cleaned_response)
-            print(data)
+            #print(data)
             
             # Append the current data to all_data list
             all_data.extend(data)  # Use extend because data is already a list

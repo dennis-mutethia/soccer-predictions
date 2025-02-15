@@ -56,6 +56,7 @@ class AutoBet():
                                             outcome_id = odd.get('outcome_id')
                                             betslip = self.compose_bet_slip(parent_match_id, sub_type_id, bet_pick, odd_value, outcome_id, special_bet_value)
                                             betslips.append(betslip)
+                                            print(f"{datum.get('home_team')} vs {datum.get('away_team')} = {key} [x{odd_value}]")
                                             added_parent_match_ids.add(parent_match_id)
                                             total_odd *= double(odd_value)
                                             if total_odd > min_odd:
