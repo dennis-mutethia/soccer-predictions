@@ -12,7 +12,7 @@ BETIKA_TOKEN = os.getenv("BETIKA_TOKEN")
 
 class Betika():
     def __init__(self):
-        self.base_url = "https://api.betika.com/v1/uo/matches?tab=&sub_type_id=1,186,340&sport_id=14&tag_id=&sort_id=1&period_id=-1&esports=false"
+        self.base_url = "https://api.betika.com/v1/uo/matches?tab=&sub_type_id=1,186,340&sport_id=14&tag_id=&sort_id=2&period_id=-1&esports=false"
         self.sub_types = [
             {
                 "id": 1,
@@ -117,12 +117,15 @@ class Betika():
         
         return total, page, question
               
-    def generate_messages(self):
-        total = 21
-        limit = 20
+    def generate_questions(self):
+        total = 16
+        limit = 15
         page = 1
-        
+        questions = []
         while limit*page < total:
             total, page, question = self.compose_question(limit, page)
-            print(question)
+            #print(question)
+            questions.append(question)
+            
+        return questions
                     

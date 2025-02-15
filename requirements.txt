@@ -2,6 +2,7 @@ africastalking
 apscheduler
 bs4
 flask
+google-genai
 openai
 pandas
 pillow
