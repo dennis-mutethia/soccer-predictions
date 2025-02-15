@@ -39,7 +39,7 @@ class AutoBet():
                         prediction = prediction if prediction is not None else (predictions.get('BTTS') if predictions else datum.get('BTTS'))
                     key = key.replace('BTTS','YES').replace('BOTH TEAMS TO SCORE', 'YES')
                     prediction = prediction if isinstance(prediction, int) else double(prediction.replace('%', ''))
-                    if (key in ['1','X', '2'] and prediction>=65) or (key in ['OVER 2.5','YES'] and prediction>=75) or (key=='OVER 1.5' and prediction>=85):  
+                    if (key in ['1', 'X', '2', 'OVER 2.5', 'YES'] and prediction>=75) or (key=='OVER 1.5' and prediction>=85):  
                         url = f'https://api.betika.com/v1/uo/match?parent_match_id={parent_match_id}'
                         match_details = self.betika.fetch_data(url)
                         data = match_details.get('data')
@@ -81,6 +81,7 @@ class AutoBet():
                     for cb in composite_betslips:
                         ttl_odd = cb['total_odd']
                         slips = cb['betslips']
+                        print(f'TOTAL ODD: {ttl_odd}')
                         self.betika.place_bet(slips, ttl_odd, stake)
                         time.sleep(5)
              
