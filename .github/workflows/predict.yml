@@ -1,8 +1,8 @@
-name: predict and fetch results
+name: predict and auto bet
 
 on:
   schedule:
-    - cron: '30 3-15 * * *'  # This runs the job every 30 minute of the hour from 6:30am to 6:30pm EAT(+3)
+    - cron: '0 3 * * *'  # Runs once every day at 3:00 AM UTC (6:00 AM EAT +3)
     
   workflow_dispatch:
 
@@ -22,6 +22,9 @@ jobs:
           echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
           echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
+          echo "BETIKA_PROFILE_ID=${{ secrets.BETIKA_PROFILE_ID }}" >> $GITHUB_ENV
+          echo "BETIKA_TOKEN=${{ secrets.BETIKA_TOKEN }}" >> $GITHUB_ENV
+          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> $GITHUB_ENV
       
       - name: setup python
         uses: actions/setup-python@v4
@@ -35,9 +38,8 @@ jobs:
       
       # execute prediction script i.e run predict.py
       - name: execute prediction script 
-        run: python predict.py
-
-      # execute jackpots script i.e run jackpots.py
-      #- name: execute jackpots script 
-      #  run: python jackpots.py
-
+        run: python ai_predict.py
+      
+      # execute auto bet  script i.e run auto_bet.py
+      - name: execute auto bet script 
+        run: python auto_bet.py

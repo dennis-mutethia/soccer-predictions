@@ -1,17 +1,36 @@
 
 import os, uuid
 from datetime import datetime
-from flask import Flask, Response, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for
 from dotenv import load_dotenv
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.cron import CronTrigger
+import atexit, pytz
 
-from broadcast import Broadcast
 from broadcast_w import BroadcastW
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
 from utils.safaricom.utils import Utils
-from utils.waapi import WaAPI
 
 app = Flask(__name__)
+
+# Set the timezone to Africa/Nairobi globally
+os.environ['TZ'] = 'Africa/Nairobi'
+
+def predict():
+    print("Running prediction...")
+    # Add your prediction logic here
+
+# Define the timezone
+nairobi_tz = pytz.timezone('Africa/Nairobi')
+
+# Setup scheduler
+scheduler = BackgroundScheduler()
+scheduler.add_job(predict, trigger=CronTrigger(hour=14, minute=53, timezone=nairobi_tz))
+scheduler.start()
+
+# Ensure scheduler shuts down properly on exit
+atexit.register(lambda: scheduler.shutdown())
 
 load_dotenv()
 waapi_instance_id = os.getenv('WAAPI_INSTANCE_ID')
