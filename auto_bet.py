@@ -58,15 +58,18 @@ class AutoBet():
                                             betslips.append(betslip)
                                             print(f"{datum.get('home_team')} vs {datum.get('away_team')} = {key} [x{odd_value}]")
                                             added_parent_match_ids.add(parent_match_id)
-                                            total_odd *= double(odd_value)
+                                            total_odd *= double(odd_value)                                            
+                                            composite_betslip = {
+                                                'total_odd': total_odd,
+                                                'betslips': betslips
+                                            }
                                             if total_odd > min_odd:
-                                                composite_betslip = {
-                                                    'total_odd': total_odd,
-                                                    'betslips': betslips
-                                                }
                                                 composite_betslips.append(composite_betslip)
                                                 betslips = []
                                                 total_odd = 1
+                                                composite_betslip = None 
+            if composite_betslip:
+                composite_betslips.append(composite_betslip)
             if len(composite_betslips) > 0:                        
                 balance, bonus = self.betika.get_balance()
                 placeable = (balance+bonus) #*0.75
