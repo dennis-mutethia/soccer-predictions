@@ -1,8 +1,8 @@
-name: predict and fetch results
+name: predict and auto bet
 
 on:
   schedule:
-    - cron: '30 3-15 * * *'  # This runs the job every 30 minute of the hour from 6:30am to 6:30pm EAT(+3)
+    - cron: '0 3 * * *'  # Runs once every day at 3:00 AM UTC (6:00 AM EAT +3)
     
   workflow_dispatch:
 
