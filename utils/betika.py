@@ -161,18 +161,16 @@ class Betika():
                 "type": "json",
                 "structure": [
                     {
-                        "match": {
-                            "parent_match_id": "string",
-                            "home_team": "string",
-                            "away_team": "string"
-                        },
+                        "parent_match_id": "string",
+                        "home_team": "string",
+                        "away_team": "string",
                         "predictions": {
+                            "BTTS": "probability",
+                            "OVER 2.5": "probability",
                             "1": "probability",
                             "X": "probability",
                             "2": "probability",
-                            "Over 1.5": "probability",
-                            "Over 2.5": "probability",
-                            "BTTS": "probability"
+                            "OVER 1.5": "probability"
                         }
                     }
                 ]
