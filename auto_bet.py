@@ -72,7 +72,7 @@ class AutoBet():
                 min_stake = placeable/min_odd
                 equal_stake = placeable/len(composite_betslips)
                 stake = round(max(min_stake, equal_stake))
-                stake = round(equal_stake)
+                #stake = round(equal_stake)
                 if stake > 0:
                     for cb in composite_betslips:
                         ttl_odd = cb['total_odd']
