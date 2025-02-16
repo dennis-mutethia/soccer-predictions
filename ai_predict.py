@@ -7,10 +7,11 @@ from utils.gemini import Gemini
 import json
 from pathlib import Path
 
-
 def compose_question(events):     
     request_json = {
-        "instructions": "Predict the outcome of the following football matches using available web data, including team form and Twitter feeds. Provide predictions for the following markets: 1 (Home Win), X (Draw), 2 (Away Win), Over 1.5 goals, Over 2.5 goals, and Both Teams To Score (BTTS). For each market, provide a probability percentage. Return the results as a JSON array of objects, where each object represents a match." ,
+        "instructions": """Predict the outcome of the following football matches using available web data, including team form and Twitter feeds. 
+        Provide predictions for the following markets: [TOTAL GOALS, TOTAL CORNERS]. 
+        For each market, provide a probability percentage. Return the results as a JSON array of objects, where each object represents a match.""" ,
         "matches": events,  # Use the 'events' list here
         "format": {
             "type": "json",
@@ -20,11 +21,15 @@ def compose_question(events):
                     "home_team": "string",
                     "away_team": "string",
                     "predictions": {
-                        "OVER 2.5": "probability",
-                        "1": "probability",
-                        "X": "probability",
-                        "2": "probability",
-                        "OVER 1.5": "probability"
+                        "TOTAL GOALS":{
+                            "OVER 2.5": "probability",
+                            "OVER 1.5": "probability"
+                        },                        
+                        "TOTAL CORNERS":{
+                            "OVER 10.5": "probability",
+                            "OVER 9.5": "probability",
+                            "OVER 8.5": "probability"
+                        }
                     }
                 }
             ] 
@@ -57,14 +62,12 @@ def generate_questions():
     while limit*page < total:
         total, page, events = Betika().get_events(limit, page)
          
-        question = compose_question(events)            
-        questions.append(question)
+        question = compose_question(events)      
+        print(question)      
+        #questions.append(question)
         
     return questions
                     
-
-
-
 if __name__ == '__main__':
     try:
         # Delete the file if it exists
