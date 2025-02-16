@@ -20,7 +20,6 @@ def compose_question(events):
                     "home_team": "string",
                     "away_team": "string",
                     "predictions": {
-                        "BTTS": "probability",
                         "OVER 2.5": "probability",
                         "1": "probability",
                         "X": "probability",

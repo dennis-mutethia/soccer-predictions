@@ -37,16 +37,16 @@ class AutoBet():
                 predictions = datum.get('predictions')
                 for key in predictions:
                     prediction = predictions.get(key)
-                    key = key.replace('BTTS','YES')
+                    #key = key.replace('BTTS','YES')
                     prediction = prediction if isinstance(prediction, int) else double(prediction.replace('%', ''))
-                    if (key in ['1', 'X', '2', 'OVER 2.5', 'YES'] and prediction>=75) or (key=='OVER 1.5' and prediction>=85):  
+                    if (key in ['1', 'X', '2', 'OVER 2.5'] and prediction>=75) or (key=='OVER 1.5' and prediction>=85):  
                         url = f'https://api.betika.com/v1/uo/match?parent_match_id={parent_match_id}'
                         match_details = self.betika.fetch_data(url)
                         data = match_details.get('data')
                         if data:
                             for d in data:
                                 sub_type_id = d.get('sub_type_id')
-                                if sub_type_id in ["1", "18", "29"]:
+                                if sub_type_id in ["18"]:
                                     odds = d.get('odds')
                                     for odd in odds:
                                         odd_value = odd.get('odd_value')
