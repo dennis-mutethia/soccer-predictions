@@ -7,10 +7,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.cron import CronTrigger
 import atexit, pytz
 
-from broadcast_w import BroadcastW
+#from broadcast_w import BroadcastW
 from utils.helper import Helper
 from utils.postgres_crud import PostgresCRUD
-from utils.safaricom.utils import Utils
+#from utils.safaricom.utils import Utils
 
 app = Flask(__name__)
 
@@ -125,11 +125,11 @@ def handle_webhook(security_token):
                 
             if 'unsubscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 2)                
-                BroadcastW().send_goodbye_message(message_sender_phone_number)        
+                #BroadcastW().send_goodbye_message(message_sender_phone_number)        
 
             elif 'subscribe' in message_content.lower():
                 PostgresCRUD().add_or_remove_subscriber(message_sender_phone_number, 1)
-                BroadcastW().send_welcome_message(message_sender_phone_number)
+                #BroadcastW().send_welcome_message(message_sender_phone_number)
 
         return '', 200
     else:
@@ -138,7 +138,7 @@ def handle_webhook(security_token):
 
 @app.route('/games_callback', methods=['POST'])
 def delivery_reports():
-    response = Utils().get_callback()
+    response = None #Utils().get_callback()
     
     print(response) 
     

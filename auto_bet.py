@@ -3,10 +3,12 @@ import json, time
 
 from numpy import double
 from utils.betika import Betika
+from utils.postgres_crud import PostgresCRUD
 
 class AutoBet():
     def __init__(self) -> None:
-        self.betika = Betika()        
+        self.betika = Betika()     
+        self.db = PostgresCRUD()
     
     def compose_bet_slip(self, parent_match_id, sub_type_id, bet_pick, odd_value, outcome_id, special_bet_value):
         return {
@@ -66,6 +68,16 @@ class AutoBet():
                                                 betslips = []
                                                 total_odd = 1
                                                 composite_betslip = None 
+                                            match = {
+                                                'match_id': match_details.get('meta').get('match_id'),
+                                                'start_time': match_details.get('meta').get('start_time'),
+                                                'home_team': datum.get('home_team'),
+                                                'away_team': datum.get('away_team'),
+                                                'prediction': key if key != 'YES' else 'GG',
+                                                'odd': odd_value,
+                                                'overall_prob': prediction
+                                            }
+                                            self.db.insert_match(match)
             if composite_betslip:
                 composite_betslips.append(composite_betslip)
             if len(composite_betslips) > 0:                        

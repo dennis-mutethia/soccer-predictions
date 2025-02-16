@@ -72,12 +72,13 @@ class Helper():
         return 'red'
 
     def highlight_analysis(self, analysis):
-        analysis = analysis.replace("a Very Low Chance", 'a <span style="background-color: red border-radius: 5px">Very Low Chance</span>')
-        analysis = analysis.replace("a Low Chance", 'a <span style="background-color: tomato border-radius: 5px">Low Chance</span>')
-        analysis = analysis.replace("Uncertainty", '<span style="background-color: yellow border-radius: 5px">Uncertainty</span>')
-        analysis = analysis.replace("Medium Chance", '<span style="background-color: lawngreen border-radius: 5px">Medium Chance</span>')
-        analysis = analysis.replace("a High Chance", 'a <span style="background-color: lime border-radius: 5px">High Chance</span>')  
-        analysis = analysis.replace("a Very High Chance", 'a <span style="background-color: green border-radius: 5px">Very High Chance</span>')
+        if analysis:
+            analysis = analysis.replace("a Very Low Chance", 'a <span style="background-color: red border-radius: 5px">Very Low Chance</span>')
+            analysis = analysis.replace("a Low Chance", 'a <span style="background-color: tomato border-radius: 5px">Low Chance</span>')
+            analysis = analysis.replace("Uncertainty", '<span style="background-color: yellow border-radius: 5px">Uncertainty</span>')
+            analysis = analysis.replace("Medium Chance", '<span style="background-color: lawngreen border-radius: 5px">Medium Chance</span>')
+            analysis = analysis.replace("a High Chance", 'a <span style="background-color: lime border-radius: 5px">High Chance</span>')  
+            analysis = analysis.replace("a Very High Chance", 'a <span style="background-color: green border-radius: 5px">Very High Chance</span>')
         return analysis
 
     def fetch_matches(self, day, comparator='=', status="AND status IS NOT NULL"):
@@ -90,19 +91,19 @@ class Helper():
             match.home_team = open_match[2]
             match.away_team = open_match[3]
             match.prediction = open_match[4]    
-            match.over_0_5_home_perc = int(open_match[9])
-            match.over_0_5_away_perc = int(open_match[10]) 
-            match.over_1_5_home_perc = int(open_match[11])
-            match.over_1_5_away_perc = int(open_match[12])
-            match.over_2_5_home_perc = int(open_match[13]) 
-            match.over_2_5_away_perc = int(open_match[14])
-            match.over_3_5_home_perc = int(open_match[15]) 
-            match.over_3_5_away_perc = int(open_match[16])
+            # match.over_0_5_home_perc = int(open_match[9])
+            # match.over_0_5_away_perc = int(open_match[10]) 
+            # match.over_1_5_home_perc = int(open_match[11])
+            # match.over_1_5_away_perc = int(open_match[12])
+            # match.over_2_5_home_perc = int(open_match[13]) 
+            # match.over_2_5_away_perc = int(open_match[14])
+            # match.over_3_5_home_perc = int(open_match[15]) 
+            # match.over_3_5_away_perc = int(open_match[16])
             match.home_results = open_match[17] 
             match.status = open_match[18] 
             match.away_results = open_match[19] 
             match.overall_prob = int(open_match[21])    
-            match.analysis = open_match[22]
+            #match.analysis = open_match[22]
             matches.append(match)
             if match.status is not None:
                 played += 1

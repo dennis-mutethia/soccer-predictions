@@ -32,7 +32,7 @@ class PostgresCRUD:
             # Reconnect if the connection is invalid
             self.conn = psycopg2.connect(**self.conn_params)
           
-    def insert_match(self, match):
+    def insert_match_old(self, match):
         kickoff = match['start_time']
         home_team = match['home_team'].replace("'","''")
         away_team = match['away_team'].replace("'","''")
@@ -72,6 +72,25 @@ class PostgresCRUD:
                                    over_3_5_away_perc, analysis, prediction, overall_prob, analysis))
             self.conn.commit()
     
+    def insert_match(self, match):
+        match_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, match['match_id']))
+        kickoff = match['start_time']
+        home_team = match['home_team'].replace("'","''")
+        away_team = match['away_team'].replace("'","''")
+        prediction = match['prediction']
+        odd = match['odd']
+        overall_prob = round(match['overall_prob'])
+        
+        self.ensure_connection()
+        with self.conn.cursor() as cursor:
+            query = """
+                INSERT INTO matches(match_id, kickoff, home_team, away_team, prediction, odd, overall_prob)
+                VALUES(%s, %s, %s, %s, %s, %s, %s)
+                ON CONFLICT DO NOTHING
+            """
+            cursor.execute(query, (match_id, kickoff, home_team, away_team, prediction, odd, overall_prob))
+            self.conn.commit()
+            
     def fetch_open_matches(self):
         self.ensure_connection()
         with self.conn.cursor() as cur:
@@ -120,13 +139,13 @@ class PostgresCRUD:
                 WHERE status = %s AND (last_delivered_at IS NULL OR DATE(last_delivered_at) < current_date)
             """
             if sms is None:
-                # If sms is None, find subscribers whose phone contains "a"
+                # If sms is None, find subscribers whose phone contains "@"
                 query += " AND phone LIKE %s"
-                phone_filter = '%@%'  # Look for phones containing 'a'
+                phone_filter = '%@%'  # Look for phones containing '@'
             else:
-                # If sms is not None, find subscribers whose phone does not contain "a"
+                # If sms, find subscribers whose phone does not contain "@"
                 query += " AND phone NOT LIKE %s"
-                phone_filter = '%@%'  # Look for phones that do not contain 'a'
+                phone_filter = '%@%'  # Look for phones that do not contain '@'
             
             # Execute the query with both status and phone_filter
             cur.execute(query, (status, phone_filter))

@@ -55,7 +55,7 @@ N/B: New Unique Link is Sent daily
                         <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
                     </div>
                     
-                    <div class="row">
+                    <!-- <div class="row">
                         <b class="col-3 col-sm-3 text-left">Goals</b>
                         <b class="col-3 col-sm-3 text-center">Home</b>
                         <b class="col-3 col-sm-3 text-center">Away</b>
@@ -96,8 +96,8 @@ N/B: New Unique Link is Sent daily
                         <small class="col-3 col-sm-3 text-center"
                             style="background: {{ get_background_color((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) }}">{{
                             ((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) | int }}%</small>
-                    </div>
-                    <div class="row">
+                    </div> -->
+                    <!-- <div class="row">
                         <small class="col-3 col-sm-3 text-left" style="background: skyblue">Over 3.5</small>
                         <small class="col-3 col-sm-3 text-center"
                             style="background: {{ get_background_color(match.over_3_5_home_perc) }}">{{
@@ -108,10 +108,10 @@ N/B: New Unique Link is Sent daily
                         <small class="col-3 col-sm-3 text-center"
                             style="background: {{ get_background_color((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) }}">{{
                             ((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) | int }}%</small>
-                    </div>
-                    <div class="text-left">
+                    </div> -->
+                    <!-- <div class="text-left">
                         <small>{{ highlight_analysis(match.analysis) | safe }}</small>
-                    </div>
+                    </div> -->
                     {% endif %}
                 </div>
             </div>
@@ -153,7 +153,7 @@ N/B: New Unique Link is Sent daily
                         <div class="text-center">
                             <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <b class="col-3 col-sm-3 text-left">Goals</b>
                             <b class="col-3 col-sm-3 text-center">Home</b>
                             <b class="col-3 col-sm-3 text-center">Away</b>
@@ -209,7 +209,7 @@ N/B: New Unique Link is Sent daily
                         </div>
                         <div class="text-left">
                             <small>{{ highlight_analysis(match.analysis) | safe }}</small>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </a>
