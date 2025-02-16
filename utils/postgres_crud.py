@@ -102,6 +102,29 @@ class PostgresCRUD:
             """
             cur.execute(query)
             return cur.fetchall()
+            
+    def get_events(self):
+        self.ensure_connection()
+        events = []
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT match_id, DATE(kickoff), home_team, away_team, prediction
+                FROM matches
+                WHERE status IS NULL AND DATE(kickoff) = CURRENT_DATE - 1
+            """
+            cur.execute(query)
+            
+            for datum in cur.fetchall():
+                event = {
+                    "match_id": datum[0],
+                    "match_date": str(datum[1]),
+                    "home_team": datum[2],
+                    "away_team": datum[3],
+                    "prediction": datum[4]
+                }
+                events.append(event)
+                
+        return events
     
     def fetch_matches(self, day, comparator, status): 
         self.ensure_connection()           

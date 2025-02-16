@@ -1,10 +1,7 @@
 
-import json
-import os
+import json, os
 from dotenv import load_dotenv
 import requests
-
-from utils.grok import Grok
 
 load_dotenv()   
 BETIKA_PROFILE_ID = os.getenv("BETIKA_PROFILE_ID")
@@ -129,9 +126,7 @@ class Betika():
         
     #     return total, page, question
               
-    import json
-
-    def compose_question(self, limit, page):
+    def get_events(self, limit, page):
         url = f'{self.base_url}/v1/uo/matches?tab=&sub_type_id=1,186,340&sport_id=14&tag_id=&sort_id=2&period_id=-1&esports=false&limit={limit}&page={page}'
         response = self.fetch_data(url)
         upcoming_matches = response.get('data')
@@ -154,56 +149,5 @@ class Betika():
         current_page = int(response.get('meta').get('current_page'))
         page = current_page + 1
 
-        request_json = {
-            "instructions": "Predict the outcome of the following football matches using available web data, including team form and Twitter feeds. Provide predictions for the following markets: 1 (Home Win), X (Draw), 2 (Away Win), Over 1.5 goals, Over 2.5 goals, and Both Teams To Score (BTTS). For each market, provide a probability percentage. Return the results as a JSON array of objects, where each object represents a match.",
-            "matches": events,  # Use the 'events' list here
-            "format": {
-                "type": "json",
-                "structure": [
-                    {
-                        "parent_match_id": "string",
-                        "home_team": "string",
-                        "away_team": "string",
-                        "predictions": {
-                            "BTTS": "probability",
-                            "OVER 2.5": "probability",
-                            "1": "probability",
-                            "X": "probability",
-                            "2": "probability",
-                            "OVER 1.5": "probability"
-                        }
-                    }
-                ]
-            },
-            "data_sources": [
-                "Recent match results for the last 7 games, weighted by recency",
-                "League standings",
-                "Head-to-head records for the last 5 meetings",
-                "Player statistics: goals and assists for key players this season, current injuries/suspensions",
-                "Team news from official team websites and reputable sports news sources",
-                "Expert predictions from ESPN and Sky Sports",
-                "Weather forecast for the match location",
-                "Home form for Team A, away form for Team B",
-                "Tweets from official team accounts and reputable sports journalists covering the league",
-                "Aggregate fan sentiment from Twitter (treat with caution)",
-                "Team information from Wikipedia",
-                "Player transfer data from Transfermarkt"
-            ]
-        }
-
-        question = json.dumps(request_json)  # Convert the JSON to a string
-
-        return total, page, question
-
-    def generate_questions(self):
-        total = 16
-        limit = 15
-        page = 1
-        questions = []
-        while limit*page < total:
-            total, page, question = self.compose_question(limit, page)
-            #print(question)
-            questions.append(question)
-            
-        return questions
-                    
+        return total, page, events
+    

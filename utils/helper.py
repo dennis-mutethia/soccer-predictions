@@ -1,6 +1,7 @@
 
 import json
 import requests
+from utils.betika import Betika
 from utils.entities import Match
 from utils.postgres_crud import PostgresCRUD
 
@@ -110,3 +111,4 @@ class Helper():
                 won += 0 if match.status == 'LOST' else 1
                 
         return matches, played, won
+    
