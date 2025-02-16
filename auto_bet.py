@@ -85,7 +85,8 @@ class AutoBet():
                 placeable = (balance+bonus) #*0.75
                 min_stake = placeable/min_odd
                 equal_stake = placeable/len(composite_betslips)
-                stake = int(max(min_stake, equal_stake))
+                max_stake = max(min_stake, equal_stake)
+                stake = int( max_stake if max_stake>1 else placeable)
                 #stake = round(equal_stake)
                 if stake > 0:
                     for cb in composite_betslips:
