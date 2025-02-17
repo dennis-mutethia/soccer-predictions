@@ -34,87 +34,25 @@ N/B: New Unique Link is Sent daily
                  href="https://api.whatsapp.com/send/?phone=254759697757&text=subscribe"
                 {% endif %}
             >
-            <div class="card box-shadow my-2">
-                <div class="card-header text-center">
-                    <b>{{ match.home_team }} vs {{ match.away_team }}</b>
+                <div class="card box-shadow my-2">
+                    <div class="card-header text-center">
+                        <b>{{ match.home_team }} vs {{ match.away_team }}</b>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <small class="col-4 col-sm-4 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
+                            <small class="col-2 col-sm-2 text-center"><b>{{ match.overall_prob }}%</b></small>
+                            <small class="col-2 col-sm-2 text-center"><b>{{ match.odd }}</b></small>
+                            <small class="col-4 col-sm-4 text-right"><b>
+                                    {% if code in today_codes or ns.counter == 1 %}
+                                        {{ match.prediction ~ ' GOALS' if match.prediction in ['OVER 1.5', 'OVER 2.5'] else (match.prediction ~ ' CORNERS' if match.prediction in ['OVER 7.5', 'OVER 8.5', 'OVER 9.5'] else '') }}
+                                    {% else %}
+                                    Subscribe & View Predictions - It's <b>FREE!!!</b>
+                                    {% endif %}
+                                </b></small>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <small class="col-5 col-sm-5 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
-                        <small class="col-2 col-sm-2 text-center"><b>{{ match.overall_prob }}%</b></small>
-                        <small class="col-5 col-sm-5 text-right"><b>
-                                {% if code in today_codes or ns.counter == 1 %}
-                                {{ match.prediction }}
-                                {% else %}
-                                Subscribe & View Predictions - It's <b>FREE!!!</b>
-                                {% endif %}
-                            </b></small>
-                    </div>
-{% if code in today_codes or ns.counter == 1 %}
-                    <!-- <div class="text-center">
-                        <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
-                    </div> -->
-                    
-                    <!-- <div class="row">
-                        <b class="col-3 col-sm-3 text-left">Goals</b>
-                        <b class="col-3 col-sm-3 text-center">Home</b>
-                        <b class="col-3 col-sm-3 text-center">Away</b>
-                        <b class="col-3 col-sm-3 text-center">Average</b>
-                    </div>
-                    <div class="row">
-                        <small class="col-3 col-sm-3 text-left" style="background: lightblue">Over 0.5</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_0_5_home_perc) }}">{{
-                            match.over_0_5_home_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_0_5_away_perc) }}">{{
-                            match.over_0_5_away_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) }}">{{
-                            ((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) | int }}%</small>
-                    </div>
-                    <div class="row">
-                        <small class="col-3 col-sm-3 text-left" style="background: powderblue">Over 1.5</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_1_5_home_perc) }}">{{
-                            match.over_1_5_home_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_1_5_away_perc) }}">{{
-                            match.over_1_5_away_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) }}">{{
-                            ((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) | int }}%</small>
-                    </div>
-                    <div class="row">
-                        <small class="col-3 col-sm-3 text-left" style="background: lightskyblue">Over 2.5</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_2_5_home_perc) }}">{{
-                            match.over_2_5_home_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_2_5_away_perc) }}">{{
-                            match.over_2_5_away_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) }}">{{
-                            ((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) | int }}%</small>
-                    </div> -->
-                    <!-- <div class="row">
-                        <small class="col-3 col-sm-3 text-left" style="background: skyblue">Over 3.5</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_3_5_home_perc) }}">{{
-                            match.over_3_5_home_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color(match.over_3_5_away_perc) }}">{{
-                            match.over_3_5_away_perc }}%</small>
-                        <small class="col-3 col-sm-3 text-center"
-                            style="background: {{ get_background_color((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) }}">{{
-                            ((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) | int }}%</small>
-                    </div> -->
-                    <!-- <div class="text-left">
-                        <small>{{ highlight_analysis(match.analysis) | safe }}</small>
-                    </div> -->
-                    {% endif %}
-                </div>
-            </div>
             </a>
             {% endif %}
             {% endfor %}
@@ -140,76 +78,16 @@ N/B: New Unique Link is Sent daily
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <small class="col-5 col-sm-5 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
-                            <small class="col-2 col-sm-2 text-center"><b>{{ match.home_results }} - {{
-                                    match.away_results }}</b></small>
-                            <small class="col-5 col-sm-5 text-right"><b>{{ match.prediction }}</b></small>
-                            <small class="col-5 col-sm-5 text-left"></small>
+                            <small class="col-4 col-sm-4 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
+                            <small class="col-2 col-sm-2 text-center"><b>{{ match.odd }}</b></small>
+                            <small class="col-2 col-sm-2 text-center"><b>{{ match.home_results }} - {{ match.away_results }}</b></small>
+                            <small class="col-4 col-sm-4 text-right"><b>
+                                {{ match.prediction ~ ' GOALS' if match.prediction in ['OVER 1.5', 'OVER 2.5'] else (match.prediction ~ ' CORNERS' if match.prediction in ['OVER 7.5', 'OVER 8.5', 'OVER 9.5'] else '') }}
+                            </b></small>
                             <small class="col-12 col-sm-2 text-center {{ match.status.lower() }}"><b><i
                                         class="material-icons">{{ 'do_not_disturb_on' if match.status == 'LOST' else
                                         ('check_circle' if match.status == 'WON' else 'autorenew') }}</i></b></small>
                         </div>
-
-                        <!-- <div class="text-center">
-                            <small>{{ match.home_team }} vs {{ match.away_team }} Statistics</small>
-                        </div> -->
-                        <!-- <div class="row">
-                            <b class="col-3 col-sm-3 text-left">Goals</b>
-                            <b class="col-3 col-sm-3 text-center">Home</b>
-                            <b class="col-3 col-sm-3 text-center">Away</b>
-                            <b class="col-3 col-sm-3 text-center">Average</b>
-                        </div>
-                        <div class="row">
-                            <small class="col-3 col-sm-3 text-left" style="background: lightblue">Over 0.5</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_0_5_home_perc) }}">{{
-                                match.over_0_5_home_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_0_5_away_perc) }}">{{
-                                match.over_0_5_away_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) }}">{{
-                                ((match.over_0_5_home_perc+match.over_0_5_away_perc)/2) | int }}%</small>
-                        </div>
-                        <div class="row">
-                            <small class="col-3 col-sm-3 text-left" style="background: powderblue">Over 1.5</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_1_5_home_perc) }}">{{
-                                match.over_1_5_home_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_1_5_away_perc) }}">{{
-                                match.over_1_5_away_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) }}">{{
-                                ((match.over_1_5_home_perc+match.over_1_5_away_perc)/2) | int }}%</small>
-                        </div>
-                        <div class="row">
-                            <small class="col-3 col-sm-3 text-left" style="background: lightskyblue">Over 2.5</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_2_5_home_perc) }}">{{
-                                match.over_2_5_home_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_2_5_away_perc) }}">{{
-                                match.over_2_5_away_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) }}">{{
-                                ((match.over_2_5_home_perc+match.over_2_5_away_perc)/2) | int }}%</small>
-                        </div>
-                        <div class="row">
-                            <small class="col-3 col-sm-3 text-left" style="background: skyblue">Over 3.5</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_3_5_home_perc) }}">{{
-                                match.over_3_5_home_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color(match.over_3_5_away_perc) }}">{{
-                                match.over_3_5_away_perc }}%</small>
-                            <small class="col-3 col-sm-3 text-center"
-                                style="background: {{ get_background_color((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) }}">{{
-                                ((match.over_3_5_home_perc+match.over_3_5_away_perc)/2) | int }}%</small>
-                        </div>
-                        <div class="text-left">
-                            <small>{{ highlight_analysis(match.analysis) | safe }}</small>
-                        </div> -->
                     </div>
                 </div>
             </a>

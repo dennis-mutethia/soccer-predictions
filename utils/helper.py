@@ -92,6 +92,7 @@ class Helper():
             match.home_team = open_match[2]
             match.away_team = open_match[3]
             match.prediction = open_match[4]    
+            match.odd = open_match[5]    
             # match.over_0_5_home_perc = int(open_match[9])
             # match.over_0_5_away_perc = int(open_match[10]) 
             # match.over_1_5_home_perc = int(open_match[11])
