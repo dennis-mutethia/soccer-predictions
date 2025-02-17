@@ -28,7 +28,8 @@ def compose_question(events):
                         "TOTAL CORNERS":{
                             "OVER 10.5": "probability",
                             "OVER 9.5": "probability",
-                            "OVER 8.5": "probability"
+                            "OVER 8.5": "probability",
+                            "OVER 7.5": "probability"
                         }
                     }
                 }
@@ -63,7 +64,8 @@ def generate_questions():
         total, page, events = Betika().get_events(limit, page)
          
         question = compose_question(events)      
-        print(question)      
+        print(question)  
+        print('')    
         #questions.append(question)
         
     return questions
@@ -71,9 +73,9 @@ def generate_questions():
 if __name__ == '__main__':
     try:
         # Delete the file if it exists
-        file_path = Path('predictions.json')
-        if file_path.exists():
-            file_path.unlink()
+        # file_path = Path('predictions.json')
+        # if file_path.exists():
+        #     file_path.unlink()
 
         # Initialize an empty list to store all responses
         all_data = []

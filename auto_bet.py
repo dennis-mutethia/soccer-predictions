@@ -24,7 +24,7 @@ class AutoBet():
     
     def __call__(self):
         betslips = []
-        min_odd = 10
+        min_odd = 100
         total_odd = 1
         composite_betslip = None
         composite_betslips = []
@@ -35,22 +35,23 @@ class AutoBet():
             for datum in data:
                 parent_match_id= datum.get('parent_match_id')
                 predictions = datum.get('predictions')
+                total_goals = predictions.get('TOTAL GOALS')
+                total_corners = predictions.get('TOTAL CORNERS')
+                predictions = {**total_goals, **total_corners}
                 for key in predictions:
                     prediction = predictions.get(key)
-                    #key = key.replace('BTTS','YES')
-                    prediction = prediction if isinstance(prediction, int) else double(prediction.replace('%', ''))
-                    if (key == 'OVER 2.5' and prediction>=75) or (key=='OVER 1.5' and prediction>=85):  
+                    if prediction>=80:  
                         url = f'https://api.betika.com/v1/uo/match?parent_match_id={parent_match_id}'
                         match_details = self.betika.fetch_data(url)
                         data = match_details.get('data')
                         if data:
                             for d in data:
                                 sub_type_id = d.get('sub_type_id')
-                                if sub_type_id in ["18"]:
+                                if sub_type_id in ["18", "166"]:
                                     odds = d.get('odds')
                                     for odd in odds:
                                         odd_value = odd.get('odd_value')
-                                        if key == odd.get('display') and double(odd_value)>=1.2 and double(odd_value)<=1.6 and parent_match_id not in added_parent_match_ids:
+                                        if key == odd.get('display') and parent_match_id not in added_parent_match_ids:
                                             bet_pick = odd.get('odd_key')
                                             special_bet_value = odd.get('special_bet_value')
                                             outcome_id = odd.get('outcome_id')
@@ -64,10 +65,12 @@ class AutoBet():
                                                 'betslips': betslips
                                             }
                                             if total_odd > min_odd:
+                                                print(total_odd)
                                                 composite_betslips.append(composite_betslip)
                                                 betslips = []
                                                 total_odd = 1
                                                 composite_betslip = None 
+                                                
                                             match = {
                                                 'match_id': match_details.get('meta').get('match_id'),
                                                 'start_time': match_details.get('meta').get('start_time'),
@@ -79,6 +82,7 @@ class AutoBet():
                                             }
                                             self.db.insert_match(match)
             if composite_betslip:
+                print(total_odd)
                 composite_betslips.append(composite_betslip)
             if len(composite_betslips) > 0:                        
                 balance, bonus = self.betika.get_balance()
