@@ -99,6 +99,7 @@ class PostgresCRUD:
                 FROM matches
                 WHERE (status IS NULL OR status = 'LIVE')
                     AND DATE(kickoff) >= CURRENT_DATE - 1
+                ORDER BY kickoff DESC
             """
             cur.execute(query)
             return cur.fetchall()
@@ -133,7 +134,7 @@ class PostgresCRUD:
                 SELECT *
                 FROM matches
                 WHERE DATE(kickoff) {comparator} CURRENT_DATE {day} {status}
-                ORDER BY status DESC
+                ORDER BY kickoff DESC
             """
             cur.execute(query)
             return cur.fetchall()

@@ -6,6 +6,7 @@ class Match():
         self.away_team = None
         self.prediction = None
         self.overall_prob = 0
+        self.odd = 0
         self.over_0_5_home_perc = 0
         self.over_0_5_away_perc = 0
         self.over_1_5_home_perc = 0
