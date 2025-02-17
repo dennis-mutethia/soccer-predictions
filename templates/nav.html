@@ -23,12 +23,20 @@
             Tomorrow
         </a>
     </div>
-    <div class="mobile-nav__item">
+    <!-- <div class="mobile-nav__item">
         <a class="mobile-nav__item-content" target="_blank"  href="https://median.co/share/rnkapp#apk">
             <i class="material-icons">share</i>
             Share
         </a>
+    </div> -->
+    {% if code not in today_codes %}
+    <div class="mobile-nav__item">
+        <a class="mobile-nav__item-content" href="https://api.whatsapp.com/send/?phone=254759697757&text=subscribe" target="_blank">
+            <i class="material-icons">create_new_folder</i>
+            Subscribe
+        </a>
     </div>
+    {% endif %}
     <!-- {% if code not in today_codes %}
     <div class="mobile-nav__item">
         <a class="mobile-nav__item-content" href="{{ url_for('subscribe', code=code) }}">
