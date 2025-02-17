@@ -339,6 +339,21 @@ class PostgresCRUD:
             """
             cursor.execute(query, (id, payload))
             self.conn.commit()
+    
+    def verify_code(self, code):
+        self.ensure_connection()
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT *
+                FROM sms
+                WHERE payload LIKE %s
+            """
+            cur.execute(query,(f'%{code}%',))
+            data = cur.fetchone()
+            if data:
+                return code
+            
+        return str(uuid.uuid5(uuid.NAMESPACE_DNS, code)).split('-')
                 
 # Example usage:
 if __name__ == "__main__":

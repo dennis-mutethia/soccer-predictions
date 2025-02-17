@@ -38,7 +38,7 @@ waapi_instance_id = os.getenv('WAAPI_INSTANCE_ID')
 waapi_token = os.getenv('WAAPI_TOKEN')
 
 today_codes = str(uuid.uuid5(uuid.NAMESPACE_DNS, datetime.now().strftime('%Y%m%d'))).split('-')
-today_codes = ['guest']
+#today_codes = ['guest']
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -47,11 +47,13 @@ def page_not_found(e):
   
 @app.route('/<code>')
 def today(code): 
+    today_codes = PostgresCRUD().verify_code(code)
     matches, played, won = Helper().fetch_matches('', '=', '')
     return render_template('index.html', today_codes=today_codes, code=code, header="Today Games Predictions", matches=matches, played=played, won=won, get_background_color=Helper().get_background_color, highlight_analysis=Helper().highlight_analysis)
 
 @app.route('/tomorrow/<code>')
 def tomorrow(code):    
+    today_codes = PostgresCRUD().verify_code(code)
     matches, played, won = Helper().fetch_matches('+1', '=', '')
     return render_template('index.html', today_codes=today_codes, code=code, header="Tomorrow Games Predictions", matches = matches, played = played, won = won, get_background_color=Helper().get_background_color, highlight_analysis=Helper().highlight_analysis )
 
@@ -159,7 +161,7 @@ def handle_sms_webhook():
     payload = str(data)
 
     # the request is validated and the requester authenticated
-    if data: 
+    if data:         
         PostgresCRUD().insert_sms(payload)
 
         return '', 200
