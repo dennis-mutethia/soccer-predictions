@@ -109,7 +109,7 @@ class PostgresCRUD:
         events = []
         with self.conn.cursor() as cur:
             query = """
-                SELECT match_id, DATE(kickoff), home_team, away_team, prediction
+                SELECT match_id, DATE(kickoff), home_team, away_team, prediction, parent_match_id, subtype_id,
                 FROM matches
                 WHERE status IS NULL AND DATE(kickoff) = CURRENT_DATE - 1
             """
@@ -121,7 +121,9 @@ class PostgresCRUD:
                     "match_date": str(datum[1]),
                     "home_team": datum[2],
                     "away_team": datum[3],
-                    "prediction": datum[4]
+                    "prediction": datum[4],
+                    "parent_match_id": datum[5],
+                    "subtype_id": datum[6]
                 }
                 events.append(event)
                 

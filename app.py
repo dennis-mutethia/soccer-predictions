@@ -49,23 +49,23 @@ def page_not_found(e):
 def today(code): 
     today_codes = PostgresCRUD().verify_code(code)
     matches, played, won = Helper().fetch_matches('', '=', '')
-    return render_template('index.html', today_codes=today_codes, code=code, header="Today Games Predictions", matches=matches, played=played, won=won, get_background_color=Helper().get_background_color, highlight_analysis=Helper().highlight_analysis)
+    return render_template('index.html', today_codes=today_codes, code=code, header="Today Games Predictions", matches=matches, played=played, won=won)
 
 @app.route('/tomorrow/<code>')
 def tomorrow(code):    
     today_codes = PostgresCRUD().verify_code(code)
     matches, played, won = Helper().fetch_matches('+1', '=', '')
-    return render_template('index.html', today_codes=today_codes, code=code, header="Tomorrow Games Predictions", matches = matches, played = played, won = won, get_background_color=Helper().get_background_color, highlight_analysis=Helper().highlight_analysis )
+    return render_template('index.html', today_codes=today_codes, code=code, header="Tomorrow Games Predictions", matches = matches, played = played, won = won)
 
 @app.route('/yesterday/<code>')
 def yesterday(code):    
     matches, played, won = Helper().fetch_matches('-1', '=', '')
-    return render_template('index.html', today_codes=today_codes, code=code, header="Yesterday's Predictions Results", matches = matches, played = played, won = won, get_background_color=Helper().get_background_color, highlight_analysis=Helper().highlight_analysis )
+    return render_template('index.html', today_codes=today_codes, code=code, header="Yesterday's Predictions Results", matches = matches, played = played, won = won)
 
 @app.route('/history/<code>')
 def history(code):    
     matches, played, won = Helper().fetch_matches('-7', '>=', '')
-    return render_template('index.html', today_codes=today_codes, code=code, header="Last 7-Days Predictions Results", matches = matches, played = played, won = won, get_background_color=Helper().get_background_color, highlight_analysis=Helper().highlight_analysis )
+    return render_template('index.html', today_codes=today_codes, code=code, header="Last 7-Days Predictions Results", matches = matches, played = played, won = won )
 
 @app.route('/jackpots/<code>')
 def jackpots(code): 
