@@ -40,10 +40,10 @@ N/B: New Unique Link is Sent daily
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <small class="col-5 col-sm-4 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
+                            <small class="col-4 col-sm-4 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
                             <small class="col-2 col-sm-2 text-center"><b>{{ match.overall_prob }}%</b></small>
                             <small class="col-2 col-sm-2 text-center"><b>{{ match.odd }}</b></small>
-                            <small class="col-5 col-sm-4 text-right"><b>
+                            <small class="col-4 col-sm-4 text-right"><b>
                                     {% if code in today_codes or ns.counter == 1 %}
                                         {{ match.prediction ~ ' GOALS' if match.prediction in ['OVER 1.5', 'OVER 2.5'] else (match.prediction ~ ' CORNERS' if match.prediction in ['OVER 7.5', 'OVER 8.5', 'OVER 9.5'] else '') }}
                                     {% else %}
@@ -78,13 +78,12 @@ N/B: New Unique Link is Sent daily
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <small class="col-5 col-sm-4 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
+                            <small class="col-4 col-sm-4 text-left">{{ match.kickoff.strftime('%d %b %Y %H:%M') }}</small>
                             <small class="col-2 col-sm-2 text-center"><b>{{ match.odd }}</b></small>
                             <small class="col-2 col-sm-2 text-center"><b>{{ match.home_results }} - {{ match.away_results }}</b></small>
-                            <small class="col-5 col-sm-4 text-right"><b>
+                            <small class="col-4 col-sm-4 text-right"><b>
                                 {{ match.prediction ~ ' GOALS' if match.prediction in ['OVER 1.5', 'OVER 2.5'] else (match.prediction ~ ' CORNERS' if match.prediction in ['OVER 7.5', 'OVER 8.5', 'OVER 9.5'] else '') }}
                             </b></small>
-                            <small class="col-5 col-sm-5 text-left"></small>
                             <small class="col-12 col-sm-2 text-center {{ match.status.lower() }}"><b><i
                                         class="material-icons">{{ 'do_not_disturb_on' if match.status == 'LOST' else
                                         ('check_circle' if match.status == 'WON' else 'autorenew') }}</i></b></small>
