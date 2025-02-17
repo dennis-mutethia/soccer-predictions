@@ -1,4 +1,5 @@
 
+import json
 import os, uuid
 from datetime import datetime
 from flask import Flask, redirect, render_template, request, url_for
@@ -152,5 +153,19 @@ def delivery_reports():
     
     return '', 200
 
+@app.route('/webhooks/sms', methods=['POST'])
+def handle_sms_webhook():
+    data = request.get_json()
+    payload = str(data)
+
+    # the request is validated and the requester authenticated
+    if data: 
+        PostgresCRUD().insert_sms(payload)
+
+        return '', 200
+    else:
+        print("Cannot handle this request")
+        return '', 404
+    
 if __name__ == '__main__':
     app.run(debug=True)

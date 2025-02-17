@@ -327,8 +327,19 @@ class PostgresCRUD:
                 
             self.conn.commit()
             self.conn.close()
-    
-            
+        
+    def insert_sms(self, payload):
+        id = str(uuid.uuid5(uuid.NAMESPACE_DNS, payload))        
+        self.ensure_connection()
+        with self.conn.cursor() as cursor:
+            query = """
+                INSERT INTO sms(id, payload)
+                VALUES(%s, %s)
+                ON CONFLICT DO NOTHING
+            """
+            cursor.execute(query, (id, payload))
+            self.conn.commit()
+                
 # Example usage:
 if __name__ == "__main__":
     crud = PostgresCRUD()
